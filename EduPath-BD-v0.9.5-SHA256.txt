@@ -1,0 +1,3 @@
+752d5911b4fef029942d8973249e4d62438f9038bf9a09910159c7a19aac6d29  EduPath-BD-v0.9.5-Production-Runtime-Source.zip
+0490a73d859ddd184a3bf116c37353590160627107c7f7faa6ba7f3621cfb206  EduPath-BD-v0.9.4-to-v0.9.5-Production-Runtime.patch
+74063b1315fca5fe4acf7a985699b6ff7bf02fe59bffdc3d3dc07e188361c6e8  EduPath-BD-v0.9.5-Release-Notes.txt

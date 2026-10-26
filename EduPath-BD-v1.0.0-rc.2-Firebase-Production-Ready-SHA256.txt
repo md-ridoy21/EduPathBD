@@ -1,0 +1,2 @@
+5e54b7d9bad1a71e0d82a4d8b8a5c5effcec4ec45987157added36195ab832e4  /workspace/scratch/1f7ab9059f7c/deliverables/EduPath-BD-v1.0.0-rc.2-Firebase-Production-Ready-Source.zip
+e7f062c3eb9e0344f12d1656b63c5d31f415f6e0bfe06e4062431c5950db1a05  /workspace/scratch/1f7ab9059f7c/deliverables/EduPath-BD-v1.0.0-rc.2-Firebase-Production-Config-Hardening.patch

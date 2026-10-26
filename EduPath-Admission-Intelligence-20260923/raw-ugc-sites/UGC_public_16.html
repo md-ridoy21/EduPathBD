@@ -1,0 +1,2791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="PSTU">
+
+    <title>Patuakhali Science and Technology University</title>
+   
+
+    <link rel="shortcut icon" href="asset/public/frontend/img/pstulogo.png" type="image/x-icon"/>
+
+    <link href="https://www.pstu.ac.bd/public/frontend/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://www.pstu.ac.bd/public/frontend/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://www.pstu.ac.bd/public/frontend/css/flaticon-set.css" rel="stylesheet" />
+    <link href="https://www.pstu.ac.bd/public/frontend/css/themify-icons.css" rel="stylesheet" />
+    <link href="https://www.pstu.ac.bd/public/frontend/css/magnific-popup.css" rel="stylesheet" />
+    <link href="https://www.pstu.ac.bd/public/frontend/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="https://www.pstu.ac.bd/public/frontend/css/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="https://www.pstu.ac.bd/public/frontend/css/animate.css" rel="stylesheet" />
+    <link href="https://www.pstu.ac.bd/public/frontend/css/bootsnav.css" rel="stylesheet" />
+    <link href="https://www.pstu.ac.bd/public/frontend/css/style.css" rel="stylesheet">
+    <link href="https://www.pstu.ac.bd/public/frontend/css/responsive.css" rel="stylesheet" />
+    <link href="https://www.pstu.ac.bd/public/frontend/fonts/NexusSans-Regular.otf" rel="stylesheet" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        .deptHeading{
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            font-weight: 400;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            transform: rotate(-3deg);
+            color: white;
+            text-align: left;
+            font-size: 3.0rem;
+            line-height: 4rem;
+            text-shadow: 0 1px 0 hsl(52,7%,20%), 2px 2px black;
+        }
+        .carousel .item .content{
+                   position: relative;
+                   height: 100%;
+                   padding: 20px;
+               }
+               .carousel .item .content p{
+                   position: absolute;
+                   bottom: 0;
+                   left: 0;
+                   padding: 20px;
+                   font-size: 20px;
+               }
+               .breadcrumb-area{
+                   background-size: cover;
+                   background-position: center;
+               }
+               .footer-content *{
+                   line-height: 1.8;
+               }
+               .people-item .image img{
+                   width: 100%;
+                   aspect-ratio: 1/1;
+               }
+               footer *{
+                   font-family: 'Roboto', sans-serif;
+               }
+               .footer_links h4{
+                   font-size: 20px;
+                   color: #51247a;
+               }
+               .footer_links ul li a{
+                   font-size: 16px;
+                   color: #51247a;
+                   padding: 5px;
+               }
+               .footer_links ul li a i{
+                   font-size: 16px;
+                   color: #51247a;
+               }
+    </style>
+
+</head>
+<body>
+    
+            <div class="top-bar-area bg-dark inc-border text-light main_topbar d-none">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-left">
+            </div>
+            <div class="col-md-8 address-info text-right">
+                <div class="info">
+                    <ul style="display: flex; justify-content: end; align-items: center;">
+                                                            <li><a href="https://www.pstu.ac.bd/login"> 
+                                Login</a></li>
+                                <li>BETA</li>
+                                
+                                
+                                                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="top-bar-area bg-dark inc-border text-light main_topbar p-0 pt-2">
+    <div class="container">
+        <div class="" style="display: flex; align-items: center;">
+            <div class="d-sm-none p-2" style="min-width: 125px; font-weight: bold;">
+                <h4 class="" style="font-weight: bold; color: #f5ee0a;">Latest Notices: </h4>
+            </div>
+            <div class="" style="flex-grow: 1;">
+                <div class="info">
+                    <marquee>
+                        <ul style="display: flex; align-items: center; gap: 10px;">
+                                                            <li>
+                                    <a href="https://www.pstu.ac.bd/notices/supply-and-installation-of-laboratory-equipment-for-various-departments-and-faculties-of-pstu-2026">Supply and Installation of Laboratory Equipment for Various Departments and Faculties of PSTU (2026)</a> | 
+                                </li>
+                                                            <li>
+                                    <a href="https://www.pstu.ac.bd/notices/pieicdi-programe-vrtir-bachai-bord-prsngoe">পিএইচডি প্রোগ্রামে ভর্তির বাছাই বোর্ড প্রসঙ্গে।</a> | 
+                                </li>
+                                                            <li>
+                                    <a href="https://www.pstu.ac.bd/notices/notis-24-septembr-2026-tarikher-chuti-batil-sngkrant">নোটিশ (২৪ সেপ্টেম্বর ২০২৬ তারিখের ছুটি বাতিল সংক্রান্ত)</a> | 
+                                </li>
+                                                            <li>
+                                    <a href="https://www.pstu.ac.bd/notices/ummukt-nilamer-notis">উম্মুক্ত নিলামের নোটিশ</a> | 
+                                </li>
+                                                            <li>
+                                    <a href="https://www.pstu.ac.bd/notices/seminar-on-higher-study-and-exchange-opportunities-in-the-united-states">Seminar on Higher Study and Exchange Opportunities in the United States</a> | 
+                                </li>
+                                                            <li>
+                                    <a href="https://www.pstu.ac.bd/notices/emergency-notice-for-ms-admission-in-jd25-session">Emergency Notice for MS Admission in JD/25 Session</a> | 
+                                </li>
+                                                            <li>
+                                    <a href="https://www.pstu.ac.bd/notices/leave-order-submission-notice-for-master-and-phd-students">Leave Order Submission Notice for Master and PhD Students</a> | 
+                                </li>
+                                                            <li>
+                                    <a href="https://www.pstu.ac.bd/notices/jj25-phd-proposalprogressive-seminar-report-submission-notice">JJ/25 PhD Proposal/Progressive Seminar Report Submission Notice</a> | 
+                                </li>
+                                                    </ul>
+                    </marquee>
+                </div>
+            </div>
+            <ul class="px-4" style="display: flex; justify-content: end; align-items: center; margin-top: -8px; font-weight: bold;">
+                                                            <li><a href="https://www.pstu.ac.bd/login" style="font-weight: bold; color: #f5ee0a;">
+                                Login</a></li> 
+                                <li class="ps-3"><b></b></li>
+                                                    </ul>
+                    <ul class="px-4" style="display: flex;  align-items: center; margin-top: -10px; "><b><a target="_blank" href="https://mail.google.com/a/pstu.ac.bd">Webmail</a></b></ul><br>
+                    <ul class="px-4" style="display: flex;  align-items: center; margin-top: -5px;  "><a target="_blank" href="https://forms.gle/NSqPeyZusuCppZQT7">NewEmail</a></ul>
+        </div>
+    </div>
+</div>
+
+<!-- Header
+============================================= -->
+<header id="home">
+
+    <!-- Start Navigation -->
+    <nav class="navbar top-pad navbar-default attr-border-none navbar-fixed navbar-transparent bootsnav main_header">
+
+        <!-- Start Top Search -->
+        <div class="container">
+            <div class="row">
+                <div class="top-search">
+                    <div class="input-group">
+                        <form action="#">
+                            <input type="text" name="text" class="form-control" placeholder="Search">
+                            <button type="submit">
+                                <i class="ti-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Top Search -->
+        <div class="container">
+            <!-- Start Atribute Navigation -->
+            
+            <!-- End Atribute Navigation -->
+            <style>
+            nav.navbar.navbar-default.top-pad.navbar-transparent{
+                margin-top: 48px;
+            }
+            .navbar-brand .logo.logo-scrolled {
+                        width: 300px;
+                        margin-top: 20px;
+                    }
+                    .d-none{
+                        display: none !important;
+                    }
+                    nav.navbar.bootsnav.navbar-fixed.top-pad .navbar-toggle{
+                        margin-top: 30px;
+                        color: white;
+                    }
+                    nav.navbar.bootsnav ul.nav > li.dropdown > a.dropdown-toggle::after{
+                        font-weight: 600;
+                    }
+                @media(min-width: 1023px) and (max-width: 1200px){
+                    nav.navbar.bootsnav .navbar-header{
+                        text-align: center !important;
+                        float: none;
+                    }
+                    nav.navbar.bootsnav .navbar-toggle{
+                            display: inline-block;
+                            float: left;
+                            margin-right: -200px;
+                            margin-top: 30px;
+                    }
+                    nav.navbar.bootsnav .navbar-brand {
+                        display: inline-block;
+                        float: none !important;
+                        margin: 0 !important;
+                    }
+                    .navbar-brand .logo.logo-scrolled {
+                            position: relative;
+                            top: 20px;
+                            display: block !important;
+                    }
+
+                }
+                @media (max-width: 1200px)
+                {
+                    nav.navbar.navbar-default.top-pad.navbar-transparent{
+                        margin-top: 35px;
+                    }
+                    .top-bar-area.main_topbar {
+                            display: block;
+                        }
+                        .top-bar-area .row{
+                            justify-content: end;
+                        }
+                }
+                @media(min-width: 775px){
+                    .d-lg-none{
+                        display: none !important;
+                    }
+                }
+                @media(max-width: 775px){
+                    .d-sm-none{
+                        display: none !important;
+                    }
+                }
+                nav.navbar.bootsnav.navbar-transparent.white ul.nav > li > a{
+                    padding: 29px 20px;
+                }
+            </style>
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="https://www.pstu.ac.bd">
+                    <div class="p-1" style="top: 12px;position: absolute;">
+                        <img src="https://www.pstu.ac.bd/storage/images/settings/1710232826_Logo Update 2.png" class="logo logo-display" alt="Logo" style="width: 300px;" >
+                    </div>
+                    <!-- <center><span style="color:lightcoral">PSTU</span></center> -->
+                    <img src="https://www.pstu.ac.bd/storage/images/settings/1710232826_Logo Update 2.png" class="logo logo-scrolled" alt="Logo" style="">
+                </a>
+            </div>
+            <!-- End Header Navigation -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li class="dropdown megamenu-fw d-sm-none">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About
+                        <span></span>
+                        </a>
+                        <ul class="dropdown-menu megamenu-content animated menuBody fadeOutUp" role="menu" style="display: none; opacity: 1;">
+                            <li>
+                                <div>
+                                <div class="col-menu col-md-6">
+                                    <h6 class="title menuTitle">About University
+                                    </h6>
+                                    <div class="content">
+                                        <ul class="menu-col">
+                                            <li>
+                                            <a href="https://www.pstu.ac.bd/about/historical-outline">
+                                            <i class="fas fa-angle-double-right"></i> History
+                                            </a>
+                                            </li>
+                                            <li><a href="https://www.pstu.ac.bd/university-ordinances"><i class="fas fa-angle-double-right"></i>
+                                            University Ordinance</a>
+                                            </li>
+                                            <li>
+                                            <a href="https://www.pstu.ac.bd/about/university-glance">
+                                            <i class="fas fa-angle-double-right"></i>
+                                            At a Glance
+                                            </a>
+                                            </li>
+                                            <!--<li>-->
+                                            <!--<a href="https://www.pstu.ac.bd/vice-chencellors-list">-->
+                                            <!--<i class="fas fa-angle-double-right"></i>-->
+                                            <!--Vice Chancellors-->
+                                            <!--</a>-->
+                                            <!--</li>-->
+
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- end col-3 -->
+                                <div class="col-menu col-md-6">
+                                    <h6 class="title menuTitle">University Leadership</h6>
+                                    <div class="content">
+                                        <ul class="menu-col">
+                                                                                        <li><a href="https://www.pstu.ac.bd/vice-chencellors/chancellor"><i class="fas fa-angle-double-right"></i>
+                                                Chancellor</a>
+                                            </li>
+                                                                                        <li><a href="https://www.pstu.ac.bd/vice-chencellors/vice-chancellor"><i class="fas fa-angle-double-right"></i>
+                                                Vice Chancellor</a>
+                                            </li>
+                                                                                        <li><a href="https://www.pstu.ac.bd/vice-chencellors/Pro-Vice%20Chancellor"><i class="fas fa-angle-double-right"></i>
+                                                Pro-Vice Chancellor</a>
+                                            </li>
+                                                                                        <li><a href="https://www.pstu.ac.bd/vice-chencellors/treasurer"><i class="fas fa-angle-double-right"></i>
+                                                Treasurer</a>
+                                            </li>
+                                            
+
+                                                                                        <li>
+                                                <a href="https://www.pstu.ac.bd/regent-board">
+                                                    <i class="fas fa-angle-double-right"></i>
+                                                    Regent Board
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.pstu.ac.bd/academic-council">
+                                                    <i class="fas fa-angle-double-right"></i>
+                                                    Academic Council
+                                                </a>
+                                            </li>
+                                            <li><a href="https://www.pstu.ac.bd/offices"><i class="fas fa-angle-double-right"></i> Administrative 
+                                                        Offices</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- end col-3 -->
+                                <!-- end col-3 -->
+                                </div>
+                                <!-- end row -->
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown d-lg-none">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About
+                        <span></span>
+                        </a>
+                        <ul class="dropdown-menu menuBody animated fadeOutUp" role="menu" style="display: none; opacity: 1;">
+                            <li>
+                                <a href="https://www.pstu.ac.bd/about/historical-outline">
+                                <i class="fas fa-angle-double-right"></i> History
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.pstu.ac.bd/university-ordinances"><i class="fas fa-angle-double-right"></i>
+                                University Ordinance</a>
+                            </li>
+                            <li>
+                                <a href="https://www.pstu.ac.bd/about/university-glance">
+                                <i class="fas fa-angle-double-right"></i>
+                                At a Glance
+                                </a>
+                            </li>
+                                                                                        <li><a href="https://www.pstu.ac.bd/vice-chencellors/chancellor"><i class="fas fa-angle-double-right"></i>
+                                    Chancellor</a>
+                                </li>
+                                                                <li><a href="https://www.pstu.ac.bd/vice-chencellors/vice-chancellor"><i class="fas fa-angle-double-right"></i>
+                                    Vice Chancellor</a>
+                                </li>
+                                                                <li><a href="https://www.pstu.ac.bd/vice-chencellors/Pro-Vice%20Chancellor"><i class="fas fa-angle-double-right"></i>
+                                    Pro-Vice Chancellor</a>
+                                </li>
+                                                                <li><a href="https://www.pstu.ac.bd/vice-chencellors/treasurer"><i class="fas fa-angle-double-right"></i>
+                                    Treasurer</a>
+                                </li>
+                                
+
+                                                                <li>
+                                    <a href="https://www.pstu.ac.bd/regent-board">
+                                        <i class="fas fa-angle-double-right"></i>
+                                        Regent Board
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.pstu.ac.bd/academic-council">
+                                        <i class="fas fa-angle-double-right"></i>
+                                        Academic Council
+                                    </a>
+                                </li>
+                                <li><a href="https://www.pstu.ac.bd/offices"><i class="fas fa-angle-double-right"></i> Administrative 
+                                            Offices</a></li>
+                                 
+                                </li>
+                                                        </ul>
+                    </li>
+                    <style>
+                        .dropdown-menu .dp_menu{
+                            position: relative;
+                        }
+                        .dropdown-menu .dp_menu .dropdown-submenu{
+                            position: absolute;
+                            left: 100%;
+                        }
+                    </style>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Academics <span></span></a>
+                        
+                        <ul class="dropdown-menu menuBody animated fadeOutUp" style="display: none; opacity: 1;">
+                                <li><a href="https://www.pstu.ac.bd/programs"><i class="fas fa-angle-double-right"></i>
+                                                        Academic Programs</a>
+                                </li>
+                                
+                                <li class="dropdown"><a href="https://www.pstu.ac.bd/faculties"><i class="fas fa-angle-double-right"></i>
+                                                Undergraduate Studies</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="https://www.pstu.ac.bd/faculties"><i class="fas fa-angle-double-right"></i>
+                                                Faculties</a>
+                                        </li>
+                                        <li><a href="https://www.pstu.ac.bd/departments"><i class="fas fa-angle-double-right"></i>
+                                                Departments</a></li>
+                                    </ul>
+                                </li>
+                                <li class=""><a href="https://pstu.ac.bd/faculty/postgraduate-studies"><i class="fas fa-angle-double-right"></i>
+                                                Postgraduate Studies</a>
+                                    
+                                </li>
+                                
+                                <li><a href="https://www.pstu.ac.bd/institutes"><i class="fas fa-angle-double-right"></i>
+                                        Institutes</a></li>
+                                <li><a href="https://www.pstu.ac.bd/academic-calender"><i class="fas fa-angle-double-right"></i> Academic Calendar</a>
+                                </li>
+                                <li><a href="https://www.pstu.ac.bd/labs"><i class="fas fa-angle-double-right"></i>
+                                        Facilities </a></li>
+                                                            </ul>
+                    </li>
+                    <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Shortcodes">Admission
+                                <span></span></a>
+                            <ul class="dropdown-menu menuBody animated fadeOutUp" style="display: none; opacity: 1;">
+                                                                                                                                            <li><a href="https://www.pstu.ac.bd/page-view/msmba-admission"><i class="fas fa-angle-double-right"></i>
+                                    MS/MBA Admission</a></li>
+                                                                                                                                                <li><a href="https://www.pstu.ac.bd/page-view/phd-admission-circular"><i class="fas fa-angle-double-right"></i>
+                                    PhD Admission Circular</a></li>
+                                                                                                                                                <li><a href="https://admission.pstu.ac.bd/" ><i class="fas fa-angle-double-right"></i>
+                                    Undergraduate Admission</a></li>
+                                                                                                                                                <li><a href="https://www.pstu.ac.bd/page-view/foreign-student-admission"><i class="fas fa-angle-double-right"></i>
+                                    Foreign Student Admission</a></li>
+                                                                                                                                                <li><a href="https://www.pstu.ac.bd/page-view/pmbaemba-admission-notice"><i class="fas fa-angle-double-right"></i>
+                                    PMBA/EMBA Admission Notice</a></li>
+                                                                                                                                    </ul>
+                        </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students
+                            <span></span></a>
+                            <ul class="dropdown-menu menuBody animated fadeOutUp" style="display: none; opacity: 1;">
+                                <h6 class="title menuTitle hide">Student Facilities</h6>
+                              
+                                <li><a href="https://www.pstu.ac.bd/scholarship-aid"><i class="fas fa-angle-double-right"></i>
+                                        Scholarships
+                                         </a></li>
+                                <li><a href="https://www.pstu.ac.bd/halls" target="_blank"><i class="fas fa-angle-double-right"></i>
+                                         Residence
+                                    </a></li>
+                                    
+                                                                                                                                                    <li><a href="https://www.pstu.ac.bd/page-view/transport"><i class="fas fa-angle-double-right"></i>
+                                        Transport</a></li>
+                                                                                                                                                            <li><a href="https://www.pstu.ac.bd/page-view/health-care-center"><i class="fas fa-angle-double-right"></i>
+                                        Health Care Center</a></li>
+                                                                                                                                                            <li><a href="https://www.pstu.ac.bd/page-view/pstu-diary"><i class="fas fa-angle-double-right"></i>
+                                        PSTU Diary</a></li>
+                                                                                                                                                            <li><a href="https://pstu.ac.bd/office/office-of-the-international-student-affairs" target="_blank"><i class="fas fa-angle-double-right"></i>
+                                        Office of the International Student Affairs</a></li>
+                                                                                                                                            <li><a href="https://www.pstu.ac.bd/clubs"><i class="fas fa-angle-double-right"></i> Club/Organization</a></li>
+                                <li><a href="https://www.pstu.ac.bd/alumni"><i class="fas fa-angle-double-right"></i>
+                                        Alumni
+                                        </a>
+                                    </li>
+                            </ul>
+                        <ul class="dropdown-menu megamenu-content animated menuBody fadeOutUp hide" role="menu" style="display: none; opacity: 1;">
+                            <li>
+                                <div class="row">
+                                    <div class="col-menu col-md-4">
+                                        <h6 class="title menuTitle">Student Facilities</h6>
+                                        <div class="content">
+                                            <ul class="menu-col">
+                                                <li><a href="https://www.pstu.ac.bd/scholarship-aid"><i class="fas fa-angle-double-right"></i>
+                                                        Scholarships &amp;
+                                                         </a></li>
+                                                <li><a href="https://www.pstu.ac.bd/halls" target="_blank"><i class="fas fa-angle-double-right"></i>
+                                                         Residence
+                                                    </a></li>
+                                                                                                                                                                                                                    <li><a href="https://www.pstu.ac.bd/page-view/transport"><i class="fas fa-angle-double-right"></i>
+                                                        Transport</a></li>
+                                                                                                                                                                                                                            <li><a href="https://www.pstu.ac.bd/page-view/health-care-center"><i class="fas fa-angle-double-right"></i>
+                                                        Health Care Center</a></li>
+                                                                                                                                                                                                                            <li><a href="https://www.pstu.ac.bd/page-view/pstu-diary"><i class="fas fa-angle-double-right"></i>
+                                                        PSTU Diary</a></li>
+                                                                                                                                                                                                                            <li><a href="https://pstu.ac.bd/office/office-of-the-international-student-affairs" target="_blank"><i class="fas fa-angle-double-right"></i>
+                                                        Office of the International Student Affairs</a></li>
+                                                                                                                                                                                                            <li><a href="https://www.pstu.ac.bd/alumni"><i class="fas fa-angle-double-right"></i>
+                                                        Alumni
+                                                        Association</a>
+                                                    </li>
+            
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-menu col-md-4 hide">
+                                        <h6 class="title menuTitle">Online Services
+                                        </h6>
+                                        <div class="content">
+                                            <ul class="menu-col">
+                                                <li><a href="https://www.pstu.ac.bd/pstu-form"><i class="fas fa-angle-double-right"></i>
+                                                        Apply for
+                                                        Certificate/Marksheet</a>
+                                                </li>
+                                                <li><a href="https://www.pstu.ac.bd/pstu-scholarship-form"><i class="fas fa-angle-double-right"></i>
+                                                        Apply
+                                                        for Govt. Scholarships</a>
+                                                </li>
+                                                <li><a href="https://www.pstu.ac.bd/results"><i class="fas fa-angle-double-right"></i>
+                                                        Examination
+                                                        Results</a>
+                                                </li>
+                                                <li><a href="https://www.pstu.ac.bd/pstu-transcript" ><i class="fas fa-angle-double-right"></i>
+                                                        Apply for
+                                                        Transcript</a>
+                                                </li>
+                                                <li><a href="#" ><i class="fas fa-angle-double-right"></i>
+                                                        Exam Form Fill-up</a>
+                                                </li>
+            
+                                                                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-menu col-md-4 hide">
+                                        <h6 class="title menuTitle">Alumni</h6>
+                                        <div class="content">
+                                            <ul class="menu-col">
+                                                    
+                                                                                                </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Shortcodes">Research
+                                <span></span></a>
+
+                            <ul class="dropdown-menu menuBody animated fadeOutUp" style="display: none; opacity: 1;">
+                               
+                                <li><a href="https://www.pstu.ac.bd/current_research"><i class="fas fa-angle-double-right"></i>
+                                       Publications</a></li>
+                                <li><a href="https://www.pstu.ac.bd/research_colaborations"><i class="fas fa-angle-double-right"></i>
+                                        Collaboration</a></li>
+                                <li><a href="https://www.pstu.ac.bd/funded-projects"><i class="fas fa-angle-double-right"></i> Grants
+                                        </a></li>
+                                        <li><a href="https://pstu.ac.bd/office/research-and-training-center"><i class="fas fa-angle-double-right"></i>
+                                        Research & Training Center</a></li>
+
+                                                                    
+                                                                        <li><a href="https://journal.pstu.ac.bd" ><i class="fas fa-angle-double-right"></i>
+                                    PSTU Journal</a></li>
+                                    
+                                    
+                                
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="https://www.pstu.ac.bd/libraries"  data-hover="Shortcodes"> Library
+                                </a>
+
+                            <ul class="dropdown-menu menuBody animated hide">
+
+                                
+                                <li><a href="https://www.pstu.ac.bd/user-informations"><i class="fas fa-angle-double-right"></i>
+                                        Telephone and Email Index</a></li>
+                               
+                                <li><a href="https://www.pstu.ac.bd/careers" ><i class="fas fa-angle-double-right"></i> PSTU Career</a>
+                                </li>
+                                <li><a href="https://www.pstu.ac.bd/trust-funds"><i class="fas fa-angle-double-right"></i> Trust
+                                        Funds</a></li>
+
+                               
+                                <li><a href="https://www.pstu.ac.bd/libraries"><i class="fas fa-angle-double-right"></i> Libraries </a></li>
+                                <li><a href="https://www.pstu.ac.bd/tenders" ><i class="fas fa-angle-double-right"></i>
+                                    Tender</a></li>
+
+                                                            </ul>
+                        </li>
+                        <li class="">
+                               <a href="https://pstu.ac.bd/office/institutional-quality-assurance-cell-iqac"  data-hover="Shortcodes">IQAC
+                                </a>
+
+                        </li>
+                        <li class="">
+                               <a href="https://www.pstu.ac.bd/search"  data-hover="Shortcodes"><i class="fa fa-search"></i> Search
+                                </a>
+
+                        </li>
+                        <li class="dropdown d-lg-none">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Shortcodes">Quick Links
+                                <span></span></a>
+
+                            <ul class="dropdown-menu menuBody animated fadeOutUp" style="display: none; opacity: 1;">
+                               
+                                <li><a href=""><i class="fas fa-angle-double-right"></i>
+                                       IQAC</a></li>
+                                <li><a href="https://www.pstu.ac.bd/noc-list"><i class="fas fa-angle-double-right"></i>
+                                        NOC/Go</a></li>
+                                <li><a href="https://www.pstu.ac.bd/notices"><i class="fas fa-angle-double-right"></i> Notice
+                                        </a></li>
+                                        <li><a href="https://www.pstu.ac.bd/pstu-forms"><i class="fas fa-angle-double-right"></i>
+                                        Forms and Download</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown d-lg-none">
+                                                                <a href="https://www.pstu.ac.bd/login">
+                                Login</a>
+                                
+                        </li>
+
+
+
+                    </ul>
+                                </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>        <!-- End Navigation -->
+    
+    
+
+</header>
+<!-- End Header -->
+    
+     <!-- Start Banner
+    ============================================= -->
+    <div class="banner_row">
+        <div class="right mt-1">
+            <div class="banner-area">
+                <div id="bootcarousel" class="carousel text-center content-less text-light top-pad-30 text-dark slide animate_text" data-ride="carousel">
+        
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner carousel-zoom">
+                                                <div class="item active bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1781759226_67eace1a-7fbf-4e1f-8470-3fec54bce157.jpg');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Wreath-laying by the newly appointed Vice-Chancellor</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1781581026_720805309_4352783374969919_758391358028242847_n.jpg');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Welcoming the new VC with flowers</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1781581304_ca4240ad-8f96-4c5a-8f61-cdd558557fec.jfif');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Discussion Meeting with Agriculture Faculty</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1781582174_b72ae864-19ad-4955-a0a2-efbd0e2e4f64.jfif');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Discussion Meeting with CSE Faculty</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1781582265_723792050_10237128964356773_1470325546492596886_n.jpg');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Discussion Meeting with BA Faculty</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1781674208_a0ee3033-d7ee-4362-890f-54a83ff62cdb.jfif');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Inception Workshop</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1781582507_59dd2eea-8b0d-4570-97fe-3c6664e33f9c.jfif');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Discussion Meeting with Fisheries Faculty</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1761731661_unnamed (2).jpg');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Food Day</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1782013311_beaf61e6-16f1-4128-94bd-8a3258bf5540.jfif');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Discussion Meeting with ANSVM Faculty</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1782013842_7638ebee-f112-402d-b6e2-4eb8445c24dd (1).jfif');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Discussion Meeting with ESDM Faculty</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1782013973_721576195_2880097192351499_2867818340068411352_n.jpg');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Discussion Meeting with NFS Faculty</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1781161375_8cf91c65-4548-443c-8047-469235837115.jfif');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Guard of Honor receiving the newly appointed Vice-Chancellor</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1783738635_WhatsApp Image 2026-07-11 at 8.53.30 AM.jpeg');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Welcome to CSE</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1785821690_762689833_2397933204066125_4106456453505947172_n.jpg');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">July Fighters&#039; Memorial Meeting</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1786944686_778899149_2410196702839775_2250805068621773073_n.jpg');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">Inauguration of various facilities at PSTU</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                                <div class="item  bg-cover" style="background-image: url('https://www.pstu.ac.bd/storage/images/sliders/1787628492_a99e625d-2eb1-45d6-86ff-82c3a97f2792.jfif');">
+                            <div class="box-table">
+                                <!-- <div class="box-cell shadow dark">-->
+                                    <div class="content">
+                                        <p data-animation="animated fadeInLeft">জাতীয় মৎস্য পক্ষ মাছের পোনা অবমুক্ত করা</p>
+                                    </div>
+                               <!-- </div> -->
+                            </div>
+                        </div>
+                                            </div>
+                    <a class="left carousel-control shadow" href="#bootcarousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control shadow" href="#bootcarousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <!--<div>-->
+            <!--    <div class="quick_links" data-animation="animated fadeInDown">-->
+            <!--        <table class="table">-->
+            <!--            <tr>-->
+            <!--                <th colspan="2"><h3 class="text-light m-0">Quick Links</h3></th>-->
+            <!--            </tr>-->
+            <!--            <tr>-->
+            <!--                <td><a href="https://www.pstu.ac.bd/apa">APA</a></td>-->
+            <!--                <td><a href="">IQAC</a></td>-->
+            <!--            </tr>-->
+            <!--            <tr>-->
+            <!--                <td><a href="https://www.pstu.ac.bd/noc-list">NOC/GO</a></td>-->
+            <!--                <td><a href="https://www.pstu.ac.bd/notices">Notice</a></td>-->
+            <!--            </tr>-->
+            <!--            <tr>-->
+            <!--                <td colspan="2"><a href="https://www.pstu.ac.bd/pstu-forms">Download</a></td>-->
+            <!--            </tr>-->
+            <!--            <tr>-->
+            <!--                <td colspan="2"><a href="">Citizen Charter</a></td>-->
+            <!--            </tr>-->
+            <!--            <tr>-->
+            <!--                <td colspan="2"><a href="https://www.pstu.ac.bd/user-informations">Telephone & Email</a></td>-->
+            <!--            </tr>-->
+            <!--        </table>-->
+            <!--    </div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="quick_links_btn">
+        Quick Links
+    </div>
+    <div id="accessibilityBar" title="Quick Links" class="">
+        <button id="universalAccessBtn" type="button" aria-label="accessibility menu" accesskey="a" class="collapsed">
+            <b class="vertical">Quick Links</b>
+            <!-- <i class="fas fa-universal-access"></i> --><span>Quick Links</span>
+        </button>
+        <div class="main_box">
+            <a href="https://www.pstu.ac.bd/apa">APA</a>
+            <a href="https://pstu.ac.bd/office/institutional-quality-assurance-cell-iqac">IQAC</a>
+            <a href="https://www.pstu.ac.bd/noc-list">NOC/GO</a>
+            <a href="https://www.pstu.ac.bd/notices">Notice</a>
+            <a href="https://www.pstu.ac.bd/pstu-forms"> Forms and Download</a>
+            <a href="">Citizen Charter</a>
+            <a href="https://forms.gle/eQu69i5m9yg53ucx6" target="_blank">ICTcell services</a>
+            <a href="https://www.pstu.ac.bd/user-informations">Telephone & Email</a>
+        </div>
+    </div>
+    <!--<div class="quick_box">-->
+    <!--    <ul>-->
+    <!--        <li><a href="https://www.pstu.ac.bd/apa">APA</a></li>-->
+    <!--        <li><a href="">IQAC</a></li>-->
+    <!--        <li><a href="https://www.pstu.ac.bd/noc-list">NOC/GO</a></li>-->
+    <!--        <li><a href="https://www.pstu.ac.bd/notices">Notice</a></li>-->
+    <!--        <li><a href="https://www.pstu.ac.bd/pstu-forms">Download</a></li>-->
+    <!--        <li><a href="">Citizen Charter</a></li>-->
+    <!--        <li><a href="https://www.pstu.ac.bd/user-informations">Telephone & Email</a></li>-->
+    <!--    </ul>-->
+    <!--</div>-->
+    <style>
+        
+    #accessibilityBar {
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        z-index: 9999;
+        position: fixed;
+        top: 60%;
+        right: 0;
+        transform: translate(100%, -50%);
+        background-color: rgba(34, 34, 34, .75);
+        border-radius: .5rem 0 0 .5rem;
+        box-shadow: 0 5px 30px rgba(34, 34, 34, 0);
+        width: 250px;
+    }
+    #accessibilityBar {
+        top: 360px !important;
+    }
+    #universalAccessBtn .vertical{
+        text-wrap: nowrap;
+        transform: rotate(90deg);
+        display: block;
+        margin-top: -38px;
+    }
+    #accessibilityBar .main_box{
+        width: 250px;
+        background: gray;
+    }
+    #accessibilityBar .main_box a{
+        width: 100%;
+        display: block;
+        padding: 10px;
+        color: white;
+        font-weight: 600;
+        font-family: "Kiron","Roboto",sans-serif;
+        position: relative;
+    }
+    #accessibilityBar .main_box a::before{
+        content: "";
+        position: absolute;
+        top:105%;
+        left: 0;
+        width: 0;
+        background: white;
+        height: 2px;
+        transition: 0.3s;
+    }
+    #accessibilityBar .main_box a:hover:before{
+        content: "";
+        position: absolute;
+        top:105%;
+        left: 0;
+        width: 100%;
+    }
+    #accessibilityBar.active {
+        transform: translate(0, -50%) !important;
+        box-shadow: 0 5px 30px rgba(34, 34, 34, .5);
+    }
+     #accessibilityBar button {
+        box-shadow: none !important;
+        -webkit-appearance: none;
+        cursor: pointer;
+    }
+    #accessibilityBar button.setAccessibility {
+        font-size: 12px;
+        font-size: .75rem;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        color: #222;
+        font-weight: 700;
+        background-color: #eee;
+        width: 100%;
+        padding: .1rem .2rem;
+        border-radius: .25rem;
+        border: none;
+        display: flex;
+        align-items: center;
+        margin: .25rem;
+    }
+   
+    #accessibilityBar button#universalAccessBtn {
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 1;
+        color: #fff;
+        background-color: #683091;
+        width: 3.5rem;
+        height: 10.5rem;
+        padding: 3px;
+        border-radius: 0%;
+        border: none;
+        position: absolute;
+        top: 50%;
+        transform: translate(-110%, -50%);
+        cursor: pointer;
+    }
+    button#universalAccessBtn.collapsed span {
+        opacity: 0;
+        right: 50%;
+    }
+    button#universalAccessBtn:hover span {
+        opacity: 1;
+        right: 3.8rem;
+        top: 4rem;
+        visibility: visible;
+    }
+    button#universalAccessBtn span{
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: 0.3s;
+        background-color: #683091;
+        height: 3.5rem;
+        padding: 8px;
+        visibility: hidden;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 1.0;
+        border-radius: 10px;
+        text-wrap: nowrap;
+    }
+                .quick_links_btn{
+                    padding: 5px 10px;
+                    background: #51247a;
+                    color: white;
+                    position: fixed;
+                    top: calc(50% - 60px);
+                    right: -30px;
+                    z-index: 10;
+                    transform: rotate(90deg);
+                    font-weight: bold;
+                    cursor: pointer;
+                    display: none;
+                }
+                .quick_box{
+                    position: fixed;
+                    top: calc(50% - 60px);
+                    right: 0px;
+                    z-index: 20;
+                    display: none;
+                    
+                }
+                .quick_box ul{
+                        padding: 10px;
+                        box-shadow: 0 0 6px gray;
+                        border-radius: 5px;
+                        background: white;
+                }
+                @media(max-width: 775px){
+                    .quick_links{
+                        display: none;
+                    }
+                }
+                /*@media(min-width: 776px){*/
+                /*    .quick_links{*/
+                /*        opacity: 0.5;*/
+                /*        transition: 0.3s;*/
+                /*    }*/
+                /*    .quick_links:hover{*/
+                /*        opacity: 1;*/
+                /*    }*/
+                /*}*/
+                .quick_links {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    z-index: 9;
+                    background: transparent;
+                    padding: 10px;
+                    border-radius: 10px;
+                    box-shadow: -1px 6px 12px 0px #00000078;
+                    min-width: 220px;
+                }
+                .quick_links h3{
+                    color: #451a6c;
+                    font-weight: bold;
+                }
+                .quick_links .table>tbody>tr>td, .quick_links .table>tbody>tr>th, .quick_links .table>tfoot>tr>td, .quick_links .table>tfoot>tr>th, .quick_links .table>thead>tr>td, .quick_links .table>thead>tr>th{
+                    border: 1px solid #08e542;
+                }
+                .quick_links table{
+                    background: white;
+                }
+                .quick_links table, .quick_links td, .quick_links tr{
+                    margin: 0;
+                }
+                .quick_links th{
+                    background: transparent;
+                }
+                .quick_links td{
+                    text-align: left;
+                }
+                .quick_links td a{
+                    color: black;
+                    font-weight: bold;
+                }
+                .learn-more {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-decoration: none;
+                    background: transparent;
+                    padding: 0;
+                    width: 15rem;
+                    height: auto;
+                    margin: 0 auto;
+                }
+                .learn-more .circle, .learn-more .circle .icon {
+                    transition: all .45s cubic-bezier(.65,0,.076,1);
+                }
+                
+                .learn-more .circle {
+                    position: relative;
+                    display: block;
+                    margin: 0;
+                    width: 3.6rem;
+                    height: 3.6rem;
+                    background: #51247a;
+                    border-radius: 2rem;
+                }
+                .learn-more .circle .icon.arrow {
+                    transition: all .45s cubic-bezier(.65,0,.076,1);
+                    left: 0.1rem;
+                    width: 2rem;
+                    height: 0.1rem;
+                    background: none;
+                }
+                .learn-more:hover .circle .icon.arrow {
+                    background: #fff;
+                    transform: translate(1.5rem);
+                }
+                .learn-more .circle .icon.arrow:before {
+                    position: absolute;
+                    content: "";
+                    top: -0.44rem;
+                    right: 0.1rem;
+                    width: 1rem;
+                    height: 1rem;
+                    border-top: 0.125rem solid #fff;
+                    border-right: 0.125rem solid #fff;
+                    transform: rotate(45deg);
+                }
+                .learn-more .button-text {
+                    transition: all .45s cubic-bezier(.65,0,.076,1);
+                    font-family: Mukta,sans-serif;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    padding: 1rem 0;
+                    margin: 0 0 0 3.5rem;
+                    color: #000;
+                    font-weight: 700;
+                    line-height: 1.1;
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-size: 1.4rem;
+                }
+                .learn-more .circle .icon {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    background: #fff;
+                }
+                .learn-more:hover .circle {
+                    width: 100%;
+                }
+                .learn-more:hover .button-text {
+                    color: #fff;
+                }
+                .features-area .features .item .pview22{
+                        background: #51247a !important;
+                        padding: 5px !important;
+                        color: #fff;
+                        border-radius: 5px;
+                        display: flex;
+                        justify-content: center;
+                }
+                .features-area .features .item.mariner .pview22 span{
+                        visibility: hidden;
+                        opacity: 0;
+                        margin-left: -26px;
+                        transition: 0.4s;
+                        min-width: auto;
+                        padding-left: 20px;
+                }
+                .features-area .features .item.mariner .pview22 i{
+                        color: white;
+                        background: transparent;
+                        font-size: 26px;
+                        margin: 0;
+                        margin-left: 0x;
+                        transition: 0.4s;
+                        min-width: auto;
+                        padding-left: 20px;
+                }
+                .features-area .features .item.mariner .pview22 i::after{
+                    background: none;
+                    height: 0;
+                    width: 0;
+                }
+                .features-area .features .item.mariner .pview22:hover span{
+                        visibility: visible;
+                        opacity: 1;
+                        margin-left: 0px;
+                }
+                .banner_row{
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                .banner_row .left2{
+                    width: 345px;
+                }
+                .banner_row .right{
+                    flex-grow: 1;
+                    position: relative;
+                    height: 90vh;
+                }
+                .banner-area{
+                    max-height: 100%;
+                }
+                body, .banner-area, .banner-area{
+                    max-height: calc(100% - 0.5rem);
+                }
+                @media(max-width: 750px){
+                    .banner_row {
+                        flex-direction: column-reverse;
+                    }
+                    .banner_row .right{
+                        height: auto;
+                    }
+                    .banner-area{
+                        width: 100%;
+                    }
+                }
+                .h-100{
+                    height: 100%;
+                }
+                .vc_feature{
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+                .vc_feature .item {
+                    height: 100%;
+                }
+                .vc_feature .item .a{
+                    height: 100%;
+                }
+                .about_section{
+                    display: flex;
+                    flex-wrap: wrap;
+                    /*align-items: center;*/
+                }
+                .vc_box{
+                    box-shadow: 0px 0px 6px rgba(0, 0, 0, .11), 0 0px 6px rgba(0, 0, 0, .23);
+                    background-color: white;
+                    padding: 20px;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                }
+                .vc_box .vc_header{
+                    /*display: flex;*/
+                    /*justify-content: space-between;*/
+                    align-items: center;
+                    position: relative;
+                    flex-wrap: wrap;
+                    text-align: center;
+                }
+                
+                .vc_image{
+                    width: 100%;
+                    margin-bottom: 10px;
+                    min-height: 100px;
+                }
+                .vc_image img{
+                    padding: 8px;
+                    background: white;
+                    box-shadow: 0 3px 6px rgba(0,0,0,.11),0 3px 6px rgba(0,0,0,.23);
+                    width: 180px;
+                    height: 180px;
+                    position: absolute;
+                        top: -80px;
+                        left: 20px;
+                }
+                .vc_title{
+                    text-transform: uppercase;
+                    color: black;
+                }
+                .vc_title h2{
+                    color: black;
+                    font-family: "Kiron","Roboto",sans-serif;
+                    font-weight: 200;
+                }
+                .vc_title h2 b{
+                    color: black;
+                    font-family: "Kiron","Roboto",sans-serif;
+                    font-weight: 900;
+                }
+                .vc_content{
+                    text-align: justify;
+                    font-family: "Kiron","Roboto",sans-serif;
+                    font-weight: 500;
+                    font-size: 16px;
+                }
+                @media(min-width: 992px){
+                    .vc_box .vc_header{
+                        /*flex-direction: row-reverse;*/
+                    }
+                    .vc_image{
+                        width: 50%;
+                        min-height: 0px;
+                    }
+                    .vc_image img{
+                        position: absolute;
+                        top: -80px;
+                        right: 20px;
+                    }
+                }
+                .mainabout{
+                    font-family: "Kiron","Roboto",sans-serif;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+                
+    </style>
+    <div class="" style="margin-top:50px">
+                <div class="mt-3 container">
+            <div class="vc_box">
+                <div class="vc_header">
+                    <div class="vc_image">
+                                                    <img src="https://www.pstu.ac.bd/storage/images/leaders/1781757925_WhatsApp Image 2026-06-18 at 9.47.56 AM (1).jpeg" class="img-thumbnail image-showing" height="180" width="200" alt=" Vice Chancellor">
+                                                </div>
+                    <div class="vc_title">
+                        <h2>Message From</h2>
+                        <h2 class="ps-3"><b>Vice Chancellor</b></h2>
+                    </div>
+                </div>
+                <div class="vc_content mt-4 pt-3 mb-2">
+                     It is my great pleasure and privilege to welcome you to the official website of Patuakhali Science and Technology University (PSTU). Established in 2002 as the first public university in the Barishal Division of Bangladesh, PSTU has grown steadily into a prominent center of excellence in higher education, research, innovation, and community engagement. Over the years, the University has earned the trust and confidence of people at home and abroad through its commitment to quality education, impactful research, human capital development, and service to society.
+                </div>
+                <a href="https://www.pstu.ac.bd/vice-chencellors/vice-chancellor" class="learn-more"><span aria-hidden="true" class="circle"><span class="icon arrow"></span></span> <span class="button-text">Read More</span></a>
+            </div>
+        </div>
+            </div>
+    <!-- End Banner -->
+    <!-- End Features -->
+    <div class="row" style="margin-top:50px"></div>
+    <div class="about-area">
+        <div class="container">
+            <div class="row ">
+                <div class="about-items about_section">
+                    <div data-aos="fade-down-right" class="col-md-7 about-info aos-init aos-animate">
+                       <h3 class="text-justify">
+                            Welcome to the Patuakhali Science and Technology University
+                        </h3>
+                        <p class="text-justify mainabout">
+                            Welcome to the Patuakhali Science and Technology University. It is one of the fast growing new public universities in Bangladesh.The Patuakhali Science and Technology University was developed at the private initiative of the local people through the establishment of a higher secondary institute in 1972 as a private college. It was then turned to Patuakhali Agricultural College under the affiliation of Bangladesh Agricultural University (BAU), Mymensingh in 1979 with the objective of producing agricultural graduates offering the B.Sc.Ag. (Hons.) degree.
+The college was nationalized on 1 February 1985 and was placed under the administrative co...
+                        </p>
+                        <a class="btn btn-theme effect btn-block btn-lg btnhome" href="https://www.pstu.ac.bd/p/welcome-to-the-patuakhali-science-and-technology-university/show">Read
+                            More...<i class="fas fa-check-circle fa-2x fa-pull-right"></i></a>
+                    </div>
+                    <div data-aos="fade-up-left" class="col-md-5 aos-init aos-animate" style="min-height: 100%;">
+                        <div class="thumb h-100" style="min-height: 100%;">
+                            <img src="https://www.pstu.ac.bd/storage/images/pages/1692783970_mission.jpg" alt="Thumb" style="min-height: 100%;">
+                            <a href="https://www.youtube.com/watch?v=ZGeG-gsNJNs" class="popup-youtube light video-play-button">
+                                <i class="fa fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<div class="fun-factor-area default-padding text-center bg-fixed" style="background-color: #51247A;">
+    <div class="" style="background-image: url(https://www.pstu.ac.bd/frontend/counter_bg_pattern.png); background-repeat: no-repeat; background-size: cover;">
+        <div class="container">
+            <div class="row">
+                                <div class="col-md-3 col-sm-6 item">
+                    <div class="fun-fact">
+                        <div class="icon">
+                            <img src="https://www.pstu.ac.bd/storage/images/images/1756270231_7c5d8b65-1953-4407-853d-a137d441fb66.jpg" width="50" height="50">
+                        </div>
+                        <div class="info" style="text-align: center">
+                            <span class="timer" data-to="9" data-speed="5000" style="display:inline;">9</span>
+                            <span style="display:inline;font-size: 36px"></span>
+                            <div class="clearfix"></div>
+                            <span class="medium">Faculties </span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-md-3 col-sm-6 item">
+                    <div class="fun-fact">
+                        <div class="icon">
+                            <img src="https://www.pstu.ac.bd/storage/images/images/1723114438_banner-245.png" width="50" height="50">
+                        </div>
+                        <div class="info" style="text-align: center">
+                            <span class="timer" data-to="59" data-speed="5000" style="display:inline;">59</span>
+                            <span style="display:inline;font-size: 36px"></span>
+                            <div class="clearfix"></div>
+                            <span class="medium">Departmant </span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-md-3 col-sm-6 item">
+                    <div class="fun-fact">
+                        <div class="icon">
+                            <img src="https://www.pstu.ac.bd/storage/images/images/1723114447_1714478217_images__1_-removebg-preview.png" width="50" height="50">
+                        </div>
+                        <div class="info" style="text-align: center">
+                            <span class="timer" data-to="3538" data-speed="5000" style="display:inline;">3538</span>
+                            <span style="display:inline;font-size: 36px"></span>
+                            <div class="clearfix"></div>
+                            <span class="medium">Regular Students </span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-md-3 col-sm-6 item">
+                    <div class="fun-fact">
+                        <div class="icon">
+                            <img src="https://www.pstu.ac.bd/storage/images/images/1723114458_1714478019_236811-removebg-preview.png" width="50" height="50">
+                        </div>
+                        <div class="info" style="text-align: center">
+                            <span class="timer" data-to="254" data-speed="5000" style="display:inline;">254</span>
+                            <span style="display:inline;font-size: 36px"></span>
+                            <div class="clearfix"></div>
+                            <span class="medium">Faculty Members and Other Manpower </span>
+                        </div>
+                    </div>
+                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+    <style>
+        @media(max-width: 575px){
+            .col-sm-12{
+                width: 100%;
+            }
+        }
+        .d-none{
+            display: none;
+        }
+        .fun-factor-area .fun-fact img{
+            width: 70px;
+            height: 70px;
+        }
+        .fun-factor-area.default-padding{
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+    </style>
+    <div class="blog-area default-padding bottom-less d-none">
+        <div class="container">
+           <div class="">
+              <div class="site-heading text-center mb-2">
+                 <div class="col-md-8 col-md-offset-2">
+                    <h2>NOC/GO/Office Order</h2>
+                 </div>
+              </div>
+           </div>
+           <div class="col-12 my-5 mt-2">
+                <div class="row2 noces">
+                                            <div class="item col-lg-4 col-md-3 col-sm-12 p-2 mt-3">
+                            <div class="card">
+                                                          <h2 class="p-2">Office Order of</h2>
+                              <div class="card-body">
+                                  <h3 class="mb-2">Md. Rasel Mahmud</h3>
+                                  <h5 class="mb-3">Attendant</h5>
+                                                                    <a href="https://www.pstu.ac.bd/storage/files/university-ordinances/1789986778_rasel.pdf" target="_blank" class="btn mt-3">Download</a>
+                                                                </div>
+                          </div>
+                      </div>
+                                            <div class="item col-lg-4 col-md-3 col-sm-12 p-2 mt-3">
+                            <div class="card">
+                                                          <h2 class="p-2">Office Order of</h2>
+                              <div class="card-body">
+                                  <h3 class="mb-2">Muhammad Al Mamun</h3>
+                                  <h5 class="mb-3">Office Shahaok</h5>
+                                                                    <a href="https://www.pstu.ac.bd/storage/files/university-ordinances/1789985195_IMG_0002.pdf" target="_blank" class="btn mt-3">Download</a>
+                                                                </div>
+                          </div>
+                      </div>
+                                            <div class="item col-lg-4 col-md-3 col-sm-12 p-2 mt-3">
+                            <div class="card">
+                                                          <h2 class="p-2">Office Order of</h2>
+                              <div class="card-body">
+                                  <h3 class="mb-2">Hachib Mohammad Tusar</h3>
+                                  <h5 class="mb-3">Deputy Registrar</h5>
+                                                                    <a href="https://www.pstu.ac.bd/storage/images/images/1789972328_Dr. Hachib mohammad tushar.jpg" target="_blank" class="btn mt-3">Download</a>
+                                                                </div>
+                          </div>
+                      </div>
+                                            <div class="item col-lg-4 col-md-3 col-sm-12 p-2 mt-3">
+                            <div class="card">
+                                                          <h2 class="p-2">Office Order of</h2>
+                              <div class="card-body">
+                                  <h3 class="mb-2">Kazi Kayum</h3>
+                                  <h5 class="mb-3">Section Officer</h5>
+                                                                    <a href="https://www.pstu.ac.bd/storage/images/images/1789966048_IMG_0001.jpg" target="_blank" class="btn mt-3">Download</a>
+                                                                </div>
+                          </div>
+                      </div>
+                                            <div class="item col-lg-4 col-md-3 col-sm-12 p-2 mt-3">
+                            <div class="card">
+                                                          <h2 class="p-2">Office Order of</h2>
+                              <div class="card-body">
+                                  <h3 class="mb-2">Professor Dr. Dibyendu Biswas</h3>
+                                  <h5 class="mb-3">Professor</h5>
+                                                                    <a href="https://www.pstu.ac.bd/storage/files/university-ordinances/1789548387_IMG_0002.pdf" target="_blank" class="btn mt-3">Download</a>
+                                                                </div>
+                          </div>
+                      </div>
+                                            <div class="item col-lg-4 col-md-3 col-sm-12 p-2 mt-3">
+                            <div class="card">
+                                                          <h2 class="p-2">NOC of</h2>
+                              <div class="card-body">
+                                  <h3 class="mb-2">Suraia Beauty</h3>
+                                  <h5 class="mb-3">Section Officer</h5>
+                                                                    <a href="https://www.pstu.ac.bd/storage/files/university-ordinances/1789548364_IMG_0001.pdf" target="_blank" class="btn mt-3">Download</a>
+                                                                </div>
+                          </div>
+                      </div>
+                                            <div class="item col-lg-4 col-md-3 col-sm-12 p-2 mt-3">
+                            <div class="card">
+                                                          <h2 class="p-2">Office Order of</h2>
+                              <div class="card-body">
+                                  <h3 class="mb-2">Shib Shankar Saha</h3>
+                                  <h5 class="mb-3">Professor</h5>
+                                                                    <a href="https://www.pstu.ac.bd/storage/images/images/1789014431_1ea656ae-5889-48b6-9a78-4c93f8ab587d.jfif" target="_blank" class="btn mt-3">Download</a>
+                                                                </div>
+                          </div>
+                      </div>
+                                            <div class="item col-lg-4 col-md-3 col-sm-12 p-2 mt-3">
+                            <div class="card">
+                                                          <h2 class="p-2">NOC of</h2>
+                              <div class="card-body">
+                                  <h3 class="mb-2">Md. Alam Khan</h3>
+                                  <h5 class="mb-3">Guard</h5>
+                                                                    <a href="https://www.pstu.ac.bd/storage/images/images/1788754190_IMG_0001.jpg" target="_blank" class="btn mt-3">Download</a>
+                                                                </div>
+                          </div>
+                      </div>
+                                    </div>
+            </div>
+            <style>
+                .noces .card {
+                    width: 100%;
+                    background-color: #f8f8f8;
+                    padding: 0;
+                    padding-top: 0;
+                    padding-bottom: 10px;
+                    border-radius: 12px;
+                    box-shadow: 0 0px 8px rgb(0 0 0 / 28%);
+                    text-align: center;
+                    overflow: hidden;
+                }
+                .noces .card .card-body{
+                    padding: 20px;
+                    padding-top: 0;
+                }
+                .noces h2 {
+                        text-align: center;
+                        color: #fff;
+                        background: #51247a;
+                        font-weight: 500;
+                        font-size: 23px;
+                }
+                .noces a {
+                  background-color: #ff9900;
+                  color: #fff;
+                  padding: 10px;
+                  border: none;
+                  border-radius: 8px;
+                  cursor: pointer;
+                  transition: background-color 0.3s ease-in-out;
+                }
+                .noces a:hover {
+                  background-color: #ff6600;
+                }
+                .row2{
+                    display: flex; flex-wrap: wrap;
+                    width: 100%;
+                }
+            </style>
+              <div class="more-btn col-md-12 text-center mb-3">
+                     <a href="https://www.pstu.ac.bd/noc-list" class="btn btn-theme effect btn-md"> All Noces </a>
+                  </div>
+          </div>
+    </div>
+
+    <style>
+        .top-course-items .item .info{
+            min-height: 150px;
+        }
+        .heading_section{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            font-family: "Kiron","Roboto",sans-serif;
+            font-weight: 500;
+            gap: 20px;
+        }
+        .site-heading h2::before{
+             background: transparent;
+        }
+    </style>
+    <div class="popular-courses-area weekly-top-items bottom-less default-padding">
+        <div class="container">
+        <style>
+            .block-thumb{
+                display: grid;
+            }
+            .block-thumb img{
+                -webkit-font-smoothing: antialiased;
+                -webkit-text-size-adjust: 100%;
+                cursor: pointer;
+                color: #000;
+                font-family: kalpurushregular!important;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font: inherit;
+                vertical-align: baseline;
+                position: relative;
+                left: 0;
+                transition: all 300ms ease-out;
+                width: 100px;
+            }
+            
+        </style>
+            <div class="row">
+                <div class="top-course-items flex-item">
+                    <div class="col-sm-12">
+                        <div class="row2">
+                            <div class="site-heading col-md-12 col-sm-12">
+                                <div class="col-md-8">
+                                    <div class="heading_section">
+                                        <h1 class="mb-0">Latest <b>Notices</b></h1> <h2 class="mb-0"> | </h2>
+                                            <a href="https://www.pstu.ac.bd/notices">
+                                                <h3 class="mb-0">All Notices</h3>
+                                            </a>
+                                    </div>
+                                </div>
+                              </div>
+                                                <div class="col-md-6 col-sm-6 equal-height" style="min-height: 100px; height: 100%; border-radius: 15px;">
+                            <div class="row">
+                                <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 135px; height: 100%; padding: 20px;">
+                                    <div class="col-md-12" style="padding-top: 0; padding-left: 10px;">
+                                        <ul style="display: flex; justify-content: space-between; color: gray;">
+                                            <li style="font-size: 12px; font-weight: 600;">22 Sep 2026</li>
+                                            <li style="text-transform: capitalize!important; font-size: 12px;">
+                                               <i class="fas fa-calendar-alt" style="color: #ffb606;"></i>
+                                               1 day ago
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-12 p-0">
+                                        <h4 style="margin-bottom: 0; padding: 10px; min-height: 50px; max-height: 50px overflow: hidden;">
+                                            <a href="https://www.pstu.ac.bd/notices/supply-and-installation-of-laboratory-equipment-for-various-departments-and-faculties-of-pstu-2026">Supply and Installation of Laboratory Equipment for Various Departments and Faculties of PSTU (2026)</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="col-md-6 col-sm-6 equal-height" style="min-height: 100px; height: 100%; border-radius: 15px;">
+                            <div class="row">
+                                <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 135px; height: 100%; padding: 20px;">
+                                    <div class="col-md-12" style="padding-top: 0; padding-left: 10px;">
+                                        <ul style="display: flex; justify-content: space-between; color: gray;">
+                                            <li style="font-size: 12px; font-weight: 600;">20 Sep 2026</li>
+                                            <li style="text-transform: capitalize!important; font-size: 12px;">
+                                               <i class="fas fa-calendar-alt" style="color: #ffb606;"></i>
+                                               3 days ago
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-12 p-0">
+                                        <h4 style="margin-bottom: 0; padding: 10px; min-height: 50px; max-height: 50px overflow: hidden;">
+                                            <a href="https://www.pstu.ac.bd/notices/pieicdi-programe-vrtir-bachai-bord-prsngoe">পিএইচডি প্রোগ্রামে ভর্তির বাছাই বোর্ড প্রসঙ্গে।</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="col-md-6 col-sm-6 equal-height" style="min-height: 100px; height: 100%; border-radius: 15px;">
+                            <div class="row">
+                                <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 135px; height: 100%; padding: 20px;">
+                                    <div class="col-md-12" style="padding-top: 0; padding-left: 10px;">
+                                        <ul style="display: flex; justify-content: space-between; color: gray;">
+                                            <li style="font-size: 12px; font-weight: 600;">17 Sep 2026</li>
+                                            <li style="text-transform: capitalize!important; font-size: 12px;">
+                                               <i class="fas fa-calendar-alt" style="color: #ffb606;"></i>
+                                               6 days ago
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-12 p-0">
+                                        <h4 style="margin-bottom: 0; padding: 10px; min-height: 50px; max-height: 50px overflow: hidden;">
+                                            <a href="https://www.pstu.ac.bd/notices/notis-24-septembr-2026-tarikher-chuti-batil-sngkrant">নোটিশ (২৪ সেপ্টেম্বর ২০২৬ তারিখের ছুটি বাতিল সংক্রান্ত)</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="col-md-6 col-sm-6 equal-height" style="min-height: 100px; height: 100%; border-radius: 15px;">
+                            <div class="row">
+                                <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 135px; height: 100%; padding: 20px;">
+                                    <div class="col-md-12" style="padding-top: 0; padding-left: 10px;">
+                                        <ul style="display: flex; justify-content: space-between; color: gray;">
+                                            <li style="font-size: 12px; font-weight: 600;">17 Sep 2026</li>
+                                            <li style="text-transform: capitalize!important; font-size: 12px;">
+                                               <i class="fas fa-calendar-alt" style="color: #ffb606;"></i>
+                                               6 days ago
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-12 p-0">
+                                        <h4 style="margin-bottom: 0; padding: 10px; min-height: 50px; max-height: 50px overflow: hidden;">
+                                            <a href="https://www.pstu.ac.bd/notices/ummukt-nilamer-notis">উম্মুক্ত নিলামের নোটিশ</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="col-md-6 col-sm-6 equal-height" style="min-height: 100px; height: 100%; border-radius: 15px;">
+                            <div class="row">
+                                <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 135px; height: 100%; padding: 20px;">
+                                    <div class="col-md-12" style="padding-top: 0; padding-left: 10px;">
+                                        <ul style="display: flex; justify-content: space-between; color: gray;">
+                                            <li style="font-size: 12px; font-weight: 600;">12 Sep 2026</li>
+                                            <li style="text-transform: capitalize!important; font-size: 12px;">
+                                               <i class="fas fa-calendar-alt" style="color: #ffb606;"></i>
+                                               1 week ago
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-12 p-0">
+                                        <h4 style="margin-bottom: 0; padding: 10px; min-height: 50px; max-height: 50px overflow: hidden;">
+                                            <a href="https://www.pstu.ac.bd/notices/seminar-on-higher-study-and-exchange-opportunities-in-the-united-states">Seminar on Higher Study and Exchange Opportunities in the United States</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="col-md-6 col-sm-6 equal-height" style="min-height: 100px; height: 100%; border-radius: 15px;">
+                            <div class="row">
+                                <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 135px; height: 100%; padding: 20px;">
+                                    <div class="col-md-12" style="padding-top: 0; padding-left: 10px;">
+                                        <ul style="display: flex; justify-content: space-between; color: gray;">
+                                            <li style="font-size: 12px; font-weight: 600;">07 Sep 2026</li>
+                                            <li style="text-transform: capitalize!important; font-size: 12px;">
+                                               <i class="fas fa-calendar-alt" style="color: #ffb606;"></i>
+                                               2 weeks ago
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-12 p-0">
+                                        <h4 style="margin-bottom: 0; padding: 10px; min-height: 50px; max-height: 50px overflow: hidden;">
+                                            <a href="https://www.pstu.ac.bd/notices/emergency-notice-for-ms-admission-in-jd25-session">Emergency Notice for MS Admission in JD/25 Session</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="col-md-6 col-sm-6 equal-height" style="min-height: 100px; height: 100%; border-radius: 15px;">
+                            <div class="row">
+                                <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 135px; height: 100%; padding: 20px;">
+                                    <div class="col-md-12" style="padding-top: 0; padding-left: 10px;">
+                                        <ul style="display: flex; justify-content: space-between; color: gray;">
+                                            <li style="font-size: 12px; font-weight: 600;">03 Sep 2026</li>
+                                            <li style="text-transform: capitalize!important; font-size: 12px;">
+                                               <i class="fas fa-calendar-alt" style="color: #ffb606;"></i>
+                                               2 weeks ago
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-12 p-0">
+                                        <h4 style="margin-bottom: 0; padding: 10px; min-height: 50px; max-height: 50px overflow: hidden;">
+                                            <a href="https://www.pstu.ac.bd/notices/leave-order-submission-notice-for-master-and-phd-students">Leave Order Submission Notice for Master and PhD Students</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="col-md-6 col-sm-6 equal-height" style="min-height: 100px; height: 100%; border-radius: 15px;">
+                            <div class="row">
+                                <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 135px; height: 100%; padding: 20px;">
+                                    <div class="col-md-12" style="padding-top: 0; padding-left: 10px;">
+                                        <ul style="display: flex; justify-content: space-between; color: gray;">
+                                            <li style="font-size: 12px; font-weight: 600;">27 Aug 2026</li>
+                                            <li style="text-transform: capitalize!important; font-size: 12px;">
+                                               <i class="fas fa-calendar-alt" style="color: #ffb606;"></i>
+                                               3 weeks ago
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-12 p-0">
+                                        <h4 style="margin-bottom: 0; padding: 10px; min-height: 50px; max-height: 50px overflow: hidden;">
+                                            <a href="https://www.pstu.ac.bd/notices/jj25-phd-proposalprogressive-seminar-report-submission-notice">JJ/25 PhD Proposal/Progressive Seminar Report Submission Notice</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="event-area default-padding" style="background-image: url(https://www.pstu.ac.bd/frontend/eventbg.png); background-repeat: no-repeat; background-size: cover;">
+        <div class="container">
+           <div class="row">
+               <div class="col-lg-12 col-md-12">
+                   <div class="row">
+                         <div class="site-heading">
+                            <div class="col-md-8">
+                                <div class="heading_section">
+                                    <h1 class="mb-0" style="color: white;">Latest <b>Events</b></h1> <h2 class="mb-0" style="color: white;"> | </h2>
+                                        <a href="https://www.pstu.ac.bd/events">
+                                            <h3 class="mb-0" style="color: white;">All Events</h3>
+                                        </a>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                          <div class="">
+                                                        <div class="col-12 mb-3">
+                                <div class="event-items">
+                                    <div class="item">
+                                        <div class="col-md-5 thumb" style="background-image: url(https://www.pstu.ac.bd/storage/images/events/1789623331_6aa76bb1b57b3.jpg);"></div>
+                                        <div class="col-md-7 info" style="background: white;">
+                                            <div class="info-box">
+                                                <div class="date">
+                                                    <strong>13</strong> Sep, 2026
+                                                </div>
+                                                <div class="content">
+                                                    <h4> <a href="https://www.pstu.ac.bd/events/pbiprbite-zuktrashtre-uccsiksha-oo-binimz-suzog-seershk-seminar-onushthit" style="font-size: 22px;">পবিপ্রবিতে যুক্তরাষ্ট্রে উচ্চশিক্ষা ও বিনিময় সুযোগ শীর্ষক সেমিনার অনুষ্ঠিত</a></h4>
+                                                    <ul>
+                                                        <li><i class="fas fa-clock"></i>  </li>
+                                                        <li><i class="fas fa-map-marked-alt"></i>  </li>
+                                                    </ul>
+                                                    <p></p>
+                                                    <div class="bottom">
+                                                        <a href="https://www.pstu.ac.bd/events/pbiprbite-zuktrashtre-uccsiksha-oo-binimz-suzog-seershk-seminar-onushthit" class="btn circle btn-dark border btn-sm text-center">
+                                                            <i class="fas fa-plus"></i> Read More
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <!-- End Single Item -->
+                                </div>
+                            </div>   
+                                                        <div class="col-12 mb-3">
+                                <div class="event-items">
+                                    <div class="item">
+                                        <div class="col-md-5 thumb" style="background-image: url(https://www.pstu.ac.bd/storage/images/events/1789623000_ptu.png);"></div>
+                                        <div class="col-md-7 info" style="background: white;">
+                                            <div class="info-box">
+                                                <div class="date">
+                                                    <strong>25</strong> Aug, 2026
+                                                </div>
+                                                <div class="content">
+                                                    <h4> <a href="https://www.pstu.ac.bd/events/pbiprbite-iesdiem-klaber-udzoge-higher-studies-and-research-in-germanyseershk-seminar" style="font-size: 22px;">পবিপ্রবিতে ইএসডিএম ক্লাবের উদ্যোগে &quot;Higher studies and Research in Germany&quot;শীর্ষক সেমিনার .</a></h4>
+                                                    <ul>
+                                                        <li><i class="fas fa-clock"></i>  </li>
+                                                        <li><i class="fas fa-map-marked-alt"></i>  </li>
+                                                    </ul>
+                                                    <p></p>
+                                                    <div class="bottom">
+                                                        <a href="https://www.pstu.ac.bd/events/pbiprbite-iesdiem-klaber-udzoge-higher-studies-and-research-in-germanyseershk-seminar" class="btn circle btn-dark border btn-sm text-center">
+                                                            <i class="fas fa-plus"></i> Read More
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <!-- End Single Item -->
+                                </div>
+                            </div>   
+                                                      </div>
+               </div>
+           </div>
+        </div>
+     </div>
+     <div class="blog-area default-padding bottom-less">
+        <div class="container">
+           <div class="row">
+              <div class="site-heading">
+                    <div class="col-md-8">
+                        <div class="heading_section news_section">
+                            <h1 class="mb-0">Latest <b>News</b></h1> <h2 class="mb-0"> | </h2>
+                                <a href="https://www.pstu.ac.bd/news">
+                                    <h3 class="mb-0">All News</h3>
+                                </a>
+                        </div>
+                    </div>
+                  </div>
+           </div>
+           <style>
+               .blog-area .blog-items .single-item .item {
+                    border-radius: 20px;
+                }
+           </style>
+           <div class="row">
+                  <div class="blog-items research-carousel owl-theme owl-carousel">
+                         <!-- Single Item -->
+                         <!-- End Single Item -->
+                                                  <div data-aos="zoom-in" data-aos-delay="200" class="single-item aos-init" >
+                            <div class="item" style="border-right: ; border-left: 0px solid transparent;">
+                               <div class="thumb">
+                                  <a href="https://www.pstu.ac.bd/news/skl-bivager-sikshartheeke-eic-ar-klabe-ontrvukt-krte-hbe">
+                                  <img src="https://www.pstu.ac.bd/storage/images/news/1789622504_6aaa71ac32826.jpeg" style="height: 240px;width: 100%;" alt="সকল বিভাগের শিক্ষার্থীকে এইচ আর ক্লাবে অন্তর্ভুক্ত করতে হবে">
+                                  </a>
+                               </div>
+                               <div class="info">
+                                  <div class="meta">
+                                     <ul style="display: flex; justify-content: space-between; align-items: center;">
+                                        <li class="date" style="text-transform: capitalize!important;">
+                                           <strong style="font-size: 30px">17</strong>
+                                    Sep, 2026
+                                        </li>
+                                        <li style="text-transform: capitalize!important; color: #f7bb0b;">
+                                           <i class="fas fa-calendar-alt"></i>
+                                           6 days ago
+                                        </li>
+                                     </ul>
+                                  </div>
+                                  <div class="content">
+                                     <h4 class="text-left" style="height: 80px; word-spacing: 5px">
+                                        <a href="https://www.pstu.ac.bd/news/skl-bivager-sikshartheeke-eic-ar-klabe-ontrvukt-krte-hbe" title="সকল বিভাগের শিক্ষার্থীকে এইচ আর ক্লাবে অন্তর্ভুক্ত করতে হবে">সকল বিভাগের শিক্ষার্থীকে এইচ আর ক্লাবে অন্তর্ভুক্ত...</a>
+                                     </h4>
+                                     <a href="https://www.pstu.ac.bd/news/skl-bivager-sikshartheeke-eic-ar-klabe-ontrvukt-krte-hbe"><i class="fas fa-plus"></i> Read More</a>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                                                  <div data-aos="zoom-in" data-aos-delay="200" class="single-item aos-init" >
+                            <div class="item" style="border-right: ; border-left: 2px solid #51247a;">
+                               <div class="thumb">
+                                  <a href="https://www.pstu.ac.bd/news/pbiprbir-prthm-upacarzer-pryane-smrnsva-oo-doya-monajat">
+                                  <img src="https://www.pstu.ac.bd/storage/images/news/1788148079_IMG-20260830-WA0007-750x359.jpg" style="height: 240px;width: 100%;" alt="পবিপ্রবির প্রথম উপাচার্যের প্রয়াণে স্মরণসভা ও দোয়া মোনাজাত">
+                                  </a>
+                               </div>
+                               <div class="info">
+                                  <div class="meta">
+                                     <ul style="display: flex; justify-content: space-between; align-items: center;">
+                                        <li class="date" style="text-transform: capitalize!important;">
+                                           <strong style="font-size: 30px">31</strong>
+                                    Aug, 2026
+                                        </li>
+                                        <li style="text-transform: capitalize!important; color: #f7bb0b;">
+                                           <i class="fas fa-calendar-alt"></i>
+                                           3 weeks ago
+                                        </li>
+                                     </ul>
+                                  </div>
+                                  <div class="content">
+                                     <h4 class="text-left" style="height: 80px; word-spacing: 5px">
+                                        <a href="https://www.pstu.ac.bd/news/pbiprbir-prthm-upacarzer-pryane-smrnsva-oo-doya-monajat" title="পবিপ্রবির প্রথম উপাচার্যের প্রয়াণে স্মরণসভা ও দোয়া মোনাজাত">পবিপ্রবির প্রথম উপাচার্যের প্রয়াণে স্মরণসভা ও দোয়া...</a>
+                                     </h4>
+                                     <a href="https://www.pstu.ac.bd/news/pbiprbir-prthm-upacarzer-pryane-smrnsva-oo-doya-monajat"><i class="fas fa-plus"></i> Read More</a>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                                                  <div data-aos="zoom-in" data-aos-delay="200" class="single-item aos-init" >
+                            <div class="item" style="border-right: ; border-left: 2px solid #51247a;">
+                               <div class="thumb">
+                                  <a href="https://www.pstu.ac.bd/news/nbnirwacit-mhamanz-rashtrpti-fkhrul-islam-almgeerke-pbiprbir-vais-czanselr-prfesr-d-esem-hemayet-jahan-er-ovinndn">
+                                  <img src="https://www.pstu.ac.bd/storage/images/news/1787455596_4ZR74ykcz459xteaD5DfUGp8TSEq1LdjUyIIoPC5.jpg" style="height: 240px;width: 100%;" alt="নবনির্বাচিত মহামান্য রাষ্ট্রপতি ফখরুল ইসলাম আলমগীরকে পবিপ্রবি’র ভাইস-চ্যান্সেলর প্রফেসর ড. এস.এম হেমায়েত জাহান এর অভিনন্দন।">
+                                  </a>
+                               </div>
+                               <div class="info">
+                                  <div class="meta">
+                                     <ul style="display: flex; justify-content: space-between; align-items: center;">
+                                        <li class="date" style="text-transform: capitalize!important;">
+                                           <strong style="font-size: 30px">23</strong>
+                                    Aug, 2026
+                                        </li>
+                                        <li style="text-transform: capitalize!important; color: #f7bb0b;">
+                                           <i class="fas fa-calendar-alt"></i>
+                                           1 month ago
+                                        </li>
+                                     </ul>
+                                  </div>
+                                  <div class="content">
+                                     <h4 class="text-left" style="height: 80px; word-spacing: 5px">
+                                        <a href="https://www.pstu.ac.bd/news/nbnirwacit-mhamanz-rashtrpti-fkhrul-islam-almgeerke-pbiprbir-vais-czanselr-prfesr-d-esem-hemayet-jahan-er-ovinndn" title="নবনির্বাচিত মহামান্য রাষ্ট্রপতি ফখরুল ইসলাম আলমগীরকে পবিপ্রবি’র ভাইস-চ্যান্সেলর প্রফেসর ড. এস.এম হেমায়েত জাহান এর অভিনন্দন।">নবনির্বাচিত মহামান্য রাষ্ট্রপতি ফখরুল ইসলাম আলমগীর...</a>
+                                     </h4>
+                                     <a href="https://www.pstu.ac.bd/news/nbnirwacit-mhamanz-rashtrpti-fkhrul-islam-almgeerke-pbiprbir-vais-czanselr-prfesr-d-esem-hemayet-jahan-er-ovinndn"><i class="fas fa-plus"></i> Read More</a>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                                                  <div data-aos="zoom-in" data-aos-delay="200" class="single-item aos-init" >
+                            <div class="item" style="border-right: ; border-left: 2px solid #51247a;">
+                               <div class="thumb">
+                                  <a href="https://www.pstu.ac.bd/news/pbiprbite-ekzoge-6ti-ntun-sthapnar-udwodhn">
+                                  <img src="https://www.pstu.ac.bd/storage/images/news/1786956016_Techtaranga.com_17869538404304.jpg" style="height: 240px;width: 100%;" alt="পবিপ্রবিতে একযোগে ৬টি নতুন স্থাপনার উদ্বোধন">
+                                  </a>
+                               </div>
+                               <div class="info">
+                                  <div class="meta">
+                                     <ul style="display: flex; justify-content: space-between; align-items: center;">
+                                        <li class="date" style="text-transform: capitalize!important;">
+                                           <strong style="font-size: 30px">17</strong>
+                                    Aug, 2026
+                                        </li>
+                                        <li style="text-transform: capitalize!important; color: #f7bb0b;">
+                                           <i class="fas fa-calendar-alt"></i>
+                                           1 month ago
+                                        </li>
+                                     </ul>
+                                  </div>
+                                  <div class="content">
+                                     <h4 class="text-left" style="height: 80px; word-spacing: 5px">
+                                        <a href="https://www.pstu.ac.bd/news/pbiprbite-ekzoge-6ti-ntun-sthapnar-udwodhn" title="পবিপ্রবিতে একযোগে ৬টি নতুন স্থাপনার উদ্বোধন">পবিপ্রবিতে একযোগে ৬টি নতুন স্থাপনার উদ্বোধন</a>
+                                     </h4>
+                                     <a href="https://www.pstu.ac.bd/news/pbiprbite-ekzoge-6ti-ntun-sthapnar-udwodhn"><i class="fas fa-plus"></i> Read More</a>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                                                  <div data-aos="zoom-in" data-aos-delay="200" class="single-item aos-init" >
+                            <div class="item" style="border-right: 0px solid transparent; border-left: 2px solid #51247a;">
+                               <div class="thumb">
+                                  <a href="https://www.pstu.ac.bd/news/pbiprbite-bzbsaz-prsasn-siesi-oo-mattszbijngan-onushder-sikshkder-sngoe-upacarzer-mtbinimz-onushthit">
+                                  <img src="https://www.pstu.ac.bd/storage/images/news/1781582912_b72ae864-19ad-4955-a0a2-efbd0e2e4f64.jfif" style="height: 240px;width: 100%;" alt="পবিপ্রবিতে ব্যবসায় প্রশাসন, সিএসই ও মাৎস্যবিজ্ঞান অনুষদের শিক্ষকদের সঙ্গে উপাচার্যের মতবিনিময় অনুষ্ঠিত">
+                                  </a>
+                               </div>
+                               <div class="info">
+                                  <div class="meta">
+                                     <ul style="display: flex; justify-content: space-between; align-items: center;">
+                                        <li class="date" style="text-transform: capitalize!important;">
+                                           <strong style="font-size: 30px">16</strong>
+                                    Jun, 2026
+                                        </li>
+                                        <li style="text-transform: capitalize!important; color: #f7bb0b;">
+                                           <i class="fas fa-calendar-alt"></i>
+                                           3 months ago
+                                        </li>
+                                     </ul>
+                                  </div>
+                                  <div class="content">
+                                     <h4 class="text-left" style="height: 80px; word-spacing: 5px">
+                                        <a href="https://www.pstu.ac.bd/news/pbiprbite-bzbsaz-prsasn-siesi-oo-mattszbijngan-onushder-sikshkder-sngoe-upacarzer-mtbinimz-onushthit" title="পবিপ্রবিতে ব্যবসায় প্রশাসন, সিএসই ও মাৎস্যবিজ্ঞান অনুষদের শিক্ষকদের সঙ্গে উপাচার্যের মতবিনিময় অনুষ্ঠিত">পবিপ্রবিতে ব্যবসায় প্রশাসন, সিএসই ও মাৎস্যবিজ্ঞান...</a>
+                                     </h4>
+                                     <a href="https://www.pstu.ac.bd/news/pbiprbite-bzbsaz-prsasn-siesi-oo-mattszbijngan-onushder-sikshkder-sngoe-upacarzer-mtbinimz-onushthit"><i class="fas fa-plus"></i> Read More</a>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                                              </div>
+                  <div class="more-btn col-md-12 text-right mb-3">
+                     <!--<a href="https://www.pstu.ac.bd/news" class=""> All News </a>-->
+                  </div>
+                </div>
+              
+          </div>
+    </div>
+    <div class="event-area default-padding" style="background-image: url(https://www.pstu.ac.bd/frontend/eventbg.png); background-repeat: no-repeat; background-size: cover;">
+        <div class="container">
+           <div class="row">
+               <div class="col-lg-12 col-md-12">
+                   <div class="row">
+                         <div class="site-heading">
+                            <div class="col-md-8">
+                                <div class="heading_section">
+                                    <h1 class="mb-0" style="color: white;">Latest <b>Research</b></h1> <h2 class="mb-0" style="color: white;"> | </h2>
+                                        <a href="https://www.pstu.ac.bd/researchs">
+                                            <h3 class="mb-0" style="color: white;">All Research</h3>
+                                        </a>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                          <div class="">
+                                                        <div class="col-12 mb-3">
+                                <div class="event-items">
+                                    <div class="item">
+                                        <div class="col-md-5 thumb" style="background-image: url(https://www.pstu.ac.bd/storage/images/researchs/1784943956_Screenshot 2026-07-25 074312.png);"></div>
+                                        <div class="col-md-7 info" style="background: white;">
+                                            <div class="info-box">
+                                                <div class="date">
+                                                    <strong>25</strong> Jul, 2026
+                                                </div>
+                                                <div class="content">
+                                                    <h4> <a href="https://www.pstu.ac.bd/researchs/formulation-of-natural-sugared-cookies-nutrinos-crucial-alternative-cookies-for-toddlers" style="font-size: 22px;">Formulation of natural sugared cookies (nutrinos): Crucial alternative cookies for toddlers</a></h4>
+                                                    <ul>
+                                                        <li><i class="fas fa-clock"></i>  </li>
+                                                        <li><i class="fas fa-map-marked-alt"></i>  </li>
+                                                    </ul>
+                                                    <p></p>
+                                                    <div class="bottom">
+                                                        <a href="https://www.pstu.ac.bd/researchs/formulation-of-natural-sugared-cookies-nutrinos-crucial-alternative-cookies-for-toddlers" class="btn circle btn-dark border btn-sm text-center">
+                                                            <i class="fas fa-plus"></i> Read More
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <!-- End Single Item -->
+                                </div>
+                            </div>   
+                                                        <div class="col-12 mb-3">
+                                <div class="event-items">
+                                    <div class="item">
+                                        <div class="col-md-5 thumb" style="background-image: url(https://www.pstu.ac.bd/storage/images/researchs/1762153767_Screenshot_3-11-2025_13844_.jpeg);"></div>
+                                        <div class="col-md-7 info" style="background: white;">
+                                            <div class="info-box">
+                                                <div class="date">
+                                                    <strong>03</strong> Nov, 2025
+                                                </div>
+                                                <div class="content">
+                                                    <h4> <a href="https://www.pstu.ac.bd/researchs/research" style="font-size: 22px;">Research</a></h4>
+                                                    <ul>
+                                                        <li><i class="fas fa-clock"></i>  </li>
+                                                        <li><i class="fas fa-map-marked-alt"></i>  </li>
+                                                    </ul>
+                                                    <p></p>
+                                                    <div class="bottom">
+                                                        <a href="https://www.pstu.ac.bd/researchs/research" class="btn circle btn-dark border btn-sm text-center">
+                                                            <i class="fas fa-plus"></i> Read More
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <!-- End Single Item -->
+                                </div>
+                            </div>   
+                                                      </div>
+               </div>
+           </div>
+        </div>
+     </div>
+<div class="popular-courses-area weekly-top-items bottom-less default-padding">
+    <div class="container">
+    <style>
+        .block-thumb{
+            display: grid;
+        }
+        .block-thumb img{
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: 100%;
+            cursor: pointer;
+            color: #000;
+            font-family: kalpurushregular!important;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+            position: relative;
+            left: 0;
+            transition: all 300ms ease-out;
+            width: 100px;
+        }
+        .blog-area .blog-items .single-item .item{
+            box-shadow: none;
+            padding-right: 2.5rem;
+            padding-left: 2.5rem;
+            background: transparent;
+            border-radius: 0;
+        }
+        .blog-area .blog-items .single-item .item .thumb img{
+            border-radius: 0;
+        }
+        
+    </style>
+        <div class="row">
+            <div class="top-course-items flex-item">
+                
+                <div class="col-sm-12">
+                    <div class="row2">
+                    <!-- Single Item -->
+                                                            <div class="col-md-6 col-sm-6 equal-height" style="min-height: 200px; height: 100%;">
+                        <div class="row">
+                            <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 200px; height: 100%;">
+                                <div class="col-md-12">
+                                    <h4 style="padding: 10px; margin-bottom: 0;">
+                                        <a href="https://www.pstu.ac.bd/block/barshik-krmsmpadn-cukti">বার্ষিক কর্মসম্পাদন  চুক্তি</a>
+                                    </h4>
+                                </div>
+                                <div class="col-md-3 block-thumb">
+                                    <img src="https://www.pstu.ac.bd/storage/images/home_blocks/1693753422_apa_cab.png" alt="">
+                                </div>
+                                <div class="info col-md-9" style="padding-top: 0; padding-left: 10px;">
+                                    <ul>
+                                                                                                                        <li> <a href="https://www.pstu.ac.bd/block/details/barshik-krmsmpadn-cukti/barshik-krmsmpadn-cukti-apa">বার্ষিক কর্মসম্পাদন  চুক্তি (APA)</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/barshik-krmsmpadn-cukti/epie-nirdesikapriptrepie-tim">এপিএ নির্দেশিকা/পরিপত্র/এপিএ টিম</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/barshik-krmsmpadn-cukti/ofis-adespribeekshn-oo-muulzayn-prtibedn">অফিস আদেশ/পরিবীক্ষণ ও মূল্যায়ন প্রতিবেদন</a> </li>
+                                                                                                                        <li> <a href="https://apams.cabinet.gov.bd/" target="_blank">এপিএ এমএস সফটওয়্যার লিংক</a> </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="col-md-6 col-sm-6 equal-height" style="min-height: 200px; height: 100%;">
+                        <div class="row">
+                            <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 200px; height: 100%;">
+                                <div class="col-md-12">
+                                    <h4 style="padding: 10px; margin-bottom: 0;">
+                                        <a href="https://www.pstu.ac.bd/block/jateey-suddhacar-kousl">জাতীয় শুদ্ধাচার কৌশল</a>
+                                    </h4>
+                                </div>
+                                <div class="col-md-3 block-thumb">
+                                    <img src="https://www.pstu.ac.bd/storage/images/home_blocks/1714478578_জাতীয় শুদ্ধাচার কৌশল.png" alt="">
+                                </div>
+                                <div class="info col-md-9" style="padding-top: 0; padding-left: 10px;">
+                                    <ul>
+                                                                                                                        <li> <a href="https://www.pstu.ac.bd/block/details/jateey-suddhacar-kousl/jateey-suddhacar-kouslprjngapnpriptrneetimala">জাতীয় শুদ্ধাচার কৌশল/প্রজ্ঞাপন/পরিপত্র/নীতিমালা</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/jateey-suddhacar-kousl/suddhacar-kousl-priklpna">শুদ্ধাচার কৌশল পরিকল্পনা</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/jateey-suddhacar-kousl/fokal-pyent-krmkrta-oo-biklp-fokal-pyent-krmkrta">ফোকাল পয়েন্ট কর্মকর্তা ও বিকল্প ফোকাল পয়েন্ট কর্মকর্তা</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/jateey-suddhacar-kousl/troimasikshanmasik-pribeekshnmuulzayn-prtibedn">ত্রৈমাসিক/ষান্মাসিক পরিবীক্ষণ/মূল্যায়ন প্রতিবেদন</a> </li>
+                                                                                                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="col-md-6 col-sm-6 equal-height" style="min-height: 200px; height: 100%;">
+                        <div class="row">
+                            <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 200px; height: 100%;">
+                                <div class="col-md-12">
+                                    <h4 style="padding: 10px; margin-bottom: 0;">
+                                        <a href="https://www.pstu.ac.bd/block/i-gvrnzans-oo-udvabn">ই-গভর্ন্যান্স ও উদ্ভাবন</a>
+                                    </h4>
+                                </div>
+                                <div class="col-md-3 block-thumb">
+                                    <img src="https://www.pstu.ac.bd/storage/images/home_blocks/1693753287_INNOVATION (1).png" alt="">
+                                </div>
+                                <div class="info col-md-9" style="padding-top: 0; padding-left: 10px;">
+                                    <ul>
+                                                                                                                        <li> <a href="https://www.pstu.ac.bd/block/details/i-gvrnzans-oo-udvabn/inovesn-tim">ইনোভেশন টিম</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/i-gvrnzans-oo-udvabn/prjngapnneetimalaofis-ades">প্রজ্ঞাপন/নীতিমালা/অফিস আদেশ</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/i-gvrnzans-oo-udvabn/i-gvrnzans-oo-udvabn-krmpriklpna-karzbibrnee-ofis-ades-muulzayn-prtibedn">ই-গভর্ন্যান্স ও উদ্ভাবন কর্মপরিকল্পনা , কার্যবিবরনী, অফিস আদেশ/ মূল্যায়ন প্রতিবেদন</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/i-gvrnzans-oo-udvabn/sreshth-udvabnee-dharnabastbayn-oo-sokesing">শ্রেষ্ঠ উদ্ভাবনী ধারণা/বাস্তবায়ন ও শোকেসিং</a> </li>
+                                                                                                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="col-md-6 col-sm-6 equal-height" style="min-height: 200px; height: 100%;">
+                        <div class="row">
+                            <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 200px; height: 100%;">
+                                <div class="col-md-12">
+                                    <h4 style="padding: 10px; margin-bottom: 0;">
+                                        <a href="https://www.pstu.ac.bd/block/seba-prdan-prtisruti-sitijens-cartar">সেবা প্রদান প্রতিশ্রুতি (সিটিজেন্‌স চার্টার)</a>
+                                    </h4>
+                                </div>
+                                <div class="col-md-3 block-thumb">
+                                    <img src="https://www.pstu.ac.bd/storage/images/home_blocks/1714478555_সেবা প্রদান প্রতিশ্রুতি.png" alt="">
+                                </div>
+                                <div class="info col-md-9" style="padding-top: 0; padding-left: 10px;">
+                                    <ul>
+                                                                                                                        <li> <a href="https://www.pstu.ac.bd/block/details/seba-prdan-prtisruti-sitijens-cartar/seba-prdan-prtisruti">সেবা প্রদান প্রতিশ্রুতি</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/seba-prdan-prtisruti-sitijens-cartar/seba-prdan-prtisruti-krmpriklpna-kmiti">সেবা প্রদান প্রতিশ্রুতি কর্মপরিকল্পনা কমিটি</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/seba-prdan-prtisruti-sitijens-cartar/krmpriklpna-pribeekshn-oo-muulzayn-prtibedn">কর্মপরিকল্পনা, পরিবীক্ষণ ও মূল্যায়ন প্রতিবেদন</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/seba-prdan-prtisruti-sitijens-cartar/prjngapnpriptrneetimalaofis-ades">প্রজ্ঞাপন/পরিপত্র/নীতিমালা/অফিস আদেশ</a> </li>
+                                                                                                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="col-md-6 col-sm-6 equal-height" style="min-height: 200px; height: 100%;">
+                        <div class="row">
+                            <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 200px; height: 100%;">
+                                <div class="col-md-12">
+                                    <h4 style="padding: 10px; margin-bottom: 0;">
+                                        <a href="https://www.pstu.ac.bd/block/ovizog-prtikar-bzbsthapna">অভিযোগ প্রতিকার ব্যবস্থাপনা</a>
+                                    </h4>
+                                </div>
+                                <div class="col-md-3 block-thumb">
+                                    <img src="https://www.pstu.ac.bd/storage/images/home_blocks/1693753570_complain (1).png" alt="">
+                                </div>
+                                <div class="info col-md-9" style="padding-top: 0; padding-left: 10px;">
+                                    <ul>
+                                                                                                                        <li> <a href="https://www.pstu.ac.bd/block/details/ovizog-prtikar-bzbsthapna/krmpriklpna-masiktroimasikbarshik-pribeekshnmuulzayn-prtibedn">কর্মপরিকল্পনা /মাসিক/ত্রৈমাসিক/বার্ষিক পরিবীক্ষণ/মূল্যায়ন প্রতিবেদন</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/ovizog-prtikar-bzbsthapna/onik-oo-apil-krmkrta">অনিক ও আপিল কর্মকর্তা</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/ovizog-prtikar-bzbsthapna/ovizog-dakhil-onlainsrasri">অভিযোগ দাখিল (অনলাইন/সরাসরি)</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/ovizog-prtikar-bzbsthapna/ainbidhipriptrneetimalanirdesika">আইন/বিধি/পরিপত্র/নীতিমালা/নির্দেশিকা</a> </li>
+                                                                                                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="col-md-6 col-sm-6 equal-height" style="min-height: 200px; height: 100%;">
+                        <div class="row">
+                            <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 200px; height: 100%;">
+                                <div class="col-md-12">
+                                    <h4 style="padding: 10px; margin-bottom: 0;">
+                                        <a href="https://www.pstu.ac.bd/block/tthz-odhikar">তথ্য অধিকার</a>
+                                    </h4>
+                                </div>
+                                <div class="col-md-3 block-thumb">
+                                    <img src="https://www.pstu.ac.bd/storage/images/home_blocks/1693753495_infocom.png" alt="">
+                                </div>
+                                <div class="info col-md-9" style="padding-top: 0; padding-left: 10px;">
+                                    <ul>
+                                                                                                                        <li> <a href="https://www.pstu.ac.bd/block/details/tthz-odhikar/abedn-oo-apil-frm">আবেদন ও আপিল ফরম</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/tthz-odhikar/tthz-krmkrta-oo-apil-krmkrta">তথ্য কর্মকর্তা ও আপিল কর্মকর্তা</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/tthz-odhikar/krmpriklpna-pribeekshn-oo-muulzayn-prtibedn">কর্মপরিকল্পনা, পরিবীক্ষণ ও মূল্যায়ন প্রতিবেদন</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/tthz-odhikar/ainbidhipri-ptrneetimalanirdesika">আইন/বিধি/পরি-পত্র/নীতিমালা/নির্দেশিকা</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/tthz-odhikar/swprnoditvabe-prkaszogz-tthzsmuuh">স্বপ্রণোদিতভাবে প্রকাশযোগ্য তথ্যসমূহ</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/tthz-odhikar/tthzer-kzatagri-oo-kzatalg">তথ্যের ক্যাটাগরি ও ক্যাটালগ</a> </li>
+                                                                                                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="col-md-6 col-sm-6 equal-height" style="min-height: 200px; height: 100%;">
+                        <div class="row">
+                            <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 200px; height: 100%;">
+                                <div class="col-md-12">
+                                    <h4 style="padding: 10px; margin-bottom: 0;">
+                                        <a href="https://www.pstu.ac.bd/block/bajet-oo-barshik-kry-priklpna">বাজেট ও বার্ষিক ক্রয় পরিকল্পনা</a>
+                                    </h4>
+                                </div>
+                                <div class="col-md-3 block-thumb">
+                                    <img src="https://www.pstu.ac.bd/storage/images/home_blocks/1693753228_budget2.png" alt="">
+                                </div>
+                                <div class="info col-md-9" style="padding-top: 0; padding-left: 10px;">
+                                    <ul>
+                                                                                                                        <li> <a href="https://www.pstu.ac.bd/block/details/bajet-oo-barshik-kry-priklpna/bajet-2023-2024">বাজেট ২০২৩-২০২৪</a> </li>
+                                                                                <li> <a href="https://www.pstu.ac.bd/block/details/bajet-oo-barshik-kry-priklpna/barshik-kry-priklpna-2023-2024">বার্ষিক ক্রয় পরিকল্পনা ২০২৩-২০২৪</a> </li>
+                                                                                                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="col-md-6 col-sm-6 equal-height" style="min-height: 200px; height: 100%;">
+                        <div class="row">
+                            <div class="item" style="flex-wrap: wrap; border-radius: 5px; min-height: 200px; height: 100%;">
+                                <div class="col-md-12">
+                                    <h4 style="padding: 10px; margin-bottom: 0;">
+                                        <a href="https://www.pstu.ac.bd/block/seba-shjikrn">সেবা সহজিকরণ</a>
+                                    </h4>
+                                </div>
+                                <div class="col-md-3 block-thumb">
+                                    <img src="https://www.pstu.ac.bd/storage/images/home_blocks/1714478634_সেবা সহজিকরণ.png" alt="">
+                                </div>
+                                <div class="info col-md-9" style="padding-top: 0; padding-left: 10px;">
+                                    <ul>
+                                                                                                                        <li> <a href="https://www.pstu.ac.bd/block/details/seba-shjikrn/prjngapnofis-ades">প্রজ্ঞাপন/অফিস আদেশ</a> </li>
+                                                                                                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="row" style="margin-top:50px"></div>
+    <!-- Start Popular Courses
+    ============================================= -->
+
+    <!-- End Popular Courses -->
+
+    <!-- Start Testimonials
+    ============================================= -->
+
+    <!-- End Testimonials -->
+
+
+
+
+
+
+     <!-- Start Footer -->
+    <footer class="">
+        <div class="container logo">
+            <div class="f-items footer-default-padding">
+                <div class="row ">
+                    <div class="row" style="margin-top:50px"></div>
+                    <!-- Single item -->
+                    <div class="col-md-3 col-sm-6 item equal-height" style="height: 222px;">
+                        <div class="f-item link aos-init aos-animate footer_links" data-aos="" data-aos-duration="3000" style="line-height:18px">
+                            <h4>About PSTU</h4>
+                            <ul>
+                                <li> <a href="https://www.pstu.ac.bd/about/historical-outline"><i class="ti-angle-right"></i> History</a> </li>
+                                <li> <a href="https://www.pstu.ac.bd/about/university-glance"><i class="ti-angle-right"></i> At a Glance</a> </li>
+                                                                    <li>
+                                        <a href="https://www.pstu.ac.bd/vice-chencellors/chancellor" target="_blank">
+                                            <i class="ti-angle-right"></i> Chancellor
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.pstu.ac.bd/vice-chencellors/vice-chancellor" target="_blank">
+                                            <i class="ti-angle-right"></i> Vice Chancellor
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.pstu.ac.bd/vice-chencellors/Pro-Vice%20Chancellor" target="_blank">
+                                            <i class="ti-angle-right"></i> Pro-Vice Chancellor
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.pstu.ac.bd/vice-chencellors/treasurer" target="_blank">
+                                            <i class="ti-angle-right"></i> Treasurer
+                                        </a>
+                                    </li>
+                                                                <li>
+                                    <a href="https://www.pstu.ac.bd/regent-board">
+                                        <i class="ti-angle-right"></i>
+                                        Regent Board
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.pstu.ac.bd/academic-council">
+                                        <i class="ti-angle-right"></i>
+                                        Academic Council
+                                    </a>
+                                </li>
+                                <li><a href="https://www.pstu.ac.bd/offices"><i class="ti-angle-right"></i> Administrative 
+                                            Offices</a></li>
+                                            <!--<li><a href="https://www.pstu.ac.bd/p/welcome-message/show"><i class="ti-angle-right"></i> Overview</a></li>-->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Single item -->
+                    <div class="col-md-3 col-sm-6 item equal-height" style="height: 222px;">
+                        <div class="f-item link aos-init aos-animate footer_links" data-aos="" data-aos-duration="3000" style="line-height:18px">
+                            <h4>Study and Services</h4>
+                            <ul>
+                                <li><a href="https://www.pstu.ac.bd/programs"><i class="ti-angle-right"></i>
+                                                        Academic Programs</a>
+                                </li>
+                                <li class=""><a href="https://www.pstu.ac.bd/faculties"><i class="ti-angle-right"></i>
+                                                Undergraduate Studies</a>
+                                </li>
+                                <li class=""><a href="https://pstu.ac.bd/faculty/postgraduate-studies"><i class="ti-angle-right"></i>
+                                                Postgraduate Studies</a>
+                                </li>
+                                <li><a href="https://www.pstu.ac.bd/faculties"><i class="ti-angle-right"></i>
+                                        Faculties</a>
+                                </li>
+                                <li><a href="https://www.pstu.ac.bd/departments"><i class="ti-angle-right"></i>
+                                        Departments</a></li>
+                                <li><a href="https://admission.pstu.ac.bd/"><i class="ti-angle-right"></i>
+                                        Undergraduate Admission</a></li>
+                                <li><a href="https://admission.pstu.ac.bd/"><i class="ti-angle-right"></i>
+                                        Postgraduate Admission</a></li>
+                                <li><a href="https://www.pstu.ac.bd/scholarship-aid"><i class="ti-angle-right"></i>
+                                        Scholarships
+                                         </a></li>
+                                <li><a href="https://www.pstu.ac.bd/halls" target="_blank"><i class="ti-angle-right"></i>
+                                         Residence
+                                    </a></li>
+                                    
+                                                                                                                                                    <li><a href="https://www.pstu.ac.bd/page-view/transport"><i class="ti-angle-right"></i>
+                                        Transport</a></li>
+                                                                                                                                                            <li><a href="https://www.pstu.ac.bd/page-view/health-care-center"><i class="ti-angle-right"></i>
+                                        Health Care Center</a></li>
+                                                                                                                                                            <li><a href="https://www.pstu.ac.bd/page-view/pstu-diary"><i class="ti-angle-right"></i>
+                                        PSTU Diary</a></li>
+                                                                                                                                                            <li><a href="https://pstu.ac.bd/office/office-of-the-international-student-affairs" target="_blank"><i class="ti-angle-right"></i>
+                                        Office of the International Student Affairs</a></li>
+                                                                                                                                            <!--<li> <a href="https://www.pstu.ac.bd/campus-organizations"><i class="ti-angle-right"></i>Campus Organizations</a> </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 item equal-height" style="height: 222px;">
+                        <div class="f-item link aos-init aos-animate footer_links" data-aos="" data-aos-duration="3000" style="line-height:18px">
+                            <h4>Research and Facilities</h4>
+                            <ul>
+                                <li><a href="https://www.pstu.ac.bd/libraries"><i class="ti-angle-right"></i>
+                                                        Library</a>
+                                </li>
+                                <li class=""><a href=""><i class="ti-angle-right"></i>
+                                                IQAC</a>
+                                </li>
+                                <li class=""><a href="https://www.pstu.ac.bd/research-centers"><i class="ti-angle-right"></i>
+                                                Research and Training Centers</a>
+                                </li>
+                                <li><a href="https://www.pstu.ac.bd/current_research"><i class="ti-angle-right"></i>
+                                        Research and Publications</a>
+                                </li>
+                                <li><a href="https://www.pstu.ac.bd/research_colaborations"><i class="ti-angle-right"></i>
+                                        Research and Collaborations</a></li>
+                                <li><a href="https://www.pstu.ac.bd/funded-projects"><i class="ti-angle-right"></i>
+                                        Fund and Grants</a></li>
+                                <li><a href="https://journal.pstu.ac.bd/"><i class="ti-angle-right"></i>
+                                        PSTU Journal</a></li>
+                                <li><a href="https://www.pstu.ac.bd/labs"><i class="ti-angle-right"></i>
+                                        Lab Facilities
+                                         </a></li>
+                                <!--<li> <a href="https://www.pstu.ac.bd/campus-organizations"><i class="ti-angle-right"></i>Campus Organizations</a> </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Single item -->
+                    <div class="col-md-3 col-sm-6 item equal-height" style="height: 222px;">
+                        <div class="f-item link aos-init aos-animate footer_links" data-aos="" data-aos-duration="3000" style="line-height:18px">
+                            <h4>Important Links</h4>
+                            <ul>
+                                <li><a href="https://www.pstu.ac.bd/pstu-forms"><i class="ti-angle-right"></i>Forms and Downloads</a>
+                                </li>
+                                <li><a href="https://www.pstu.ac.bd/noc-list"><i class="ti-angle-right"></i>NOC, GO, Office Order</a></li>
+                                <li><a href="https://www.pstu.ac.bd/notices"><i class="ti-angle-right"></i> Notice</a></li>
+                                <li><a href="https://www.pstu.ac.bd/news"><i class="ti-angle-right"></i> News</a></li>
+                                <li><a href="https://www.pstu.ac.bd/events"><i class="ti-angle-right"></i> Events</a></li>
+                                <li><a href=""><i class="ti-angle-right"></i>
+                                        Citizen Charter</a></li> 
+                                <li><a href=""><i class="ti-angle-right"></i>
+                                        ICT Cell Services</a></li>
+                                <li><a href="https://www.pstu.ac.bd/user-informations"><i class="ti-angle-right"></i>
+                                        Telephone & Email </a></li>
+                            
+                                <li><a href="https://www.pstu.ac.bd/clubs" ><i class="ti-angle-right"></i> Club/Organizations</a>
+                                </li>
+                                <li><a href="https://www.pstu.ac.bd/alumni"><i class="ti-angle-right"></i>
+                                        Alumni
+                                         </a></li>
+                                <li><a href="/contacts"><i class="ti-angle-right"></i>
+                                        Contact US
+                                         </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Single item -->
+
+
+                    <!-- End Single item -->
+
+                    <!-- Single item -->
+            <!-- End Single item -->
+
+            <!-- Single item -->
+            <div class="col-md-3 col-sm-6 hide">
+                <div class="col-sm-12">
+                    <img class="fooimg" src="https://www.pstu.ac.bd/storage/images/settings/1706690284_logo white.png" style="width:100%;" class="logo" alt="Logo">
+                    <div class="clearfix"></div>
+                    <div class="footer-content urgent-need aos-init aos-animate" data-aos="" data-aos-duration="3000">
+                        <p class="ps-3" style="font-size:13px;">
+                            <i class="fa fa-map-marker"></i>
+                            Dumki-8602, Dumki, Patuakhali<br>
+
+                        </p>
+                        <p class="ps-3">
+                            <a class="telephone">
+                                <b>Phone:</b> 02478883476</a>
+                            <br>
+                            <a class="telephone">
+                                <b>Fax:</b> 02478883472</a>
+                            <br>
+                            <a href="mailto:office@pstu.ac.bd">
+                                <b>Email:</b>  registrar@pstu.ac.bd
+                            </a>
+                        </p>
+                        <style>
+                            .info .social a{
+                                padding: 10px;
+                            }
+                        </style>
+                        <div class="info">
+                            <ul>
+                                <li class="social">
+                                    <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="" target="_blank"><i class="fab fa-youtube"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+        <!-- End Single item -->
+        </div>
+
+
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>© 2023 PSTU. All Rights Reserved. Design, Development and Maintenance
+                            by <a href="https://pstu.ac.bd/office/ict-cell" target="_blank">PSTU ICT Cell and Aerolith Solution</a></p>
+                    </div>
+                    <!-- <div class="col-md-4 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#" target="_blank">Admin Login</a>
+                            </li>
+                            <li>
+                                <a href="#">Student Login</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">AIS Dashboard</a>
+                            </li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- End Footer Bottom -->
+
+    </footer>    <!-- End Footer -->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="https://www.pstu.ac.bd/frontend/js/jquery-1.12.4.min.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/bootstrap.min.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/equal-height.min.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/jquery.appear.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/jquery.easing.min.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/jquery.magnific-popup.min.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/modernizr.custom.13711.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/owl.carousel.min.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/wow.min.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/progress-bar.min.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/isotope.pkgd.min.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/imagesloaded.pkgd.min.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/count-to.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/YTPlayer.min.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/loopcounter.js"></script>
+    
+    <script src="https://www.pstu.ac.bd/frontend/js/bootsnav.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://www.pstu.ac.bd/frontend/js/main.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('#accessibilityBar').click(function(){
+            $(this).toggleClass('active');
+        })
+    })
+</script>
+
+    <script>
+    
+        </script>
+        <script>
+            $(document).on('submit','form#ajax_form', function(e) {
+                e.preventDefault();
+                $('p.textdanger').text('');
+                $(document).find('p.failed').text('');
+                var url=$(this).attr('action');
+                var method=$(this).attr('method');
+                var formData = new FormData($(this)[0]);
+                $.ajax({
+                    type: method,
+                    url: url,
+                    data: formData,
+                    async: false,
+                    processData: false,
+                    contentType: false,
+                    beforeSend: function(){
+                        $('.submit').attr('disabled', true);
+                        $('.loading').show(100);
+                    },
+                    success: function(res) {
+                        $('.submit').attr('disabled', false);
+                        $('.loading').hide(100);
+                        if(res.status==true){
+
+                            Toast.fire({
+                                icon: 'success',
+                                title: res.msg
+                            });
+                            //  toastr.success(res.msg);
+                            var message = res.msg;
+                            $('.message').html(message);
+                            $('#ajax_form')[0].reset();
+                            if(res.url){
+                                setTimeout(() => {
+                                    document.location.href = res.url;
+                                }, 2000);
+
+                            }else{
+                                window.location.reload();
+                            }
+                        }else if(res.status==false){
+                            //  toastr.error(res.msg);
+                            Toast.fire({
+                                icon: 'error',
+                                title: res.msg
+                            });
+                        }
+
+                    },
+                    error:function (response){
+                        $.each(response.responseJSON.errors,function(field_name,error){
+                            $(document).find('[name='+field_name+']').after('<p style="color:red" class="failed">' +error+ '</p>')
+                            //  toastr.error(error);
+                            Toast.fire({
+                                icon: 'error',
+                                title: error
+                            }); 
+                            $('.loading').hide(100);
+                            $('.submit').attr('disabled', false);
+                        })
+                    }
+                });
+
+            });
+        </script>
+    
+        <script>
+    $(document).ready(function(){
+        $('#faculties').on('change', function() {
+            var facultyId = $(this).val();
+            $.ajax({
+                url: 'https://www.pstu.ac.bd/get-departments',
+                type: 'GET',
+                dataType: 'json',
+                data:{
+                    id: facultyId
+                },
+                success: function(data) {
+                    $(document).find('select#department_id').empty();
+                    $('select#department_id').html('<option value="">Select One</option>');
+                    $.each(data, function(index, department) {
+                        $('select#department_id').append('<option value ="'+department.id+'">'+department.name+'</option>');
+                    });
+                    $(document).find('select#departments').empty();
+                    $('select#departments').html('<option value="">Select One</option>');
+                    $.each(data, function(index, department) {
+                        $('select#departments').append('<option value ="'+department.id+'">'+department.name+'</option>');
+                    });
+                }
+            });
+        })
+        $('#department_id').on('change', function() {
+        var facultyId = $(this).val();
+        $.ajax({
+            url: 'https://www.pstu.ac.bd/get-calendars',
+            type: 'GET',
+            dataType: 'json',
+            data:{
+                id: facultyId
+            },
+            success: function(data) {
+                $(document).find('#show_result').empty();
+
+                $('#show_result').html(data.html)
+            }
+        });
+    })
+        $('#departments').on('change', function() {
+        var department_id = $(this).val();
+        $.ajax({
+            url: 'https://www.pstu.ac.bd/get-department-user',
+            type: 'GET',
+            dataType: 'json',
+            data:{
+                id: department_id
+            },
+            success: function(data) {
+                $(document).find('select#users').empty();
+                $('select#users').html('<option value="">Select One</option>');
+                $.each(data, function(index, department) {
+                    $('select#users').append('<option value ="'+department.id+'">'+department.name+'</option>');
+                });
+            }
+        });
+    })
+    $('.department_result').on('change', function() {
+        var facultyId = $(this).val();
+        $.ajax({
+            url: 'https://www.pstu.ac.bd/results/show',
+            type: 'GET',
+            dataType: 'json',
+            data:{
+                id: facultyId
+            },
+            success: function(data) {
+                $(document).find('#show_result').empty();
+
+                $('#show_result').html(data.html)
+            }
+        });
+    })
+    
+
+})
+function limitText(element, limit) {
+        var text = $(element).text();
+        if (text.length > limit) {
+            var truncatedText = $.trim(text).substring(0, limit) + "...";
+            $(element).text(truncatedText);
+        }
+    }
+</script>
+</body>
+
+</html>

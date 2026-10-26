@@ -1,0 +1,10 @@
+legacyId,legacyName,legacySlug,institutionId,legacyVerificationStatus,legacySourceRecordId,bestCanonicalCandidateId,bestCanonicalCandidateName,bestCanonicalCandidateSlug,bestCanonicalCandidateSourceRecordId,bestSimilarityScore,assistantAction
+prog_brur_cse,Computer Science and Engineering,cse,inst_brur,VERIFIED,,,,,,0.000,REVIEW_ONLY_NO_DB_CHANGE
+prog_brur_management,Management Studies,management-studies,inst_brur,VERIFIED,,,,,,0.000,REVIEW_ONLY_NO_DB_CHANGE
+prog_buet_civil,Civil Engineering,civil-engineering,inst_buet,VERIFIED,,,,,,0.000,REVIEW_ONLY_NO_DB_CHANGE
+prog_buet_cse,Computer Science and Engineering,cse,inst_buet,VERIFIED,,,,,,0.000,REVIEW_ONLY_NO_DB_CHANGE
+prog_cu_economics,Economics,economics,inst_cu,VERIFIED,,cmufyvl2i000sovn1s8jb9jyy,Certificate & Diploma Courses,certificate-diploma-courses,ugc:program:9ca642bb46f65ecb0c65125f797ab775,0.000,REVIEW_ONLY_NO_DB_CHANGE
+prog_cu_eee,Electrical and Electronic Engineering,eee,inst_cu,VERIFIED,,cmufyvl2i000sovn1s8jb9jyy,Certificate & Diploma Courses,certificate-diploma-courses,ugc:program:9ca642bb46f65ecb0c65125f797ab775,0.000,REVIEW_ONLY_NO_DB_CHANGE
+prog_du_bba,Business Administration,bba,inst_du,VERIFIED,,,,,,0.000,REVIEW_ONLY_NO_DB_CHANGE
+prog_du_cse,Computer Science and Engineering,cse,inst_du,VERIFIED,,,,,,0.000,REVIEW_ONLY_NO_DB_CHANGE
+prog_du_english,English,english,inst_du,VERIFIED,,,,,,0.000,REVIEW_ONLY_NO_DB_CHANGE

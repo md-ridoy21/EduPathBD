@@ -1,0 +1,106 @@
+{
+  "retrievedDate": "2026-09-23",
+  "home": "https://www.btebadmission.gov.bd/website/",
+  "tlsCertificateValidationBypassed": true,
+  "captures": [
+    {
+      "source_url": "https://www.btebadmission.gov.bd/website/inst_list_available_seat.html",
+      "session": "",
+      "links": [
+        {
+          "text": "ভর্তির নীতিমালা - ২০২৬",
+          "href": "http://btebadmission.gov.bd/website/Link/2026/Admission_Policy_2026.pdf"
+        },
+        {
+          "text": "ভর্তি বিজ্ঞপ্তি",
+          "href": "http://btebadmission.gov.bd/website/Link/2026/advertisement_2026.pdf"
+        },
+        {
+          "text": "প্রদেয় ফি",
+          "href": "http://btebadmission.gov.bd/website/Link/2026/application_fee_2026.pdf"
+        },
+        {
+          "text": "অনলাইন আবেদনের নির্দেশিকা",
+          "href": "http://btebadmission.gov.bd/website/Link/2026/online_admission_guideline_2026.pdf"
+        },
+        {
+          "text": "জরুরী প্রশ্নোত্তর",
+          "href": "http://btebadmission.gov.bd/website/Link/2025/FAQ__2025.pdf"
+        },
+        {
+          "text": "প্রতিষ্ঠানের নামের তালিকা",
+          "href": "https://www.btebadmission.gov.bd/website/inst_list_available_seat.html"
+        },
+        {
+          "text": "পরীক্ষার কেন্দ্রের তালিকা",
+          "href": "http://btebadmission.gov.bd/website/Link/2026/Final-2026-Center-with-seat-All.pdf"
+        },
+        {
+          "text": "Diploma in Engineering (Govt.)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatusInstWise"
+        },
+        {
+          "text": "Diploma in Textile (Govt.)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatus?programId=10"
+        },
+        {
+          "text": "Diploma in Fisheries (Govt.)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatus?programId=13"
+        },
+        {
+          "text": "Diploma in Livestock (Govt.)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatus?programId=14"
+        },
+        {
+          "text": "Certificate in Marine Trade (Govt.)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatus?programId=15"
+        },
+        {
+          "text": "Diploma in Marine and Shipbuilding (Govt.)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatus?programId=17"
+        },
+        {
+          "text": "Diploma in Tourism and Hospitality Management (Govt.)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatus?programId=44"
+        },
+        {
+          "text": "HSC (BMT)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatusInstWise"
+        },
+        {
+          "text": "HSC (VOC)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatusInstWise"
+        },
+        {
+          "text": "Diploma in Commerce (DCOM)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatusInstWise"
+        },
+        {
+          "text": "Diploma in Engineering (Private)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatusInstWise"
+        },
+        {
+          "text": "Diploma in Textile (Private)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatus?programId=2"
+        },
+        {
+          "text": "Diploma in Agriculture (Private)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatus?programId=4"
+        },
+        {
+          "text": "Diploma in Fisheries (Private)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatus?programId=6"
+        },
+        {
+          "text": "Diploma in Agriculture (Govt.)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatus?programId=8"
+        },
+        {
+          "text": "Diploma in Forestry (Govt.)",
+          "href": "http://app1.btebadmission.gov.bd:7080/BTEB_WEB/college/CollegeSeatStatus?programId=9"
+        }
+      ],
+      "tables": []
+    }
+  ]
+}

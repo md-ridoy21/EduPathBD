@@ -1,0 +1,35 @@
+{
+  "status": "PASS_EVIDENCE_STAGING",
+  "mode": "FILES_ONLY_NO_DB_WRITES",
+  "dbChanges": false,
+  "counts": {
+    "totalEvidence": 1336,
+    "admission": 682,
+    "scholarship": 654,
+    "admissionEligibility": 356,
+    "admissionFee": 87,
+    "admissionDeadline": 239,
+    "admissionPolicyGroups": 84,
+    "scholarshipPolicyGroups": 172,
+    "explicitNormalizedPromotionCandidates": 7
+  },
+  "checks": {
+    "total1336": true,
+    "admission682": true,
+    "scholarship654": true,
+    "eligibility356": true,
+    "fee87": true,
+    "deadline239": true,
+    "allPending": true,
+    "allProductionVerifiedNo": true,
+    "uniqueSourceRecordIds": true
+  },
+  "policy": {
+    "structuredEntityAutoPromotionPerformed": false,
+    "fakeOrInferredValuesAllowed": false,
+    "verificationStatus": "PENDING",
+    "verifiedPublicationAllowed": false,
+    "feeFragmentsForcedIntoAdmissionRule": false,
+    "deadlineFragmentsForcedIntoAdmissionRule": false
+  }
+}

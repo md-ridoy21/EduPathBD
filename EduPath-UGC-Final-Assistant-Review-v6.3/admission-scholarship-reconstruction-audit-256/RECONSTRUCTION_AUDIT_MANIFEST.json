@@ -1,0 +1,33 @@
+{
+  "status": "PASS_RECONSTRUCTION_AUDIT_256",
+  "mode": "READ_ONLY_DB_TO_FILES",
+  "dbWritesPerformed": false,
+  "counts": {
+    "evidenceRowsRead": 1010,
+    "admissionGroups": 84,
+    "scholarshipGroups": 172,
+    "totalGroups": 256,
+    "unresolvedParentGroups": 20,
+    "alreadyPromotedOverlapGroups": 7,
+    "bucketCounts": {
+      "SOURCE_SCOPE_REVIEW": 73,
+      "READY_FOR_MANUAL_RECONSTRUCTION": 163,
+      "BLOCKED_PARENT": 20
+    }
+  },
+  "checks": {
+    "admissionGroups84": true,
+    "scholarshipGroups172": true,
+    "totalGroups256": true,
+    "autoPromotionDisabledForAll": true,
+    "promotedIdsKnownOnly": true
+  },
+  "policy": {
+    "autoPromotionPerformed": false,
+    "autoPromotionAllowedForRemainingGroups": false,
+    "sourceFactsSynthesized": false,
+    "verifiedPublicationPerformed": false,
+    "feeFragmentsIncludedInAdmissionGroups": false,
+    "deadlineFragmentsIncludedInAdmissionGroups": false
+  }
+}

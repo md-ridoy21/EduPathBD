@@ -1,0 +1,50 @@
+{
+  "program_candidate_rows": 1634,
+  "unique_program_entities": 1630,
+  "duplicate_candidate_rows_collapsed": 4,
+  "entity_conflicts": 0,
+  "entities_without_https": 22,
+  "unique_canonical_records": 119,
+  "degree_level_counts": {
+    "UNDERGRADUATE": 831,
+    "CERTIFICATE": 134,
+    "POSTGRADUATE": 577,
+    "DIPLOMA": 89,
+    "DOCTORAL": 3
+  },
+  "degree_award_counts": {
+    "BSc": 344,
+    "BBA": 113,
+    "BA": 113,
+    "Certificate": 134,
+    "EMBA": 49,
+    "BArch": 13,
+    "Bachelor": 148,
+    "MBA": 139,
+    "MArch": 2,
+    "Master": 124,
+    "MEd": 3,
+    "MSc": 91,
+    "Diploma": 89,
+    "LLM": 41,
+    "MA": 98,
+    "MPH": 5,
+    "MPhil": 4,
+    "LLB": 47,
+    "BSS": 41,
+    "MSS": 15,
+    "BPharm": 8,
+    "PhD": 3,
+    "MPharm": 3,
+    "MBBS": 1,
+    "MS": 1,
+    "BEd": 1,
+    "DVM": 1,
+    "MEng": 1,
+    "BFA": 1,
+    "MFA": 1
+  },
+  "institution_mapping": {
+    "institution_master_files_found": []
+  }
+}

@@ -1,0 +1,23 @@
+import { getApp, getApps, initializeApp } from "firebase/app";
+import { getAuth, signOut } from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
+};
+
+export const firebaseConfigured = Object.values(firebaseConfig).every(Boolean);
+
+export function getFirebaseAuth() {
+  if (!firebaseConfigured) throw new Error("Firebase is not configured. Use Demo Access or add the free Firebase web keys.");
+  const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+  return getAuth(app);
+}
+
+export async function signOutFirebaseUser() {
+  if (!firebaseConfigured) return;
+  const auth = getFirebaseAuth();
+  if (auth.currentUser) await signOut(auth);
+}

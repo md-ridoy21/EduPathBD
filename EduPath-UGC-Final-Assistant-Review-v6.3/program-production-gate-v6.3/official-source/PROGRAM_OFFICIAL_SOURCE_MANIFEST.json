@@ -1,0 +1,32 @@
+{
+  "status": "PASS_OFFICIAL_SOURCE_SPLIT",
+  "mode": "READ_ONLY_NETWORK_AND_DB_VALIDATION",
+  "dbWritesPerformed": false,
+  "inputFile": "/home/md-ridoy/Downloads/EduPath-UGC-Final-Assistant-Review-v6.3/program-production-gate-v6.3/semantic/program_strict_semantic_pass.csv",
+  "inputSha256": "1f07e1717137ffa2471282015129521e91e6d99800974481d96405c72efba498",
+  "inputRows": 1297,
+  "uniqueSourceUrls": 191,
+  "requiredParents": 105,
+  "databaseParentsMatched": 105,
+  "passStrongRows": 29,
+  "reviewRequiredRows": 1268,
+  "policy": {
+    "passRequiresHttps": true,
+    "passRequiresExactParent": true,
+    "passRequiresParentWebsiteUrl": true,
+    "passRequiresSourceAndRedirectDomainMatchParentWebsite": true,
+    "passRequiresSuccessfulFetch": true,
+    "passRequiresHtmlTextEvidence": true,
+    "passRequiresExactPhraseOrTokenCoverage": 0.7,
+    "pdfAutoPass": false,
+    "verifiedPublicationAllowed": false
+  },
+  "checks": {
+    "partitionReconstructsInput": true,
+    "noVerifiedWrites": true
+  },
+  "files": {
+    "passStrong": "program_official_verified_pass.csv",
+    "reviewRequired": "program_official_source_review.csv"
+  }
+}

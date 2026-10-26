@@ -1,0 +1,53 @@
+=== EDUPATH BRITANNIA SOURCE CONFLICT V6.3 ===
+
+generated_at: 2026-09-24T08:47:56.688997+00:00
+root_conflicts: 1
+previous_unresolved_groups: 3
+consolidated_unresolved_groups: 1
+candidate_ids: 22
+
+institution: Britannia University
+dataset: scholarship
+status: NEEDS_SOURCE_RECONCILIATION
+production_percentage_schedule: BLOCKED
+
+CURRENT OFFICIAL SOURCE A
+Financial Aid & Scholarship
+https://britannia.edu.bd/admission-process/scholarships
+
+6.00-6.99 = 5%
+7.00-7.99 = 10%
+8.00-8.99 = 20%
+9.00-9.99 = 30%
+GPA 10 = 50%
+
+CURRENT OFFICIAL SOURCE B
+Tuition Fee
+https://britannia.edu.bd/admission-process/tuition-fee
+
+6.00-6.99 = 5%
+7.00-7.99 = 10%
+8.00-8.99 = 20%
+9.00-9.99 = 30%
+GPA 10 = 50%
+
+CURRENT OFFICIAL SOURCE C
+Waiver & Tuition Fee Calculator
+https://britannia.edu.bd/admission-process/waiver--tuition-fee-calculator
+
+6.00-6.99 = 10%
+7.00-7.99 = 20%
+8.00-8.99 = 30%
+9.00-9.99 = 40%
+GPA 10 = 50%
+Golden+5 = 55%
+Double Golden = 60%
+
+DECISION
+Do not choose or infer a canonical percentage schedule.
+Keep the conflict unresolved until Britannia University publishes a
+superseding dated policy or provides authoritative clarification.
+
+The underlying raw candidates remain excluded from production canonical facts.
+Human decision state is not modified.
+production_verified remains NO.

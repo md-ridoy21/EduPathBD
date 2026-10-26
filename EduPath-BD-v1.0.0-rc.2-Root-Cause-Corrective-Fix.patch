@@ -1,0 +1,176 @@
+diff -ruN a/RELEASE_NOTES_v1.0.0-rc.2.md b/RELEASE_NOTES_v1.0.0-rc.2.md
+--- a/RELEASE_NOTES_v1.0.0-rc.2.md	2026-09-18 18:23:04.000000000 +0000
++++ b/RELEASE_NOTES_v1.0.0-rc.2.md	2026-09-18 18:34:09.544290076 +0000
+@@ -36,3 +36,5 @@
+ ## External evidence still required
+ 
+ Real PostgreSQL/Firebase/Supabase/Gemini credentials, official full-scale catalog content, public HTTPS deployment, hosted CI, signed Android AAB, iOS/macOS signing, physical-device acceptance, scheduled off-site backups/restore drill, privacy/legal approval and the final Windows Crystal Reports `.rpt` layout.
++
++- Authentication overlay now unmounts deterministically after successful sign-in; release and operations gates enforce this lifecycle invariant.
+diff -ruN a/apps/web/src/App.tsx b/apps/web/src/App.tsx
+--- a/apps/web/src/App.tsx	2026-09-16 18:37:52.000000000 +0000
++++ b/apps/web/src/App.tsx	2026-09-18 18:34:09.543667637 +0000
+@@ -141,6 +141,10 @@
+   }, [session]);
+ 
+   useEffect(() => {
++    if (session && authOpen) setAuthOpen(false);
++  }, [session, authOpen]);
++
++  useEffect(() => {
+     if (!appMessage) return;
+     const timeout = window.setTimeout(() => setAppMessage(""), 4000);
+     return () => window.clearTimeout(timeout);
+@@ -259,6 +263,7 @@
+ 
+   const handleAuthenticated = (nextSession: AppSession) => {
+     setAppMessage("");
++    setAuthOpen(false);
+     setSession(nextSession);
+   };
+ 
+diff -ruN a/apps/web/src/components/AuthModal.tsx b/apps/web/src/components/AuthModal.tsx
+--- a/apps/web/src/components/AuthModal.tsx	2026-09-16 18:37:52.000000000 +0000
++++ b/apps/web/src/components/AuthModal.tsx	2026-09-18 18:34:09.543885245 +0000
+@@ -1,5 +1,5 @@
+ import { useEffect, useRef, useState } from "react";
+-import { AnimatePresence, motion } from "framer-motion";
++import { motion } from "framer-motion";
+ import { CheckCircle2, Eye, EyeOff, LoaderCircle, MailCheck, MessageSquareText, Phone, ShieldCheck, UserRound, X, XCircle } from "lucide-react";
+ import { createUserWithEmailAndPassword, deleteUser, RecaptchaVerifier, sendEmailVerification, signInWithEmailAndPassword, signInWithPhoneNumber, updateProfile } from "firebase/auth";
+ import type { ConfirmationResult } from "firebase/auth";
+@@ -165,11 +165,11 @@
+     finally { setBusy(false); }
+   };
+ 
++  if (!open) return null;
++
+   return (
+-    <AnimatePresence>
+-      {open && (
+-        <motion.div data-testid="auth-modal-overlay" className="fixed inset-0 z-[80] grid place-items-center bg-[#041321]/75 p-4 backdrop-blur-sm" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={onClose}>
+-          <motion.div role="dialog" aria-modal="true" aria-labelledby="auth-dialog-title" className="max-h-[92vh] w-full max-w-md overflow-y-auto rounded-[2rem] bg-white p-6 shadow-2xl sm:p-7" initial={{ y: 24, opacity: 0, scale: .97 }} animate={{ y: 0, opacity: 1, scale: 1 }} exit={{ y: 16, opacity: 0 }} onMouseDown={(event) => event.stopPropagation()}>
++    <motion.div data-testid="auth-modal-overlay" className="fixed inset-0 z-[80] grid place-items-center bg-[#041321]/75 p-4 backdrop-blur-sm" initial={{ opacity: 0 }} animate={{ opacity: 1 }} onMouseDown={onClose}>
++          <motion.div role="dialog" aria-modal="true" aria-labelledby="auth-dialog-title" className="max-h-[92vh] w-full max-w-md overflow-y-auto rounded-[2rem] bg-white p-6 shadow-2xl sm:p-7" initial={{ y: 24, opacity: 0, scale: .97 }} animate={{ y: 0, opacity: 1, scale: 1 }} onMouseDown={(event) => event.stopPropagation()}>
+             <div className="flex items-start justify-between gap-4">
+               <div><span className="text-xs font-black uppercase tracking-[.18em] text-teal-700">{text("Secure access", "নিরাপদ প্রবেশ")}</span><h2 id="auth-dialog-title" className="mt-2 text-2xl font-black">{mode === "login" ? text("Welcome back", "স্বাগতম") : text("Create student account", "শিক্ষার্থী অ্যাকাউন্ট তৈরি করুন")}</h2></div>
+               <button type="button" className="grid size-11 place-items-center rounded-xl bg-slate-100" onClick={onClose} aria-label={text("Close", "বন্ধ করুন")}><X size={18} /></button>
+@@ -202,9 +202,7 @@
+ 
+             <div className="my-5 flex items-center gap-3 text-[10px] font-bold uppercase tracking-wider text-slate-400"><span className="h-px flex-1 bg-slate-200" />{text("Demo access", "ডেমো প্রবেশ")}<span className="h-px flex-1 bg-slate-200" /></div>
+             <div className="grid grid-cols-2 gap-3"><button type="button" onClick={() => submitDemo(false)} disabled={busy} className="min-h-11 rounded-xl border border-slate-200 px-3 py-3 text-xs font-black hover:bg-slate-50">{text("Student demo", "শিক্ষার্থী ডেমো")}</button><button type="button" onClick={() => submitDemo(true)} disabled={busy} className="min-h-11 rounded-xl border border-teal-200 bg-teal-50 px-3 py-3 text-xs font-black text-teal-800 hover:bg-teal-100">{text("Admin demo", "অ্যাডমিন ডেমো")}</button></div>
+-          </motion.div>
+-        </motion.div>
+-      )}
+-    </AnimatePresence>
++      </motion.div>
++    </motion.div>
+   );
+ }
+diff -ruN a/docs/BUG_LOG.md b/docs/BUG_LOG.md
+--- a/docs/BUG_LOG.md	2026-09-18 18:23:04.000000000 +0000
++++ b/docs/BUG_LOG.md	2026-09-18 18:34:09.544154542 +0000
+@@ -62,6 +62,7 @@
+ | P91-004 | Playwright treated intentional real-time stream teardown as a network failure and used immediate visibility probes before responsive UI rendering settled | High | Fixed: only aborted first-party real-time streams are ignored; the test waits for the app, follows the configured viewport breakpoint and targets stable desktop/mobile auth identifiers |
+ | RC2-001 | Desktop and mobile account-flow tests could continue while an authentication overlay remained above the signed-in shell | High | Fixed: authenticated state now makes the auth modal structurally impossible to render; the overlay has a stable test identity and acceptance waits for its complete DOM removal before interacting with account or navigation controls |
+ | RC2-002 | Account & privacy dialog was labelled by the signed-in student name, so semantic role queries and screen readers did not identify the dialog by purpose | High | Fixed: the visible bilingual Account & privacy label now owns `aria-labelledby`; the user name remains dialog content and an operations regression test protects the contract |
++| RC2-003 | Authentication overlay used an exit-presence lifecycle for a security boundary; in real Playwright desktop/mobile runs the DOM overlay remained after demo session success and blocked subsequent account/navigation interactions | High | Fixed: successful authentication closes auth state explicitly, session state also enforces closure, and AuthModal returns null immediately when closed; release/ops regressions now reject reintroduction of delayed presence unmounting |
+ 
+ Phase 7 Android blockers are resolved on the student's phone. The remaining Phase 7.1 control and external-integration findings are tracked in `docs/PHASE_7_1_AUDIT.md` and must be closed before the final release candidate.
+ 
+diff -ruN a/docs/RC2_AUTH_LIFECYCLE_ROOT_CAUSE.md b/docs/RC2_AUTH_LIFECYCLE_ROOT_CAUSE.md
+--- a/docs/RC2_AUTH_LIFECYCLE_ROOT_CAUSE.md	1970-01-01 00:00:00.000000000 +0000
++++ b/docs/RC2_AUTH_LIFECYCLE_ROOT_CAUSE.md	2026-09-18 18:34:09.544222344 +0000
+@@ -0,0 +1,25 @@
++# RC2 authentication modal root-cause analysis
++
++## Observed evidence
++
++The desktop and mobile Playwright flow both completed the Student demo click but still found `auth-modal-overlay` in the DOM for the full 8-second assertion window. An earlier deterministic-unmount build progressed beyond that point to the Account & privacy assertion, proving the demo session itself could complete and isolating the blocking behavior to the modal lifecycle.
++
++## Root cause
++
++`AuthModal` represented a security/session boundary but was implemented with `AnimatePresence`, allowing the full-screen pointer-blocking overlay to remain mounted while its exit lifecycle completed. In the tested browser/runtime combination this exit presence did not reliably leave the DOM after authentication. Static source checks only verified `open={authOpen && !session}` and therefore missed the actual DOM-lifecycle invariant.
++
++## Corrective design
++
++Authentication closure is now deterministic and redundant by design:
++
++1. `handleAuthenticated` closes auth state before committing the session.
++2. A session-state effect closes any stale auth state.
++3. `AuthModal` returns `null` immediately when `open` is false.
++4. The app still passes `authOpen && !session`, preventing an authenticated shell from requesting the modal.
++5. Operations and release verification reject any future `AnimatePresence`-based auth overlay regression.
++
++Entry animation remains; only the exit animation is removed from the authentication overlay because correctness, focus safety, and pointer release take precedence over decorative exit motion at an authentication boundary.
++
++## Separate accessibility issue
++
++The Account & privacy dialog accessible-name mismatch is independently fixed: its visible bilingual purpose label owns `aria-labelledby`, while the student's display name remains content.
+diff -ruN a/docs/SECURITY_DEPENDENCY_STATUS.md b/docs/SECURITY_DEPENDENCY_STATUS.md
+--- a/docs/SECURITY_DEPENDENCY_STATUS.md	1970-01-01 00:00:00.000000000 +0000
++++ b/docs/SECURITY_DEPENDENCY_STATUS.md	2026-09-18 18:35:09.655266389 +0000
+@@ -0,0 +1,17 @@
++# Security dependency status — RC2 corrective build
++
++The latest laptop audit reported **3 high** and **2 moderate** findings even though no critical finding was present. Therefore `audit:critical` is not sufficient for public-production sign-off.
++
++Current findings observed on 2026-09-18:
++
++- `deepmerge-ts < 8.0.0` through Prisma CLI/config tooling — High. The vulnerable code path is configuration/build/migration tooling rather than an EduPath HTTP request path, but it remains an open dependency finding and must be resolved or explicitly risk-reviewed before public production.
++- `uuid < 11.1.1` through an older `gaxios` dependency — Moderate. A patched UUID line exists, but forcing a transitive major override without compatibility verification is not accepted as a safe fix.
++
++Do **not** run `npm audit fix --force` blindly. The current npm suggestion can change Prisma versions and may break migrations/client compatibility.
++
++This source adds:
++
++- `npm run audit:high` — fails on high-or-critical production audit findings.
++- `npm run release:gate` — runs core QA, Playwright browser acceptance, then the high-severity audit.
++
++Public-production sign-off requires the release gate plus external runtime evidence (real PostgreSQL/Firebase/Supabase/HTTPS, backup restore, signed Android build and physical-device acceptance).
+diff -ruN a/package.json b/package.json
+--- a/package.json	2026-09-16 17:57:18.000000000 +0000
++++ b/package.json	2026-09-18 18:35:09.654975100 +0000
+@@ -18,6 +18,8 @@
+     "test:e2e": "playwright test",
+     "test:e2e:report": "playwright show-report",
+     "audit:critical": "npm audit --omit=dev --audit-level=critical",
++    "audit:high": "npm audit --omit=dev --audit-level=high",
++    "release:gate": "npm run qa && npm run test:e2e && npm run audit:high",
+     "audit:report": "npm audit --omit=dev || true",
+     "qa": "npm run typecheck && npm test && npm run verify:model && npm run verify:api && npm run verify:release && npm run verify:production && npm run build",
+     "verify:api": "npm run build -w @edupath/api && node scripts/verify-api.mjs",
+diff -ruN a/scripts/verify-release.mjs b/scripts/verify-release.mjs
+--- a/scripts/verify-release.mjs	2026-09-18 18:23:06.000000000 +0000
++++ b/scripts/verify-release.mjs	2026-09-18 18:35:09.655187611 +0000
+@@ -103,6 +103,7 @@
+ check(rootPackage.scripts.qa?.includes("verify:api") && rootPackage.scripts.qa?.includes("verify:release") && rootPackage.scripts.qa?.includes("verify:production"), "One-command repository QA and production gate is registered");
+ check(rootPackage.scripts.postinstall === "npm run db:generate", "Fresh npm installs generate the nested Prisma Client automatically");
+ check(rootPackage.scripts["audit:critical"]?.includes("--audit-level=critical"), "Critical production dependency audit is registered");
++check(rootPackage.scripts["audit:high"]?.includes("--audit-level=high") && rootPackage.scripts["release:gate"]?.includes("test:e2e") && rootPackage.scripts["release:gate"]?.includes("audit:high"), "Strict release gate includes browser acceptance and high-severity dependency audit");
+ check(rootPackage.scripts["test:e2e"] === "playwright test" && rootPackage.devDependencies["@playwright/test"], "Playwright browser acceptance suite is registered");
+ check(rootPackage.scripts.qa?.includes("verify:model") && rootPackage.scripts["model:train"], "TensorFlow model training and verification commands are registered");
+ check(rootPackage.scripts["db:backup"] && rootPackage.scripts["db:restore"] && rootPackage.scripts["db:integrity"] && rootPackage.scripts["test:ops"], "Database backup, restore, integrity and operations-test commands are registered");
+@@ -156,6 +157,7 @@
+ const mediaStorage = await readFile("apps/api/src/storage/media.ts", "utf8");
+ const accountCenter = await readFile("apps/web/src/components/AccountCenter.tsx", "utf8");
+ check(accountCenter.includes('aria-labelledby="account-center-label"') && accountCenter.includes('id="account-center-label"') && accountCenter.includes('data-testid="account-center-dialog"'), "Account & privacy dialog has a stable purpose-based accessible name");
++check(appSource.includes('open={authOpen && !session}') && appSource.includes('if (session && authOpen) setAuthOpen(false)') && appSource.includes('setAuthOpen(false);\n    setSession(nextSession);') && authModal.includes('if (!open) return null;') && !authModal.includes('AnimatePresence'), "Authentication overlay unmounts deterministically after a successful session");
+ const firebaseServer = await readFile("apps/api/src/auth/firebase.ts", "utf8");
+ const store = await readFile("apps/api/src/data/store.ts", "utf8");
+ check(authModal.includes("reserveRegistration") && authModal.includes("deleteUser(credential.user)"), "Firebase registration reserves username and rolls back a failed account claim");
+diff -ruN a/tests/ops/accessibility-contracts.test.mjs b/tests/ops/accessibility-contracts.test.mjs
+--- a/tests/ops/accessibility-contracts.test.mjs	2026-09-18 18:23:04.000000000 +0000
++++ b/tests/ops/accessibility-contracts.test.mjs	2026-09-18 18:34:09.543955772 +0000
+@@ -33,7 +33,11 @@
+   const auth = await readFile("apps/web/src/components/AuthModal.tsx", "utf8");
+   const e2e = await readFile("tests/e2e/app-smoke.spec.ts", "utf8");
+   assert.match(app, /<AuthModal open=\{authOpen && !session\}/);
++  assert.match(app, /if \(session && authOpen\) setAuthOpen\(false\);/);
++  assert.match(app, /const handleAuthenticated = \(nextSession: AppSession\) => \{[\s\S]*?setAuthOpen\(false\);[\s\S]*?setSession\(nextSession\);/);
++  assert.match(auth, /if \(!open\) return null;/);
+   assert.match(auth, /data-testid="auth-modal-overlay"/);
++  assert.doesNotMatch(auth, /AnimatePresence/);
+   assert.match(e2e, /getByTestId\("auth-modal-overlay"\)/);
+   assert.match(e2e, /name: \/account & privacy\|অ্যাকাউন্ট ও প্রাইভেসি\/i/);
+ });

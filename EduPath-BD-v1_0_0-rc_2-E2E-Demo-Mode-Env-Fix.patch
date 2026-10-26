@@ -1,0 +1,14 @@
+diff --git a/playwright.config.ts b/playwright.config.ts
+index e7b7489..29791f6 100644
+--- a/playwright.config.ts
++++ b/playwright.config.ts
+@@ -28,7 +28,8 @@ export default defineConfig({
+       command: "npm run build -w @edupath/api && node apps/api/dist/server.js",
+       url: "http://localhost:4000/api/health",
+       reuseExistingServer: !process.env.CI,
+-      timeout: 120_000
++      timeout: 120_000,
++      env: { NODE_ENV: "development", DEMO_MODE: "true" }
+     },
+     {
+       command: "npm run build -w @edupath/web && npm run preview -w @edupath/web -- --host localhost --port 5173",

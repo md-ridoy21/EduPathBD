@@ -1,0 +1,2 @@
+3777bda4e6c37e02865dcc228e3fe2e0f354b9bce5300c9a6505e07a0651094c  EduPath-BD-v1.0.0-rc.2-E2E-Fixed-Production-Source.zip
+61454e14e8d138fc6c0cc8c6b96f2bbe23984461dd869d9185a80a7a84b61eec  EduPath-BD-v1.0.0-rc.2-E2E-Modal-Race-Fix.patch

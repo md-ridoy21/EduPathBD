@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="Author" content="IIUSTB, Developer: Naem Islam">
+
+            <!-- App Title -->
+        <title>Home | IIUSTB</title>
+
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <!-- App favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="https://www.iiustb.ac.bd/uploads/setting/favicon_32x32_1756801969.png"
+            type="image/x-icon">
+        <link rel="shortcut icon" href="https://www.iiustb.ac.bd/uploads/setting/favicon_32x32_1756801969.png" type="image/x-icon">
+    
+
+    
+
+    <!-- Social Meta Tags -->
+    <link rel="canonical" href="https://www.iiustb.ac.bd">
+
+                <meta property="og:type" content="website">
+        <meta property='og:site_name' content="IIUSTB" />
+        <meta property='og:title' content="IIUSTB" />
+        <meta property='og:description' content="" />
+        <meta property='og:url' content="https://www.iiustb.ac.bd" />
+        <meta property='og:image' content="https://www.iiustb.ac.bd/uploads/setting/cse_dept_01_1724252389.jpg" />
+
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@IIUSTB" />
+        <meta name="twitter:creator" content="@HiTechParks" />
+        <meta name="twitter:url" content="https://www.iiustb.ac.bd" />
+        <meta name="twitter:title" content="IIUSTB" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:image" content="https://www.iiustb.ac.bd/uploads/setting/cse_dept_01_1724252389.jpg" />
+    
+
+    <!-- Stylesheets -->
+    <link href="https://www.iiustb.ac.bd/frontend/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://www.iiustb.ac.bd/frontend/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="https://www.iiustb.ac.bd/frontend/css/animate.css" rel="stylesheet" type="text/css">
+    <link href="https://www.iiustb.ac.bd/frontend/css/css-plugin-collections.css" rel="stylesheet" />
+    <link href="https://www.iiustb.ac.bd/frontend/css/menuzord-megamenu.css" rel="stylesheet" />
+    <link id="menuzord-menu-skins" href="https://www.iiustb.ac.bd/frontend/css/menuzord-skins/menuzord-boxed.css"
+        rel="stylesheet" />
+    <link href="https://www.iiustb.ac.bd/frontend/css/style-main.css" rel="stylesheet" type="text/css">
+
+    <!-- CSS | Preloader Styles -->
+    <link href="https://www.iiustb.ac.bd/frontend/css/preloader.css" rel="stylesheet" type="text/css">
+    <!-- CSS | Custom Margin Padding Collection -->
+    <link href="https://www.iiustb.ac.bd/frontend/css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+    <!-- CSS | Responsive media queries -->
+    <link href="https://www.iiustb.ac.bd/frontend/css/responsive.css" rel="stylesheet" type="text/css">
+
+    <!-- Revolution Slider 5.x CSS settings -->
+    <link href="https://www.iiustb.ac.bd/frontend/js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.iiustb.ac.bd/frontend/js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.iiustb.ac.bd/frontend/js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css" />
+
+    <!-- CSS | Theme Color -->
+    <link href="https://www.iiustb.ac.bd/frontend/css/colors/theme-skin-color-set1.css" rel="stylesheet" type="text/css">
+
+
+    <script type="text/javascript"
+        src="https://www.iiustb.ac.bd/frontend/js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript"
+        src="https://www.iiustb.ac.bd/frontend/js/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js">
+    </script>
+    <script type="text/javascript"
+        src="https://www.iiustb.ac.bd/frontend/js/revolution-slider/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript"
+        src="https://www.iiustb.ac.bd/frontend/js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
+     <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11132063396">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-11132063396');
+    </script>
+
+
+
+    <style>
+        #copyright p {
+            display: inline;
+        }
+    </style>
+        <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .gallery-item .thumb {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .member-thumb {
+            width: 100%;
+            overflow: hidden;
+            background-color: #f2f2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .member-thumb {
+            border: 1px solid #b9b9b9;
+            border-bottom: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+
+
+</head>
+
+<body class="">
+
+    <div id="wrapper" class="clearfix">
+
+        <!-- preloader -->
+        
+
+        <header id="header" class="header modern-header modern-header-theme-colored">
+    <div class="header-top bg-theme-colored2 sm-text-center">
+        <div class="container">
+            <!---------- Top Header HTML Ends --------->
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="width-50 head-left" style="width: 500px">
+                        <ul style="display: flex">
+                             <li><a style="display: flex; align-items:center" href="https://www.iiustb.ac.bd/admin/login"><i class="fa fa-lock" style="margin-right: 5px"></i> UIMS</a></li> 
+                                                            <li><a style="display: flex; align-items:center" href="https://www.iiustb.ac.bd/student/login"><i style="margin-right: 5px" class="fa fa-user"></i> Student Portal</a>
+                                </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="width-50">
+                        
+                                                    <marquee class="notification">
+                                <span>Admission News : Get Ready To Explore The Genius In You With Genius 2026 Enrollment</span>
+                            </marquee>
+                                            </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="width-25 head-right">
+                        <ul>
+                            <li><a href="https://www.iiustb.ac.bd/application"><i class="fa fa-paper-plane "></i> Admission
+                                    Open
+                                    <span class="head-span"><img src="images/new.gif"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-middle p-0 bg-white xs-text-center">
+        <div class="container pt-20 pb-20 logo_head">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-8">
+                    <div class="widget text-left desk_logo">
+                        <a class="" href="https://www.iiustb.ac.bd"><img style="height: 55px;" class="desk_logo"
+                                src="https://www.iiustb.ac.bd/frontend/images/logo/logo_wide.png" alt=""></a>
+                    </div>
+                    <div class="widget text-center mob_logo">
+                        <a class="" href="https://www.iiustb.ac.bd"><img style="height: 105px;" class=""
+                                src="https://www.iiustb.ac.bd/frontend/images/logo/wide_top.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 mt-10 mob_none desk_block">
+                    <div class="topbar-nav-icon">
+                        <div class="item">
+                            <div class="icon"><i
+                                    class="fa fa-envelope text-theme-colored font-32 m-0 mr-sm-0 sm-display-block pull-left flip sm-pull-none"></i>
+                            </div>
+                            <div>
+                                <span class="label">MAIL US</span>
+                                <span class="value">
+                                    <a href="mailto:info@iiustb.ac.bd">info@iiustb.ac.bd</a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="icon"><i
+                                    class="fa fa-phone-square text-theme-colored font-32 m-0 mr-sm-0 sm-display-block pull-right flip sm-pull-none"></i>
+                            </div>
+                            <div>
+                                <span class="label">CALL US</span>
+                                <span class="value"><a href="tel:01329728375">+8801329-728375</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-nav">
+        <div class="header-nav-wrapper navbascrolltofixed">
+            <div class="container mp_none">
+                <nav id="menuzord" class="menuzord green" style="text-transform: uppercase">
+                                        <ul class="menuzord-menu">
+                        <li class="active"><a href="https://www.iiustb.ac.bd">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About IIUSTB</a>
+                            <ul class="dropdown">
+                                                                                                            <li>
+                                            <a href="https://www.iiustb.ac.bd/page/iiustb-at-a-glance">
+                                                - IIUSTB At A Glance
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a href="https://www.iiustb.ac.bd/page/university-approval">
+                                                - University Approval
+                                            </a>
+                                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                                <li>
+                                    <a href="#">- Messages</a>
+                                    <ul class="dropdown">
+                                                                                    <li>
+                                                <a href="https://www.iiustb.ac.bd/message/5">
+                                                    - The Chancellor
+                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="https://www.iiustb.ac.bd/message/6">
+                                                    - The Vice-Chancellor
+                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="https://www.iiustb.ac.bd/message/11">
+                                                    - The Registrar
+                                                </a>
+                                            </li>
+                                                                            </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:void(0)">Academics</a>
+                            <div class="megamenu megamenu-bg-img">
+                                <div class="megamenu-row">
+                                    <div class="col3">
+                                        <h4 class="megamenu-col-title text-theme-colored mb-0"
+                                            style="text-transform: uppercase;">
+                                            Faculty</h4>
+                                        <ul class="list-dashed list-icon">
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/faculties/eyJpdiI6ImFieGEydnV6NXNjV2dibDQ3cGNwelE9PSIsInZhbHVlIjoiR01QOSszM3NtaGpvUEIremZNWXovUT09IiwibWFjIjoiZTZhMzA3YjA5NmZmY2RiYmI2OTFjZDczMjQzOTc3OTY5ZmQxZDViMjAyMmI3NmUzM2ZmZjdiY2Y5ZmJlNzZkYSIsInRhZyI6IiJ9">Faculty of Science &amp; Engineering</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/faculties/eyJpdiI6Ik0zWWJXZlZORWJtdWhtT3k3TEdDekE9PSIsInZhbHVlIjoiN2wyaHVucUxoVmk5NnhEd2lwa0dVUT09IiwibWFjIjoiNGUyZTBjMmFmYTU5OGY1YzE3NjhiYjFmMWEyNTVlNmQzZmQ2NWE5N2U0ZjhiNWE3ODkxMzE2N2M4YzM0OTY1NiIsInRhZyI6IiJ9">Faculty of Religious Science</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/faculties/eyJpdiI6IklObHdRK3dIV05YWlVUcGcrWUtYbkE9PSIsInZhbHVlIjoiN2JIdDZpdVhSa0FHQ29mN1JXTzI1UT09IiwibWFjIjoiNWVlNmIzM2I2MzMxZjY2ZGFiOWY0NGQ4ZDFiODQwOTFiZTMzN2UyMGFmNjU3MGZjM2EzOTRmYzY5YWQxM2IxYiIsInRhZyI6IiJ9">Faculty of Business Administration</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/faculties/eyJpdiI6IlpwVVdGZ3lhNzJXaW9mWTNBd1l5MVE9PSIsInZhbHVlIjoiNDhTMUYyY0ZIQ2d3d3hiV2twNDlaUT09IiwibWFjIjoiMzRkYzU1NzExOWJkZTExN2NlZDQ2YWExYjQ0YzExNzRlZGU3OGUwMTNlZjNlZGNlYWUzMjllMzkwZmIxNjdjNCIsInRhZyI6IiJ9">Faculty of Arts and Social Science</a>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+
+                                    <div class="col3">
+                                        <h4 class="megamenu-col-title text-theme-colored mb-0"
+                                            style="text-transform: uppercase;">
+                                            department</h4>
+                                        <ul class="list-dashed list-icon">
+                                            <li><a style="text-transform: uppercase"
+                                                    href="https://www.iiustb.ac.bd/academic/departments">All Departments</a>
+                                            </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/departments/eyJpdiI6InZOcVQzRndwcjVSRWdYSTNYYjA5RGc9PSIsInZhbHVlIjoianNKR1FsSktMZzVpc09oc1RWZUZsQT09IiwibWFjIjoiYjkwMWMyNzM1OWE4NmZiMWE5YzM3ZmM5YzRiY2Q2N2EwMjEzODAyYWRlMGNkNjYwMGJjMzIxYTk3NWU1ZjQ3NyIsInRhZyI6IiJ9">Computer Science &amp; Engineering</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/departments/eyJpdiI6Iks3cCtCYzNOUVpLZ0c4bCtIWnlsQXc9PSIsInZhbHVlIjoiYkUwMnlsbExZOXAwS1lkSmJTSEkxQT09IiwibWFjIjoiN2E2MDM2YzUxOTkwMjg0YWE3NzY2NDg0YTMwMDM5NDJhNzFhY2NjYTIxYTJkOWQ2MThkMDdlYjJhMWE2OGVhZCIsInRhZyI6IiJ9">Business Administration</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/departments/eyJpdiI6IklEbGdVM0g0NjU5OFBKL3hyNzNpU0E9PSIsInZhbHVlIjoiUG45bXJCNEptRVdtQVRmVWtEYjdqZz09IiwibWFjIjoiMmE0ZDEwYTM1Y2MxYzU4OTMzMWM1MWE2YTkyOGM5Zjg5MjgwY2VjNDNjYjEyMWQwNjYxOTU1OGJjNjU5M2RmMiIsInRhZyI6IiJ9">Electrical &amp; Electronic Engineering</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/departments/eyJpdiI6ImtBQmFOS3BDd1lGZ2JITmdjSHppTkE9PSIsInZhbHVlIjoiWHA0Wlo3SkRjcERDeUtaWlNjOFlqUT09IiwibWFjIjoiMTFmNzA5MTFhNDlmMjRkNjdlOGFlNWJmNmY2NzRjNGYwNzNkNjBmNGJlOTQ3NTUwZTdhNzkzYzY3MDkyNGYxMSIsInRhZyI6IiJ9">Al Quran and Islamic Studies</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/departments/eyJpdiI6Ikt4ZmllczkvTlpzYjR6VTN6RVZrbXc9PSIsInZhbHVlIjoiM0xNOWZwWkMxQ0lNWjFOZFJIVWkwdz09IiwibWFjIjoiMTJiNGIxMTIxZTZjMDI0OWFmM2YxNzkyMTkwYmUwODMzZjgwNTE2NTQ0ZWIwYmJiZWY4NzJkMTFkNWRjOWI3MCIsInRhZyI6IiJ9">English</a>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                    <div class="col3">
+                                        <h4 class="megamenu-col-title text-theme-colored mb-0"
+                                            style="text-transform: uppercase;">
+                                            Programs</h4>
+                                        <ul class="list-dashed list-icon">
+                                            <li><a style="text-transform: uppercase"
+                                                    href="https://www.iiustb.ac.bd/academic/programs">All Programs</a>
+                                            </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IjI1RFFmNFBEWGxuODYyejg4QXZKM3c9PSIsInZhbHVlIjoiVHhPSThOZWUrZ0dhWGpVS2I2WmkxZz09IiwibWFjIjoiZTU0YWZiZmUxMmFhZDFjYWUyOTQwM2ZkMDcwNGFkNzUyNWY2OTZhNTllNmQ3MTM0N2U1OGI2ZDU4NTVhZDQzYyIsInRhZyI6IiJ9">B.Sc. in Computer Science and Engineering (CSE)</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6Ii9FaWYwcU9DUGhlSEtVQ3Y5VkNiQXc9PSIsInZhbHVlIjoiNDI5SmdrS0QyWlY4NnFjQmFROFh2dz09IiwibWFjIjoiZWExOWIxMDhmYjI1OWY2MzMxZWJiNTBiMTA1M2YwYTk2MDhjMTU2NGQ5NmY0OTBiNzI0OTFkOTMxYTQzNWE0MyIsInRhZyI6IiJ9">B.Sc. in Electrical and Electronic Engineering (EEE)</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IjZTRzk2Zy80NlRzTlBKNHMrTHNPY1E9PSIsInZhbHVlIjoia3M2N0owRWR6aXd3ektDTjlGYkdpZz09IiwibWFjIjoiNmU0MDU2Y2I0YTVjM2NmMTExMjFhMGUwMmRlYzE0Mjg0OTA0M2Q0NWQ2MzEwZjY2ZTQzZjVjZmJkMGVkYzU5NiIsInRhZyI6IiJ9">B.A. in Al Quran and Islamic Studies (AQIS)</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6ImtrbjIzZDE2N00yWmpBeXdnNkR0TUE9PSIsInZhbHVlIjoiRVFHNVY3MkRyUk1oU1dsN3A3dzF0UT09IiwibWFjIjoiZGFlMzQ0NzYxODAwMWFlN2QwZGNiMTFiOWU3YzY4NDM1MWE0Zjc2ODcxMjQ0YjcwNzFiMmRhNDUyOWI2MDEyNSIsInRhZyI6IiJ9">Bachelor of Business Administration (BBA)</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IjVHdWNiZ1A0QVBQbjY2U0NjSTBxVWc9PSIsInZhbHVlIjoiTXhyYjV3M3NVa3QvUDYvZFJ1MDhyUT09IiwibWFjIjoiZmY4NDVhMTJmZmQ5YzI0M2M5NTdhMWE3ZDU1NzMzZTdkMjQzNDJhNTA0Y2M4OWZiYWNmZDhkYmI3NjgzMjY5NCIsInRhZyI6IiJ9">Masters of Business Administration (2 Years)</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IjB3NXJ3Vk5ZZ0xXVW90dlRKN2orVFE9PSIsInZhbHVlIjoibXFQRUJldWFYek9SbFg5emRzSGttQT09IiwibWFjIjoiNTViNDIxNjJiYjM1ZGEwOTFmMjA2MDdlNTVmZWFlNjIzZWU1MGU2YzA0MzYyZjQ1MDk1Y2I0OTJhOGEzZTg3YyIsInRhZyI6IiJ9">Masters of Business Administration (1.5 Years)</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IlVteFlCZWgyRW9OMWVndEc5UVdtQXc9PSIsInZhbHVlIjoiMGVtYmdLT1dIUEFTZ2RlYnlueXZodz09IiwibWFjIjoiMmM1OGU3M2YwOTc4MjUyMjU3NWFhZDA0N2VhY2UxMDc5MGIwOGUzNjI5NGIwMzA0NjlkNjA3ZWQwM2E3ZjFiNyIsInRhZyI6IiJ9">Masters of Business Administration (1 Year)</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6ImRJcFk5d2kzYjVYUHJObkRCRFNHS0E9PSIsInZhbHVlIjoic0thR3dOTGdRQURROGpNaVFkRmw4Zz09IiwibWFjIjoiNGFjMzlmM2NjYzBlZDc3YTQyNTFkNGJlMTQ5ZDhkYzhhODViZjdhNGMwZTBiNDU2MmI2MjVlMzBiODkyMjVmMCIsInRhZyI6IiJ9">Master of Al Quran and Islamic Studies</a>
+                                                </li>
+                                                                                            <li><a style="text-transform: uppercase"
+                                                        href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IjJ5b1JEL0I1U3J0Qk9ybzNpb3ZmMEE9PSIsInZhbHVlIjoiNzMwS3dRSkFOclAwMFgxNXV6ajIxUT09IiwibWFjIjoiZDY2MDZhMjY3YTkxNzJmOWVkY2Q4NmE4ZmU5ZjU5NWU1ZDI1NDhiODRlOTRlODJlYjgyYWIzZGU5ZjZmYjJhZiIsInRhZyI6IiJ9">Bachelor of Arts (Hons.) in English Language &amp; Literature</a>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li><a href="#">Administrations</a>
+                            <ul class="dropdown">
+                                
+                                <li>
+                                    <a href="https://www.iiustb.ac.bd/administration/office-list">
+                                        - Offices
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">- Management</a>
+                                    <ul class="dropdown">
+                                                                                                                                    <li>
+                                                    <a
+                                                        href="https://www.iiustb.ac.bd/administration/office/member/eyJpdiI6ImloRGZ6QkdqVWNFQVJTclhPYXhOcWc9PSIsInZhbHVlIjoiYUJyK1ROVXpyajg1bjF5SnhXNnU2SWtsbnJ6VWZ2S2N6UWp0RC8rN0VLVT0iLCJtYWMiOiJlMGZmZWI1ZGQ0ZWM1MzgxMmU5NGFjYjNmNDNlYzBlZmQwNTA2MzlmZGRjYWYwNDUxYWM0OTcyZDc1NWQwOTQ0IiwidGFnIjoiIn0=">
+                                                        - Board of Trustees
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                                                                                                                                                    <li>
+                                                    <a
+                                                        href="https://www.iiustb.ac.bd/administration/office/member/eyJpdiI6Ikp4eG84aUs4bEZqMk9XbVZpZnJEMlE9PSIsInZhbHVlIjoiS3ZSR2V1RkNCNGlqZjdnSjZ1NjRLUVlacHh5VE5lL0JpdTREWkVJUkFnVT0iLCJtYWMiOiJiMzBhNWRjMjJlNTYxZDliNTE2OTg3OWJiMWNkZjRlN2MyNWQ4NDM2YTdmNWY2MGJkZmQ3ZTJhYzMwMmNiNTQxIiwidGFnIjoiIn0=">
+                                                        - Syndicate
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                                                                                                                                                    <li>
+                                                    <a
+                                                        href="https://www.iiustb.ac.bd/administration/office/member/eyJpdiI6IjZpOWpnamIvVGhqMFI3VWg4VWtKeXc9PSIsInZhbHVlIjoiUnBEWE1vUTRyTGlnRlVTMkZMNW5QbXlHaWtDRnlESE94M2JCMSsrclhadz0iLCJtYWMiOiIwZmVmZjhkMmJkNDQ2MjViZjNjYzJjZGU4YjRhY2JiMDg3YmU0MGI5ZjBmZGUzYzY5YmUxODU5ZjZlZWJlMWMwIiwidGFnIjoiIn0=">
+                                                        - Academic Council
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">Admission</a>
+                            <ul class="dropdown">
+                                                                                                                                                                                                                                                    <li>
+                                            <a href="https://www.iiustb.ac.bd/page/admission-requirements">
+                                                - Admission Requirements
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a href="https://www.iiustb.ac.bd/page/tuition-fees">
+                                                - Tuition Fees
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a href="https://www.iiustb.ac.bd/page/facilities">
+                                                - Facilities
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a href="https://www.iiustb.ac.bd/page/tuition-fee-waiver-policy">
+                                                - Tuition Fee Waiver Policy
+                                            </a>
+                                        </li>
+                                                                                                                                                                                                                                        </ul>
+                        </li>
+                        <li><a href="#">Notice & Events</a>
+                            <ul class="dropdown">
+                                <li><a href="https://www.iiustb.ac.bd/all/notice/view">- Notices</a></li>
+                                <li><a href="https://www.iiustb.ac.bd/acdemic/calender">- Academic Calendar</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li>
+                                            <a href="https://www.iiustb.ac.bd/page/career-opportunity">
+                                                - Career opportunity
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a href="https://www.iiustb.ac.bd/page/iiustb-journal">
+                                                - IIUSTB Journal
+                                            </a>
+                                        </li>
+                                                                                                </ul>
+                        </li>
+                        
+                        <li><a href="https://www.iiustb.ac.bd/application">Apply Online</a>
+                        </li>
+                        <li><a href="#footer">Contact</a>
+                        </li>
+                    </ul>
+                    <ul class="pull-right sm-pull-nonelist-inline nav-side-icon-list">
+                        <li>
+                            <a href="#fullscreen-search-form" id="fullscreen-search-btn"><i
+                                    class="search-icon text-white fa fa-search"></i></a>
+                            <div id="fullscreen-search-form">
+                                <button type="button" class="close">×</button>
+                                <form>
+                                    <input type="search" value="" placeholder="Search keywords(s)" />
+                                    <button type="submit"><i class="search-icon fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+        <!-- Content Start -->
+                
+    <!-- Start main-content -->
+    <div class="main-content">
+        <section id="home" class="divider">
+            <div class="container mobilecontainer" style="padding-top: 0; padding-bottom: 0;">
+                <div class="slider-container">
+                    <div class="slider" id="slider">
+                                                    <div class="slide">
+                                <img src="https://www.iiustb.ac.bd/uploads/slider/1_1756697938.jpg" alt="Slider Image">
+                            </div>
+                                                    <div class="slide">
+                                <img src="https://www.iiustb.ac.bd/uploads/slider/iiust_image_1783074113.jpeg" alt="Slider Image">
+                            </div>
+                                                    <div class="slide">
+                                <img src="https://www.iiustb.ac.bd/uploads/slider/slider_4_1757221617.png" alt="Slider Image">
+                            </div>
+                                                    <div class="slide">
+                                <img src="https://www.iiustb.ac.bd/uploads/slider/iiustb_2_1782990891.jpeg" alt="Slider Image">
+                            </div>
+                                            </div>
+                    <button class="nav-arrow prev" id="prevBtn">‹</button>
+                    <button class="nav-arrow next" id="nextBtn">›</button>
+                    <div class="indicators" id="indicators"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: home-boxed -->
+        <section>
+            <div class="container mobilecontainer pb-0">
+                <div class="section-content">
+                    <div class="row admission" style="display: flex; align-items: center;">
+                        <div class="col-xs-12 col-sm-12 col-md-4">
+                            <div class="icon-box admission_image text-center p-40 mb-sm-50 border-2px border-theme-colored2"
+                                data-bg-img="https://www.iiustb.ac.bd/frontend/images/promotion/promotion-1.jpeg">
+                                <div style="position: relative;">
+                                    <span class="typed-text-carousel font-20" style="color:#094FA3 !important; font-weight: bolder" data-speed="50"
+                                        data-back_delay="600" data-loop="true">
+                                        <span class="" style="text-transform: uppercase !important;">Welcome To
+                                            IIUSTB</span>
+                                        <span class="">Admission for Fall-2026</span>
+                                    </span>
+                                    <h2 class="font-40 text-white"
+                                        style="display: flex; align-items: center; justify-content: center;">
+                                        <span style="font-size: 25px;">Upto - </span> 100% Off
+                                    </h2>
+                                    <a href="https://www.iiustb.ac.bd/application"
+                                        class="btn btn-default text-theme-colored mt-5 mb-10"
+                                        style="font-weight: bolder;">Apply
+                                        Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mob_none desk_block">
+                            <div class="icon-box iconbox-border border-theme-colored2 bg-theme-colored text-center"
+                                style="width: 12px; height: 100px;">
+                            </div>
+                        </div>
+                        <div class="mob_none desk_block">
+                            <div class="icon-box iconbox-border border-theme-colored2 bg-theme-colored text-center"
+                                style="width: 907px; height: 100px; background: #05ad4e!important;">
+                                <p style="color: white; text-transform: capitalize; margin-top: 15px; margin-bottom: 0;">
+                                    Fall 2026
+                                </p>
+                                <h1 style="color: white; text-transform: uppercase; margin: 0; font-size: 30px;">Admission
+                                    going On
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: about -->
+        <section style="background: #EFF7FF">
+            <div class="container pt-sm-0 pb-0">
+                <div class="row">
+                    <div class="col-md-9" style="position: relative;">
+                        <h3 class="text-theme-colored mt-0 mt-sm-30 mb-2 mob_font_14">Welcome To</h3>
+                        <div class="logo mb-20" style="display: flex; align-items: end;">
+                            <h2 class="text-theme-colored m-0 mob_font_18" style="line-height: 1;">INTERNATIONAL ISLAMI
+                                UNIVERSITY
+                                <br>
+                                <span class="sub_font">OF SCIENCE AND TECHNOLOGY BANGLADESH</span>
+                            </h2>
+                        </div>
+                        <div class="entry-meta media no-bg no-border mt-15 pb-20">
+                            <div class="media-body">
+                                <div class="event-content pull-left flip">
+                                    <h4 class="entry-title text-white text-uppercase m-0 pt-5 mob_font_16 about_font"><a
+                                            href="#"><i
+                                                class="fa fa-graduation-cap mr-5 text-theme-color-2 mob_font_16 about_font"></i>About Our University</a>
+                                    </h4>
+
+
+                                    <blockquote class="theme-colored pt-20 pb-20 mob_dp mob_width_100">
+                                        <footer class="mob_font_14 about_dfont"
+                                            style="text-align: justify; color: #202020; font-family: serif;">
+                                            International Islami University of Science and Technology Bangladesh (IIUSTB) stands as a beacon of knowledge (&lsquo;ilm) and moral guidance. It was established in 2023 as a new generation digital private University in Bangladesh having full commitment and dedication for standard, quality, sincerity and excellence. It upholds the values of compassion, justice, and respect for all creation. It encourages the pursuit of wisdom through reason and reflection, as enjoined in the holy Qur'an. It is a place for the exploration of ideas and the sincere quest for truth.
+                                        </footer>
+                                    </blockquote>
+
+                                    <a href="https://www.iiustb.ac.bd/page/iiustb-at-a-glance" class="btn btn-success"
+                                        style="float: right; margin-right: 25px;">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3">
+                        <div class="col-sm-12 p-0">
+                            <div class="p-30 mt-0 bg-theme-colored" style="border-radius: 10px">
+                                <h3 class="title-pattern mt-0 text-center mob_font_20" style="line-height: 1;"><span
+                                        class="text-white">Make a Contact <br><span
+                                            class="mob_font_16 desk_font_22">information</span></span>
+                                </h3>
+                                <!-- Appilication Form Start-->
+                                <form class="mt-20" action="https://www.iiustb.ac.bd/contact/store" method="POST">
+                                    <input type="hidden" name="_token" value="HKlxtUgIFzNKpRih24X2dpjjACGBLhDyGFA4ADLY">                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group mb-15">
+                                                <input placeholder="Enter Name" style="border-radius: 10px;"
+                                                    type="text" id="reservation_name" name="name" required=""
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group mb-15">
+                                                <input placeholder="Phone Number" style="border-radius: 10px;"
+                                                    type="text" id="reservation_email" name="email"
+                                                    class="form-control" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group mb-15">
+                                                <div class="styled-select">
+                                                    <select id="person_select" name="subject" class="form-control"
+                                                        required="" style="border-radius: 10px !important;">
+                                                        <option value="">Choose Subject</option>
+                                                        <option value="Admission Information">Admission Information
+                                                        </option>
+                                                                                                                                                                            <option value="Computer Science &amp; Engineering">
+                                                                Computer Science &amp; Engineering</option>
+                                                                                                                    <option value="Business Administration">
+                                                                Business Administration</option>
+                                                                                                                    <option value="Electrical &amp; Electronic Engineering">
+                                                                Electrical &amp; Electronic Engineering</option>
+                                                                                                                    <option value="Al Quran and Islamic Studies">
+                                                                Al Quran and Islamic Studies</option>
+                                                                                                                    <option value="English">
+                                                                English</option>
+                                                                                                            </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <textarea style="border-radius: 10px;" placeholder="Enter Message" rows="3" class="form-control required"
+                                                    name="message" id="form_message" aria-required="true"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group mb-0 mt-10">
+                                                <button type="submit" style="border-radius: 10px;"
+                                                    class="btn btn-colored btn-theme-colored2 text-white btn-lg btn-block"
+                                                    data-loading-text="Please wait...">Submit Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- Application Form End-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: info-boxes -->
+        <section class="pt-70 info_box">
+            <div class="container pt-0 pb-30 pt-sm-30">
+                <div class="section-content">
+                    <div class="row equal-height-inner home-boxes">
+                        <div class="col-xs-6 col-md-3 info_item wow fadeInLeft animation-delay1">
+                            <div class="bg-theme-colored info_itemh h-100">
+                                <div class="text-center pt-30 pb-30">
+                                    <i class="fa fa-graduation-cap text-white font-64"></i>
+                                    <h4 class="text-uppercase mt-5">
+                                        <a href="https://www.iiustb.ac.bd/page/admission-requirements" class="text-white mob_font_16">Qualification</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-3 info_item wow fadeInLeft animation-delay2">
+                            <div class="bg-theme-colored2-darker2 info_itemh h-100">
+                                <div class="text-center pt-30 pb-30">
+                                    <i class="fa fa-book text-white font-64"></i>
+                                    <h4 class="text-uppercase mt-5">
+                                        <a href="https://www.iiustb.ac.bd/page/admission-requirements" class="text-white mob_font_16"><span class="mob_none">Admission
+                                            </span>Requirement</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-3 info_item wow fadeInLeft animation-delay3">
+                            <div class="bg-theme-colored-darker3 info_itemh h-100">
+                                <div class="text-center pt-30 pb-30">
+                                    <i class="fa fa-paper-plane text-white font-64"></i>
+                                    <h4 class="text-uppercase mt-5">
+                                        <a href="https://www.iiustb.ac.bd/page/how-to-apply" class="text-white mob_font_16">How to Apply</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-3 info_item wow fadeInLeft animation-delay4">
+                            <div class="bg-theme-colored2-darker4 info_itemh h-100">
+                                <div class="text-center pt-30 pb-30">
+                                    <i class="fa fa-mobile text-white font-64"></i>
+                                    <h4 class="text-uppercase mt-5">
+                                        <a href="https://www.iiustb.ac.bd/page/payment" class="text-white mob_font_16">Payment</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Program -->
+        <section id="courses" class="pt-30" style="background: #EFF7FF">
+            <div class="container course_box pb-40">
+                <div class="section-title text-center">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="text-uppercase line-bottom-double-line-centered mt-0 mob_font_26">All <span
+                                    class="text-theme-colored2">Programs</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mtli-row-clearfix">
+                                            <div class="item col-lg-3 col-md-3 col-sm-6 col-xs-6 course_item">
+                            <div class="course-single-item style2 text-center mb-40" style="border: none">
+                                <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6ImxQS3N0WCthaG1Hd2ZRdFpXeFdodXc9PSIsInZhbHVlIjoiNkp1ZU0yVUhpTEVScisvMWYxallvdz09IiwibWFjIjoiNjZjYjBkZWUyZGZmMDJkYzEzNDg5ZjNjYTc3ODRlZmRhNzY0NGRiZTNhNjY4NDNlMzZjZTRiMzRkZGFiYTlkZSIsInRhZyI6IiJ9">
+                                    <div class="member-thumb program-thumb">
+                                        <img class="img-fullwidth" style="height: 250px" alt="B.A. in Al Quran and Islamic Studies (AQIS)"
+                                            src="https://www.iiustb.ac.bd/uploads/programs/1756697055_nPKt1i.jpg">
+                                    </div>
+
+                                    <div class="course-details bg-white border-1px clearfix p-10 pt-15">
+                                        <div class="course-top-part">
+                                            <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IjlTbEx6S29KUkE3NzRnc1YwRGRhY3c9PSIsInZhbHVlIjoiSzdWd1Q0U0xudVdRWk5yZ0NRYnA3dz09IiwibWFjIjoiNWE3ZmFjMGQxNWE1ZGY3ODNjNDk2M2FhZjVhMjRjODk5ODliMjYyOTZiYjIzMzQ0Yzg4YjE0MmZlNmU0ZGE1NSIsInRhZyI6IiJ9">
+                                                <h4 class="m-0" style="text-align: left;color: #05ad4e;">
+                                                    <span style="color: #05ad4e; font-weight: bolder;">|</span>
+                                                    B.A. in AQIS
+                                                </h4>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white mob_none desk_block">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>8 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>150 Credits
+                                            </li>
+                                            <li><i class="fa fa-clock-o text-white mr-5"></i>40 Seats
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white desk_none mob_block mob_font_12">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>8 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>150 Credits
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                                            <div class="item col-lg-3 col-md-3 col-sm-6 col-xs-6 course_item">
+                            <div class="course-single-item style2 text-center mb-40" style="border: none">
+                                <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6Ik42VTM3YW1aQ3lRMzk1MFIvYXR2eFE9PSIsInZhbHVlIjoiaXJoK1dOWFgySktTeHBnL1c3WFVmUT09IiwibWFjIjoiMTkzNmUwYzM1NTQ2MTgxZDgyODdhMjM0ZTg1ZDExNmIxODYzYjIwYjI1ODE2MjkwNjdkM2FhOGUwY2VmZjMxZCIsInRhZyI6IiJ9">
+                                    <div class="member-thumb program-thumb">
+                                        <img class="img-fullwidth" style="height: 250px" alt="B.Sc. in Computer Science and Engineering (CSE)"
+                                            src="https://www.iiustb.ac.bd/uploads/programs/1756697068_sIHIC3.jpg">
+                                    </div>
+
+                                    <div class="course-details bg-white border-1px clearfix p-10 pt-15">
+                                        <div class="course-top-part">
+                                            <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IkRzY1RtRnBMOGYrUWRBVDBhbWdGWlE9PSIsInZhbHVlIjoieWxCK0ZkU0NISWFicTl2bHJUMStOQT09IiwibWFjIjoiNjkzNjEwNjg4ZmZlMGZhZDhjNGQzOWVkZmRhYzkyOTQyNjllMGJiYmI5NGYzNzdlNWYzMDU2MWE0YmQ5NTZjMyIsInRhZyI6IiJ9">
+                                                <h4 class="m-0" style="text-align: left;color: #05ad4e;">
+                                                    <span style="color: #05ad4e; font-weight: bolder;">|</span>
+                                                    B.Sc. in CSE
+                                                </h4>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white mob_none desk_block">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>8 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>152 Credits
+                                            </li>
+                                            <li><i class="fa fa-clock-o text-white mr-5"></i>25 Seats
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white desk_none mob_block mob_font_12">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>8 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>152 Credits
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                                            <div class="item col-lg-3 col-md-3 col-sm-6 col-xs-6 course_item">
+                            <div class="course-single-item style2 text-center mb-40" style="border: none">
+                                <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6Ik1CTUhUaTNvMXZrMjhscHIzZk1sY1E9PSIsInZhbHVlIjoiQXBsQlRWNTZKdnk2OXF6SnNCMWxMUT09IiwibWFjIjoiNzNmMzBjZWM0MDE0Y2ZmODFjZTAwYTg5MTJmMTMwY2Y4N2I1MWZlZDVkZjViZjg1ZGNiZDY2MGE3NWMyYmJhMiIsInRhZyI6IiJ9">
+                                    <div class="member-thumb program-thumb">
+                                        <img class="img-fullwidth" style="height: 250px" alt="B.Sc. in Electrical and Electronic Engineering (EEE)"
+                                            src="https://www.iiustb.ac.bd/uploads/programs/1756697080_NMBHV3.jpg">
+                                    </div>
+
+                                    <div class="course-details bg-white border-1px clearfix p-10 pt-15">
+                                        <div class="course-top-part">
+                                            <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IndMNTBxYnN3TFlPRXlwbExvQmExT0E9PSIsInZhbHVlIjoiN1RqenNwU3dwQktyL2wzUEJkQjkvUT09IiwibWFjIjoiN2QxOTYwYzZkY2RhYTViOGE0ODA1ZjY3MmEyYmUzNjA4YzgyNDBmYmRhNTAwNzU0NGVkMzU3NmNlZTkzZWE5NCIsInRhZyI6IiJ9">
+                                                <h4 class="m-0" style="text-align: left;color: #05ad4e;">
+                                                    <span style="color: #05ad4e; font-weight: bolder;">|</span>
+                                                    B.Sc. in EEE
+                                                </h4>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white mob_none desk_block">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>8 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>157.5 Credits
+                                            </li>
+                                            <li><i class="fa fa-clock-o text-white mr-5"></i>25 Seats
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white desk_none mob_block mob_font_12">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>8 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>157.5 Credits
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                                            <div class="item col-lg-3 col-md-3 col-sm-6 col-xs-6 course_item">
+                            <div class="course-single-item style2 text-center mb-40" style="border: none">
+                                <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6ImlKYlNjYkVNUDJzUFp4WHNxNzhSZFE9PSIsInZhbHVlIjoiNXRhMFZMRGZSeHIzQ1lBWDJZNHVkdz09IiwibWFjIjoiNjM0ZmRkODdhOTQ0MWFkZTM0MWYwODg2MTNkZWQ2ZGFjZDI0YTJhMmY1MjdmZDg3ZDdkMzE5ZmJiMDM4N2MwZSIsInRhZyI6IiJ9">
+                                    <div class="member-thumb program-thumb">
+                                        <img class="img-fullwidth" style="height: 250px" alt="Bachelor of Business Administration (BBA)"
+                                            src="https://www.iiustb.ac.bd/uploads/programs/1757237954_5gvXg1.jpg">
+                                    </div>
+
+                                    <div class="course-details bg-white border-1px clearfix p-10 pt-15">
+                                        <div class="course-top-part">
+                                            <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6Im96WlVUNHNrT1Z6RUVXUDJCdjBzMkE9PSIsInZhbHVlIjoiUVBPTWpZU3VEbkV5M1hSRXplcVVEdz09IiwibWFjIjoiMDhhODcyZTBkMzlmMTA2MjRkY2I3ZGI1YmVjMjY4ZmM5NmE3MGUzMTY3Y2VkZWI4ZWU4ZThmNjdkODJhOWMxZCIsInRhZyI6IiJ9">
+                                                <h4 class="m-0" style="text-align: left;color: #05ad4e;">
+                                                    <span style="color: #05ad4e; font-weight: bolder;">|</span>
+                                                    BBA
+                                                </h4>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white mob_none desk_block">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>8 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>138 Credits
+                                            </li>
+                                            <li><i class="fa fa-clock-o text-white mr-5"></i>40 Seats
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white desk_none mob_block mob_font_12">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>8 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>138 Credits
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                                            <div class="item col-lg-3 col-md-3 col-sm-6 col-xs-6 course_item">
+                            <div class="course-single-item style2 text-center mb-40" style="border: none">
+                                <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6InVoM1hScU5ZUEdzTTc4amNkc2hYWGc9PSIsInZhbHVlIjoiZkltcUk1MDNRdFFFQk1iSzQ2UXQ1Zz09IiwibWFjIjoiNWUxZDI0ZDVkMjAzYzAwODc3ZmNhNmVhNTVmZDdhYTllN2I5MjVkYzU3MGJjNzNmNTg0ZDZlNjNjYjA4MmQ4YyIsInRhZyI6IiJ9">
+                                    <div class="member-thumb program-thumb">
+                                        <img class="img-fullwidth" style="height: 250px" alt="Bachelor of Arts (Hons.) in English Language &amp; Literature"
+                                            src="https://www.iiustb.ac.bd/uploads/programs/1789188040_XuOWv5.png">
+                                    </div>
+
+                                    <div class="course-details bg-white border-1px clearfix p-10 pt-15">
+                                        <div class="course-top-part">
+                                            <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6ImlsWW4rTE90dzdLNFA4dENrbzVuR0E9PSIsInZhbHVlIjoiNDdlWmxHeStLNTVlcjh2MUxjV2k2Zz09IiwibWFjIjoiMzc5OGUwZjI0YjZiMjJlMWI2MjhiMWFkNTM5ZGZhZmM4YjhlMWI3NThmODZiZTE3Mzk5YTlkZmIyNTliMDEwMiIsInRhZyI6IiJ9">
+                                                <h4 class="m-0" style="text-align: left;color: #05ad4e;">
+                                                    <span style="color: #05ad4e; font-weight: bolder;">|</span>
+                                                    BA in English
+                                                </h4>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white mob_none desk_block">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>8 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>143 Credits
+                                            </li>
+                                            <li><i class="fa fa-clock-o text-white mr-5"></i>50 Seats
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white desk_none mob_block mob_font_12">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>8 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>143 Credits
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                                            <div class="item col-lg-3 col-md-3 col-sm-6 col-xs-6 course_item">
+                            <div class="course-single-item style2 text-center mb-40" style="border: none">
+                                <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IlR3ZG43cjVoQkFtRlJkOGNENkdYL2c9PSIsInZhbHVlIjoiSHQ3cjBBZ3ZrdjUycXd0TG5KL3VkZz09IiwibWFjIjoiMzI0NDEzYzkzM2NhYzE4NTUxMGU1MDMxZDU4MzA0YWI4MDVlMmEzZjRhMjFkZmQ1Y2E4NmJkZmQxMWM5OGViZCIsInRhZyI6IiJ9">
+                                    <div class="member-thumb program-thumb">
+                                        <img class="img-fullwidth" style="height: 250px" alt="Master of Al Quran and Islamic Studies"
+                                            src="https://www.iiustb.ac.bd/uploads/programs/1757306934_3ztvP3.jpg">
+                                    </div>
+
+                                    <div class="course-details bg-white border-1px clearfix p-10 pt-15">
+                                        <div class="course-top-part">
+                                            <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6Ik5SbEhURzhQb2xmd3Y1ZmU0ZHBCbUE9PSIsInZhbHVlIjoiZE5SZTB4YUdOeFJFdXZCTll5QmdoZz09IiwibWFjIjoiYTIyMzBjYzI2NTRjYmNmNDg0NzNkM2E0Y2FhNjkzNmE5MzQ1ZGY0OWJhZDJhODQ2OGYzNDRiNTNhMWI1YTNjNyIsInRhZyI6IiJ9">
+                                                <h4 class="m-0" style="text-align: left;color: #05ad4e;">
+                                                    <span style="color: #05ad4e; font-weight: bolder;">|</span>
+                                                    MA in AQIS
+                                                </h4>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white mob_none desk_block">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>2 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>44 Credits
+                                            </li>
+                                            <li><i class="fa fa-clock-o text-white mr-5"></i>40 Seats
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white desk_none mob_block mob_font_12">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>2 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>44 Credits
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                                            <div class="item col-lg-3 col-md-3 col-sm-6 col-xs-6 course_item">
+                            <div class="course-single-item style2 text-center mb-40" style="border: none">
+                                <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IndycHkvVUpzU3ZaMk5uSzVwVUREWmc9PSIsInZhbHVlIjoiV3B4TW5GYTlydUc2TTdTdlk5V0cxdz09IiwibWFjIjoiMDA3ZDEwNDE3ZGQ0OGVmYzAxMmM0ZDIxOTY4N2QwNGNjMjY1MDRkNTE3MTVkNjlmYzgwZDEzYmM3MTJhYzczNiIsInRhZyI6IiJ9">
+                                    <div class="member-thumb program-thumb">
+                                        <img class="img-fullwidth" style="height: 250px" alt="Masters of Business Administration (2 Years)"
+                                            src="https://www.iiustb.ac.bd/uploads/programs/1757238005_RxYzAZ.jpeg">
+                                    </div>
+
+                                    <div class="course-details bg-white border-1px clearfix p-10 pt-15">
+                                        <div class="course-top-part">
+                                            <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IlhFQXZZbmdMYWRiNGZYYzBIWTZibXc9PSIsInZhbHVlIjoiNnpVUzBTaCs3QVR5MDlpaWNEcUQrdz09IiwibWFjIjoiMDAzZWQ0YzkyYjdiMTBmZTU4NzgzZjQ5Y2M0ZTEwYjdkMTU2MDc3NTNjYmE4Yzc5YjgzODllNjE1ZmY2NTllZCIsInRhZyI6IiJ9">
+                                                <h4 class="m-0" style="text-align: left;color: #05ad4e;">
+                                                    <span style="color: #05ad4e; font-weight: bolder;">|</span>
+                                                    MBA-2 Years
+                                                </h4>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white mob_none desk_block">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>4 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>60 Credits
+                                            </li>
+                                            <li><i class="fa fa-clock-o text-white mr-5"></i>40 Seats
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white desk_none mob_block mob_font_12">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>4 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>60 Credits
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                                            <div class="item col-lg-3 col-md-3 col-sm-6 col-xs-6 course_item">
+                            <div class="course-single-item style2 text-center mb-40" style="border: none">
+                                <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6ImhEc09ZdzM5MVlVRDVrZnVnWGJnVlE9PSIsInZhbHVlIjoid1hVSVhFRndYbUUreXBRN0o5MWRxdz09IiwibWFjIjoiYTk2ZDg0MGRhYTEyYWFkZGU4YzFmYWE5OGFjYmMwMzBjZjI2MzI3ZGY4YjY0MzRhMTcxMTRjOWZhOTZjY2ZlNyIsInRhZyI6IiJ9">
+                                    <div class="member-thumb program-thumb">
+                                        <img class="img-fullwidth" style="height: 250px" alt="Masters of Business Administration (1.5 Years)"
+                                            src="https://www.iiustb.ac.bd/uploads/programs/1757238238_5J9QPW.jpeg">
+                                    </div>
+
+                                    <div class="course-details bg-white border-1px clearfix p-10 pt-15">
+                                        <div class="course-top-part">
+                                            <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IlkwcE1HYjlyT2xuaUpYOFhJbGVqMVE9PSIsInZhbHVlIjoiUVVvMHlYMzFsTjEzVUNCanVyVXBJQT09IiwibWFjIjoiMGM5YTM1MGE5NGU1YWIxMjNiYzM2Y2U2Mzc3ZDJhMzFiZTdjYjlhMTVlNjEwZTBiZDhmOGRiODczM2ZjN2ViYSIsInRhZyI6IiJ9">
+                                                <h4 class="m-0" style="text-align: left;color: #05ad4e;">
+                                                    <span style="color: #05ad4e; font-weight: bolder;">|</span>
+                                                    MBA-1.5 Years
+                                                </h4>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white mob_none desk_block">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>3 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>48 Credits
+                                            </li>
+                                            <li><i class="fa fa-clock-o text-white mr-5"></i>40 Seats
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white desk_none mob_block mob_font_12">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>3 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>48 Credits
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                                            <div class="item col-lg-3 col-md-3 col-sm-6 col-xs-6 course_item">
+                            <div class="course-single-item style2 text-center mb-40" style="border: none">
+                                <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6Ilk0TE9ZR2xNdlUvTmYxcis4VW5XSWc9PSIsInZhbHVlIjoieUdyZHVudkc4OHA3ZjVaSnRjSFZRQT09IiwibWFjIjoiODZiMmM0MzM2MmRhMTIzMzcyMGMyNWI3NzhmZGNmZDIyZmRhYjVlOGE0MjVjNzk0YzhiYWM2YzQ5ZTY4Yjg2MyIsInRhZyI6IiJ9">
+                                    <div class="member-thumb program-thumb">
+                                        <img class="img-fullwidth" style="height: 250px" alt="Masters of Business Administration (1 Year)"
+                                            src="https://www.iiustb.ac.bd/uploads/programs/1757238178_KNFPCU.jpeg">
+                                    </div>
+
+                                    <div class="course-details bg-white border-1px clearfix p-10 pt-15">
+                                        <div class="course-top-part">
+                                            <a href="https://www.iiustb.ac.bd/academic/single/programs/eyJpdiI6IjVqYjM3c3krL0wzRElPWmpqMzh2enc9PSIsInZhbHVlIjoiYUxMMTEzM2h6d0RVUHF6Mk14R0JMQT09IiwibWFjIjoiYzA4ZjRkMTQ1MjhiNDA5OWJlZGYyM2E5NDQ0ZmRmYjAyNWU2YTExZmU0NmM4ODM0YmM3MTBlNWMxMzgwZTk0YiIsInRhZyI6IiJ9">
+                                                <h4 class="m-0" style="text-align: left;color: #05ad4e;">
+                                                    <span style="color: #05ad4e; font-weight: bolder;">|</span>
+                                                    MBA-1 Year
+                                                </h4>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white mob_none desk_block">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>2 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>36 Credits
+                                            </li>
+                                            <li><i class="fa fa-clock-o text-white mr-5"></i>40 Seats
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="course-meta bg-theme-colored2">
+                                        <ul class="list-inline text-white desk_none mob_block mob_font_12">
+                                            <li><i class="fa fa-calendar text-white mr-5"></i>2 Sem
+                                            </li>
+                                            <li><i class="fa fa-book text-white mr-5"></i>36 Credits
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </section>
+
+        <!-- Section: Notice -->
+        <section id="event" class="bg-white notice_box">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="text-uppercase line-bottom-double-line-centered mt-0 mob_font_26">Notice <span
+                                    class="text-theme-colored2">Board</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="main-section">
+                        <div class="container">
+                            <div class="row">
+                                <!-- News Board -->
+                                <div class="col-md-6 col-xs-12 mb-4 mobilecontainer">
+                                    <div class="note-event" style="width: 100%">
+                                        <div class="d-flex justify-content-between align-items-center flex-wrap mb-2"
+                                            style="display:flex; justify-content: space-between">
+                                            <button class="btn btn-secondary w-auto mb-2 mb-sm-0"
+                                                style="border-radius: 0;">NEWS BOARDS</button>
+                                            <a class="btn btn-secondary w-auto" href="#">→ VIEW ALL</a>
+                                        </div>
+                                        <span class="heading-border d-block mb-2"></span>
+                                        <div class="notice-board" style="overflow-y: hidden;">
+                                                                                            <ul class="pl-3">
+                                                    <li style="font-size: 16px"><i class="fa fa-check"></i>
+                                                        Admission News:</li>
+                                                    <p>Get Ready To Explore The Genius In You With Genius 2026 Enrollment</p>
+                                                    <img src="https://www.iiustb.ac.bd/uploads/news/526793675_122245287458232435_5483041143109043410_n_1757105220.jpg"
+                                                        alt="">
+                                                </ul>
+                                                                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-xs-12 mb-4 mobilecontainer">
+                                    <div class="note-event" style="width: 100%">
+                                        <div class="d-flex justify-content-between align-items-center flex-wrap mb-2"
+                                            style="display:flex; justify-content: space-between">
+                                            <button class="btn btn-secondary w-auto mb-2 mb-sm-0"
+                                                style="border-radius: 0;">RECENT NOTICE</button>
+                                            <a class="btn btn-secondary w-auto" href="https://www.iiustb.ac.bd/all/notice/view">→ VIEW
+                                                ALL</a>
+                                        </div>
+                                        <span class="heading-border d-block mb-2"></span>
+                                        
+                                        <div class="custom-scroll"
+                                            style="height: 380px; overflow-y: auto; overflow-x: hidden;">
+                                                                                                                                        <div class="notice mb-2 p-2 border rounded">
+                                                    <a href="https://www.iiustb.ac.bd/notice/view/26" target="_blank"
+                                                        class="text-decoration-none text-dark">
+                                                        <div class="notice-date font-weight-bold">
+                                                            04 Aug 2026
+                                                        </div>
+                                                        <div class="notice-title">| July Uprising Day 2026</div>
+                                                        <span class="notice-tag text-muted">📂  Administrative</span>
+                                                    </a>
+                                                </div>
+                                                                                                                                        <div class="notice mb-2 p-2 border rounded">
+                                                    <a href="https://www.iiustb.ac.bd/notice/view/25" target="_blank"
+                                                        class="text-decoration-none text-dark">
+                                                        <div class="notice-date font-weight-bold">
+                                                            04 Aug 2026
+                                                        </div>
+                                                        <div class="notice-title">| Notice_Togethar Against Corruption</div>
+                                                        <span class="notice-tag text-muted">📂  Administrative</span>
+                                                    </a>
+                                                </div>
+                                                                                                                                        <div class="notice mb-2 p-2 border rounded">
+                                                    <a href="https://www.iiustb.ac.bd/notice/view/24" target="_blank"
+                                                        class="text-decoration-none text-dark">
+                                                        <div class="notice-date font-weight-bold">
+                                                            23 Jun 2026
+                                                        </div>
+                                                        <div class="notice-title">| ছুটি সংক্রান্ত নোটিশ</div>
+                                                        <span class="notice-tag text-muted">📂  Administrative</span>
+                                                    </a>
+                                                </div>
+                                                                                                                                        <div class="notice mb-2 p-2 border rounded">
+                                                    <a href="https://www.iiustb.ac.bd/notice/view/23" target="_blank"
+                                                        class="text-decoration-none text-dark">
+                                                        <div class="notice-date font-weight-bold">
+                                                            20 Jun 2026
+                                                        </div>
+                                                        <div class="notice-title">| University Introductory Video Competition 2026</div>
+                                                        <span class="notice-tag text-muted">📂  Administrative</span>
+                                                    </a>
+                                                </div>
+                                                                                                                                        <div class="notice mb-2 p-2 border rounded">
+                                                    <a href="https://www.iiustb.ac.bd/notice/view/22" target="_blank"
+                                                        class="text-decoration-none text-dark">
+                                                        <div class="notice-date font-weight-bold">
+                                                            05 May 2026
+                                                        </div>
+                                                        <div class="notice-title">| স্প্রিং-২০২৬ সেমিস্টার পর্যন্ত শিক্ষার্থীদের বকেয়া সংক্রান্ত</div>
+                                                        <span class="notice-tag text-muted">📂  Administrative</span>
+                                                    </a>
+                                                </div>
+                                                                                                                                        <div class="notice mb-2 p-2 border rounded">
+                                                    <a href="https://www.iiustb.ac.bd/notice/view/21" target="_blank"
+                                                        class="text-decoration-none text-dark">
+                                                        <div class="notice-date font-weight-bold">
+                                                            10 Mar 2026
+                                                        </div>
+                                                        <div class="notice-title">| ছুটি সংক্রান্ত নোটিশ</div>
+                                                        <span class="notice-tag text-muted">📂  Administrative</span>
+                                                    </a>
+                                                </div>
+                                                                                                                                        <div class="notice mb-2 p-2 border rounded">
+                                                    <a href="https://www.iiustb.ac.bd/notice/view/20" target="_blank"
+                                                        class="text-decoration-none text-dark">
+                                                        <div class="notice-date font-weight-bold">
+                                                            16 Feb 2026
+                                                        </div>
+                                                        <div class="notice-title">| পবিত্র মাহে রমাযান মাসে একাডেমিক ও প্রশাসনিক কার্যক্রম সংক্রান্ত</div>
+                                                        <span class="notice-tag text-muted">📂  Administrative</span>
+                                                    </a>
+                                                </div>
+                                                                                                                                        <div class="notice mb-2 p-2 border rounded">
+                                                    <a href="https://www.iiustb.ac.bd/notice/view/19" target="_blank"
+                                                        class="text-decoration-none text-dark">
+                                                        <div class="notice-date font-weight-bold">
+                                                            10 Feb 2026
+                                                        </div>
+                                                        <div class="notice-title">| ত্রয়োদশ সংসদ নির্বাচন ও গণভোট সংক্রান্ত ছুটির নোটিশ</div>
+                                                        <span class="notice-tag text-muted">📂  Administrative</span>
+                                                    </a>
+                                                </div>
+                                                                                                                                        <div class="notice mb-2 p-2 border rounded">
+                                                    <a href="https://www.iiustb.ac.bd/notice/view/18" target="_blank"
+                                                        class="text-decoration-none text-dark">
+                                                        <div class="notice-date font-weight-bold">
+                                                            20 Jan 2026
+                                                        </div>
+                                                        <div class="notice-title">| সরস্বতী পূজার ছুটির নোটিশ</div>
+                                                        <span class="notice-tag text-muted">📂  Administrative</span>
+                                                    </a>
+                                                </div>
+                                                                                                                                        <div class="notice mb-2 p-2 border rounded">
+                                                    <a href="https://www.iiustb.ac.bd/notice/view/17" target="_blank"
+                                                        class="text-decoration-none text-dark">
+                                                        <div class="notice-date font-weight-bold">
+                                                            11 Jan 2026
+                                                        </div>
+                                                        <div class="notice-title">| শীতকালীন অবকাশ সংক্রান্ত</div>
+                                                        <span class="notice-tag text-muted">📂  Administrative</span>
+                                                    </a>
+                                                </div>
+                                                                                                                                        <div class="notice mb-2 p-2 border rounded">
+                                                    <a href="https://www.iiustb.ac.bd/notice/view/16" target="_blank"
+                                                        class="text-decoration-none text-dark">
+                                                        <div class="notice-date font-weight-bold">
+                                                            30 Dec 2025
+                                                        </div>
+                                                        <div class="notice-title">| সাবেক প্রধানমন্ত্রী বেগম খালেদা জিয়ার মৃত্যুতে রাষ্ট্রীয় শোক ও সাধারণ ছুটি সংক্রান্ত জরুরী বিজ্ঞপ্তি।</div>
+                                                        <span class="notice-tag text-muted">📂  Administrative</span>
+                                                    </a>
+                                                </div>
+                                                                                                                                        <div class="notice mb-2 p-2 border rounded">
+                                                    <a href="https://www.iiustb.ac.bd/notice/view/15" target="_blank"
+                                                        class="text-decoration-none text-dark">
+                                                        <div class="notice-date font-weight-bold">
+                                                            23 Dec 2025
+                                                        </div>
+                                                        <div class="notice-title">| ঈসা (আ) এর জন্মদিন উপলক্ষে ছুটির নোটিশ</div>
+                                                        <span class="notice-tag text-muted">📂  Administrative</span>
+                                                    </a>
+                                                </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider: Funfact -->
+        <section class="divider parallax layer-overlay overlay-theme-colored-7 " style="background: #094FA3 !important;"
+            data-bg-img="https://www.iiustb.ac.bd/frontend/images/bg/bg5.jpg" data-parallax-ratio="0.7">
+            <div class="container">
+                <div class="section-content text-center">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="mt-0 mb-50 text-white mob_font_26"><span style="font-size: 16px;">We are always
+                                    ahead
+                                </span><br>
+                                Professional Education for Your Future</h2>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-3 mb-md-50">
+                        <div class="funfact text-center">
+                            <i class="pe-7s-user mt-5 text-white"></i>
+                            <div class="odometer-animate-number text-white font-weight-600 font-48"
+                                data-value="291" data-theme="minimal">0</div>
+                            <h5 class="text-white text-uppercase mb-0">Enrolled Students</h5>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 mb-md-50">
+                        <div class="funfact text-center">
+                            <i class="pe-7s-note2 mt-5 text-white"></i>
+                            <div class="odometer-animate-number text-white font-weight-600 font-48"
+                                data-value="9" data-theme="minimal">0</div>
+                            <h5 class="text-white text-uppercase mb-0">Ongoing Programs</h5>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 mb-md-50">
+                        <div class="funfact text-center">
+                            <i class="pe-7s-users mt-5 text-white"></i>
+                            <div class="odometer-animate-number text-white font-weight-600 font-48" data-value="21"
+                                data-theme="minimal">0</div>
+                            <h5 class="text-white text-uppercase mb-0">Faculty Members</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xs-6 col-sm-6 col-md-3 mb-md-0">
+                        <div class="funfact text-center">
+                            <i class="pe-7s-cup mt-5 text-white"></i>
+                            <div class="odometer-animate-number text-white font-weight-600 font-48" data-value=" 147"
+                                data-theme="minimal">0</div>
+                            <h5 class="text-white text-uppercase mb-0">Research</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Teachers -->
+        <section id="team">
+            <div class="container teacher_box" style="padding-bottom: 35px !important;">
+                <div class="section-title text-center">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h2 class="text-uppercase line-bottom-double-line-centered mt-0 mob_font_26">Faculty <span
+                                    class="text-theme-colored2">Members</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="row mtli-row-clearfix">
+                        <div class="owl-carousel-5col">
+                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IjFKTDk0eXkvTGltUDB5WFdWbUNEVnc9PSIsInZhbHVlIjoiWXJ1MW01YUZZWlgzdTdxUEZqOENBUT09IiwibWFjIjoiYjE1YzM3Yjk5ZmU1Yzc1YzFjZGJmZWRkNWJjYmY2NjQzMWRhYTgyYTAzOTlhMjhmODQ0ODUzNTlhM2JjNzk0YiIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/Laskor_Sir_Photo_1729590083.jpg">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6Ik9qaFlPT3NPeTdNOVlycnM0L25NYWc9PSIsInZhbHVlIjoieWtibGxJd1AwS2F3VTRndmU1SUM2QT09IiwibWFjIjoiZDA1NTExYTU5YjA2OGE0ZTNhZDYxNjE5ZTFiYzU4ZjhlYzJkY2U0YmQ4MmIyOTA0Yzc1NWFkNGY3OGUwZWMyYyIsInRhZyI6IiJ9">
+                                                            Loskar Nowsher
+                                                            Ali
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer (Adjunct)
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IjVCUnNPT0Jqc283cm1xZ1ltdjZqQmc9PSIsInZhbHVlIjoiWHV0U1hKMDJSZHlPUzkrRlkwRXpMUT09IiwibWFjIjoiZDY0ZDVlY2VkNDExYjM0NzBiZWQ0OWU4M2Y2ODVmNmYyYmRiYTY4NzcxOGU3Y2RiNzQyNGY1ODJlZDA1OTAyMSIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IkNhTmZGNURXTk5wbUZmT2dmK0ZQL3c9PSIsInZhbHVlIjoiSGNVdjROQVBNNUxHaVhGZU1mdURtQT09IiwibWFjIjoiYTE4NWJlYzc3ZmUyZjBjNWE4ZmU4YzU3OWM2Yjk2MzY4MGViMGZlMjBiYTcyZWUzZjBiYmZjNjE1YmNjYTBmNyIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/website_profile_picture_template3_01_1757014035.jpg">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6InpOVmdrU3drN3J4ZmZpa2NyaVhQU0E9PSIsInZhbHVlIjoiQndaYjh5ejdrbFdZNTdCbGlSdENPdz09IiwibWFjIjoiOWVkOGRmNWRmZDY0MzljMDUyOTJjZjYzNmUxYzM0MmJjZDNiNGU5YTZmZTJjZTI1ZWJmNDA1M2YwN2I5MWQ0NSIsInRhZyI6IiJ9">
+                                                            Md. Rabiul
+                                                            Islam
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IlhIWGlUZmlPaGJtZXp3U0FBbGVpTWc9PSIsInZhbHVlIjoiaVpVdFVFbTY1eHJldGxmRkhtalJ4dz09IiwibWFjIjoiZGIyYzJlMmQyMmU5MTFmM2M2Y2Q2ZjJjMDdlZDA5ZTY3NzNjY2UzMDliMjFiOGI1MGVkNjExN2JkMjYwNDU5ZCIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6InBxWkMxdDZFaTY0VmlWZUwxQk0rc1E9PSIsInZhbHVlIjoiak54YmFXbnJWZnFSZEd3UWtRNGNOQT09IiwibWFjIjoiMzY4ZDFmZWU5MDA3NmMwYjYzMzYwYWFlMjNhYzJlMWEyMjA5OWJjY2I0NjU0OGNkYTM2ZThlMDU2MTI5NmIzNSIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/khalid_sir_1757217107.jpg">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IlEwT0NoY0grWU9JTWo0WVh0V3BFT1E9PSIsInZhbHVlIjoiTXRNaHUwQVFSU3pYU2pKTmgvSGdUQT09IiwibWFjIjoiODQ4MTA3MWFkNDZmNmMzZTgyYzY1ZDZkOThhMWY4YjMzNGE1MWMwODU4NDM2OTEzYTU0M2E5NzkwNWJlMDZkMiIsInRhZyI6IiJ9">
+                                                            Md. Khalid
+                                                            Hassan
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6Ilh5TE5QQUlRYmR4R1pqK0Q0NTBLblE9PSIsInZhbHVlIjoiczRNMmk5WGFBREJGc3daN0RxWGplZz09IiwibWFjIjoiMjQxZTg4YTg5ZjVhMzJiN2Q3MjQ2OTczZjNmMDZmZTFiYWVjNzBhZDZkNjMxOGMwNTIyZmU2NTc0OTA4NDgxMiIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6ImFmR2xWZnpmNm50djRNOVlsQjNpL0E9PSIsInZhbHVlIjoieHAyYVpJRVlDMXBha2JpOWZ4TC9LQT09IiwibWFjIjoiMWExNTlkYzgwMzY4OGNiMjRjZWE5NzU0MmIwMDgxYzhjZmRhNzUwMTIwZDJhOTRkMjAyNGQ2MWU1NzIyOGQ3ZCIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/mahfuz_1757218569.png">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6Im1aR1puQ1ZYNmpUMWlvL1BsUWRpSmc9PSIsInZhbHVlIjoiY2E5OWx0ekxyMVd3QzNGTXRLMjQzZz09IiwibWFjIjoiOTE2Yjk1ZjJmODY5ZmI1NWIwMzVkYmZjYmY3MGJkOTU5NDkxMjAxNjY4MTQ0Yzg1ODQ2NTJhY2FhYzQ0ZTM2YSIsInRhZyI6IiJ9">
+                                                            A.K.M Mahfuj
+                                                            Ullah
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Assistant Professor
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6ImNlYXFpcmRKd3RpY282ZkFRcmVsaUE9PSIsInZhbHVlIjoicW5FZS8wRHRsbU1CR0xvL0hTaU5YZz09IiwibWFjIjoiYThmMGFlZTZiNmExM2E2ZDJkZDBlODI1ZDg2ZDNkMTk4NWEzZjc5MTdlMTIxN2ZjYjYzMTBkMjQ0ZWYyYTRjNyIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IktmT0dJVEhhNG5adTlWWU1zQmpYV0E9PSIsInZhbHVlIjoiMTQxdmhWY3VVdkRpamttMGhGbnlsUT09IiwibWFjIjoiYmY5YmQyZWIxODQ1ZTg3Yzk5OWQ2ZDg3ZDBjMjhmYTMwZWVlZTBlNGIyMTM2M2Y1MGNiMTI3NTY1ODBhYWI3ZCIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/minhaj_sir_1757222414.png">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6Im1jYndXMTFmQnhnUVlSejRNRDNHZmc9PSIsInZhbHVlIjoiaVZqN3RhWmhKemJJT2VMQW56d1Z6UT09IiwibWFjIjoiMjhiODViMjkwYTM5M2Y5ZjgyYjJjMTk2NDk3OGJiNmE4NjMwYjdjNDgwODJhY2NhOTkzY2JjMjE2ZDdkMWM5OSIsInRhZyI6IiJ9">
+                                                            Md. Minhazul
+                                                            Islam
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IkpnVzJ5LytNc2R3dk82Z2RKYkVvUmc9PSIsInZhbHVlIjoieVVzMU5oZ2lCc3JxMkRtSHRtMTkrQT09IiwibWFjIjoiODBjNGVkMDdkMGJiMTIyY2U1YjI1NjUzY2ZiNWIyNDg3ZWJiNmQ2NDJjYjI1ZjU2ZGIxYzFjY2QxYzllNTU1MSIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6InpiRlhCNU9DKzRhVk1HRDhqVHphVXc9PSIsInZhbHVlIjoiMHAwY2NneFUvdmdMdFpSV2x4OTlLdz09IiwibWFjIjoiN2E4NzJmMTQ1ZmViODJhOGUzMDA3YTMzM2U5NjIyN2UxNDYzYmE4ODNjZGQ2YmNjNzM0OThmYmQ1Y2IyNzI1YSIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/mijan_sir_1757232812.png">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IkJabmVjNlI4Zjd0blJ2RERzQjNhNGc9PSIsInZhbHVlIjoiQjAxNXdubno5bUVJRDJFc2ViYjJvQT09IiwibWFjIjoiZjc2ZWUzYjFlYjUwYWYzMjNjMzExZDkyYmU0MmQ3Zjk4NWU3MDIzOGVjNWU5ZTZjODkxNmM5ODg3YmM0ZjgyOSIsInRhZyI6IiJ9">
+                                                            Dr. Md. Mizanur
+                                                            Rahman
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Associate Professor
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6InpGMDQ2dHJNbG5nMHkrNkNSMVZBNnc9PSIsInZhbHVlIjoiTkdZOGhDWFR5K2ZVenhsQWpWK1orZz09IiwibWFjIjoiYmFiZDM0YzQ2ZGNjZGQ5OTE1ODMxMDIwNDVlYTIzMGIzN2YwMmZiNmE4NzY1ZjMxZTgzZGRkZDUzYzc4Y2MxYiIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IkozVWxFY3lTOGtoZE56Yk8yQjRUbWc9PSIsInZhbHVlIjoiTVBoRE5OdXVyYnhVQW93UjlOSTBnQT09IiwibWFjIjoiYThkZjg3ZTg4NTU1ZGFjOTY2ZGE2ZTBkMTEzMGMxOTIyMzI1YWFjOTM3NDZjNDlkNjE1ZGE0NmRkNzI5M2Y5ZSIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/rakib_sir_1757233406.png">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6ImZDZjNlM0pTckJIdGd4UEdqdzV1d3c9PSIsInZhbHVlIjoiZ3d4TzBCNFF2ME95MmpaUElrK2x5Zz09IiwibWFjIjoiZmVlYTUzNDRkMGNhZDRlMzUwMzM1Zjk3MTljNzRkMjAyODNhM2NlNzAxOGZlYThkYWZjOTEyOTNlYTQzNTQ2YSIsInRhZyI6IiJ9">
+                                                            Md. Rakibul
+                                                            Islam
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer (Adjunct)
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IldEOFA0b29jMFVOVTRLWldwN0NpUXc9PSIsInZhbHVlIjoicWRkNDRjQWIzQXNUalB1SUQ4WDBEQT09IiwibWFjIjoiYjEyODNkYzRmMjRmZjhlZWQxODU2MDI3OTE2NDBlM2QwYWM1YmE0YzZkZGVlNGFiYjkyZThhYzI1YTY0MzlhOCIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6InRiUXd2N2ZZb1NyMW8wVCt3bnJaK1E9PSIsInZhbHVlIjoiUE9kTTQzNWFRd0c2VHcxU0huOUF4QT09IiwibWFjIjoiM2RiMzRkZDAyYWI0NmI2OGYxNWFmNDVhYTQ0ZTZiNGNhODA1MjVkNWI4OGQyNmY2OGI2YzAzNmE3NDEyNjY0MCIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/reja_sir_1757241465.png">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IlFUU3ZuK0puZXBqRTRoMEJpUlpFL2c9PSIsInZhbHVlIjoiT0J6WFBSQnpGa21DdHM3UTFneWhpQT09IiwibWFjIjoiMzgwNTA5YjY3Yzg4N2ZjODY4ODE5OTJkMjljODUwMTExMjk4MzNlZWY5ODU1NGJkZGY4YWEwM2NhNjBhZTFhNCIsInRhZyI6IiJ9">
+                                                            Dr. Rijaul Karim
+                                                            Madani
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IkdmZ0hidHhWeStzeFZPUWtlVG5XVVE9PSIsInZhbHVlIjoibURPc3FPUWY3T1FtQUduSnJDMWp0Zz09IiwibWFjIjoiNGUzZmFhOGNkZTYzMmNmMjNmODFkNTQ3Zjc4NWE0OWRhYjYzODBmN2QxZWY3MTk4MjFjN2Q1NWY1ODIzNTJhOSIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6Ilp2MENhN3VBWlBaRHI2eThXU0hWTmc9PSIsInZhbHVlIjoiY1dBRFVIb1NDOGVXZTRDcXhib1NjQT09IiwibWFjIjoiYTYwZDgwZWEzNjYzZjU3ZjgzNTkxYzFmNDgxYjJhNDA0YzYxMzViZDIxYTZlOGQyN2MxMDRlZDVjNGVhMjJjOSIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/default.jpg">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IjF2aGJoM1p6NzdQZEQwbHNWQ3Nab1E9PSIsInZhbHVlIjoiZ3RaRDJzdDFFdlRjK1A2dFdxVTcxdz09IiwibWFjIjoiYzRkMTVkMGNmZjIzNmEzZTJkMzljMjdiMDYwOWI5NzBhYmQ2NDY5NWFiMDk3YThmZDQ5ZTM3ZTA1ODc3ZTAwNCIsInRhZyI6IiJ9">
+                                                            Mst. Kamona
+                                                            Akter
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer (Adjunct)
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IjA0UVZyRjdDR05QUXVpMDV1MXBxUUE9PSIsInZhbHVlIjoiUTBuT05CakhycXNRSml3WXdkT1VQdz09IiwibWFjIjoiMTEyZDQ3YTRjNTAzYjBlMTIwMzBiNmQzMWNlNDQxN2U0NTdkYTNiYzY5YjNlYTZjMWVlYjQ5ZjA3ZjAxNmIyOCIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6ImFveThYSFd6QkJsMFVyMk9sRUxDcmc9PSIsInZhbHVlIjoiUW44NjZvTjRsRHJ2VXJORmFDS2kwUT09IiwibWFjIjoiN2JiMzcxZTM5Nzk5Y2UzZDA1MDFhYWY5NjA2OGYxOThjZGM5YmY0YTE2ZDMwNTllYjA4MTk1YTFkZGMzOTQ2NiIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/zakaria_sir_1757306205.jpg">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6ImtkSDcrVEw5M2FJUTJ1TXZDNGZ4Mmc9PSIsInZhbHVlIjoiQUQvME4xeitGWkRIQkdLSjlGMnBVUT09IiwibWFjIjoiNzM1NzRjODc4M2U5YjU5ZWJiMTQ1ZjA5ZThkMjNjMjdhODRkMjkzMWRiNGU3OWRjMWRkMzZmZDg4NGU0MWMwMiIsInRhZyI6IiJ9">
+                                                            Dr. Zakaria
+                                                            Abdul Jalil
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6ImdFVHdITXRicCtYNnFrbW9TU1g4Vnc9PSIsInZhbHVlIjoiRFB6MXRYL2xGZmJ1eW8vM1htOTVZUT09IiwibWFjIjoiZjZiYjEzNDRhY2M2NjA3YzUzNGVmOWZlY2ViYWIzYmM1OWUzNmEzYTkwZGEzMWFjNGI4ZDQ5ZTc4YzFkNWM3YyIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IlJQdzdHSkRITUJKSFFmK0NFdnkraGc9PSIsInZhbHVlIjoibWhLZ0lCaE16RVZ5b2xoUStzZi9NZz09IiwibWFjIjoiYzk1ZmRjNjNhNjhiZGIyNzYxZjM4MjcxMmY4NGI0YWM1MmEwZjY0NGQ4ZDIyNjJhYWRiODliOWNhMzVkYzEwNSIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/saiful_1757255424.png">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IkE3NDlZbXhHVDMySE9oaExUcUw2SGc9PSIsInZhbHVlIjoiS3BVRHUvNTFHTmorWGZUSm13WmpkZz09IiwibWFjIjoiMzNlMWM4YmU1YjkyMTdkZDlkNDE3MjY4NDE1NTZkOGM1Y2YxZjc1YTM1OWVmYzI5MTliZTYyNTI0OGYwY2UzYiIsInRhZyI6IiJ9">
+                                                            Md. Saiful
+                                                            Islam
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer (Adjunct)
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6Ik5VYjBHV0dSajZJN3VOWXI0ZCt4Q2c9PSIsInZhbHVlIjoidjdKbm5PenE0bWtDU0JkeldrNFpsUT09IiwibWFjIjoiYzZkODZjYWJhZjNjOGMzNGQyYzZhZjc2Mjc2MjZkYmYxOWRlNDgzODkxYzZkMmY3YTVlOTIyMjFkODY1Mjc1YiIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IktnZzhWc3VGcEd6Zmh2Y1dBaVFhV3c9PSIsInZhbHVlIjoiTXpOcXdsWDBmbUg1UWg1MHMyaURZUT09IiwibWFjIjoiMjIwNjFkOWNjMjNiNjdjODFjZTc1MjE0MDQzN2ExYTUzMTlhMzQwNGYyYTk2ZDE5MmU5YjU2M2U3YmJlY2QyZiIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/rabiul_1757255646.png">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IjlUNldSWE5iTFkrZmwzT2MzK1lzSEE9PSIsInZhbHVlIjoicjlKTmFyWVRpV1VyYVZuUFptNXNhdz09IiwibWFjIjoiNWQzZjhjYTMxMDBiZThkMDg4MjRkNmIyYjFhN2I1YTBlMjc1YjY3MDJmN2RiM2RhODNmMjM4OTBlMDlmNjJiNiIsInRhZyI6IiJ9">
+                                                            Md. Rabiul
+                                                            Islam
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IkNTWlVWcjRRdG1uYkpvZEVaVEZFVkE9PSIsInZhbHVlIjoiU01TUkVhUEY2SFZ2Y1BDS3VRWFo3QT09IiwibWFjIjoiMTliNmQ0OGE1NzViMzYyM2E4ZTM4MmZkYTM3Y2E4MWE2YmJkYThhNjhiZWI1ODgxYTU2Y2FlNjEwY2RlNjdjZCIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IkdkRHhiZmFUeVg1c0kwaTVkUGZ6eWc9PSIsInZhbHVlIjoiRTh4b3JESDlYYkRua2xrMWQrN1ZzQT09IiwibWFjIjoiZTBkNzA0YTBhZmU1M2JkYzRjYWNlOTVlMzE3YTQwMzlhMjRkZWY0ZjE4MzZlNWM4OWY3NDBjMDRiN2U4MzQ0NSIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/obaidullah_1757304258.jpg">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IklNeUNjaTRQRVM1dEhJTndBTnUxM1E9PSIsInZhbHVlIjoiUmlNSm5LQXRvTVNleExNd1JZWCtwQT09IiwibWFjIjoiNDVjM2YyODJiNzM3ZTEyODkyNDU5NzFhNjU3MDE3Mzc4YjU2YTQyOTU2Zjc3ZmI3MDE5OWUwNGZjNzlhYzgxOCIsInRhZyI6IiJ9">
+                                                            Dr. Md.
+                                                            Obaidullah
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6InAvTlliWXJoQ2xwdVNobHZPN3VTZ2c9PSIsInZhbHVlIjoicnhMWGtmQXZ2bXdrMEtsY0V0YUlHdz09IiwibWFjIjoiMzliNTRjZTY3N2ZkN2I5YTUyMWY0MjQzMWYzNDUzZmIxMTdhODA4Yzg0ZGQxM2VkYmUyZmJkMTMzODJlMTBiMCIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                                                                                <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IndSazBSbTMwb1ZvdDFNVHZlV0sycGc9PSIsInZhbHVlIjoiTWRITjVxUHJVcDgvb0czbG1MZkFkdz09IiwibWFjIjoiZDI4MWExYjBjYzliYzNhY2FlYmNkMGYyZDZhMWFiN2NkMWY4MmE3YTZhOWMyNTYyMzk0ZTdiMDhiMGJiZWRjNiIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/solaiman_1757304026.png">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IkpYRFM4eG5HTXBSa2FBVVdyOGtPTVE9PSIsInZhbHVlIjoiN09panVUSHl1WEdLdWpKVjVkeEVvdz09IiwibWFjIjoiMTY5ODIzNmJlMTQ3ZjJkMWYxYTQ5YTI3Yjk3N2I5MjA4MjI3MjM0OTM1MTU3ZmQ4NjUzZWExZjdjOWMxMDc1YyIsInRhZyI6IiJ9">
+                                                            Md. Solayman
+                                                            Kobir
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer (Adjunct)
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6ImE3M0tFVmR6bGRoa1B2Nm9vZ3BFb0E9PSIsInZhbHVlIjoiaXExc1ZGZUIzek11MlVJTlRsN2thUT09IiwibWFjIjoiMjE5ZmE2NDA2YzljYTliNTk3ZDcyMDNlMWEzZWE1ZGUxMWQwMTc5YzY4ZGEwZDE4NWE3ZTI1N2RkMGE0YTM4ZCIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6Imx4WFBzTDhKbnp4MzR0T3kyVDdGMHc9PSIsInZhbHVlIjoiQ0hlNnh1Y25LRk04MVdKci9HZXB1UT09IiwibWFjIjoiODAyZGQ1NTI5YWNlNzUxNjE3ZTk2MzEwM2MxNThmOGRkMWI5MjFiZGFhZDM0ZGNiYTJmYzIyZTQyZTNkZWViMSIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/default.jpg">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IloxalNwWEk5KzU4QUt1b3dJWFYzVWc9PSIsInZhbHVlIjoic1doV3d3ZDAzdG5XTWZLNEFhQUFSZz09IiwibWFjIjoiZDE1MDFjZDlhNDczYzgxMTU0ZDQzNDRmMGYwMjAzOTk1ZDgzZWRiNzhhZDhjN2JiOTBjYWIwYjk2MTQyMDE1ZSIsInRhZyI6IiJ9">
+                                                            Shaharin Khanam
+                                                            Psycha
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer (Adjunct)
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6Im95Vms0SEpIMUQ0NUpvbWdxM0RDVGc9PSIsInZhbHVlIjoiMGtTdWtPTHNmbTFUMlN4ZGxYTnh1QT09IiwibWFjIjoiZGZjNzU0YmE4NzVlMTRiMjU1NWFmMGIzYjIyY2EyMDlkNTViOTMyZjczMjEzMDEwZjRmNmY1ZDM5YmFlODAzNyIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6Ik1VcVVaNVVyRi93a2JSeVpJd0MxZVE9PSIsInZhbHVlIjoidWJjUUJaSENtcnpHUG9QQTNoMDVFZz09IiwibWFjIjoiNjExODVmZmFjYzE3ZjI3NDUwNmM1YWJiYTc0MmFhNGJmOTQ2M2Q2MDBkOTI2NGE5MTUwMDZkZGE4ZTFmYjkwMSIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/default.jpg">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IkxNOE1KeXRxcytscmV0WHczcDZRc0E9PSIsInZhbHVlIjoibisyOTVSdUZUaGF4MWpLVjUycGNQUT09IiwibWFjIjoiOTkwODJjYjljNzhmYjE3ZDliMWNhZWFjYjZhMzJjZjAzZmI5YjgxYjk1M2E4YWJhN2M0N2EwMjI0MDg1YzE1YiIsInRhZyI6IiJ9">
+                                                            Faria
+                                                            Khan
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer (Adjunct)
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6InozcVlOTVpVaGFWVFFXUnhDNi9DZVE9PSIsInZhbHVlIjoiRzloYXp5cjFOYTBDRjhpRXJya2F2UT09IiwibWFjIjoiOTVjNTFmMjJhNjI0MGFmMDc4ODI1ZTNhZWI1ZjBhMTFkMDI5YjUwOGRkYWYxMjUyNWVmMWY4N2RlNGZkNTdhZSIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IjJsbnA1dlhxN2p5cjNmRlpsNmJlVHc9PSIsInZhbHVlIjoiU0p1ZVFkRGgzc0pCRTlDc3ozcnU5UT09IiwibWFjIjoiZjJmNDI3MWE2MDhhMGVhNmM4MWY0NTRjOWM4NmI0NDA0NTY3YWFiYmUyMjk5OTAwNzNjNDQ3MzYyMWI3Yzc1NyIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/arafat_1757323462.png">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6ImpTdGJDQVlVMVJEWlYzVW0xZzNQMWc9PSIsInZhbHVlIjoickp6UWx2cGx6bzRmQ2hkaTlNZUt3QT09IiwibWFjIjoiODY1ZTZhNmE4NWFmYzBjYjUyN2ViMGJjMmVhNjc2ZGMwMzRlZTBjN2M0NDg0ZTUyNDE2YTdmZDYxOWVkZjRkMCIsInRhZyI6IiJ9">
+                                                            S. M. Yiasir
+                                                            Arafat
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6Ijg1RHZReCswNHROY2gzcGZRbjRNTXc9PSIsInZhbHVlIjoiNGdvRnhIcThqZVVaOGtDajJ2dzNYQT09IiwibWFjIjoiYTY2OWMyMTY4N2MyZGJjMGQ5MzgzMzAwNGNmMTczYWVjOWQ5OWY3OThjNDU4Yjk3YWQ2NGM4NmVjZDAwZmEzYyIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6ImJQTThPcnJ6bHdkZ283dFlNaVZMTlE9PSIsInZhbHVlIjoiYlVUN29UNGtNb1l4clpveXN2Y0t2dz09IiwibWFjIjoiNjgwZGE2NTJiZGUyM2Q4YjBlMGVhMGMzZDVmOWM2YTJlNWYyMDM4MzU5MjI0YTA2ZWI1MTU1OWE0NzY3NjFjZiIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/default.jpg">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6ImRLWVpLWjZ1MHJEVDdRVVlZTDN1MUE9PSIsInZhbHVlIjoiMjV0QUd4SE5weFVud1VibkpkL1c0dz09IiwibWFjIjoiYWM4MmM2NGI1OTExNDhhY2Q4ODQ3N2RmZjkwNzM3YjY4YjYwZDNiNTAzYmU1Y2JkMzc1ODZlNWIyZTRhMWNkNSIsInRhZyI6IiJ9">
+                                                            Lutfun
+                                                            Nahar
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Lecturer (Adjunct)
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6ImpGZFpKOHg2MkJkWDRicFJnRk9SWmc9PSIsInZhbHVlIjoiL3lpVmtPQWxQRDV3ZHNwY3JYUEdPZz09IiwibWFjIjoiOWQzOWQ4ZjBjNTZlYjI2ZDcwNDRhMDk0MjIzYzE3NmU4MjdmMDk1MTdhNGE0MjQ4NWViYzFhODg1OWE0ZGM2NCIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                                    <div class="item">
+                                        <a href="https://www.iiustb.ac.bd/member/details/eyJpdiI6Ilk5M2tRTUJXWFg0ZmFxejNFNTFtbVE9PSIsInZhbHVlIjoiY3k5eEFUVXlscG1DQXErMGk3cWJmdz09IiwibWFjIjoiYzY4NmMxYzkwOTAxOGU2NmE3MWMxNDk0NzVmZmY5ZjIwYjVmMDdjOTkxYjlmNTczNzIwYzU0OWU1MzU2MmRmOSIsInRhZyI6IiJ9">
+                                            <div class="team-members maxwidth400">
+                                                <div class="member-thumb" style="border: 1px solid #ddd">
+                                                    <img class="img-fullwidth"
+                                                        src="https://www.iiustb.ac.bd/uploads/user/default.jpg">
+                                                </div>
+                                                <div class="bg-white text-center p-10" style="border: 1px solid #ddd">
+                                                    <h3 class="m-0" style="text-align: left !important;">
+                                                        <a class="linetext text-theme-colored2 mob_font_14 desk_font_16"
+                                                            href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IlR4ajZPM3NzcDdRbzRhTC9rVE9DYnc9PSIsInZhbHVlIjoib1dDVnRuejZyM1Q1c0tweHRDTXBZUT09IiwibWFjIjoiZWUxNTEwNWMyNGY3OTBiZDNhMzZmMmYzMzY3M2ZjM2VmOTg1ZTlhZTY5NjMwOTQ4NmNmMDdhZTEwZTJjZjdhMiIsInRhZyI6IiJ9">
+                                                            Prof. Dr. Amirul
+                                                            Islam Chemistry
+                                                        </a>
+                                                    </h3>
+                                                    <h5 class="text-theme-color m-0 mob_font_12 desk_font_14"
+                                                        style="text-align: left !important">
+                                                                                                                Professor (Adjunct)
+                                                    </h5>
+                                                    
+                                                    <a class="btn btn-success mt-10"
+                                                        style="width: 100%; border-radius: 0px; padding: 3px 10px"
+                                                        href="https://www.iiustb.ac.bd/member/details/eyJpdiI6IjVmYkRCamcwUkRHUHRUMU5UZUx4L1E9PSIsInZhbHVlIjoiU3ZLWm9USWxCSk8rL01Nb2VERVFRdz09IiwibWFjIjoiOTQyMjgzODNkZjU4MzgxNzQ2NDQ0NDcwNGFjMjc5NTI5YjY3MjE1MmRmNjYwMWFjM2I2ZjE3Y2JlOGY4NjRkMiIsInRhZyI6IiJ9">VIEW
+                                                        PROFILE</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                                                                                                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Gallery -->
+        <section id="gallery" class="mob_none desk_block mb-40"style="background: #EFF7FF">
+            <div class="container" style="padding-top: 35px !important;">
+                <div class="section-title text-center">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h2 class="text-uppercase line-bottom-double-line-centered mt-0">Campus <span
+                                    class="text-theme-colored2">Gallery</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-content text-center">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="gallery-grid">
+                                                                    <div class="gallery-item gallery">
+                                        <div class="thumb">
+                                            <img class="gallery-img" src="https://www.iiustb.ac.bd/uploads/gallery/1756797104_xLdVsX.jpg"
+                                                alt="Campus Picture">
+                                        </div>
+                                    </div>
+                                                                    <div class="gallery-item gallery">
+                                        <div class="thumb">
+                                            <img class="gallery-img" src="https://www.iiustb.ac.bd/uploads/gallery/1756797264_ttbZmY.jpg"
+                                                alt="IIUSTB">
+                                        </div>
+                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+        <!-- Content End -->
+        <section>
+    <div class="container pt-0 pb-0">
+        <div class="section-title text-center">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h2 class="text-uppercase line-bottom-double-line-centered mt-0 mob_font_22">Google Map <span
+                            class="text-theme-colored2">Location</span></h2>
+                </div>
+            </div>
+        </div>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.3945881627355!2d90.2699378!3d23.9464831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755e9004a5657f7%3A0x3cb8086f9dfe063c!2sInternational%20Islami%20University%20of%20Science%20and%20Technology%20Bangladesh%20(IIUSTB)!5e0!3m2!1sen!2sbd!4v1725848815524!5m2!1sen!2sbd"
+            width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+<!-- Footer -->
+<footer id="footer" class="footer" data-bg-img="https://www.iiustb.ac.bd/frontend/images/footer-bg.png"
+    data-bg-color="#152029">
+    <div class="container pt-70 pb-40">
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <div class="widget dark">
+                    <div class="logo mb-20" style="display: flex; align-items: end;">
+                        <img style="height: 40px; margin-right: 10px;"
+                            src="https://www.iiustb.ac.bd/frontend/images/logo/logo-white.png" alt="Logo">
+                        <h2 class="text-white m-0" style="line-height: 1; font-size: 38px;">IIUSTB
+                        </h2>
+                    </div>
+                    <p class="text-white">
+                        <strong>Permanent Campus: </strong>
+                                                    Baipail, Ashulia, Dhaka-1349 (about 0.5 km north from Baipail Bus Stand &amp; adjacent to the south side of EPZ)
+                                            </p>
+                    <ul class="list-inline mt-5">
+                        <li class="m-0"> <i class="fa fa-phone text-white mr-5"></i>
+                                                            <a style="color: white"
+                                    href="tel:+8801329728375">+8801329728375</a>
+                                                    </li>
+                        <li class="m-0"> <i class="fa fa-envelope-o text-white mr-5"></i>
+                                                            <a style="color: white"
+                                    href="mailto:info@iiustb.ac.bd">info@iiustb.ac.bd</a>
+                                                    </li>
+                        <li class="m-0"> <i class="fa fa-globe text-white mr-5"></i> <a class="text-white"
+                                href="#">www.iiustb.ac.bd</a> </li>
+                    </ul>
+                    <ul class="styled-icons icon-sm icon-bordered icon-circled clearfix mt-10">
+                                                    <li><a href="https://www.facebook.com/iiustb" target="_blank"><i
+                                        class="fa fa-facebook"></i></a></li>
+                                                                            <li><a href="mailto:info@iiustb.ac.bd?subject=Hello&amp;body=Hi%20%F0%9F%98%8A" target="_blank"><i
+                                        class="fa fa-instagram"></i></a></li>
+                                                                                                                            <li><a href="https://wa.me/+8801329728375?text=Assalamualikum%20%F0%9F%98%8A" target="_blank"><i
+                                        class="fa fa-pinterest"></i></a></li>
+                                                                            <li><a href="https://www.youtube.com/@IIUSTBBangladesh" target="_blank"><i
+                                        class="fa fa-youtube"></i></a></li>
+                                            </ul>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="widget dark">
+                    <h4 class="widget-title line-bottom-theme-colored-2">Website Links</h4>
+                    <ul class="list angle-double-right list-border">
+                        <li><a href="https://www.iiustb.ac.bd/page/iiustb-at-a-glance" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Our Mission</a></li>
+                        <li><a href="#" class="text-white">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="widget dark">
+                    <h4 class="widget-title line-bottom-theme-colored-2">Useful Links</h4>
+                    <ul class="list angle-double-right list-border">
+                        <li><a href="https://ugc.gov.bd/" class="text-white">UGC</a></li>
+                        <li><a href="https://moedu.gov.bd/" class="text-white">Ministry of Education</a></li>
+                        <li><a href="https://finlitbd.com" class="text-white">দেশব্যাপী বিনিয়োগ শিক্ষা</a></li>
+                        <li><a href="https://youtube.com/@financialliteracyprogramba6178" class="text-white">Financial Literacy Program Bangladesh</a></l
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="widget dark">
+                    <h4 class="widget-title line-bottom-theme-colored-2">Opening Hours</h4>
+                    <div class="opening-hours">
+                        <ul class="list-border">
+                            <li class="clearfix text-white"> <span> Fri - Tue : </span>
+                                <div class="value pull-right text-white"> 8.55 am - 5.00 pm </div>
+                            </li>
+                            <li class="clearfix text-white"> <span> Wed </span>
+                                <div class="value pull-right text-white"> Closed</div>
+                            </li>
+                            <li class="clearfix text-white"> <span> Thu </span>
+                                <div class="value pull-right bg-theme-color-2 text-white closed"> Closed </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom" data-bg-color="#2b2d3b">
+        <div class="container pt-20 pb-20">
+            <div class="row" style="display: flex; align-items:center">
+                <div class="col-md-6" id="copyright">
+                    <p class="font-12 text-black-777 m-0 sm-text-center"><a target="_blank"
+                            href=""><p><span style="color: #eeffff; font-family: Consolas, 'Courier New', monospace; font-size: 15px; white-space: pre;"><span style="color: #ffffff;">&copy;</span> </span>IIUSTB</p> </a><span>2026</span></p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <div class="widget no-border m-0">
+                        <ul class="list-inline sm-text-center mt-5 font-12">
+                            <li>
+                                <a href="#">FAQ</a>
+                            </li>
+                            <li>|</li>
+                            <li>
+                                <a href="#">Help Desk</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+    </div>
+
+    <!-- Footer Scripts -->
+    <script src="https://www.iiustb.ac.bd/frontend/js/jquery-2.2.4.min.js"></script>
+    <script src="https://www.iiustb.ac.bd/frontend/js/jquery-ui.min.js"></script>
+    <script src="https://www.iiustb.ac.bd/frontend/js/bootstrap.min.js"></script>
+    <!-- JS | jquery plugin collection for this theme -->
+    <script src="https://www.iiustb.ac.bd/frontend/js/jquery-plugin-collection.js"></script>
+    <!-- JS | Custom script for all pages -->
+    <script src="https://www.iiustb.ac.bd/frontend/js/custom.js"></script>
+    <script src="https://www.iiustb.ac.bd/frontend/js/extra.js"></script>
+
+    <!-- Revolution Slider 5.x SCRIPTS -->
+    <script src="https://www.iiustb.ac.bd/frontend/js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+    <script src="https://www.iiustb.ac.bd/frontend/js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="https://www.iiustb.ac.bd/frontend/js/extra-rev-slider-new.js"></script>
+
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS
+      (Load Extensions only on Local File Systems !
+       The following part can be removed on Server for On Demand Loading) -->
+    <script type="text/javascript"
+        src="https://www.iiustb.ac.bd/frontend/js/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript"
+        src="https://www.iiustb.ac.bd/frontend/js/revolution-slider/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript"
+        src="https://www.iiustb.ac.bd/frontend/js/revolution-slider/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript"
+        src="https://www.iiustb.ac.bd/frontend/js/revolution-slider/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript"
+        src="https://www.iiustb.ac.bd/frontend/js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+
+
+    
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+{
+  "status": "PASS_UGC_AUTHORITATIVE_SALVAGE_SPLIT",
+  "mode": "NETWORK_READ_ONLY_NO_DB_WRITES",
+  "dbWritesPerformed": false,
+  "inputRows": 1268,
+  "ugcUniversityDetailRecordsFound": 0,
+  "inputParentNames": 101,
+  "parentsMatchedToUgcDetail": 0,
+  "parentsAmbiguous": 0,
+  "parentsUnmatched": 101,
+  "ugcFacultyPagesCrawled": 0,
+  "salvagePassStrongRows": 0,
+  "unresolvedRows": 1268,
+  "reasonCounts": {
+    "UGC_PARENT_NOT_CONFIDENTLY_MATCHED": 1268
+  },
+  "policy": {
+    "authoritativePrimary": "ugc-universities.gov.bd",
+    "ugcDegreeExactOrStrongUniqueAccepted": true,
+    "ugcListedUniversityWebsiteFallbackAcceptedOnlyWithStrongPageEvidence": true,
+    "verificationStatusForImport": "DRAFT",
+    "verifiedPublicationAllowed": false,
+    "fakeOrInferredProgramCreationAllowed": false
+  },
+  "checks": {
+    "partitionReconstructsInput": true,
+    "allSalvageRowsAlreadyStrictSemanticPass": true,
+    "allSalvageRowsDraft": true,
+    "allSalvageRowsProductionVerifiedNo": true
+  },
+  "samples": {
+    "ambiguousParents": [],
+    "unmatchedParents": [
+      "Ahsania Mission University of Science and Technology",
+      "Ahsanullah University of Science and Technology",
+      "America Bangladesh University ***",
+      "Anwer Khan Modern University",
+      "BGC Trust University Bangladesh",
+      "BGMEA University of Fashion & Technology(BUFT) (2)",
+      "Bangladesh Agricultural University",
+      "Bangladesh Army International University of Science & Technology(BAIUST) ,Comilla",
+      "Bangladesh Army University of Engineering and Technology (BAUET), Qadirabad",
+      "Bangladesh Army University of Science and Technology (BAUST), Saidpur",
+      "Bangladesh Army University of Science and Technology, Khulna",
+      "Bangladesh Islami University",
+      "Bangladesh Medical University",
+      "Bangladesh University",
+      "Bangladesh University of Business & Technology (BUBT)",
+      "Bangladesh University of Professionals",
+      "Begum Rokeya University, Rangpur",
+      "Britannia University",
+      "Central University of Science and Technology",
+      "Central Women's University"
+    ]
+  },
+  "files": {
+    "salvagePass": "program_ugc_authoritative_salvage_pass.csv",
+    "unresolved": "program_ugc_authoritative_unresolved.csv",
+    "ugcCatalog": "ugc_authoritative_catalog.json"
+  },
+  "hardStopReasons": []
+}

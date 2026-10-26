@@ -1,0 +1,58 @@
+diff --git a/apps/web/src/components/AuthModal.tsx b/apps/web/src/components/AuthModal.tsx
+--- a/apps/web/src/components/AuthModal.tsx
++++ b/apps/web/src/components/AuthModal.tsx
+@@ -168,5 +168,5 @@ export function AuthModal({ open, onClose, onAuthenticated }: Props) {
+   return (
+     <AnimatePresence>
+       {open && (
+-        <motion.div className="fixed inset-0 z-[80] grid place-items-center bg-[#041321]/75 p-4 backdrop-blur-sm" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={onClose}>
++        <motion.div data-testid="auth-modal-overlay" className="fixed inset-0 z-[80] grid place-items-center bg-[#041321]/75 p-4 backdrop-blur-sm" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={onClose}>
+           <motion.div role="dialog" aria-modal="true" aria-labelledby="auth-dialog-title" className="max-h-[92vh] w-full max-w-md overflow-y-auto rounded-[2rem] bg-white p-6 shadow-2xl sm:p-7" initial={{ y: 24, opacity: 0, scale: .97 }} animate={{ y: 0, opacity: 1, scale: 1 }} exit={{ y: 16, opacity: 0 }} onMouseDown={(event) => event.stopPropagation()}>
+diff --git a/apps/web/src/App.tsx b/apps/web/src/App.tsx
+--- a/apps/web/src/App.tsx
++++ b/apps/web/src/App.tsx
+@@ -535,5 +535,5 @@ function App() {
+ 
+       <Suspense fallback={null}>
+-        <AuthModal open={authOpen} onClose={() => setAuthOpen(false)} onAuthenticated={handleAuthenticated} />
++        <AuthModal open={authOpen && !session} onClose={() => setAuthOpen(false)} onAuthenticated={handleAuthenticated} />
+         <DeviceCheckModal open={deviceCheckOpen} onClose={() => setDeviceCheckOpen(false)} />
+         <ReminderCenter open={reminderCenterOpen} onClose={() => setReminderCenterOpen(false)} />
+diff --git a/tests/e2e/app-smoke.spec.ts b/tests/e2e/app-smoke.spec.ts
+--- a/tests/e2e/app-smoke.spec.ts
++++ b/tests/e2e/app-smoke.spec.ts
+@@ -115,10 +115,12 @@ test("safe visible controls and demo student flow respond", async ({ page }, tes
+   await expect(signIn).toBeVisible();
+   await signIn.click();
++  const authOverlay = page.getByTestId("auth-modal-overlay");
++  await expect(authOverlay).toBeVisible();
+   const authDialog = page.getByRole("dialog", { name: /welcome back|স্বাগতম/i });
+   await expect(authDialog).toBeVisible();
+   const demoButton = page.getByRole("button", { name: /student demo|শিক্ষার্থী ডেমো/i });
+   const loginDuration = await timed("Student demo sign-in", page.url(), issues, () => demoButton.click());
+   controls.push({ name: "Student demo", type: "button", action: "clicked", durationMs: loginDuration });
+-  await expect(authDialog).toHaveCount(0);
++  await expect(authOverlay).toHaveCount(0);
+   await expect(page.getByText(/signed in as|সাইন ইন করেছেন/i)).toBeVisible();
+ 
+   let accountAction = page.getByTestId("desktop-account-action");
+diff --git a/docs/BUG_LOG.md b/docs/BUG_LOG.md
+--- a/docs/BUG_LOG.md
++++ b/docs/BUG_LOG.md
+@@ -60,5 +60,5 @@
+ | P91-002 | Audio records could not be selected according to the active Bangla/English preference | Medium | Fixed: media language metadata and deterministic institution/global/local/device fallback precedence were added |
+ | P91-003 | A fresh source archive installed dependencies without generating Prisma Client from the nested API schema, causing cascading TypeScript and Playwright startup failures | Critical | Fixed: the root `postinstall` lifecycle now generates Prisma Client automatically; release verification guards the install contract |
+ | P91-004 | Playwright treated intentional real-time stream teardown as a network failure and used immediate visibility probes before responsive UI rendering settled | High | Fixed: only aborted first-party real-time streams are ignored; the test waits for the app, follows the configured viewport breakpoint and targets stable desktop/mobile auth identifiers |
+-| RC2-001 | Desktop and mobile account-flow tests could click the next control while the successfully closed authentication modal was still completing its exit animation | Medium | Fixed: the acceptance flow now waits for the authentication dialog to leave the DOM before interacting with account or navigation controls |
++| RC2-001 | Desktop and mobile account-flow tests could continue while an authentication overlay remained above the signed-in shell | High | Fixed: authenticated state now makes the auth modal structurally impossible to render; the overlay has a stable test identity and acceptance waits for its complete DOM removal before interacting with account or navigation controls |
+ 
+diff --git a/RELEASE_NOTES_v1.0.0-rc.2.md b/RELEASE_NOTES_v1.0.0-rc.2.md
+--- a/RELEASE_NOTES_v1.0.0-rc.2.md
++++ b/RELEASE_NOTES_v1.0.0-rc.2.md
+@@ -12,5 +12,5 @@
+ - Deployed HTTPS liveness, readiness, version, CORS and catalog runtime verifier.
+ - Encrypted database backup, checksum-verified restore dry run, bounded retention, integrity checks and operations tests.
+ - Responsive desktop/mobile Account & privacy Playwright acceptance path.
+-- Deterministic authentication-modal exit synchronization before desktop/mobile account actions.
++- Authenticated-state modal invariant plus deterministic overlay-exit synchronization before desktop/mobile account actions.
+ - Updated 15-page feature, technology and manual acceptance PDF.

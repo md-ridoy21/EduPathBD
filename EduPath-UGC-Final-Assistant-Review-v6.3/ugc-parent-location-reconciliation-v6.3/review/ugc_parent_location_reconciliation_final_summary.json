@@ -1,0 +1,33 @@
+{
+  "status": "PASS_FINAL_LOCATION_RECONCILIATION",
+  "mode": "FILES_ONLY_NO_DB_WRITES",
+  "dbWritesPerformed": false,
+  "evidence_rows": 119,
+  "recommendation_rows_loaded": 119,
+  "unique_recommendation_ids": 119,
+  "duplicate_recommendation_ids": 0,
+  "duplicate_ids": [],
+  "reviewed_rows": 119,
+  "unreviewed_rows": 0,
+  "recommend_accept": 110,
+  "recommend_correct_candidate": 2,
+  "needs_campus_policy": 6,
+  "needs_model_policy": 1,
+  "needs_more_evidence": 0,
+  "human_decisions_nonblank": 0,
+  "accepted_district_nonblank": 0,
+  "accepted_district_code_nonblank": 0,
+  "accept_rows_missing_code": 0,
+  "correction_rows_with_code": 0,
+  "campus_policy_rows_with_location": 0,
+  "model_policy_rows_with_location": 0,
+  "district_ready_rows": 110,
+  "policy_hold_rows": 7,
+  "corrected_candidate_rows": 2,
+  "chapainawabganj_resolution": {
+    "institution_id": "ugc:private:60",
+    "district_id": "district_chapainawabganj",
+    "district_code": "BD-CHP",
+    "source": "read-only Prisma lookup"
+  }
+}

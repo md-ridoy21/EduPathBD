@@ -1,0 +1,58 @@
+{
+  "admission": {
+    "rows": 682,
+    "fields": {
+      "canonical_candidate_id": 682,
+      "canonical_record_id": 682,
+      "institution_name": 682,
+      "source_candidate_text": 682,
+      "source_urls": 682,
+      "production_verified": 682,
+      "assistant_final_resolution_v6_2": 682,
+      "final_fact_type": 0,
+      "final_fact_value": 0,
+      "final_effective_date": 0,
+      "final_applicant_group": 0,
+      "final_condition": 0,
+      "refined_gpa_values_v4_5": 373,
+      "suggested_gpa_values": 338
+    }
+  },
+  "program": {
+    "rows": 1634,
+    "fields": {
+      "canonical_candidate_id": 1634,
+      "canonical_record_id": 1634,
+      "institution_name": 1634,
+      "source_candidate_text": 1634,
+      "source_urls": 1634,
+      "production_verified": 1634,
+      "assistant_final_resolution_v6_2": 1634,
+      "final_program_name": 0,
+      "final_degree_level": 0,
+      "final_degree_award": 0,
+      "final_subject_or_major": 0,
+      "final_credit_hours": 0,
+      "final_duration": 0
+    }
+  },
+  "scholarship": {
+    "rows": 654,
+    "fields": {
+      "canonical_candidate_id": 654,
+      "canonical_record_id": 654,
+      "institution_name": 654,
+      "source_candidate_text": 654,
+      "source_urls": 654,
+      "production_verified": 654,
+      "assistant_final_resolution_v6_2": 654,
+      "final_scholarship_name": 0,
+      "final_award_percent": 0,
+      "final_award_amount": 0,
+      "final_minimum_gpa": 0,
+      "final_eligibility": 0,
+      "final_deadline": 0,
+      "final_renewal_condition": 0
+    }
+  }
+}

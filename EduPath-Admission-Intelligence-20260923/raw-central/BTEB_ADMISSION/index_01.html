@@ -1,0 +1,915 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+ 
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+
+    <title>BTEB Admission System</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" type="text/css" href="Content/style.css" />
+    <!-- Bootstrap CSS CDN -->
+		<link href="Content/bootstrap.min.css" rel="stylesheet"  id="bootstrap-css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    
+    <!-- Our Custom CSS -->
+    <!--<link rel="stylesheet" href="Content/style2.css" />-->
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <!--
+ <script src="js/common.js"></script>
+ -->
+ <script>
+  var script = document.createElement('script');
+  script.src = "js/common.js?v=" + new Date().getTime();
+  document.head.appendChild(script);
+</script>
+    
+
+    
+    <style type="text/css">
+
+        
+     
+
+        .blink_text {
+            -webkit-animation-name: blinker;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-name: blinker;
+            -moz-animation-duration: 1s;
+            -moz-animation-timing-function: linear;
+            -moz-animation-iteration-count: infinite;
+            animation-name: blinker;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            color: red;
+        }
+
+        @ -moz-keyframes blinker {
+            0% {
+                opacity: 1.0;
+            }
+
+            50% {
+                opacity: 0 .0;
+            }
+
+            100% {
+                opacity: 1 .0;
+            }
+        }
+
+        @ -webkit-keyframes blinker {
+            0% {
+                opacity: 1.0;
+            }
+
+            50% {
+                opacity: 0 .0;
+            }
+
+            100% {
+                opacity: 1 .0;
+            }
+        }
+
+        @ keyframes blinker {
+            0% {
+                opacity: 1.0;
+            }
+
+            50% {
+                opacity: 0 .0;
+            }
+
+            100% {
+                opacity: 1 .0;
+            }
+        }
+
+        .messageDivImg, .messageDivImg_ {
+            background-color: #e6e6fa;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .headerDivImg {
+            background-color: #a2b5cd;
+            color: #000080;
+        }
+
+        .imageDivLink {
+            float: right;
+        }
+
+        .titleTextImg {
+            float: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button {
+            background: #9ed55f; /* Old browsers */
+            background: linear-gradient(to bottom, #26A69A 10%, #76cfdb 150%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6AA121', endColorstr='#9ed55f', GradientType=0); /* IE6-9 */
+            border: none;
+            color: white;
+            width: 500px;
+            padding: 15px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            border-radius: 10px;
+            text-shadow: 1px 1px 2px black, 0 0 18px blue, 0 0 5px darkblue;
+        }
+
+        .button1 {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+       .button2:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 255, 0, 0.3);
+        } 
+
+        h1 {
+            text-align: center;
+            font-family: Tahoma, Arial, sans-serif;
+            color: #06D85F;
+            margin: 80px 0;
+        }
+
+        .box {
+            width: 100%;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 0px;
+            border: 2px solid #fff;
+            border-radius: 30px/60px;
+            background-clip: padding-box;
+            text-align: center;
+            color: red;
+        }
+
+        .buttonpop {
+            font-size: 1em;
+            padding: 10px;
+            color: #00008b;
+            border: 2px solid #06D85F;
+            border-radius: 20px/50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.5s ease-out;
+        }
+
+            .buttonpop:hover {
+                background: #458b00;
+                color: #fff;
+            }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            transition: opacity 900ms;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+            .overlay:target {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .list-unstyled {
+              padding-left: 0;
+              list-style: none;
+              border:none;
+            }
+
+        .popup {
+            margin: 0px auto;
+            padding: 10px; <!--
+            background: #e6e6fa; -->
+            background-color: transparent;
+            border-radius: 5px;
+            width: 70%;
+            position: relative;
+            transition: all 1s ease-in-out;
+        }
+
+            .popup h2 {
+                margin-top: 0;
+                color: #333;
+                font-family: Tahoma, Arial, sans-serif;
+            }
+
+            .popup .close {
+                position: absolute;
+                top: 20px;
+                right: 30px;
+                transition: all 100ms;
+                font-size: 30px;
+                font-weight: bold;
+                text-decoration: none;
+                color: #333;
+            }
+
+            .popup .close {
+                color: #ff3030;
+            }
+
+                .popup .close:hover {
+                    color: #06D85F;
+                }
+
+            .popup .content {
+                max-height: 30%;
+                overflow: auto;
+            }
+
+        .gradientBoxesWithOuterShadows {
+	height: 60%;
+	margin-left: 0;
+	width: 100%;
+	background-color: #0C3;
+	font-size: 16px;
+	font-weight: bold;
+	color: #473c8b;
+	/* outer shadows  (note the rgba is red, green, blue, alpha) */
+	-webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0px 1px 6px rgba(23, 69, 88, .5);
+	/* rounded corners */
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	/* gradients */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(15%, white), color-stop(100%, #D7E9F5));
+	background-position: top;
+	padding-bottom: 10px;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 10px;
+        }
+
+        @media screen and (max-width: 700px) {
+            .box {
+                width: 50%;
+            }
+
+            .popup {
+                width: 70%;
+            }
+        }
+		
+		.gradientBoxesinner{
+	height: 60%;
+	margin-left: 0;
+	width: 100%;
+	background-color: #0C3;
+	font-size: 16px;
+	font-weight: bold;
+	color: #473c8b;
+	
+	/* outer shadows  (note the rgba is red, green, blue, alpha) */
+	-webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0px 1px 6px rgba(23, 69, 88, .5);
+	/* rounded corners */
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	/* gradients */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(15%, white), color-stop(100%, #D7E9F5));
+	background-position: top;
+	padding-bottom: 10px;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 10px;
+        }
+
+        @media screen and (max-width: 700px) {
+            .box {
+                width: 50%;
+            }
+
+            .popup {
+                width: 70%;
+            }
+        }
+		.buttonInner {
+            	height: 40%;
+				margin-left: 0;
+				width: 100%;
+				
+				background-color: #24c6b6; 
+			<!--	background: linear-gradient(to bottom, #26A69A 10%, #0000ff 150%); -->
+				
+				font-size: 16px;
+				font-weight: bold;
+				color: #473c8b;
+				margin-top: 4px;	
+				white-space: normal;
+
+			/* outer shadows  (note the rgba is red, green, blue, alpha) */
+				-webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+				-moz-box-shadow: 0px 1px 6px rgba(23, 69, 88, .5);
+	/* rounded corners */
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	/* gradients */
+<!--	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(15%, white), color-stop(100%, #76cfdb)); -->
+	background-position: top;
+	padding-bottom: 10px;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 10px;
+        }
+			
+		
+	
+		
+		/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 35%;
+  padding: 10px;
+  margin: 15px;
+  margin-top: 0px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:700px) {
+  .column {
+    width: 100%;
+  }
+		
+	
+		
+		
+    body,td,th {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif, Times, "Times New Roman", SolaimanLipi, AdorshoLipi, Vrinda, "Siyam Rupali", "Shonar bangla", serif;
+}
+
+
+
+
+ 
+ 
+    </style>
+	
+	<style>
+#curTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#curTable td, #curTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#curTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#curTable tr:hover {background-color: #ddd;}
+
+#curTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #13A662;
+  color: white;
+}
+
+ 
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background: white; /* Optional background */
+    padding: 5px 0;
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-text 30s linear infinite;
+    color: #7108F9;
+    font-weight: bold;
+}
+
+.marquee-container:hover .marquee-text {
+    animation-play-state: paused; /* Pause on hover */
+}
+
+@keyframes scroll-text {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+ 
+
+</style> 
+
+    <!--Java Script Function for load balancing-->
+   
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+		<!--
+            <div style="float: middle; width: 90%;">
+                <h1>
+                    <font color="white">বাংলাদেশ কারিগরি শিক্ষা বোর্ড</font>
+                </h1>
+             </div>
+            <div style="float: left-side; width: 5%;">
+                <img src="bteb_logo.png" />
+            </div>
+			
+			
+        </div>
+		-->
+		<div style="float: left;width: 90%;">
+				 <div style="float: left; width: 9%;">
+				 	<img src="bteb_logo.png" />
+				 </div>
+                  <h1><font color="white">বাংলাদেশ কারিগরি শিক্ষা বোর্ড</font></h1>
+				  
+               <!--   <h2 style="font-size: 12px; text-align: center; color: #003399;">
+					  </h2> -->
+            </div>
+            
+             <div style="float: right;width: 9%;">
+                
+                   <img src="bteb_logo.png" height="94px" width="94px"/>  
+            </div>
+          
+
+       </div>
+			 
+		<div style="color: #26A69A; font-size: 30px;">
+             <center>
+			     <div style="font-size: 26px; color: #006400">
+                        <div style="height: 40px">
+                            BTEB Admission
+                        </div>
+						<br/>
+                        <div style="font-size: 23px; color: #006400">
+                            (Session: 2026- 2027)
+							</div>
+				</div>			
+            </center>
+            <!--	-->
+<!--            
+-->
+<!--                <a href="http://btebadmission.gov.bd/result.aspx">সরকারি পলিটেকনিক ইন্সটিটিউট, টিএসসি, ভিটিটিআই এ ডিপ্লোমা ইন ইঞ্জিনিয়ারিং</a> এবং <a href="http://marine.btebadmission.gov.bd/result.aspx">মেরিন ইঞ্জিনিয়ারিং</a> প্রোগ্রামে ভর্তির ৫ম ওয়েটিং লিস্ট এর ফলাফল প্রকাশিত হয়েছে । ভর্তি নিশ্চায়নের সময়সীমা: ৩১-০৮-২০১৮ ইং পর্যন্ত ।  -->
+<!--                <a href="http://btebadmission.gov.bd/fcfs.aspx">সরকারি পলিটেকনিক ইন্সটিটিউট, টিএসসি, ভিটিটিআই এ ডিপ্লোমা ইন ইঞ্জিনিয়ারিং</a>,এবং  <a href="http://marine.btebadmission.gov.bd/fcfs.aspx">ডিপ্লোমা ইন মেরিন প্রোগ্রামে </a>শূন্য আসনের বিপরীতে ওয়েটিং লিস্ট এর শিক্ষার্থীদের জন্য 'First Come First Selection' পদ্ধতিতে ঝটিকা আবেদন গ্রহণ করা হচ্ছে;  ।  
+-->
+
+ 
+
+
+
+<div class="marquee-container">
+    <span class="marquee-text">
+       <!-- রক্ষণাবেক্ষণ কাজের জন্য অ্যাপ্লিকেশন সাময়িকভাবে বন্ধ আছে	।
+         সপ্তম পর্যায়ের ফলাফল প্রকাশ করা হয়েছে।
+         
+            শিক্ষার্থীদের প্রবেশপত্র ডাউনলোডের সময় ২৩-২৮ আগস্ট ২০২৫ এবং ভর্তি পরীক্ষা ২৯ আগস্ট ২০২৫ খ্রি. তারিখে অনুষ্ঠিত হবে ।
+			<br/>
+			সার্টিফিকেট ইন মেরিন ট্রেড কোর্সে কোনো ভর্তি পরীক্ষা অনুষ্ঠিত হবে না। এ সকল শিক্ষার্থীদের  প্রবেশ পত্র ডাউনলোডের প্রয়োজন নেই ।
+
+            -->
+    </span>
+</div>
+
+
+           
+
+	
+	<marquee scrollamount="5"
+                     onMouseOver="this.setAttribute('scrollamount', 0, 0);this.stop();"
+                     OnMouseOut="this.setAttribute('scrollamount', 4, 0);this.start();">                
+		<span style="color: #FF4000;" class="buetHelpline">  
+ <b>
+         ২০২৬-২০২৭ শিক্ষাবর্ষের ডিপ্লোমা পর্যায়ের ভর্তি পরীক্ষার এডমিট কার্ড ২২ সেপ্টেম্বর রাত ৮ হতে ডাউনলোড করা যাবে ।
+			 <b/>
+       
+  
+        </span>
+         
+	</marquee> 
+	 <!--
+		<marquee scrollamount="5" 
+                     onMouseOver="this.setAttribute('scrollamount', 0, 0);this.stop();"
+                     OnMouseOut="this.setAttribute('scrollamount', 4, 0);this.start();">                
+		<span style="color: #7108F9;" class="buetHelpline">
+            
+            ২০২৬-২০২৭ সেশনে ভর্তি  কার্যক্রমের আবেদন প্রক্রিয়া ২৯ আগস্ট ২০২৬ শনিবার হতে শুরু হবে।
+
+         <b> 
+            বাংলাদেশ কারিগরি শিক্ষা বোর্ডের আওতাধীন সরকারি ও বেসরকারি প্রতিষ্ঠানে ডিপ্লোমা ও উচ্চ মাধ্যমিক পর্যায়ের শিক্ষাক্রমের ২০২৫-২০২৬ শিক্ষাবর্ষে ভর্তির আবেদন ৩০/০৭/২০২৫ খ্রি: তারিখে শুরু হয়েছে । ডিপ্লোমা পর্যায়ের সরকারি প্রতিষ্ঠানের ভর্তি পরীক্ষা ২৯ আগষ্ট ২০২৫ খ্রি. রোজ শুক্রবার অনুষ্ঠিত হবে 
+
+            <b/>
+
+
+
+         <b> 
+            <a href="http://btebadmission.gov.bd/website/Link/2024/notice-05-03-2025.pdf"> বেসরকারি প্রতিষ্ঠানসমূহে ডিপ্লোমা পর্যায়ের ভর্তির সময় বৃদ্ধি ও এইচএসসি পর্যায়ে ৪র্থ বিষয় সংযোজন বিষয়ক বিজ্ঞপ্তি ।
+ 
+                (05-03-2025) </a> 
+            <b/>
+           
+            <b>
+                 <a href="http://btebadmission.gov.bd/website/Link/2024/Notice-02-02-2-25.pdf"> বিজ্ঞপ্তি   
+                (02-02-2025) </a> 
+                <b/>
+                 
+                <b> <a href="http://btebadmission.gov.bd/website/Link/2024/Notice-29-01-2025.pdf"> বিজ্ঞপ্তি   
+                (29-01-2025) </a> 
+                <b/>
+
+
+
+
+            <b>
+                <a href="http://btebadmission.gov.bd/website/Link/2024/Admission notice-24-Jan-2025.pdf"> ডিপ্লোমা-ইন-ইঞ্জিনিয়ারিং শিক্ষাক্রমের ২০২৪-২০২৫ শিক্ষাবর্ষে ভর্তিকৃত শিক্ষার্থীদের ক্লাস শুরু হবে ১৯ জানুয়ারি ২০২৫ ( বিজ্ঞপ্তি 15-01-2025) ।</a>
+            </b>
+
+            <!--
+            <b>
+                ডিপ্লোমা পর্যায়ের বেসরকারি  ও উচ্চমাধ্যমিক পর্যায়ের সরকারি-বেসরকারি প্রতিষ্ঠানসমূহের ভর্তি কার্যক্রম ২৮ নভেম্বর, ২০২৪ খ্রী: তারিখে শেষ হবে । ২৮ নভেম্বর, ২০২৪ খ্রী: তারিখে প্রতিষ্ঠানের এপ্রুভলিষ্ট এ থাকা শিক্ষার্থীদের বোর্ড নির্ধারিত সময়ে মূল নম্বরপত্র  প্রদর্শন সাপেক্ষে রেজিষ্ট্রেশনের জন্য বিবেচিত হবে 
+            </b>
+            
+
+                <b>
+            রক্ষণাবেক্ষণ এর কাজের জন্য অ্যাপ্লিকেশন সার্ভার বন্ধ আছে । সাময়িক অসুবিধার জন্য দুঃখিত ।
+        </b>
+        <br/>
+        
+            <b>
+            বিভিন্ন পর্যায়ের ফলাফলে চান্সপ্রাপ্ত শিক্ষার্থী যারা নিশ্চায়ন করতে পারেনি তাদের নতুনভাবে আবেদন ও অপেক্ষমান তালিকায় থাকা শিক্ষার্থীদের পছন্দক্রম পরিবর্তনের সময় ৩০-০৯-২০২৪খ্রি হতে ০২-১০-২০২৪খ্রি. তারিখ পর্যন্ত ।
+            </b>
+          
+            <b>
+                 সপ্তম পর্যায়ের ফলাফল প্রকাশ করা হয়েছে।
+                ষষ্ঠ পর্যায়ের ফলাফল প্রকাশ করা হয়েছে।
+                 চান্স প্রাপ্ত শিক্ষার্থীদের নিশ্চায়ন ১৯.০৯.২০২৪ তারিখের মধ্যে সম্পন্ন করতে হবে। 
+        </b>
+			 <br/>
+            
+                পঞ্চম পর্যায়ের ফলাফল ১৫.০৯.২০২৪ তারিখে প্রকাশ করা হবে। 
+                ৪র্থ পর্যায়ের ফলাফল প্রকাশ করা হয়েছে। চান্স প্রাপ্ত শিক্ষার্থীদের নিশ্চায়ন ১৪.০৮.২০২৪ তারিখ হতে ১৫.০৮.২০২৪ তারিখের মধ্যে সম্পন্ন করতে হবে। সকল পর্যায়ে নিশ্চায়নকৃত শিক্ষার্থীদের সংশ্লিষ্ট প্রতিষ্ঠানে ১৯/০৮/২০২৪ হতে ২৫/০৮/২০২৪ তারিখের মধ্যে স্ব শরীরে উপস্থিত হয়ে প্রাতিষ্ঠানিক ভর্তি সম্পন্ন করতে হবে।
+                <b>
+			    ২০২৩-২০২৪ শিক্ষাবর্ষে ডুপ্লিকেট, Blank form-এ ভর্তি ও Delete হওয়া শিক্ষার্থীদের সমস্যা সমাধানের জন্য আগামী ২১ মার্চ, ২০২৪খ্রি. তারিখের মধ্যে বোর্ডের সংশ্লিষ্ট শাখায় যোগাযোগের জন্য অনুরোধ করা হলো। অন্যথায় এসকল শিক্ষার্থী রেজিস্ট্রেশনের জন্য বিবেচিত হবে না।
+			 </b>
+			 <br/>
+
+            
+
+            <b>
+                <a href="http://btebadmission.gov.bd/website/Link/Duplicate Admission Notice_27-01-2024.pdf"> বিজ্ঞপ্তি (22-01-2024) ।</a>
+			 </b>
+
+            <!--
+			 <b>
+			    সরকারি প্রতিষ্ঠানসমূহের ওরিয়েন্টেশন ক্লাস ও মূলনম্বরপত্র জমাদানের শেষ তারিখ ২৯/১১/২০২৩খ্রি. এবং বেসরকারি প্রতিষ্ঠানে ভর্তির শেষ তারিখ ৩০/১১/২০২৩খ্রি. তারিখ। উক্ত সময়ের পর কোন আবেদন গ্রহণ করা হবে না। 
+			 </b>
+			 <br/>
+		   <b>  
+		    <a href="http://btebadmission.gov.bd/website/Link/Orientaion 2023-2024.pdf"> বিজ্ঞপ্তি (27-11-2023) </a>
+		      </b>
+			   
+		     <!--
+			 
+			  <b>
+			    অষ্টম   পর্যায়ের ফলাফল প্রকাশিত হয়েছে । নির্বাচিত শিক্ষার্থীদের 08/11/2023 তারিখ  রাত 9 টার  মধ্যে নির্ধারিত ভর্তি নিশ্চায়ন ফি প্রদান করে নিশ্চায়ন সম্পন্ন করতে হবে।
+			 </b>
+			 <br/>
+		   <b>  
+		    <a href="http://btebadmission.gov.bd/website/Link/Notice-01-11-2023.pdf"> বিজ্ঞপ্তি (01-11-2023) </a>
+		      </b>
+		  <b>  
+		     প্রতিষ্ঠান কর্তৃক অনুপস্থিত প্রার্থীদের অনলাইনে তথ্য প্রেরণের তারিখ  31-10-2023
+		      </b>
+			 
+		     <b>
+			     পঞ্চম পর্যায়ের   ভর্তির ফলাফল প্রকাশিত হয়েছে । নির্বাচিত শিক্ষার্থীদের 19/10/2023 তারিখ বিকাল 5 টার  মধ্যে নির্ধারিত ভর্তি নিশ্চায়ন ফি প্রদান করে নিশ্চায়ন সম্পন্ন করতে হবে। 
+			 </b>
+			 <br/>
+			 <b>
+			        <a href="http://btebadmission.gov.bd/website/Link/Notice-15-10-2023.pdf"> বিজ্ঞপ্তি (15-10-2023) ।</a>
+			  </b>
+			 
+			 
+			 <b>
+			  প্রাতিষ্ঠানিক ভর্তির কার্যক্রম ২৫ সেপ্টেম্বর-২০২৩ হতে  0২ অক্টোবর-২০২৩ এর ভিতরে সম্পন্ন করতে হবে ।
+			 </b>
+			 
+			 <b>
+			       দ্বিতীয় পর্যায়ের ভর্তির ফলাফল প্রকাশিত হয়েছে ।   নতুনভাবে  নির্বাচিত শিক্ষার্থীদের  ২২/০৯/২০২৩ তারিখের মধ্যে নির্ধারিত ভর্তি নিশ্চায়ন ফি প্রদান করে নিশ্চায়ন সম্পন্ন করতে হবে।
+			 </b>
+			
+			<b>
+				ভর্তির ফলাফল প্রকাশিত হয়েছে । নির্বাচিত শিক্ষার্থীদের ০২/০১/২০২৩ হতে ০৫/০১/২০২৩ তারিখের মধ্যে নির্ধারিত ভর্তি নিশ্চায়ন ফি প্রদান করে নিশ্চায়ন সম্পন্ন করতে হবে।
+            </b>
+			 
+
+			
+			<b>
+			বেসরকারী প্রতিষ্ঠানের সকল শিক্ষাক্রমে এবং সরকারি মেরিন ট্রেড কোর্সে ভর্তি কার্যক্রম সার্ভার মেইন্টেনেন্স জনিত কারনে আগামী ১৭ ফেব্রুয়ারী, ২০২৩ হতে ২২ ফেব্রুয়ারী, ২০২৩ পর্যন্ত বন্ধ থাকবে। আগামী  ২৩ ফেব্রুয়ারী, ২০২৩  হতে পুনরায় ভর্তি কার্যক্রম শুরু হবে। 
+			</b>
+			
+			<b>
+			 বেসরকারী প্রতিষ্ঠানের সকল শিক্ষাক্রমে এবং সরকারি মেরিন ট্রেড কোর্সে ভর্তি কার্যক্রম  পুনরায় শুরু হয়েছে।
+			</b>
+			<b>
+				ভর্তির ফলাফল প্রকাশিত হয়েছে । নির্বাচিত শিক্ষার্থীদের ০২/০১/২০২৩ হতে ০৫/০১/২০২৩ তারিখের মধ্যে নির্ধারিত ভর্তি নিশ্চায়ন ফি প্রদান করে নিশ্চায়ন সম্পন্ন করতে হবে।
+            </b>
+			
+			<b>
+			অনিবার্য কারণবশত First Come First Served (FCFS)- এ ভর্তি  সাময়িক স্থগিত করা হয়েছে, আগামীকাল (১৫/০২/২০২৩) সকাল ১০:০০ টা হতে পুনরায় শুরু হবে ।
+			</b>
+			
+			
+			<b>
+			প্রথম পর্যায়ের First Come First Served (FCFS)- এর মাধ্যমে ভর্তি  শুরু হয়েছে। 
+			</b>
+			
+			<b>
+			ডিপ্লোমা পর্যায়ের শিক্ষাক্রমের সরকারি প্রতিষ্ঠানসমূহের শুণ্য আসনের ভর্তি কার্যক্রম ১৪-১৬ মার্চ, ২০২৩খ্রি. তারিখের মধ্যে এবং বেসরকারি প্রতিষ্ঠানসমূহের সকল শিক্ষাক্রমের ভর্তি কার্যক্রম ২৩ মার্চ, ২০২৩খ্রি. তারিখের মধ্যে সম্পন্ন করতে হবে।
+			<br/>
+			নগদ অপারেটর দিয়ে পেমেন্ট আপাতত বন্ধ আছে
+			-->
+			</b>
+        </span>
+	</marquee> 
+	
+	<!--
+	<marquee scrollamount="5"
+                     onMouseOver="this.setAttribute('scrollamount', 0, 0);this.stop();"
+                     OnMouseOut="this.setAttribute('scrollamount', 4, 0);this.start();">                
+		<span class="buetHelpline">
+            <b>
+				Remedial Course -এ উত্তীর্ণ ছাত্র-ছাত্রীগণ আবেদনের শর্তাবলীতে বণির্ত ন্যূনতম যোগ্যতা থাকা সাপেক্ষে আবেদন করতে পারবেন
+            </b>
+        </span>
+	</marquee>
+	
+    <marquee scrollamount="5" 
+             onMouseOver="this.setAttribute('scrollamount', 0, 0);this.stop();"
+             OnMouseOut="this.setAttribute('scrollamount', 4, 0);this.start();">
+        
+		<span style="color: #7108F9;">
+        সরকারি পলিটেকনিক ও মেরিন ইন্সটিটিউট সমূহে ডিপ্লোমা ইন ইঞ্জিনিয়ারিং -এ ভর্তির ফলাফল ০৭/০৩/২০২২ তারিখ রাত ৮টায় প্রকাশিত হবে ।
+		</span>
+
+    </marquee>
+	-->
+	<!--
+	<marquee scrollamount="5"
+                     onMouseOver="this.setAttribute('scrollamount', 0, 0);this.stop();"
+                     OnMouseOut="this.setAttribute('scrollamount', 4, 0);this.start();">                
+				<span style="color: #FF8033;">
+                    <b>
+                        বিকাশ এর মাধ্যমে আবেদন ফি প্রদান সাময়িক ভাবে বন্ধ আছে। 
+                    </b>
+                </span>
+    </marquee> 
+	-->
+   </div>
+
+
+ <!--Navigation bar Start-->
+ 
+        <script>
+            $(function() {
+                  $("#leftNaviagationBar").load("leftsidebar.html?v=" + new Date().getTime());
+                  });
+                   
+            </script>
+          <div id="leftNaviagationBar"></div>
+        <!--Navigation bar End-->
+
+
+
+<div class="row">
+ 
+ 
+<!--
+ <div style="padding-left:400px">
+				<input type="button" class="button button2" value="Institute login" onclick="forwardCollegeLogin()" /> 
+
+</div>	
+-->
+
+<center>
+<div style="padding-left:400px">
+    
+     <input type="button"  style="width:300px;font-size: x-large;" class="button" value="Apply Now" onclick="sscInfoVerification()" />
+    
+   
+
+    <input type="button"  style="width:250px;font-size: large;" class="button" value="সিকিউরিটি কোড পুনরুদ্ধার " onclick="parent.open('http://app1.btebadmission.gov.bd:7080/BTEB_WEB/pinretrival')" /> 
+	
+    <input type="button"  style="width:500px;font-size: large;" class="button" value="সরকারি প্রতিষ্ঠানে ভর্তি পরীক্ষার জন্য এডমিট কার্ড ডাউনলোড" onclick="forwardApplicantLogin()" /> 
+    
+	<!--<br/>
+	<input type="button" class="button" style="width: 150px;font-size: x-large;" value="View Result" onclick="window.open('http://app1.btebadmission.gov.bd:7080/resultview/index')" />
+	
+	<input type="button" style="width: 235px;font-size: x-large;" class="button" value="Confirmation Status" onclick="parent.open('http://app1.btebadmission.gov.bd:7080/resultview/resultRegStatusIndex')" />
+   		 -->
+</div>
+</center>
+
+       <div class="column" style="width:800px" >     
+	 
+<table id="curTable" style="width:800px;font-size:18px;color:#03F;text-align:left;">
+	   <tr>
+	     <th>Curriculum Name</th><th>Application Link</th>
+		 
+	   </tr>
+	   <tr>
+	     <td style="color:#220bec">Diploma in Engineering (Govt.)</td>
+		 <td  rowspan="11" style="background-color:#DDFFFF"><input type="button" class="buttonInner button2" value="Registration" onclick="forwardApplication()" /> </td>
+	   </tr>
+         <tr>
+	     <td style="color:#ee3131">Diploma in Tourism and Hospitality Management (Govt.)</td>
+		 
+	   </tr>
+	   <tr>
+        
+	     <td style="color:#000000">Diploma in Marine Engineering (Govt.) </td>
+		 
+	   </tr>
+	   <tr>
+	     <td style="color:#000000">Diploma in Textile Engineering (Govt.)</td>
+		 
+	   </tr>
+	   <tr>
+	     <td style="color:#000000">Diploma in Agriculture (Govt.)</td>
+		 
+	   </tr>
+	   <tr>
+	     <td style="color:#000000">Diploma in Fisheries (Govt.)</td>
+		  
+	   </tr>
+	   <tr>
+	     <td style="color:#000000">Diploma in Forestry (Govt.)</td>
+		 
+	   </tr>
+	   <tr>
+	     <td style="color:#000000">Diploma in Livestock (Govt.)</td>
+		 
+	   </tr>
+	    <tr>
+	     <td style="color:#000000">HSC-VOC (Govt.)</td>
+		 
+	   </tr>
+	   <tr>
+	     <td style="color:#000000">HSC-BMT (Business Management and Technology) (Govt.)</td>
+		 
+	   </tr>
+	   <tr>
+	     <td style="color:#000000">Certificate in Marine Trade (Govt.)</td>
+		 
+	   </tr>
+
+     
+	    
+	   <tr>
+	     <td style="color:#03F" >Diploma in Engineering (Private)</td>
+		 <td  rowspan="6" style="background-color:#B8DCDC"><input type="button" class="buttonInner button2" value="Registration" onclick="forwardApplication()" /> </td>
+	   </tr>
+	   <tr>
+	     <td style="color:#03F">Diploma in Agriculture (Private)</td>
+		 
+	   </tr>
+	   <tr>
+	     <td style="color:#03F">Diploma in Fisheries (Private)</td>
+		 
+	   </tr>
+	   <tr>
+	     <td style="color:#03F">Diploma in Textile Engineering (Private)</td>
+		 
+	   </tr>
+	   <tr>
+	     <td style="color:#03F">HSC-BMT (Business Management and Technology)(Private)</td>
+		 
+	   </tr>
+	   <tr>
+	     <td style="color:#03F">Diploma in Commerce (Private)</td>
+		 
+	   </tr>
+	    
+	   
+	   </table>
+	<!--
+	
+	<input type="button" class=" buttonInner button2" value="ভর্তি নিশ্চায়ন বিষয়ক বিজ্ঞপ্তি" onclick="parent.open('/Link/Confirmation_Notice.pdf')" />
+	
+    <input type="button" class=" buttonInner button2" value="Govt. / Non-Govt. Inst. Login" onclick="forwardCollegeLogin()" /> 
+	
+	<input type="button" class=" buttonInner button2" value="জরুরী বিজ্ঞপ্তি" onclick="parent.open('http://btebadmission.gov.bd/website/Link/notice 22-jun-2022.pdf')" /> 
+	-->
+	 
+	
+	 
+	</div>
+	</div>
+	
+	 
+
+<!--
+<center style="font-size:35px; color:red; font-weight:bold;">
+<div style="margin-top:0px; float: center;">
+                            <a style="font-weight:bold; font-size:35px; color:darkred; cursor:pointer; " href="http://180.211.164.133/remedial_new/" target="_blank">
+                                Click here for Remedial Course Application
+                            </a>
+ </div>
+</center>    
+    -->
+
+<br />
+<br />
+<center style="font-size:20px; color:red;">
+<!--
+<div style="margin-top:0px; float: center;">
+                            <a style="font-weight:bold; font-size:20px; color:red; cursor:pointer; " href="Link/notice_mobilenumber_securitycode.pdf" target="_blank">
+                                                                                মোবাইল নাম্বার এবং সিকিউরিটি কোড সংক্রান্ত বিজ্ঞপ্তি
+                            </a>
+ </div>
+ -->
+</center>   
+	<center style="font-size:25px; color:red; font-weight:bold;"> Help Line</center>  </br>
+   	<center style="font-size:20px; color:red;">  BTEB (9:00 AM To 5:00 PM)  </center>
+	<center style="font-size:18px; color:black;"> 
+		Diploma:  01322830308<br/>
+Agriculture: 01322830306<br/>
+Textile :    01322830307<br/>
+BMT / VOC:  01322830309 <br/>
+         
+	</center>
+	<br/>
+	<center style="font-size:20px; color:red;">  BUET (9:00 AM To 5:00 PM)  </center>
+	<center style="font-size:18px; color:black;"> 
+		01346935338, 01707721572
+	</center>
+
+	 
+
+	<br />
+	
+	
+	<br />
+        <br />
+        <div class="footer">
+            <div class="copyRight">
+                © 2026 Bangladesh Technical Education Board, All Rights
+                Reserved
+            </div>
+			  <div class="techicalAssistance">
+                  <span>Technical Assistance by:</span> <a href="http://www.buet.ac.bd/" target="_blank"> <span>BUET</span> <img src="buetLogo.png" style="vertical-align:middle" width="25" height="25" alt="BUET Logo"/> </a>
+            </div>
+        </div>
+    
+</div>
+    
+</body>
+</html>

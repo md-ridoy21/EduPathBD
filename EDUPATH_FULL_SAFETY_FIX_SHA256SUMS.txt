@@ -1,0 +1,4 @@
+6aac0ff3409eb35c8bc434ccd0b51bfaa401af28413c95e6cc5b33df0a9de363  EduPath-BD-v1.1.0-rc.2-Data-Safety-Fix.zip
+bbdc075f246314bf8c39191161690c1e2c98b279be7426336dc346dcfc69bece  EduPath-BD-v1.1.0-rc.1-Full-Safety-Fix-Overlay.zip
+d46fd58a0357050a76a4edb74079d0b11c9479d05124d8cae96554e6a807002d  EduPath-BD-v1.1.0-rc.1-to-Full-Safety-Fix.patch
+7296e84480455f516bab51c0fa46cafc348c1c9e14269cb96cea10a1c83519f7  EDUPATH_FULL_AUDIT_AND_FIX_REPORT.md

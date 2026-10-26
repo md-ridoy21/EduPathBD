@@ -1,0 +1,2811 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="google-site-verification" content="7MSNFqyJ81XHW1RO81h2PEnkPvMeMMam6DkOFDgLjd0" />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Sonargaon University</title>
+    <meta name="description" content="The Sonargaon University (SU) is one of the Bangladesh’s preeminent private university, approved by University Grants Commission (UGC) of Bangladesh and Bangladesh Government (GoB) and has been sponsored by Sonargaon University (SU) Trust.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#5B2382">
+
+    <!-- favicon
+    ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://su.edu.bd/web_assets/engineering/img/favicon.png">
+
+    <!-- Google Fonts
+    ============================================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Color Swithcer CSS
+    ============================================ -->
+    <link rel="stylesheet" href="https://su.edu.bd/web_assets/engineering/css/color-switcher.css">
+
+    <!-- Fontawsome CSS
+    ============================================ -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS
+    ============================================ -->
+    <link rel="stylesheet" href="https://su.edu.bd/web_assets/engineering/css/bootstrap.min.css">
+    <!-- Plugins CSS
+    ============================================ -->
+    <link rel="stylesheet" href="https://su.edu.bd/web_assets/engineering/css/plugins.css">
+
+    <!-- Style CSS
+    ============================================ -->
+    <link rel="stylesheet" href="https://su.edu.bd/web_assets/engineering/css/style.css">
+    <link rel="stylesheet" href="https://su.edu.bd/web_assets/engineering/css/theme.css">
+
+    <!-- Color CSS
+    ============================================ -->
+    <link rel="stylesheet" href="https://su.edu.bd/web_assets/engineering/css/color.css">
+
+    <!-- Responsive CSS
+    ============================================ -->
+    <link rel="stylesheet" href="https://su.edu.bd/web_assets/engineering/css/responsive.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- SU Theme (logo colour system) — must stay last so it wins
+    ============================================ -->
+    <link rel="stylesheet" href="https://su.edu.bd/web_assets/engineering/css/su_theme.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MSBPPXRN');</script>
+<!-- End Google Tag Manager -->
+
+    <script>
+        /* Multi-level dropdown: every nested level works by click and desktop hover. */
+        $(document).ready(function () {
+            var $menu = $('#navbarSupportedContent');
+
+            $menu.on('click', '.dropdown-menu > li.dropdown > a.dropdown-toggle', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var $link = $(this);
+                var $item = $link.parent('.dropdown');
+                var $subMenu = $link.next('.dropdown-menu');
+                var isOpen = $subMenu.hasClass('show');
+
+                $item.siblings('.dropdown').find('> .dropdown-menu.show').removeClass('show');
+                $item.siblings('.dropdown').find('> a.dropdown-toggle').attr('aria-expanded', 'false');
+                $subMenu.toggleClass('show', !isOpen);
+                $link.attr('aria-expanded', isOpen ? 'false' : 'true');
+            });
+
+            $menu.on('hidden.bs.dropdown', '.navbar-nav > li.dropdown', function () {
+                $(this).find('.dropdown-menu.show').removeClass('show');
+                $(this).find('a.dropdown-toggle').attr('aria-expanded', 'false');
+            });
+
+            /* Close the mobile menu only after a real destination is selected. */
+            $menu.on('click', 'a:not(.dropdown-toggle)', function () {
+                if (window.innerWidth < 992) {
+                    $menu.collapse('hide');
+                }
+            });
+        });
+    </script>
+
+    <!-- Header / menu — SU logo colours, footer-style polish + sticky menu -->
+    <style>
+        :root {
+            --su-purple: #5B2382;
+            --su-purple-dark: #2E1046;
+            --su-purple-light: #7B3FA8;
+            --su-magenta: #C2185B;
+            --su-magenta-dark: #9C123F;
+            --su-gold: #E9B824;
+            --su-navy: #241B4E;
+        }
+
+        /* clip (not hidden) so position:sticky keeps working */
+        html, body { max-width: 100%; overflow-x: clip; }
+        img, iframe, video, table { max-width: 100%; }
+        .as-mainwrapper { overflow-x: clip; }
+        .main-header { height: auto; position: relative; z-index: 1040; }
+
+        /* ---------- 1. Utility bar ---------- */
+        .su-utility {
+            background: linear-gradient(90deg, var(--su-magenta-dark), var(--su-magenta) 55%, var(--su-purple));
+            color: #fff;
+            font-size: 12.5px;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+        .su-utility__inner { display: flex; align-items: stretch; justify-content: space-between; flex-wrap: wrap; }
+        .su-utility__links { display: flex; flex-wrap: wrap; align-items: center; padding: 0 16px; margin: 0; list-style: none; }
+        .su-utility__links li { position: relative; }
+        .su-utility__links li + li:before { content: "|"; opacity: .4; margin: 0 2px; }
+        .su-utility__links a { color: rgba(255,255,255,.9); font-weight: 600; padding: 10px; display: inline-block; }
+        .su-utility__links a:hover { color: var(--su-gold); }
+        .su-utility__social { display: flex; align-items: center; background: rgba(0,0,0,.28); padding: 0 12px; }
+        .su-utility__social a { color: #fff; font-weight: 600; font-size: 12px; padding: 11px 12px; display: inline-flex; align-items: center; gap: 7px; }
+        .su-utility__social a:hover { color: var(--su-gold); }
+
+        /* ---------- 2. Notice marquee ---------- */
+        .header-top-design {
+            min-height: 0; padding: 0;
+            background: linear-gradient(90deg, var(--su-purple-dark), var(--su-purple) 65%, var(--su-magenta));
+            border-bottom: 2px solid var(--su-gold);
+        }
+        .header-top-design .container { padding-left: 16px; padding-right: 16px; }
+        .GeneratedMarquee { font-family: 'Poppins','Raleway',sans-serif; font-size: 13.5px; font-weight: 500; color: #fff; padding: 9px 0; margin: 0; }
+        .GeneratedMarquee a { color: #FFE9A8 !important; text-decoration: underline; }
+        .GeneratedMarquee a:hover { color: #fff !important; }
+
+        /* ---------- 3. Brand + action row ---------- */
+        .navbar-new-top {
+            background:
+                radial-gradient(1000px 220px at 92% -60%, rgba(194,24,91,.10), transparent 70%),
+                radial-gradient(900px 200px at 4% -60%, rgba(91,35,130,.10), transparent 70%),
+                #fff;
+            padding: 16px; gap: 14px; flex-wrap: wrap; justify-content: space-between;
+            border-bottom: 1px solid #F0ECF7;
+        }
+        .navbar-brand { margin-right: 0; padding: 0; }
+        .navbar-brand img { width: 300px; max-width: 100%; height: auto; }
+        .navbar-new-top .header-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 10px; padding: 0; }
+        .navbar-new-top .header-actions .btn {
+            border-radius: 999px; font-family: 'Poppins',sans-serif; font-size: 13.5px; font-weight: 600;
+            padding: 10px 20px; background: #fff !important; color: var(--su-navy) !important;
+            border: 1.4px solid #E4DDF0 !important; box-shadow: 0 2px 8px rgba(46,16,70,.06);
+            white-space: nowrap; transition: all .2s ease;
+        }
+        .navbar-new-top .header-actions .btn:hover {
+            border-color: var(--su-magenta) !important; color: var(--su-magenta) !important;
+            transform: translateY(-2px); box-shadow: 0 10px 22px rgba(194,24,91,.16);
+        }
+        .navbar-new-top .header-actions .btn.su-cta {
+            background: linear-gradient(120deg, var(--su-purple), var(--su-magenta)) !important;
+            color: #fff !important; border: 0 !important; box-shadow: 0 10px 24px rgba(91,35,130,.28);
+        }
+        .navbar-new-top .header-actions .btn.su-cta:hover { color: #fff !important; }
+
+        @keyframes suPulse {
+            0%,100% { box-shadow: 0 0 0 0 rgba(194,24,91,.5); }
+            50%     { box-shadow: 0 0 0 9px rgba(194,24,91,0); }
+        }
+        .blinking-button { animation: suPulse 2.6s ease-out infinite; }
+        @media (prefers-reduced-motion: reduce) { .blinking-button { animation: none; } }
+
+        /* ---------- 4. Main menu bar — STICKY ---------- */
+        .navbar-new-bottom.mainmenu {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            background: linear-gradient(120deg, var(--su-purple-dark), var(--su-purple) 52%, var(--su-magenta));
+            border-top: 3px solid var(--su-gold);
+            border-bottom: 0;
+            box-shadow: 0 10px 26px rgba(46,16,70,.22);
+            padding: 0; z-index: 1050;
+            transition: box-shadow .25s ease, padding .25s ease;
+        }
+        .mainmenu { border: 0; margin: 0; min-height: 20px; width: 100%; }
+        .mainmenu .container { padding-left: 16px; padding-right: 16px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+        .mainmenu .navbar-nav { align-items: stretch; }
+
+        .mainmenu a,
+        .navbar-new-bottom ul li a,
+        .navbar-expand-lg .navbar-nav .nav-link {
+            color: #fff;
+            font-family: 'Poppins','Raleway',sans-serif;
+            font-size: 14.5px; font-weight: 500; padding: 15px 13px;
+            display: block !important; letter-spacing: .2px; position: relative;
+        }
+        .mainmenu > .container > .navbar-collapse > .navbar-nav > li > a { white-space: nowrap; }
+        .mainmenu .navbar-nav { flex-wrap: nowrap; justify-content: center; }
+        .mainmenu .navbar-collapse { flex-basis: 100%; justify-content: center; }
+
+        .mainmenu > .container > .navbar-collapse > .navbar-nav > li > a:after {
+            content: ""; position: absolute; left: 13px; right: 13px; bottom: 8px;
+            height: 2.5px; border-radius: 3px; background: var(--su-gold);
+            transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
+        }
+        .mainmenu > .container > .navbar-collapse > .navbar-nav > li:hover > a:after,
+        .mainmenu > .container > .navbar-collapse > .navbar-nav > li.active > a:after { transform: scaleX(1); }
+
+        .navbar-new-bottom ul li:hover > a,
+        .mainmenu li a:hover, .mainmenu li a:focus, .mainmenu .active > a {
+            color: var(--su-gold); background: rgba(255,255,255,.08); outline: 0;
+        }
+
+        /* compact logo + CTA that appear inside the sticky bar on scroll (DESKTOP ONLY) */
+        .mainmenu .su-mini-brand,
+        .mainmenu .su-mini-cta,
+        a.su-mini-brand, a.su-mini-cta { display: none !important; }
+        @media (min-width: 992px) {
+            .mainmenu .su-mini-brand, a.su-mini-brand { flex: 0 0 auto; opacity: 0; max-width: 0; overflow: hidden; transition: opacity .25s ease, max-width .3s ease; }
+            .mainmenu .su-mini-brand img { height: 34px; width: auto; display: block; }
+            .mainmenu .su-mini-cta, a.su-mini-cta {
+                flex: 0 0 auto; opacity: 0; max-width: 0; overflow: hidden; white-space: nowrap;
+                background: var(--su-gold); color: var(--su-purple-dark) !important;
+                border-radius: 999px; font-weight: 700; font-size: 13px;
+                padding: 9px 0 !important; transition: opacity .25s ease, max-width .3s ease, padding .25s ease;
+            }
+            .navbar-new-bottom.mainmenu.su-stuck { box-shadow: 0 14px 34px rgba(20,6,36,.34); }
+            @media (min-width: 1400px) {
+                .navbar-new-bottom.mainmenu.su-stuck a.su-mini-cta { display: inline-block !important; opacity: 1; max-width: 220px; padding: 9px 18px !important; }
+            }
+            .navbar-new-bottom.mainmenu.su-stuck .su-mini-cta:hover { background: #fff; color: var(--su-magenta) !important; }
+            .navbar-new-bottom.mainmenu.su-stuck .mainmenu-inner { justify-content: space-between; }
+        }
+        @media (min-width: 1500px) {
+            .navbar-new-bottom.mainmenu.su-stuck a.su-mini-brand { display: block !important; opacity: 1; max-width: 170px; }
+            .navbar-new-bottom.mainmenu.su-stuck .mainmenu a { padding-top: 12px; padding-bottom: 12px; }
+        }
+
+
+        /* ---------- Dropdowns ---------- */
+        .dropdown-menu {
+            padding: 8px 0; margin: 0; border: 0; border-top: 3px solid var(--su-gold);
+            border-radius: 0 0 14px 14px; box-shadow: 0 22px 46px rgba(20,6,36,.26) !important; background: #fff;
+        }
+        .dropdown-menu.show { background: #fff !important; }
+        .mainmenu .collapse ul ul,
+        .mainmenu .collapse ul ul ul,
+        .mainmenu .collapse ul ul ul ul { background: #fff; }
+        .mainmenu .dropdown-menu > li > a {
+            color: var(--su-navy) !important; font-size: 14px; font-weight: 500;
+            padding: 10px 20px; border-left: 3px solid transparent; white-space: normal;
+        }
+        .mainmenu .dropdown-menu > li > a:hover,
+        .mainmenu .dropdown-menu > li:hover > a {
+            background: #F7F0FA; color: var(--su-magenta) !important; border-left-color: var(--su-magenta);
+        }
+        .mainmenu .dropdown-menu > li.dropdown > a.dropdown-toggle:after {
+            border: 0; content: "\f105"; font-family: FontAwesome; float: right; margin-left: 8px; opacity: .65;
+        }
+
+        @media only screen and (min-width: 992px) {
+            .mainmenu .collapse ul li:hover > ul { display: block; }
+            .mainmenu .collapse ul ul { position: absolute; top: 100%; left: 0; min-width: 262px; display: none; }
+            .mainmenu .collapse ul ul li { position: relative; }
+            .mainmenu .collapse ul ul li:hover > ul { display: block; }
+            .mainmenu .collapse ul ul ul,
+            .mainmenu .collapse ul ul ul ul { position: absolute; top: 0; left: 100%; min-width: 262px; display: none; border-radius: 12px; }
+            .mainmenu .collapse ul ul ul li,
+            .mainmenu .collapse ul ul ul ul li { position: relative; }
+            .mainmenu .collapse ul ul ul li:hover > ul,
+            .mainmenu .collapse ul ul ul ul li:hover > ul { display: block; }
+            .mainmenu .navbar-nav > li:nth-last-child(-n+3) .dropdown-menu .dropdown-menu { left: auto; right: 100%; }
+            /* Keep fly-out levels visible. Scrolling here clipped the faculty/program lists. */
+            .mainmenu .collapse ul ul { overflow: visible; }
+            .mainmenu .collapse > ul > li > ul { max-height: none; }
+            .mainmenu .dropdown-menu { max-width: min(310px, calc(100vw - 32px)); }
+            .mainmenu .dropdown-menu > li > a { overflow-wrap: anywhere; }
+        }
+
+        /* ---------- Mobile ---------- */
+        .navbar-toggler {
+            border: 1.4px solid rgba(255,255,255,.5); background: rgba(255,255,255,.12) !important;
+            border-radius: 10px; padding: 9px 14px; margin: 10px 16px;
+            display: flex; align-items: center; gap: 10px; color: #fff; font-size: 13.5px; font-weight: 700;
+        }
+        .navbar-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            width: 22px; height: 22px;
+        }
+
+        @media (max-width: 991px) {
+            /* never show the sticky compact logo / CTA on phones & tablets */
+            .mainmenu a.su-mini-brand, .mainmenu a.su-mini-cta,
+            a.su-mini-brand, a.su-mini-cta { display: none !important; visibility: hidden !important; }
+            .mainmenu .container.mainmenu-inner { padding: 0; }
+            .navbar-new-bottom.mainmenu.su-stuck { box-shadow: 0 10px 26px rgba(20,6,36,.28); }
+            .mainmenu { display: block !important; }
+            .mainmenu .container { display: block; }
+            .navbar-new-bottom .navbar-collapse {
+                background: #fff; border: 1px solid #EDE7F5; border-radius: 12px; margin: 0 0 12px;
+                max-height: 72vh; overflow-y: auto; -webkit-overflow-scrolling: touch;
+                box-shadow: 0 16px 34px rgba(46,16,70,.16);
+            }
+            .mainmenu .navbar-nav { width: 100%; }
+            .mainmenu .navbar-nav > li { border-bottom: 1px solid #F1ECF8; }
+            .mainmenu .navbar-collapse a { color: var(--su-navy) !important; }
+            .mainmenu a { padding: 13px 16px; }
+            .mainmenu .dropdown-menu {
+                position: static !important; float: none; width: 100%; max-width: none;
+                max-height: none; overflow: visible;
+                background: #FBF9FE !important; border: 0; border-radius: 0; box-shadow: none !important; padding: 0;
+            }
+            .mainmenu .dropdown-menu.show { display: block; }
+            .mainmenu .dropdown > .dropdown-toggle { display: flex !important; align-items: center; justify-content: space-between; gap: 12px; }
+            .mainmenu .dropdown-menu > li > a { border-left: 0; padding-left: 32px; }
+            .mainmenu .dropdown-menu .dropdown-menu > li > a { padding-left: 46px; }
+            .mainmenu .dropdown-menu .dropdown-menu .dropdown-menu > li > a { padding-left: 60px; }
+            .mainmenu .dropdown-menu > li.dropdown > a.dropdown-toggle:after { content: "\f107"; }
+            .mainmenu > .container > .navbar-collapse > .navbar-nav > li > a:after { display: none; }
+            .navbar-new-top.flex-nowrap,
+            .header-top-design.flex-nowrap { flex-wrap: wrap !important; }
+            .navbar-new-top .navbar-brand { flex: 1 1 100%; text-align: center; }
+            .navbar-new-top .navbar-brand img { margin: 0 auto; width: 250px; }
+            .navbar-new-top .header-actions { flex: 1 1 100%; justify-content: center; }
+            .navbar-toggler { width: calc(100% - 32px); justify-content: center; }
+            .navbar-new-top { flex-wrap: wrap; justify-content: center; }
+            .su-utility__links a { padding: 9px 7px; }
+            .header-top-design .container, .mainmenu .container { max-width: 100%; }
+            .mainmenu a, .su-utility__links a { min-height: 40px; }
+        }
+
+        @media (max-width: 767px) {
+            .su-utility { font-size: 11.5px; letter-spacing: 1px; }
+            .su-utility__inner { justify-content: center; }
+            .su-utility__links { justify-content: center; padding: 2px 8px; }
+            .su-utility__social { width: 100%; justify-content: center; }
+            .su-utility__social a span { display: none; }
+            .navbar-new-top { justify-content: center; padding: 12px; }
+            .navbar-brand { margin: 0 auto; text-align: center; }
+            .navbar-new-top .header-actions .btn { flex: 1 1 46%; min-width: 138px; font-size: 12.5px; padding: 10px 12px; white-space: normal; }
+            .GeneratedMarquee { font-size: 12.5px; }
+            .icon-bar a { padding: 8px !important; font-size: 17px !important; }
+        }
+
+        @media (max-width: 575px) {
+            .su-utility { font-size: 11px; letter-spacing: .6px; }
+            .su-utility__links li + li:before { display: none; }
+            .navbar-brand img { width: 215px; }
+            .navbar-new-top { padding: 10px; gap: 10px; }
+            .navbar-new-top .header-actions .btn { font-size: 12px; padding: 9px 10px; min-width: 0; flex: 1 1 46%; }
+            .su-utility__links a { padding: 8px 6px; }
+            .GeneratedMarquee { font-size: 12px; padding: 7px 0; }
+            .navbar-toggler { margin: 8px 12px; padding: 8px 12px; }
+            .mainmenu a { padding: 12px 14px; font-size: 14px; }
+        }
+
+        @media (max-width: 767px) {
+            .navbar-new-top .header-actions { flex-wrap: wrap; gap: 8px; width: 100%; }
+            .navbar-new-top .header-actions .btn { flex: 1 1 calc(50% - 4px); min-width: 0; }
+            .navbar-new-top .header-actions .btn.su-cta { flex: 1 1 100%; }
+        }
+        @media (max-width: 340px) {
+            .navbar-new-top .header-actions .btn { flex: 1 1 100%; }
+        }
+
+        /* ============ DESKTOP / LAPTOP LADDER (no menu wrapping) ============ */
+        @media (min-width: 992px) and (max-width: 1499px) {
+            .mainmenu a, .navbar-new-bottom ul li a { font-size: 13.6px; padding: 14px 10px; }
+            .navbar-brand img { width: 262px; }
+            .navbar-new-top .header-actions .btn { font-size: 12.8px; padding: 9px 15px; }
+        }
+        @media (min-width: 992px) and (max-width: 1299px) {
+            .mainmenu a, .navbar-new-bottom ul li a { font-size: 12.8px; padding: 13px 8px; letter-spacing: 0; }
+            .navbar-brand img { width: 230px; }
+            .navbar-new-top { padding: 10px 14px; }
+            .navbar-new-top .header-actions { gap: 8px; }
+            .navbar-new-top .header-actions .btn { font-size: 12px; padding: 8px 13px; }
+            .navbar-new-top .header-actions .btn i { display: none; }
+            .mainmenu > .container > .navbar-collapse > .navbar-nav > li > a:after { left: 8px; right: 8px; }
+            .navbar-new-bottom.mainmenu.su-stuck a.su-mini-brand { display: none !important; }
+        }
+        @media (min-width: 992px) and (max-width: 1120px) {
+            .mainmenu a, .navbar-new-bottom ul li a { font-size: 11.9px; padding: 12px 6px; }
+            .mainmenu .container { justify-content: flex-start; padding-left: 10px; padding-right: 10px; }
+            .mainmenu .navbar-nav { justify-content: flex-start; }
+            .navbar-brand img { width: 205px; }
+            .navbar-new-top .header-actions .btn { font-size: 11.4px; padding: 8px 11px; }
+            .navbar-new-bottom.mainmenu.su-stuck a.su-mini-cta { display: none !important; }
+        }
+    </style>
+
+    <script>
+        /* Sticky menu: mark the bar once it reaches the top of the screen */
+        (function () {
+            function init() {
+                var bar = document.querySelector('.navbar-new-bottom.mainmenu');
+                if (!bar) return;
+                var trigger = 0;
+                function measure() {
+                    var r = bar.getBoundingClientRect();
+                    trigger = r.top + (window.pageYOffset || document.documentElement.scrollTop);
+                    if (bar.classList.contains('su-stuck')) return;
+                }
+                function onScroll() {
+                    var y = window.pageYOffset || document.documentElement.scrollTop;
+                    bar.classList.toggle('su-stuck', y >= trigger - 1);
+                }
+                measure();
+                onScroll();
+                window.addEventListener('scroll', onScroll, { passive: true });
+                window.addEventListener('resize', function () {
+                    if (!bar.classList.contains('su-stuck')) measure();
+                    onScroll();
+                });
+            }
+            if (document.readyState !== 'loading') init();
+            else document.addEventListener('DOMContentLoaded', init);
+        })();
+    </script>
+
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!--Main Wrapper Start-->
+<div class="as-mainwrapper">
+    <div>
+        <!--Header Area Start-->
+        <header class="header-two main-header">
+
+            <!-- Utility bar -->
+            <div class="su-utility">
+                <div class="su-utility__inner">
+                    <ul class="su-utility__links">
+                        <li><a href="https://su.edu.bd/iqac">IQAC</a></li>
+                        <li><a href="https://su.edu.bd/welcome/career">Career</a></li>
+                        <li><a href="https://su.edu.bd/welcome/notice">Notice</a></li>
+                        <li><a href="https://su.edu.bd/welcome/news_and_events">News &amp; Events</a></li>
+                        <li><a href="https://su.edu.bd/contact/campus">Contact</a></li>
+                    </ul>
+                    <div class="su-utility__social">
+                        <a href="https://www.facebook.com/sonargaon.university.su" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
+                        <a href="https://www.linkedin.com/school/sonargaon-university/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+                        <a href="https://www.youtube.com/@sonargaonuniversitysu" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i><span>YouTube</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notice marquee -->
+            <nav class="navbar navbar-expand-md flex-nowrap header-top-design">
+                <div class="container">
+                     <marquee class="GeneratedMarquee" direction="left" scrollamount="3" behavior="scroll"><a href="https://su.edu.bd/web_assets/news/Bus Service.pdf" class="text-white">ছাত্র-ছাত্রীদের জন্য বাস সার্ভিস । সিডিউল দেখুন.
+                     ..</a> ||  Admission Going on Fall- 2026 *** 50-100% Scholarship on Tuition Fee. ***  Bangla, BBA, LLB | B.Sc in Civil, CSE, Mechanical, EEE, Textile, Architecture, AMT, FDT, Marine |  MBA, LLM</marquee>
+                </div>
+            </nav>
+
+            <!-- Brand + actions -->
+            <nav class="navbar navbar-expand-md flex-nowrap navbar-new-top">
+                <a href="https://su.edu.bd/" class="navbar-brand"><img src="https://su.edu.bd/public/gallery/logo2.png" alt="Sonargaon University (SU)" /></a>
+                <div class="header-actions">
+                    <button type="button" class="btn btn-success login" onclick="document.location='http://sue.su.edu.bd:5081/sonargaon_erp/'"><i class="fa fa-user-o" aria-hidden="true"></i> Login To ERP</button>
+                    <button type="button" class="btn btn-info online_admission blinking-button" onclick="document.location='http://sue.su.edu.bd:5081/sonargaon_erp/'"><i class="fa fa-graduation-cap" aria-hidden="true"></i> 2nd Convocation</button>
+                    <button type="button" class="btn btn-primary degree_verify" onclick="document.location='https://su.edu.bd/welcome/degree_verification'"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Degree Verification</button>
+                    <button type="button" class="btn btn-primary degree_verify" onclick="document.location='http://sue.su.edu.bd:5081/sonargaon_erp/siteadmin/alumni_profile'">Alumni Registration</button>
+                    <button type="button" class="btn su-cta" onclick="document.location='http://sue.su.edu.bd:5081/sonargaon_erp/siteadmin/admission_info'">Apply Now</button>
+                </div>
+            </nav>
+
+            <!-- Main menu -->
+            <nav class="navbar navbar-light navbar-expand-lg navbar-new-bottom mainmenu">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span> MENU
+                </button>
+                <div class="container mainmenu-inner">
+                    <a class="su-mini-brand" href="https://su.edu.bd/" aria-label="Sonargaon University home"><img src="https://su.edu.bd/public/gallery/logo2.png" alt="Sonargaon University (SU)"></a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class=""><a href="https://su.edu.bd/">Home</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a href="https://su.edu.bd/about_us">About Us</a></li>
+                                    <li class=""><a href="https://su.edu.bd/about_us/vision_mission">Vission & Mission </a></li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VC Office</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a href="https://su.edu.bd/About_us/new_administration/1">Vice Chancellor</a></li>
+                                            <li><a href="https://su.edu.bd/About_us/old_vc">Former Vice Chancellor</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pro-VC Office</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a href="https://su.edu.bd/About_us/new_administration/2">Pro-VC</a></li>
+                                            <li><a href="https://su.edu.bd/About_us/old_pro_vc">Former Pro-VC</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Treasurer Office</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a href="https://su.edu.bd/About_us/new_administration/3">Treasurer</a></li>
+                                            <li><a href="#">Former Treasurer</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administration</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                                                            
+                                                                                                
+                                                                                                
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/4">Registrar </a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/5">Exam Controller</a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/6">Information Technology</a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/7">Finance & Accounts</a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/8">Human Resource Management</a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/9">Planning & Development</a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/10">Purchase </a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/11">Admission & Information</a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/12">IQAC & PRIA</a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/13">Library and Information </a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/14">Student Welfare Division</a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/15">Academic Affairs </a></li>
+                                                                                                
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/18">International Affairs & Public Relation</a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/20">Center for Research Training & Consultancy(CRTC)</a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/22">Audit</a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/23">Sports</a></li>
+                                                                                                                                                    <li><a href="https://su.edu.bd/About_us/new_administration/25">Engineering & Maintenance</a></li>
+                                                                                        </ul>
+                                    </li>
+                                    <li class=""><a href="https://su.edu.bd/faculty_members/dean_list">Dean of the Faculties</a></li>
+                                    <li class=""><a href="https://su.edu.bd/faculty_members/head_list">Head of the Departments</a></li>
+                                    <li class=""><a href="https://su.edu.bd/faculty_members/all_faculty_details">All Faculty Members</a></li>
+                                    <li class=""><a href="https://su.edu.bd/faculty_members/director_list">Directors</a></li>
+                                    <li class=""><a href="https://su.edu.bd/faculty_members/advisor_list">Advisor List</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Program</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Undergraduate</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li class="dropdown">
+                                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Faculty of Science &amp; Engineering</a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/2">B.Sc. in Civil Engineering</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/3">B.Sc. in Mechanical Engineering</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/4">B.Sc. in Computer Science & Engineering (CSE) </a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/5">B.Sc. in Naval Architecture and Marine Engineering</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/6">B.Sc. in Textile Engineering</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/7">B.Sc. in Fashion Design and Technology</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/8">B.Sc. in Apparel Manufacture and Technology</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/9">B.Sc. in Electrical and Electronics Engineering</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/10">Bachelor of Architecture</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/23">Basic Science</a>
+                                                        </li>
+                                                                                                    </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Faculty of Business</a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/1">Bachelor of Business Administration (BBA)</a>
+                                                        </li>
+                                                                                                    </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Faculty of Arts &amp; Humanities</a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/24">General Education </a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/22">Department of Journalism and Media Studies </a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/12">LLB (Hon’s)</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/11">BA (Honours) in Bangla</a>
+                                                        </li>
+                                                                                                    </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Graduate</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li class="dropdown">
+                                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Faculty of Business</a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/13">Executive Master of Business Administration (EMBA)</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/14">MBA in Apparel Merchandising</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/15">MBA in Supply Chain Management</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/16">MBA in Textile & Fashion Marketing</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/17">Masters in Bank Management (MBM)</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/18">Master of Business Administration (MBA)</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/19">Regular Master of Business Administration</a>
+                                                        </li>
+                                                                                                    </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Faculty of Arts &amp; Humanities</a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/20">LLM (2 Years)</a>
+                                                        </li>
+                                                                                                            <li>
+                                                            <a href="https://su.edu.bd/welcome/program_details/21">LLM (1 year)</a>
+                                                        </li>
+                                                                                                    </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admission</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a href="https://su.edu.bd/Admission/requirement">Requirements</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://su.edu.bd/Admission/registration_policies">Registration Policies</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://su.edu.bd/Admission/tution_fee">Tuition Fee</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://su.edu.bd/Admission/waiver_policy">Waiver Policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://su.edu.bd/Admission/admission_officer_list">Admission Officer List</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research &amp; Journal</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a href="https://su.edu.bd/research/home">Research</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://su.edu.bd/Su_journal">Journal</a>
+                                    </li>
+                                    <li><a href="https://su.edu.bd/Su_journal/journal_new">Journal New</a></li>
+                                </ul>
+                            </li>
+                            <li class=""><a href="http://lib.su.edu.bd">Library </a></li>
+                            <li class=""><a href="https://su.edu.bd/welcome/notice">Notice </a></li>
+                            <li class=""><a href="https://su.edu.bd/iqac">IQAC </a></li>
+                            <li><a href="https://su.edu.bd/welcome/news_and_events">News &amp; Events</a></li>
+                            <li><a href="https://su.edu.bd/crtc">CRTC</a></li>
+                            <li><a href="https://su.edu.bd/welcome/career">Career</a></li>
+                            <li><a href="https://su.edu.bd/contact/campus">Contact</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Important Links</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a href="https://su.edu.bd/welcome/code_of_conduct">Code of Conduct</a></li>
+                                    <li><a href="http://sue.su.edu.bd:5081/sonargaon_erp/siteadmin/room_tracking">Exam Room Tracking</a></li>
+                                    <li><a href="http://sue.su.edu.bd:5081/sonargaon_erp/siteadmin/admission_info">Online Admission</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="su-mini-cta" href="http://sue.su.edu.bd:5081/sonargaon_erp/siteadmin/admission_info">Apply Now</a>
+                </div>
+            </nav>
+
+</header>
+<!--End of Header Area-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+
+
+
+<style>
+    /* SU Hero — Editorial Luxe Asymmetry */
+    .su-hero,
+    .su-hero * {
+        box-sizing: border-box;
+    }
+
+    .su-hero {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: #2E1046;
+        border-top: 3px solid #E9B824;
+        font-family: 'IBM Plex Sans', Arial, sans-serif;
+    }
+
+    .su-hero__inner,
+    .su-hero__item {
+        width: 100%;
+        height: clamp(590px, 68vh, 760px);
+        min-height: 590px;
+        overflow: hidden;
+        background: #2E1046;
+    }
+
+    /* Keeps every dynamic slider image proportional — never stretched or flattened */
+    .su-hero__item img {
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none;
+        object-fit: cover !important;
+        object-position: center center;
+        transform: scale(1.015);
+        transition: transform 6s ease;
+    }
+
+    .su-hero__item.active img {
+        transform: scale(1.045);
+    }
+
+    .su-hero__shade {
+        position: absolute;
+        z-index: 2;
+        inset: 0;
+        pointer-events: none;
+        background:
+            linear-gradient(90deg, rgba(46, 16, 70, .96) 0%, rgba(46, 16, 70, .86) 34%, rgba(46, 16, 70, .42) 60%, rgba(46, 16, 70, .06) 100%),
+            linear-gradient(0deg, rgba(46, 16, 70, .38) 0%, transparent 42%);
+    }
+
+    .su-hero__shade::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 18%;
+        height: 34%;
+        background: rgba(91, 35, 130, .22);
+        border-bottom-left-radius: 100%;
+    }
+
+    .su-hero__overlay {
+        position: absolute;
+        z-index: 4;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        pointer-events: none;
+    }
+
+    .su-hero__overlay .container {
+        width: 100%;
+    }
+
+    .su-hero__content {
+        width: min(690px, 61%);
+        padding: 54px 0 108px;
+        pointer-events: auto;
+    }
+
+    .su-hero__eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 22px;
+        color: #E9B824;
+        font-size: 13px;
+        line-height: 1.4;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .su-hero__eyebrow::before {
+        content: "";
+        width: 46px;
+        height: 2px;
+        flex: 0 0 46px;
+        background: #E9B824;
+    }
+
+    .su-hero__title {
+        max-width: 680px;
+        margin: 0 0 24px;
+        color: #FFFFFF;
+        font-family: 'Libre Baskerville', Georgia, serif;
+        font-size: clamp(44px, 5vw, 72px);
+        line-height: 1.1;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-shadow: 0 5px 24px rgba(25, 7, 38, .28);
+    }
+
+    .su-hero__title span {
+        color: #E9B824;
+        white-space: nowrap;
+    }
+
+    .su-hero__text {
+        max-width: 650px;
+        margin: 0 0 34px;
+        padding-left: 20px;
+        color: rgba(255, 255, 255, .88);
+        border-left: 3px solid #C2185B;
+        font-size: 18px;
+        line-height: 1.7;
+        font-weight: 400;
+    }
+
+    .su-hero__actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .su-btn {
+        min-height: 52px;
+        padding: 14px 25px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF !important;
+        border: 2px solid rgba(255, 255, 255, .45);
+        border-radius: 3px;
+        font-size: 14px;
+        line-height: 1.3;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none !important;
+        transition: transform .22s ease, background-color .22s ease, border-color .22s ease, box-shadow .22s ease, color .22s ease;
+    }
+
+    .su-btn--primary {
+        background: #C2185B;
+        border-color: #C2185B;
+        box-shadow: 0 12px 28px rgba(194, 24, 91, .30);
+    }
+
+    .su-btn--primary::after {
+        content: "\2192";
+        margin-left: 12px;
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    .su-btn--light {
+        background: rgba(255, 255, 255, .08);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    .su-btn:hover,
+    .su-btn:focus-visible {
+        color: #2E1046 !important;
+        background: #E9B824;
+        border-color: #E9B824;
+        box-shadow: 0 12px 28px rgba(233, 184, 36, .24);
+        transform: translateY(-3px);
+        outline: none;
+    }
+
+    .su-hero .su-hero__dots.carousel-indicators {
+        z-index: 6;
+        right: auto;
+        bottom: 35px;
+        left: max(calc((100% - 1170px) / 2), 30px);
+        width: auto;
+        margin: 0;
+        padding: 0;
+        justify-content: flex-start;
+    }
+
+    .su-hero .su-hero__dots li {
+        width: 34px;
+        height: 4px;
+        margin: 0 5px 0 0;
+        border: 0;
+        border-radius: 0;
+        background: rgba(255, 255, 255, .38);
+        opacity: 1;
+        cursor: pointer;
+        transition: width .2s ease, background-color .2s ease;
+    }
+
+    .su-hero .su-hero__dots li.active {
+        width: 54px;
+        background: #E9B824;
+    }
+
+    .su-hero__nav.carousel-control-prev,
+    .su-hero__nav.carousel-control-next {
+        z-index: 7;
+        top: auto;
+        right: 30px;
+        bottom: 28px;
+        left: auto;
+        width: 46px;
+        height: 46px;
+        color: #FFFFFF;
+        background: rgba(46, 16, 70, .56);
+        border: 1px solid rgba(255, 255, 255, .34);
+        opacity: 1;
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(7px);
+        transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+    }
+
+    .su-hero__nav.carousel-control-prev {
+        right: 84px;
+    }
+
+    .su-hero__nav i {
+        font-size: 25px;
+        line-height: 1;
+    }
+
+    .su-hero__nav:hover,
+    .su-hero__nav:focus-visible {
+        color: #2E1046;
+        background: #E9B824;
+        border-color: #E9B824;
+        outline: none;
+    }
+
+    .su-hero .carousel-item-next,
+    .su-hero .carousel-item-prev,
+    .su-hero .carousel-item.active {
+        display: block;
+    }
+
+    @media (max-width: 1199px) {
+        .su-hero .su-hero__dots.carousel-indicators {
+            left: 30px;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .su-hero__inner,
+        .su-hero__item {
+            height: 640px;
+            min-height: 640px;
+        }
+
+        .su-hero__item img {
+            object-position: 58% center;
+        }
+
+        .su-hero__shade {
+            background:
+                linear-gradient(90deg, rgba(46, 16, 70, .94) 0%, rgba(46, 16, 70, .77) 52%, rgba(46, 16, 70, .26) 100%),
+                linear-gradient(0deg, rgba(46, 16, 70, .44), transparent 50%);
+        }
+
+        .su-hero__content {
+            width: 72%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .su-hero__inner,
+        .su-hero__item {
+            height: min(700px, calc(100svh - 70px));
+            min-height: 570px;
+            max-height: 700px;
+        }
+
+        .su-hero__item img {
+            object-position: center center;
+            transform: none;
+        }
+
+        .su-hero__item.active img {
+            transform: none;
+        }
+
+        .su-hero__shade {
+            background:
+                linear-gradient(180deg, rgba(46, 16, 70, .30) 0%, rgba(46, 16, 70, .48) 34%, rgba(46, 16, 70, .96) 100%);
+        }
+
+        .su-hero__shade::after {
+            display: none;
+        }
+
+        .su-hero__overlay {
+            align-items: flex-end;
+        }
+
+        .su-hero__overlay .container {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .su-hero__content {
+            width: 100%;
+            padding: 40px 0 96px;
+        }
+
+        .su-hero__eyebrow {
+            margin-bottom: 14px;
+            font-size: 10px;
+            letter-spacing: 1.1px;
+        }
+
+        .su-hero__eyebrow::before {
+            width: 30px;
+            flex-basis: 30px;
+        }
+
+        .su-hero__title {
+            margin-bottom: 17px;
+            font-size: clamp(34px, 10vw, 46px);
+            line-height: 1.12;
+        }
+
+        .su-hero__text {
+            margin-bottom: 24px;
+            padding-left: 14px;
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .su-hero__actions {
+            gap: 10px;
+        }
+
+        .su-btn {
+            min-height: 47px;
+            padding: 12px 16px;
+            font-size: 12.5px;
+        }
+
+        .su-hero .su-hero__dots.carousel-indicators {
+            bottom: 28px;
+            left: 20px;
+        }
+
+        .su-hero .su-hero__dots li {
+            width: 22px;
+        }
+
+        .su-hero .su-hero__dots li.active {
+            width: 38px;
+        }
+
+        .su-hero__nav.carousel-control-prev,
+        .su-hero__nav.carousel-control-next {
+            right: 16px;
+            bottom: 18px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .su-hero__nav.carousel-control-prev {
+            right: 62px;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .su-hero__inner,
+        .su-hero__item {
+            height: 610px;
+            min-height: 610px;
+        }
+
+        .su-hero__actions {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .su-btn {
+            width: 100%;
+        }
+
+        .su-hero__title span {
+            white-space: normal;
+        }
+
+        .su-hero__nav.carousel-control-prev,
+        .su-hero__nav.carousel-control-next {
+            display: none;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .su-hero__item img,
+        .su-btn,
+        .su-hero__nav,
+        .su-hero .su-hero__dots li {
+            transition: none;
+        }
+
+        .su-hero__item img,
+        .su-hero__item.active img {
+            transform: none;
+        }
+    }
+</style>
+
+<!-- ============ HERO SLIDER ============ -->
+<section class="su-hero">
+    <div id="suHero" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5500">
+        <div class="carousel-inner su-hero__inner">
+                            <div class="carousel-item su-hero__item active">
+                    <img src="https://su.edu.bd/public/master_slider/20-09-2026_1789912322.jpeg" alt="Sonargaon University campus">
+                </div>
+                            <div class="carousel-item su-hero__item ">
+                    <img src="https://su.edu.bd/public/master_slider/20-09-2026_1789912349.jpeg" alt="Sonargaon University campus">
+                </div>
+                            <div class="carousel-item su-hero__item ">
+                    <img src="https://su.edu.bd/public/master_slider/20-09-2026_1789912360.jpeg" alt="Sonargaon University campus">
+                </div>
+                            <div class="carousel-item su-hero__item ">
+                    <img src="https://su.edu.bd/public/master_slider/20-09-2026_1789912373.jpeg" alt="Sonargaon University campus">
+                </div>
+                            <div class="carousel-item su-hero__item ">
+                    <img src="https://su.edu.bd/public/master_slider/20-09-2026_1789912385.jpeg" alt="Sonargaon University campus">
+                </div>
+                            <div class="carousel-item su-hero__item ">
+                    <img src="https://su.edu.bd/public/master_slider/20-09-2026_1789912397.jpeg" alt="Sonargaon University campus">
+                </div>
+            
+                    </div>
+
+        <div class="su-hero__shade" aria-hidden="true"></div>
+
+        <div class="su-hero__overlay">
+            <div class="container">
+                <div class="su-hero__content">
+                    <span class="su-hero__eyebrow">UGC &amp; Govt. Approved</span>
+                    <h1 class="su-hero__title">Sonargaon University <span>(SU)</span></h1>
+                    <p class="su-hero__text">We will rise up. We will shine — quality higher education in engineering, business,
+                        arts and humanities at the heart of Dhaka.</p>
+
+                    <div class="su-hero__actions">
+                        <a class="su-btn su-btn--primary" href="http://sue.su.edu.bd:5081/sonargaon_erp/siteadmin/admission_info">Apply for Admission</a>
+                        <a class="su-btn su-btn--light" href="https://su.edu.bd/about_us">Explore the University</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                    <ol class="carousel-indicators su-hero__dots">
+                                    <li data-target="#suHero" data-slide-to="0" class="active"></li>
+                                    <li data-target="#suHero" data-slide-to="1" class=""></li>
+                                    <li data-target="#suHero" data-slide-to="2" class=""></li>
+                                    <li data-target="#suHero" data-slide-to="3" class=""></li>
+                                    <li data-target="#suHero" data-slide-to="4" class=""></li>
+                                    <li data-target="#suHero" data-slide-to="5" class=""></li>
+                            </ol>
+
+            <a class="carousel-control-prev su-hero__nav" href="#suHero" role="button" data-slide="prev" aria-label="Previous slide">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </a>
+            <a class="carousel-control-next su-hero__nav" href="#suHero" role="button" data-slide="next" aria-label="Next slide">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+</section>
+
+
+<!-- ============ QUICK LINK STRIP ============ -->
+<!--<section class="su-quick">-->
+<!--    <div class="container">-->
+<!--        <div class="su-quick__grid">-->
+<!--            <a href="https://su.edu.bd/Admission/requirement" class="su-quick__item"><i class="fa fa-file-text-o" aria-hidden="true"></i><span>Admission Requirements</span></a>-->
+<!--            <a href="https://su.edu.bd/Admission/tution_fee" class="su-quick__item"><i class="fa fa-money" aria-hidden="true"></i><span>Tuition Fees</span></a>-->
+<!--            <a href="https://su.edu.bd/Admission/waiver_policy" class="su-quick__item"><i class="fa fa-star-o" aria-hidden="true"></i><span>Waiver &amp; Scholarship</span></a>-->
+<!--            <a href="http://lib.su.edu.bd" class="su-quick__item"><i class="fa fa-book" aria-hidden="true"></i><span>Central Library</span></a>-->
+<!--            <a href="http://sue.su.edu.bd:5081/sonargaon_erp/" class="su-quick__item"><i class="fa fa-laptop" aria-hidden="true"></i><span>ERP Login</span></a>-->
+<!--            <a href="https://su.edu.bd/welcome/notice" class="su-quick__item"><i class="fa fa-bullhorn" aria-hidden="true"></i><span>Notice Board</span></a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+    
+  .su-quick__heading {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    margin: 0 0 24px;
+    padding: 18px 24px;
+
+    color: #FFFFFF;
+    background: linear-gradient(
+        120deg,
+        #2E1046 0%,
+        #5B2382 55%,
+        #C2185B 100%
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(46, 16, 70, 0.20);
+
+    font-family: 'Archivo Black', Arial, sans-serif;
+    font-size: 25px;
+    line-height: 1.3;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    overflow: hidden;
+}
+.su-quick h2.su-quick__heading {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+.su-quick h2.su-quick__heading:hover {
+    color: #FFFFFF !important;
+}
+
+.su-quick__heading::before,
+.su-quick__heading::after {
+    content: "";
+    width: 55px;
+    height: 3px;
+    margin: 0 18px;
+    flex-shrink: 0;
+    background: #E9B824;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(233, 184, 36, 0.45);
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .su-quick__heading {
+        margin-bottom: 20px;
+        padding: 15px 18px;
+        font-size: 21px;
+        letter-spacing: 1px;
+    }
+
+    .su-quick__heading::before,
+    .su-quick__heading::after {
+        width: 36px;
+        margin: 0 12px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+    .su-quick__heading {
+        margin-bottom: 16px;
+        padding: 13px 8px;
+        border-radius: 8px;
+        font-size: 16px;
+        line-height: 1.3;
+        letter-spacing: 0.5px;
+    }
+
+    .su-quick__heading::before,
+    .su-quick__heading::after {
+        width: 18px;
+        height: 2px;
+        margin: 0 7px;
+    }
+}
+    .su-quick,
+    .su-quick * {
+        box-sizing: border-box;
+    }
+
+    .su-quick__heading {
+        margin: 0 0 14px;
+        padding-left: 3px;
+        color: #4A2C7E;
+        font-family: 'Archivo Black', Arial, sans-serif;
+        font-size: 12px;
+        line-height: 1.4;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+    }
+
+    .su-quick__grid {
+        display: grid !important;
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+        gap: 14px !important;
+        width: 100%;
+    }
+
+    .su-quick__item {
+        --tile-color: #4A2C7E;
+
+        position: relative;
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        min-height: 132px;
+        padding: 22px 12px 18px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 13px;
+
+        overflow: hidden;
+        color: #2D2733;
+        background: #FFFFFF;
+        border: 1px solid #ECE8F0;
+        border-radius: 10px;
+        box-shadow: 0 5px 18px rgba(46, 16, 70, 0.08);
+
+        text-align: center;
+        text-decoration: none !important;
+        -webkit-tap-highlight-color: transparent;
+
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease,
+            border-color 0.25s ease;
+    }
+
+    .su-quick__item:nth-child(2),
+    .su-quick__item:nth-child(5) {
+        --tile-color: #C2185B;
+    }
+
+    .su-quick__item:nth-child(3),
+    .su-quick__item:nth-child(6) {
+        --tile-color: #C49713;
+    }
+
+    .su-quick__item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--tile-color);
+    }
+
+    .su-quick__icon {
+        width: 50px;
+        height: 50px;
+        flex: 0 0 50px;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        color: var(--tile-color);
+        background: rgba(74, 44, 126, 0.08);
+        border: 1px solid rgba(74, 44, 126, 0.10);
+        border-radius: 50%;
+
+        transition:
+            color 0.25s ease,
+            background-color 0.25s ease,
+            border-color 0.25s ease,
+            transform 0.25s ease;
+    }
+
+    .su-quick__item:nth-child(2) .su-quick__icon,
+    .su-quick__item:nth-child(5) .su-quick__icon {
+        background: rgba(194, 24, 91, 0.08);
+        border-color: rgba(194, 24, 91, 0.10);
+    }
+
+    .su-quick__item:nth-child(3) .su-quick__icon,
+    .su-quick__item:nth-child(6) .su-quick__icon {
+        background: rgba(233, 184, 36, 0.14);
+        border-color: rgba(196, 151, 19, 0.16);
+    }
+
+    .su-quick__icon i {
+        font-size: 21px;
+        line-height: 1;
+    }
+
+    .su-quick__label {
+        width: 100%;
+        color: #322C38;
+        font-family: 'Hind', Arial, sans-serif;
+        font-size: 15px;
+        line-height: 1.25;
+        font-weight: 600;
+        overflow-wrap: anywhere;
+        transition: color 0.25s ease;
+    }
+
+    .su-quick__item:hover,
+    .su-quick__item:focus-visible {
+        border-color: var(--tile-color);
+        box-shadow: 0 13px 28px rgba(46, 16, 70, 0.15);
+        transform: translateY(-5px);
+        outline: none;
+    }
+
+    .su-quick__item:hover .su-quick__icon,
+    .su-quick__item:focus-visible .su-quick__icon {
+        color: #FFFFFF;
+        background: var(--tile-color);
+        border-color: var(--tile-color);
+        transform: scale(1.06);
+    }
+
+    .su-quick__item:hover .su-quick__label,
+    .su-quick__item:focus-visible .su-quick__label {
+        color: var(--tile-color);
+    }
+
+    .su-quick__item:active {
+        background: #FFFFFF;
+        box-shadow: 0 5px 14px rgba(46, 16, 70, 0.12);
+        transform: translateY(-1px);
+    }
+
+    /* Small desktop and tablet: 3 + 3 */
+    @media (max-width: 1199px) {
+        .su-quick {
+            margin-top: -24px;
+            padding-bottom: 38px;
+        }
+
+        .su-quick__grid {
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr)) !important;
+            gap: 12px !important;
+        }
+
+        .su-quick__item {
+            min-height: 126px;
+        }
+    }
+
+    /* Mobile: 2 + 2 + 2 */
+    @media (max-width: 575px) {
+        .su-quick {
+            margin-top: 0;
+            padding: 24px 0 32px;
+            overflow: hidden;
+        }
+
+        .su-quick .container {
+            width: 100%;
+            padding-left: 14px;
+            padding-right: 14px;
+        }
+
+        .su-quick__heading {
+            margin-bottom: 11px;
+            font-size: 11px;
+        }
+
+        .su-quick__grid {
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr)) !important;
+            gap: 10px !important;
+        }
+
+        .su-quick__item {
+            min-height: 116px;
+            padding: 17px 8px 14px;
+            gap: 10px;
+            border-radius: 8px;
+        }
+
+        .su-quick__icon {
+            width: 44px;
+            height: 44px;
+            flex-basis: 44px;
+        }
+
+        .su-quick__icon i {
+            font-size: 19px;
+        }
+
+        .su-quick__label {
+            font-size: 13.5px;
+            line-height: 1.2;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .su-quick__item,
+        .su-quick__icon,
+        .su-quick__label {
+            transition: none;
+        }
+    }
+</style>
+
+<section class="su-quick" aria-labelledby="su-quick-title">
+    <div class="container">
+        <h2 class="su-quick__heading" id="su-quick-title">University Quick Access</h2>
+
+        <div class="su-quick__grid">
+            <a href="https://su.edu.bd/Admission/requirement" class="su-quick__item">
+                <span class="su-quick__icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
+                <span class="su-quick__label">Admission Requirements</span>
+            </a>
+
+            <a href="https://su.edu.bd/Admission/tution_fee" class="su-quick__item">
+                <span class="su-quick__icon"><i class="fa fa-money" aria-hidden="true"></i></span>
+                <span class="su-quick__label">Tuition Fees</span>
+            </a>
+
+            <a href="https://su.edu.bd/Admission/waiver_policy" class="su-quick__item">
+                <span class="su-quick__icon"><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                <span class="su-quick__label">Waiver &amp; Scholarship</span>
+            </a>
+
+            <a href="http://lib.su.edu.bd" class="su-quick__item">
+                <span class="su-quick__icon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                <span class="su-quick__label">Central Library</span>
+            </a>
+
+            <a href="http://sue.su.edu.bd:5081/sonargaon_erp/" class="su-quick__item">
+                <span class="su-quick__icon"><i class="fa fa-laptop" aria-hidden="true"></i></span>
+                <span class="su-quick__label">ERP Login</span>
+            </a>
+
+            <a href="https://su.edu.bd/welcome/notice" class="su-quick__item">
+                <span class="su-quick__icon"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>
+                <span class="su-quick__label">Notice Board</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============ ABOUT ============ -->
+<!--<section class="su-section">-->
+<!--    <div class="container">-->
+<!--        <div class="su-about">-->
+<!--            <div class="su-about__text su-min0">-->
+<!--                <span class="su-eyebrow">Welcome to SU</span>-->
+<!--                <h2 class="su-heading">Sonargaon University (SU)</h2>-->
+<!--                <div class="su-rule"></div>-->
+<!--                <p>Sonargaon University (SU) is one of Bangladesh’s preeminent private universities, approved by the-->
+<!--                    University Grants Commission (UGC) of Bangladesh and the Government of Bangladesh, and sponsored by-->
+<!--                    the Sonargaon University (SU) Trust.</p>-->
+<!--                <p>SU offers undergraduate and graduate programs through the Faculty of Science &amp; Engineering, the-->
+<!--                    Faculty of Business and the Faculty of Arts &amp; Humanities — combining modern curricula, well-->
+<!--                    equipped laboratories, an experienced faculty and strong industry linkage.</p>-->
+<!--                <div class="su-flex">-->
+<!--                    <a class="su-btn su-btn--primary" href="https://su.edu.bd/about_us">Explore More</a>-->
+<!--                    <a class="su-btn su-btn--ghost" href="https://su.edu.bd/About_us/new_administration/1">Vice Chancellor’s Message</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="su-about__media">-->
+<!--                -->
+<!--                    <img src="https://su.edu.bd/public/photo_galary/12-05-2022_1652335553.jpg" alt="Sonargaon University students">-->
+<!--                -->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<section
+    class="su-section"
+    style="
+        padding:clamp(35px,6vw,85px) 15px;
+        background:linear-gradient(135deg,#f8f5fb 0%,#ffffff 48%,#f3edf8 100%);
+        box-sizing:border-box;
+        overflow:hidden;
+    "
+>
+    <div
+        class="container"
+        style="
+            width:100%;
+            max-width:1200px;
+            margin:0 auto;
+            box-sizing:border-box;
+        "
+    >
+        <div
+            class="su-about"
+            style="
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+                background:#ffffff;
+                border-radius:22px;
+                overflow:hidden;
+                box-shadow:0 22px 55px rgba(50,16,72,0.14);
+            "
+        >
+            <!-- Image Section -->
+            <div
+                class="su-about__media"
+                style="
+                    position:relative;
+                    min-height:clamp(340px,48vw,520px);
+                    background-color:#5b167c;
+                    background-image:
+                        linear-gradient(
+                            180deg,
+                            rgba(70,15,105,0.18) 0%,
+                            rgba(73,19,105,0.88) 100%
+                        )
+                        ,
+                        url('https://su.edu.bd/public/photo_galary/12-05-2022_1652335553.jpg')
+                        ;
+                    background-size:cover;
+                    background-position:center;
+                    box-sizing:border-box;
+                "
+            >
+                <div
+                    style="
+                        position:absolute;
+                        inset:18px;
+                        border:1px solid rgba(255,176,65,0.50);
+                        border-radius:6px;
+                        pointer-events:none;
+                    "
+                ></div>
+
+                <div
+                    style="
+                        position:absolute;
+                        left:clamp(24px,5vw,52px);
+                        right:25px;
+                        bottom:clamp(28px,5vw,50px);
+                        color:#ffffff;
+                    "
+                >
+                    <div
+                        style="
+                            width:48px;
+                            height:4px;
+                            margin-bottom:18px;
+                            border-radius:4px;
+                            background:#ffad22;
+                        "
+                    ></div>
+
+                    <div
+                        style="
+                            max-width:310px;
+                            font-family:Georgia,'Times New Roman',serif;
+                            font-size:clamp(21px,2.3vw,30px);
+                            line-height:1.32;
+                            font-weight:700;
+                            font-style:italic;
+                            text-shadow:0 2px 12px rgba(0,0,0,0.28);
+                        "
+                    >
+                        Shaping the leaders<br>
+                        of tomorrow since 2012
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Section -->
+            <div
+                class="su-about__text su-min0"
+                style="
+                    position:relative;
+                    padding:clamp(32px,6vw,72px);
+                    display:flex;
+                    flex-direction:column;
+                    justify-content:center;
+                    box-sizing:border-box;
+                    min-width:0;
+                "
+            >
+                <!-- Decorative Graduation Icon -->
+                <div
+                    aria-hidden="true"
+                    style="
+                        position:absolute;
+                        top:25px;
+                        right:28px;
+                        font-family:Georgia,serif;
+                        font-size:clamp(70px,9vw,125px);
+                        line-height:1;
+                        color:#5b167c;
+                        opacity:0.045;
+                        pointer-events:none;
+                    "
+                >
+                    ◆
+                </div>
+
+                <div
+                    style="
+                        display:flex;
+                        align-items:center;
+                        gap:10px;
+                        margin-bottom:15px;
+                    "
+                >
+                    <span
+                        style="
+                            display:block;
+                            width:28px;
+                            height:2px;
+                            background:#f28c18;
+                        "
+                    ></span>
+
+                    <span
+                        class="su-eyebrow"
+                        style="
+                            color:#e96f00;
+                            font-size:11px;
+                            line-height:1.4;
+                            font-weight:800;
+                            letter-spacing:2px;
+                            text-transform:uppercase;
+                        "
+                    >
+                        Welcome to SU
+                    </span>
+                </div>
+
+                <h2
+                    class="su-heading"
+                    style="
+                        max-width:600px;
+                        margin:0;
+                        color:#541274;
+                        font-family:Georgia,'Times New Roman',serif;
+                        font-size:clamp(34px,5vw,58px);
+                        line-height:1.05;
+                        font-weight:700;
+                        letter-spacing:-1.5px;
+                    "
+                >
+                    Sonargaon<br>
+                    <span
+                        style="
+                            background:linear-gradient(90deg,#541274,#ca00e7);
+                            -webkit-background-clip:text;
+                            -webkit-text-fill-color:transparent;
+                            background-clip:text;
+                            color:#541274;
+                        "
+                    >
+                        University
+                    </span>
+                </h2>
+
+                <div
+                    class="su-rule"
+                    style="
+                        width:72px;
+                        height:4px;
+                        margin:22px 0;
+                        border-radius:5px;
+                        background:linear-gradient(90deg,#f39a18,#6a168d);
+                    "
+                ></div>
+
+                <p
+                    style="
+                        margin:0 0 13px;
+                        color:#3c485b;
+                        font-size:clamp(14px,1.5vw,16px);
+                        line-height:1.75;
+                    "
+                >
+                    Sonargaon University (SU) is one of Bangladesh’s
+                    preeminent private universities, approved by the
+                    University Grants Commission (UGC) of Bangladesh and
+                    the Government of Bangladesh, and sponsored by the
+                    Sonargaon University (SU) Trust.
+                </p>
+
+                <p
+                    style="
+                        margin:0;
+                        color:#3c485b;
+                        font-size:clamp(14px,1.5vw,16px);
+                        line-height:1.75;
+                    "
+                >
+                    SU offers undergraduate and graduate programs through
+                    the Faculty of Science &amp; Engineering, Faculty of
+                    Business and Faculty of Arts &amp; Humanities—combining
+                    modern curricula, well-equipped laboratories, experienced
+                    faculty and strong industry linkage.
+                </p>
+
+                <!-- Buttons -->
+                <div
+                    class="su-flex"
+                    style="
+                        display:flex;
+                        flex-wrap:wrap;
+                        gap:13px;
+                        margin-top:27px;
+                    "
+                >
+                    <a
+                        href="https://su.edu.bd/about_us"
+                        style="
+                            display:inline-flex;
+                            align-items:center;
+                            justify-content:center;
+                            min-height:46px;
+                            padding:0 25px;
+                            border:2px solid #5b167c;
+                            border-radius:8px;
+                            background:linear-gradient(135deg,#6b188e,#4b0f69);
+                            box-shadow:0 10px 22px rgba(91,22,124,0.22);
+                            color:#ffffff;
+                            font-size:13px;
+                            font-weight:700;
+                            text-decoration:none;
+                            box-sizing:border-box;
+                        "
+                    >
+                        Explore More
+                    </a>
+
+                    <a
+                        href="https://su.edu.bd/About_us/new_administration/1"
+                        style="
+                            display:inline-flex;
+                            align-items:center;
+                            justify-content:center;
+                            min-height:46px;
+                            padding:0 22px;
+                            border:2px solid #f28c18;
+                            border-radius:8px;
+                            background:#ffffff;
+                            color:#b85600;
+                            font-size:13px;
+                            font-weight:700;
+                            text-align:center;
+                            text-decoration:none;
+                            box-sizing:border-box;
+                        "
+                    >
+                        Vice Chancellor’s Message
+                    </a>
+                </div>
+
+                <!-- Statistics -->
+                <div
+                    style="
+                        display:grid;
+                        grid-template-columns:repeat(auto-fit,minmax(105px,1fr));
+                        gap:16px;
+                        margin-top:38px;
+                        padding-top:26px;
+                        border-top:1px solid #ece5f0;
+                    "
+                >
+                    <div>
+                        <div
+                            style="
+                                color:#571476;
+                                font-family:Georgia,serif;
+                                font-size:27px;
+                                font-weight:700;
+                                line-height:1;
+                            "
+                        >
+                            24+
+                        </div>
+                        <div
+                            style="
+                                margin-top:7px;
+                                color:#7c7183;
+                                font-size:10px;
+                                font-weight:700;
+                                letter-spacing:1px;
+                                text-transform:uppercase;
+                            "
+                        >
+                            Programs
+                        </div>
+                    </div>
+
+                    <div>
+                        <div
+                            style="
+                                color:#571476;
+                                font-family:Georgia,serif;
+                                font-size:27px;
+                                font-weight:700;
+                                line-height:1;
+                            "
+                        >
+                            3
+                        </div>
+                        <div
+                            style="
+                                margin-top:7px;
+                                color:#7c7183;
+                                font-size:10px;
+                                font-weight:700;
+                                letter-spacing:1px;
+                                text-transform:uppercase;
+                            "
+                        >
+                            Faculties
+                        </div>
+                    </div>
+
+                    <div>
+                        <div
+                            style="
+                                color:#571476;
+                                font-family:Georgia,serif;
+                                font-size:27px;
+                                font-weight:700;
+                                line-height:1;
+                            "
+                        >
+                            3
+                        </div>
+                        <div
+                            style="
+                                margin-top:7px;
+                                color:#7c7183;
+                                font-size:10px;
+                                font-weight:700;
+                                letter-spacing:1px;
+                                text-transform:uppercase;
+                            "
+                        >
+                            Campuses
+                        </div>
+                    </div>
+
+                    <div>
+                        <div
+                            style="
+                                color:#571476;
+                                font-family:Georgia,serif;
+                                font-size:27px;
+                                font-weight:700;
+                                line-height:1;
+                            "
+                        >
+                            100%
+                        </div>
+                        <div
+                            style="
+                                margin-top:7px;
+                                color:#7c7183;
+                                font-size:10px;
+                                font-weight:700;
+                                letter-spacing:1px;
+                                text-transform:uppercase;
+                            "
+                        >
+                            Scholarship
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="su-section su-section--ink">
+    <div class="container">
+        <div class="su-grid su-grid--4">
+            <div class="su-stat"><span class="su-stat__num">24+</span><span class="su-stat__label">Academic Programs</span></div>
+            <div class="su-stat"><span class="su-stat__num">3</span><span class="su-stat__label">Faculties</span></div>
+            <div class="su-stat"><span class="su-stat__num">3</span><span class="su-stat__label">Campuses in Dhaka</span></div>
+            <div class="su-stat"><span class="su-stat__num">100%</span><span class="su-stat__label">Scholarship Available</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PROGRAMS ============ list --> 
+<section class="su-section su-section--soft">
+    <div class="container">
+        <div class="su-center">
+            <span class="su-eyebrow">Academic Programs</span>
+            <h2 class="su-heading">Programmes Offered</h2>
+            <div class="su-rule"></div>
+            <p class="su-sub">Choose from professionally designed undergraduate and graduate programmes across three
+                faculties, taught by experienced academics and industry practitioners.</p>
+        </div>
+
+        <div class="su-grid su-grid--3">
+                            <div class="su-card su-prog">
+                    <div class="su-card__body">
+                        <span class="su-badge su-badge--magenta">Undergraduate</span>
+                        <h3 class="su-card__title su-prog__title"><i class="fa fa-cogs" aria-hidden="true"></i> Faculty of Science &amp; Engineering</h3>
+                        <ul class="su-prog__list">
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/2"><i class="fa fa-angle-right" aria-hidden="true"></i> B.Sc. in Civil Engineering</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/3"><i class="fa fa-angle-right" aria-hidden="true"></i> B.Sc. in Mechanical Engineering</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/4"><i class="fa fa-angle-right" aria-hidden="true"></i> B.Sc. in Computer Science & Engineering (CSE) </a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/5"><i class="fa fa-angle-right" aria-hidden="true"></i> B.Sc. in Naval Architecture and Marine Engineering</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/6"><i class="fa fa-angle-right" aria-hidden="true"></i> B.Sc. in Textile Engineering</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/7"><i class="fa fa-angle-right" aria-hidden="true"></i> B.Sc. in Fashion Design and Technology</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/8"><i class="fa fa-angle-right" aria-hidden="true"></i> B.Sc. in Apparel Manufacture and Technology</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/9"><i class="fa fa-angle-right" aria-hidden="true"></i> B.Sc. in Electrical and Electronics Engineering</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/10"><i class="fa fa-angle-right" aria-hidden="true"></i> Bachelor of Architecture</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/23"><i class="fa fa-angle-right" aria-hidden="true"></i> Basic Science</a></li>
+                                                    </ul>
+                    </div>
+                    <div class="su-card__foot"><span class="su-badge">10 programmes</span></div>
+                </div>
+                            <div class="su-card su-prog">
+                    <div class="su-card__body">
+                        <span class="su-badge su-badge--magenta">Undergraduate</span>
+                        <h3 class="su-card__title su-prog__title"><i class="fa fa-line-chart" aria-hidden="true"></i> Faculty of Business</h3>
+                        <ul class="su-prog__list">
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/1"><i class="fa fa-angle-right" aria-hidden="true"></i> Bachelor of Business Administration (BBA)</a></li>
+                                                    </ul>
+                    </div>
+                    <div class="su-card__foot"><span class="su-badge">1 programme</span></div>
+                </div>
+                            <div class="su-card su-prog">
+                    <div class="su-card__body">
+                        <span class="su-badge su-badge--magenta">Graduate</span>
+                        <h3 class="su-card__title su-prog__title"><i class="fa fa-briefcase" aria-hidden="true"></i> Faculty of Business</h3>
+                        <ul class="su-prog__list">
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/13"><i class="fa fa-angle-right" aria-hidden="true"></i> Executive Master of Business Administration (EMBA)</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/14"><i class="fa fa-angle-right" aria-hidden="true"></i> MBA in Apparel Merchandising</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/15"><i class="fa fa-angle-right" aria-hidden="true"></i> MBA in Supply Chain Management</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/16"><i class="fa fa-angle-right" aria-hidden="true"></i> MBA in Textile & Fashion Marketing</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/17"><i class="fa fa-angle-right" aria-hidden="true"></i> Masters in Bank Management (MBM)</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/18"><i class="fa fa-angle-right" aria-hidden="true"></i> Master of Business Administration (MBA)</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/19"><i class="fa fa-angle-right" aria-hidden="true"></i> Regular Master of Business Administration</a></li>
+                                                    </ul>
+                    </div>
+                    <div class="su-card__foot"><span class="su-badge">7 programmes</span></div>
+                </div>
+                            <div class="su-card su-prog">
+                    <div class="su-card__body">
+                        <span class="su-badge su-badge--magenta">Undergraduate</span>
+                        <h3 class="su-card__title su-prog__title"><i class="fa fa-book" aria-hidden="true"></i> Faculty of Arts &amp; Humanities</h3>
+                        <ul class="su-prog__list">
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/24"><i class="fa fa-angle-right" aria-hidden="true"></i> General Education </a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/22"><i class="fa fa-angle-right" aria-hidden="true"></i> Department of Journalism and Media Studies </a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/12"><i class="fa fa-angle-right" aria-hidden="true"></i> LLB (Hon’s)</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/11"><i class="fa fa-angle-right" aria-hidden="true"></i> BA (Honours) in Bangla</a></li>
+                                                    </ul>
+                    </div>
+                    <div class="su-card__foot"><span class="su-badge">4 programmes</span></div>
+                </div>
+                            <div class="su-card su-prog">
+                    <div class="su-card__body">
+                        <span class="su-badge su-badge--magenta">Graduate</span>
+                        <h3 class="su-card__title su-prog__title"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Faculty of Arts &amp; Humanities</h3>
+                        <ul class="su-prog__list">
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/20"><i class="fa fa-angle-right" aria-hidden="true"></i> LLM (2 Years)</a></li>
+                                                            <li><a href="https://su.edu.bd/welcome/program_details/21"><i class="fa fa-angle-right" aria-hidden="true"></i> LLM (1 year)</a></li>
+                                                    </ul>
+                    </div>
+                    <div class="su-card__foot"><span class="su-badge">2 programmes</span></div>
+                </div>
+                    </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- ============ ADMISSION CTA ============ -->
+<section class="su-cta-band">
+    <div class="container">
+        <div class="su-cta-band__inner">
+            <div class="su-min0">
+                <span class="su-eyebrow">Admission Going On — Fall 2026</span>
+                <h2 class="su-heading">50%–100% scholarship on tuition fees</h2>
+                <p class="su-cta-band__text">Bangla, BBA, LLB | B.Sc in Civil, CSE, Mechanical, EEE, Textile,
+                    Architecture, AMT, FDT, Marine | MBA, LLM</p>
+            </div>
+            <div class="su-flex">
+                <a class="su-btn su-btn--gold" href="http://sue.su.edu.bd:5081/sonargaon_erp/siteadmin/admission_info">Online Admission</a>
+                <a class="su-btn su-btn--light" href="https://su.edu.bd/Admission/admission_officer_list">Talk to Admission Office</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CAMPUS LIFE / FACILITIES ============ -->
+<section class="su-section">
+    <div class="container">
+        <div class="su-center">
+            <span class="su-eyebrow">Campus Life</span>
+            <h2 class="su-heading">Facilities &amp; Student Services</h2>
+            <div class="su-rule"></div>
+        </div>
+        <div class="su-grid su-grid--3">
+            <div class="su-card"><div class="su-card__body"><span class="su-badge">Academic</span>
+                <h3 class="su-card__title">Central Library</h3>
+                <p class="su-card__text">Digital catalogue, reference collection and online journal access for students and faculty.</p></div>
+                <div class="su-card__foot"><a href="http://lib.su.edu.bd">Visit library <i class="fa fa-angle-right" aria-hidden="true"></i></a></div></div>
+
+            <div class="su-card"><div class="su-card__body"><span class="su-badge">Practical</span>
+                <h3 class="su-card__title">Modern Laboratories</h3>
+                <p class="su-card__text">Well equipped engineering, computing and science laboratories supporting hands-on learning.</p></div>
+                <div class="su-card__foot"><a href="https://su.edu.bd/about_us">Learn more <i class="fa fa-angle-right" aria-hidden="true"></i></a></div></div>
+
+            <div class="su-card"><div class="su-card__body"><span class="su-badge">Research</span>
+                <h3 class="su-card__title">Research &amp; Journal</h3>
+                <p class="su-card__text">Faculty and student research, publications and the SU Journal.</p></div>
+                <div class="su-card__foot"><a href="https://su.edu.bd/research/home">Research at SU <i class="fa fa-angle-right" aria-hidden="true"></i></a></div></div>
+
+            <div class="su-card"><div class="su-card__body"><span class="su-badge">Career</span>
+                <h3 class="su-card__title">CRTC — Career Support</h3>
+                <p class="su-card__text">Career, research and training centre supporting internships and job placement.</p></div>
+                <div class="su-card__foot"><a href="https://su.edu.bd/crtc">Explore CRTC <i class="fa fa-angle-right" aria-hidden="true"></i></a></div></div>
+
+            <div class="su-card"><div class="su-card__body"><span class="su-badge">Quality</span>
+                <h3 class="su-card__title">IQAC</h3>
+                <p class="su-card__text">Institutional Quality Assurance Cell ensuring continuous academic quality improvement.</p></div>
+                <div class="su-card__foot"><a href="https://su.edu.bd/iqac">Visit IQAC <i class="fa fa-angle-right" aria-hidden="true"></i></a></div></div>
+
+            <div class="su-card"><div class="su-card__body"><span class="su-badge">Student</span>
+                <h3 class="su-card__title">Transport &amp; Bus Service</h3>
+                <p class="su-card__text">Dedicated bus service for students — check the current schedule.</p></div>
+                <div class="su-card__foot"><a href="https://su.edu.bd/web_assets/news/Bus Service.pdf">Bus schedule <i class="fa fa-angle-right" aria-hidden="true"></i></a></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PEOPLE ============ -->
+<section class="su-section su-section--soft">
+    <div class="container">
+        <div class="su-center">
+            <span class="su-eyebrow">Our People</span>
+            <h2 class="su-heading">Leadership &amp; Faculty</h2>
+            <div class="su-rule"></div>
+        </div>
+        <div class="su-grid su-grid--3">
+            <a class="su-card su-people" href="https://su.edu.bd/About_us/new_administration/1"><div class="su-card__body"><h3 class="su-card__title">Vice Chancellor</h3><p class="su-card__text">Message and profile from the office of the Vice Chancellor.</p></div></a>
+            <a class="su-card su-people" href="https://su.edu.bd/About_us/new_administration/2"><div class="su-card__body"><h3 class="su-card__title">Pro-Vice Chancellor</h3><p class="su-card__text">Office of the Pro-VC and academic leadership.</p></div></a>
+            <a class="su-card su-people" href="https://su.edu.bd/About_us/new_administration/3"><div class="su-card__body"><h3 class="su-card__title">Treasurer</h3><p class="su-card__text">Office of the Treasurer and financial administration.</p></div></a>
+            <a class="su-card su-people" href="https://su.edu.bd/faculty_members/dean_list"><div class="su-card__body"><h3 class="su-card__title">Dean of the Faculties</h3><p class="su-card__text">Deans leading the three faculties of the university.</p></div></a>
+            <a class="su-card su-people" href="https://su.edu.bd/faculty_members/head_list"><div class="su-card__body"><h3 class="su-card__title">Head of the Departments</h3><p class="su-card__text">Departmental heads across all programmes.</p></div></a>
+            <a class="su-card su-people" href="https://su.edu.bd/faculty_members/all_faculty_details"><div class="su-card__body"><h3 class="su-card__title">All Faculty Members</h3><p class="su-card__text">Complete faculty directory with qualifications and contacts.</p></div></a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ NOTICE / NEWS ============ -->
+<section class="su-section">
+    <div class="container">
+        <div class="su-center">
+            <span class="su-eyebrow">Stay Updated</span>
+            <h2 class="su-heading">Notices, News &amp; Events</h2>
+            <div class="su-rule"></div>
+        </div>
+        <div class="su-grid su-grid--3">
+            <a class="su-card su-people" href="https://su.edu.bd/welcome/notice"><div class="su-card__body"><span class="su-badge su-badge--gold">Notice Board</span><h3 class="su-card__title">Academic &amp; Exam Notices</h3><p class="su-card__text">Registration, examination schedules, holidays and student services.</p></div></a>
+            <a class="su-card su-people" href="https://su.edu.bd/welcome/news_and_events"><div class="su-card__body"><span class="su-badge su-badge--gold">News</span><h3 class="su-card__title">News &amp; Events</h3><p class="su-card__text">Seminars, workshops, convocation and campus activities.</p></div></a>
+            <a class="su-card su-people" href="https://su.edu.bd/welcome/career"><div class="su-card__body"><span class="su-badge su-badge--gold">Career</span><h3 class="su-card__title">Career at SU</h3><p class="su-card__text">Current faculty and staff openings at Sonargaon University.</p></div></a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PHOTO GALLERY ============ -->
+<section class="su-section su-section--soft">
+    <div class="container">
+        <div class="su-center">
+            <span class="su-eyebrow">Photo Gallery</span>
+            <h2 class="su-heading">Life at Sonargaon University</h2>
+            <div class="su-rule"></div>
+        </div>
+        <div class="su-gallery">
+                            <figure class="su-gallery__item">
+                    <img src="https://su.edu.bd/public/photo_galary/12-05-2022_1652335553.jpg" alt="Sonargaon University photo gallery" loading="lazy">
+                </figure>
+                            <figure class="su-gallery__item">
+                    <img src="https://su.edu.bd/public/photo_galary/12-05-2022_1652335569.jpg" alt="Sonargaon University photo gallery" loading="lazy">
+                </figure>
+                            <figure class="su-gallery__item">
+                    <img src="https://su.edu.bd/public/photo_galary/12-05-2022_1652335585.jpg" alt="Sonargaon University photo gallery" loading="lazy">
+                </figure>
+                            <figure class="su-gallery__item">
+                    <img src="https://su.edu.bd/public/photo_galary/12-05-2022_1652335600.jpg" alt="Sonargaon University photo gallery" loading="lazy">
+                </figure>
+                            <figure class="su-gallery__item">
+                    <img src="https://su.edu.bd/public/photo_galary/12-05-2022_1652335647.jpg" alt="Sonargaon University photo gallery" loading="lazy">
+                </figure>
+                            <figure class="su-gallery__item">
+                    <img src="https://su.edu.bd/public/photo_galary/12-05-2022_1652335665.jpg" alt="Sonargaon University photo gallery" loading="lazy">
+                </figure>
+                            <figure class="su-gallery__item">
+                    <img src="https://su.edu.bd/public/photo_galary/12-05-2022_1652335687.jpg" alt="Sonargaon University photo gallery" loading="lazy">
+                </figure>
+                            <figure class="su-gallery__item">
+                    <img src="https://su.edu.bd/public/photo_galary/12-05-2022_1652335703.jpg" alt="Sonargaon University photo gallery" loading="lazy">
+                </figure>
+                            <figure class="su-gallery__item">
+                    <img src="https://su.edu.bd/public/photo_galary/12-05-2022_1652335720.jpg" alt="Sonargaon University photo gallery" loading="lazy">
+                </figure>
+                    </div>
+    </div>
+</section>
+
+<style>
+    /* ---------- Hero ---------- */
+    .su-hero { position: relative; background: #2E1046; }
+    .su-hero__inner { position: relative; height: clamp(360px, 62vh, 660px); overflow: hidden; }
+    .su-hero__item { height: clamp(360px, 62vh, 660px); }
+    .su-hero__item img { width: 100%; height: 100%; object-fit: cover; }
+    .su-hero__inner:after {
+        content: "";
+        position: absolute; inset: 0;
+        background: linear-gradient(90deg, rgba(46,16,70,.92) 0%, rgba(46,16,70,.72) 45%, rgba(194,24,91,.42) 100%);
+    }
+    .su-hero__overlay {
+        position: absolute; inset: 0;
+        display: flex; align-items: center;
+        z-index: 3;
+        pointer-events: none;
+    }
+    .su-hero__overlay .container { pointer-events: auto; }
+    .su-hero__eyebrow { color: #E9B824; font-size: 13px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
+    .su-hero__title { color: #fff; font-size: clamp(30px, 6vw, 62px); font-weight: 800; margin: 10px 0 12px; line-height: 1.12; }
+    .su-hero__title span { color: #E9B824; }
+    .su-hero__text { color: #E8DFF4; max-width: 560px; font-size: clamp(15px, 1.6vw, 18px); }
+    .su-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .su-hero__dots { z-index: 4; margin-bottom: 18px; }
+    .su-hero__dots li { width: 11px; height: 11px; border-radius: 50%; background: rgba(255,255,255,.5); border: 0; }
+    .su-hero__dots li.active { background: #E9B824; }
+    .su-hero__nav { width: 8%; z-index: 4; color: #fff; font-size: 34px; opacity: .7; text-decoration: none; }
+    .su-hero__nav:hover { color: #E9B824; opacity: 1; }
+
+    /* ---------- Quick strip ---------- */
+    .su-quick { background: #fff; border-bottom: 1px solid #EDE7F5; }
+    .su-quick__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    .su-quick__item {
+        display: flex; align-items: center; gap: 12px;
+        padding: 20px 16px;
+        color: #241B4E;
+        font-weight: 600;
+        font-size: 14px;
+        border-right: 1px solid #F1ECF8;
+        transition: background .2s ease, color .2s ease;
+    }
+    .su-quick__item:last-child { border-right: 0; }
+    .su-quick__item i { font-size: 20px; color: #C2185B; }
+    .su-quick__item:hover { background: #F7F5FB; color: #C2185B; }
+
+    /* ---------- About ---------- */
+    .su-about { display: grid; grid-template-columns: 1.05fr .95fr; gap: 46px; align-items: center; }
+    .su-about__media img { width: 100%; border-radius: 18px; box-shadow: 0 26px 60px rgba(46,16,70,.18); }
+
+    /* ---------- Programs ---------- */
+    .su-prog__title i { color: #C2185B; margin-right: 6px; }
+    .su-prog__list { list-style: none; padding: 0; margin: 14px 0 0; }
+    .su-prog__list li { border-top: 1px dashed #EDE7F5; }
+    .su-prog__list li a { display: block; padding: 9px 0; font-size: 14.5px; color: #4A4560; }
+    .su-prog__list li a:hover { color: #C2185B; padding-left: 5px; }
+    .su-prog__list i { color: #E9B824; }
+
+    /* ---------- CTA band ---------- */
+    .su-cta-band {
+        background: linear-gradient(120deg, #2E1046 0%, #5B2382 55%, #C2185B 100%);
+        padding: 52px 0;
+    }
+    .su-cta-band__inner {
+        display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 26px;
+    }
+    .su-cta-band .su-eyebrow { color: #E9B824; }
+    .su-cta-band .su-heading { color: #fff; }
+    .su-cta-band__text { color: #E4D8F0; margin: 0; max-width: 620px; font-size: 14.5px; }
+
+    /* ---------- People / linked cards ---------- */
+    .su-people { display: block; color: inherit; }
+    .su-people:hover .su-card__title { color: #C2185B; }
+
+    /* ---------- Gallery ---------- */
+    .su-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .su-gallery__item { margin: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 14px 34px rgba(46,16,70,.12); }
+    .su-gallery__item img { width: 100%; height: 220px; object-fit: cover; transition: transform .5s ease; }
+    .su-gallery__item:hover img { transform: scale(1.08); }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 991px) {
+        .su-about { grid-template-columns: 1fr; gap: 28px; }
+        .su-about__media { order: -1; }
+        .su-hero__nav { display: none; }
+    }
+    @media (max-width: 767px) {
+        .su-hero__inner, .su-hero__item { height: auto; min-height: 0; max-height: none; }
+        .su-hero__item img { height: 300px; }
+        .su-hero__overlay { position: static; background: linear-gradient(140deg, #2E1046, #5B2382 60%, #C2185B); padding: 26px 0 30px; }
+        .su-hero__inner:after { background: linear-gradient(180deg, rgba(46,16,70,.35), rgba(46,16,70,.65)); }
+        .su-hero__title { font-size: 30px; }
+        .su-hero__text { max-width: 100%; font-size: 15px; }
+        .su-hero__actions { margin-top: 16px; }
+        .su-hero__actions .su-btn { flex: 1 1 100%; justify-content: center; text-align: center; }
+        .su-hero__dots { display: none; }
+        .su-quick__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .su-quick__item { border-right: 1px solid #F1ECF8; border-bottom: 1px solid #F1ECF8; padding: 14px 12px; font-size: 13px; gap: 9px; }
+        .su-quick__item i { font-size: 17px; }
+        .su-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+        .su-gallery__item img { height: 130px; }
+        .su-cta-band { padding: 38px 0; }
+        .su-cta-band__inner { text-align: center; justify-content: center; }
+        .su-cta-band .su-flex { justify-content: center; width: 100%; }
+        .su-prog__list li a { padding: 11px 0; }
+    }
+    @media (max-width: 420px) {
+        .su-quick__grid { grid-template-columns: 1fr; }
+        .su-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+        .su-gallery__item img { height: 120px; }
+        .su-hero__item img { height: 240px; }
+    }
+</style>
+<div class="top_section">
+    <a href="https://su.edu.bd/about_us/privacy_policy">Terms &amp; Conditions</a>
+</div>
+
+<style>
+    /* ---------- Payment / terms strip — SU logo colours ---------- */
+    .top_section {
+        margin: 0 auto 26px;
+        width: max-content;
+        max-width: 92%;
+        text-align: center;
+        background: linear-gradient(90deg, #3E1660, #5B2382 60%, #C2185B);
+        border-radius: 999px;
+        box-shadow: 0 8px 22px rgba(62, 22, 96, .18);
+    }
+    .top_section a {
+        display: block;
+        color: #fff !important;
+        font-family: 'Poppins', 'Raleway', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: .4px;
+        padding: 12px 34px;
+        margin: 0;
+        text-decoration: none;
+        transition: color .25s ease;
+    }
+    .top_section a:hover { color: #FFE9A8 !important; }
+
+    @media (max-width: 575px) {
+        .top_section { width: 100%; border-radius: 12px; }
+        .top_section a { padding: 12px 16px; font-size: 13px; }
+    }
+</style>
+<footer>
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-top-wrapper">
+                <div class="footer-top-left"><p class="footer-top-focus">ARE YOU READY TO JOIN</p>
+
+                    <p class="footer-top-text">Become a Proud Member of SU Family</p></div>
+                <div class="footer-top-right">
+                    <button
+                        onclick="window.location.href='http://sue.su.edu.bd/sonargaon_erp/siteadmin/register_as_admission_officer'"
+                        class="btn btn-blue btn-bold"><span>ADMISSION OPEN FOR ALL</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-main">
+        <div class="container">
+            <div class="footer-main-wrapper">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sd380">
+                        <div class="edugate-widget widget">
+                            <div class="title-widget"><i class="fa fa-university"></i> Green Road Campus</div>
+                            <div class="content-widget">
+                                <p><i class="fa fa-map-marker"></i>&nbsp;&nbsp;147/I, Green Road, Panthapath, Tejgaon, Dhaka</p>
+
+                                                               <div class="info-list">
+                                    <ul class="list-unstyled">
+                                                                                <li><a href="tel:+8801955529721"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;+8801955529721</a></li>
+                                        
+                                        <li><a href="tel:++8801907165597"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;+8801907165597</a></li>
+
+                                    </ul>
+                                </div>
+                                                                <div class="info-list">
+                                    <ul class="list-unstyled">
+                                        
+                                        <li><a href="tel:++8801775000888"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;+8801775000888</a></li>
+
+                                    </ul>
+                                </div>
+                                                                <div class="info-list">
+                                    <ul class="list-unstyled">
+                                        
+                                        <li><a href="tel:++8801955529725"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;+8801955529725</a></li>
+
+                                    </ul>
+                                </div>
+                                                                <div class="info-list">
+                                    <ul class="list-unstyled">
+                                        
+                                        <li><a href="tel:++8801959204957"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;+8801959204957</a></li>
+
+                                    </ul>
+                                </div>
+                                                                <p><i class="fa fa-phone-square"></i>&nbsp;&nbsp;<a href="tel:+880241010352" >+880241010352</a></p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sd380">
+                        <div class="edugate-widget widget">
+                            <div class="title-widget"><i class="fa fa-university"></i> Mohakhali Campus</div>
+                            <div class="content-widget">
+                                <p><i class="fa fa-map-marker"></i>&nbsp;&nbsp;GP Ja-146, Wireless Gate, Mohakhali, Dhaka</p>
+
+                                                                <div class="info-list">
+                                    <ul class="list-unstyled">
+                                                                                <li><a href="tel:+8801999914395"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;+8801999914395</a></li>
+                                                                                <li><a href="tel:++8801780330044"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;+8801780330044</a></li>
+
+                                    </ul>
+                                </div>
+                                                                <div class="info-list">
+                                    <ul class="list-unstyled">
+                                                                                <li><a href="tel:++8801955529724"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;+8801955529724</a></li>
+
+                                    </ul>
+                                </div>
+                                                                <div class="info-list">
+                                    <ul class="list-unstyled">
+                                                                                <li><a href="tel:++8801780330055"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;+8801780330055</a></li>
+
+                                    </ul>
+                                </div>
+                                                                <div class="info-list">
+                                    <ul class="list-unstyled">
+                                                                                <li><a href="tel:++8801955529722"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;+8801955529722</a></li>
+
+                                    </ul>
+                                </div>
+                                                                <div class="info-list">
+                                    <ul class="list-unstyled">
+                                                                                <li><a href="tel:++8801717967026"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;+8801717967026</a></li>
+
+                                    </ul>
+                                </div>
+                                
+                                <p><i class="fa fa-phone-square"></i>&nbsp;&nbsp;<a href="tel:+8802222292134" >+8802222292134</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sd380">
+                        <div class="edugate-widget widget">
+                            <div class="title-widget"><i class="fa fa-university"></i> Permanent Campus</div>
+                            <div class="content-widget">
+                                <p><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Sonargaon University, Ward no.-75, South City Corporation, Dasherkandi, Khilgaon, Dhaka.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="hyperlink">
+                            <div class="footer-copy">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-4">
+                                        <div class="copy-left">
+                                            <span>Copyright &copy; 2026 All Rights Reserved by Sonargaon University</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4">
+                                        <div class="copy-center"><span>Designed &amp; Developed by: Software Development Team, IT Division (SU)</span></div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-2">
+                                        <div class="copy-right">
+                                            <a href="http://www.su.edu.bd/privacy/privacy_info">Privacy Policy, Terms &amp; Conditions</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-2">
+                                        <div class="copy-right">
+                                            বিনিয়োগ শিক্ষা&nbsp;&nbsp;
+                                            <a target="_blank" rel="noopener" href="https://www.youtube.com/@financialliteracyprogramba6178" aria-label="Financial Literacy Programme on YouTube">
+                                                <i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                            <a target="_blank" rel="noopener" href="http://finlitbd.com" aria-label="finlitbd.com">
+                                                <i class="fa fa-globe" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<style>
+    /* ---------- Footer — Sonargaon University logo colours ---------- */
+    footer .footer-top {
+        background: linear-gradient(120deg, #3E1660 0%, #5B2382 55%, #C2185B 100%);
+        padding: 30px 0;
+        border-bottom: 4px solid #E9B824;
+        position: relative;
+        overflow: hidden;
+    }
+    footer .footer-top:before {
+        content: "";
+        position: absolute;
+        top: -60%;
+        right: -8%;
+        width: 420px;
+        height: 220%;
+        background: radial-gradient(closest-side, rgba(233, 184, 36, .18), transparent);
+        pointer-events: none;
+    }
+    footer .footer-top-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        position: relative;
+    }
+    footer .footer-top-focus {
+        color: #FFE9A8;
+        font-size: 13px;
+        letter-spacing: 3px;
+        font-weight: 700;
+        margin: 0 0 5px;
+        text-transform: uppercase;
+    }
+    footer .footer-top-text {
+        color: #fff;
+        font-size: 25px;
+        font-weight: 700;
+        margin: 0;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, .3);
+    }
+    footer .footer-top-right .btn {
+        background: #fff !important;
+        color: #5B2382 !important;
+        border-radius: 999px;
+        font-weight: 700;
+        letter-spacing: .8px;
+        padding: 13px 30px;
+        border: 0;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, .28);
+        transition: transform .25s ease, background .25s ease, color .25s ease;
+    }
+    footer .footer-top-right .btn:hover {
+        background: #E9B824 !important;
+        color: #3E1660 !important;
+        transform: translateY(-2px);
+    }
+
+    .footer-main {
+        background-image: linear-gradient(rgba(35, 12, 56, .94), rgba(35, 12, 56, .97)), url("https://su.edu.bd/public/images/footer-bg-min.png");
+        background-color: #230C38;
+        background-size: cover;
+        background-position: center;
+        padding: 52px 0 0;
+        overflow-x: hidden;
+        position: relative;
+        color: #DCD4E8;
+    }
+
+    /* campus cards */
+    .footer-main .widget {
+        margin-bottom: 30px;
+        border: 1px solid rgba(255, 255, 255, .14);
+        border-radius: 14px;
+        padding: 24px 22px;
+        background: rgba(255, 255, 255, .045);
+        backdrop-filter: blur(2px);
+        height: calc(100% - 30px);
+        transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+    }
+    .footer-main .widget:hover {
+        border-color: rgba(233, 184, 36, .45);
+        transform: translateY(-4px);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, .35);
+    }
+    .footer-main a { color: #DCD4E8; transition: color .2s ease; }
+    .footer-main a:hover { color: #E9B824; text-decoration: none; }
+
+    .footer-main .title-widget {
+        color: #fff;
+        font-size: 17px;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 12px;
+        margin-bottom: 16px;
+    }
+    .footer-main .title-widget i { color: #E9B824; margin-right: 8px; }
+    .footer-main .title-widget:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 56px;
+        height: 3px;
+        border-radius: 3px;
+        background: linear-gradient(90deg, #C2185B, #E9B824);
+    }
+    .footer-main .content-widget p { font-size: 14.5px; line-height: 1.8; }
+    .footer-main .content-widget .fa { color: #E9B824; }
+
+    .edugate-widget .info-list ul { margin: 0; }
+    .edugate-widget .info-list ul li {
+        display: block;
+        width: 100%;
+        border: none;
+        padding: 3px 0;
+        font-size: 14.5px;
+    }
+
+    /* bottom bar */
+    .footer-main .hyperlink {
+        border-top: 1px solid rgba(255, 255, 255, .16);
+        padding: 20px 0 24px;
+        margin-top: 14px;
+        font-weight: 500;
+        display: block;
+        width: 100%;
+    }
+    .footer-main .footer-copy span { font-size: 13.5px; line-height: 1.7; display: inline-block; }
+    .footer-main .copy-center, .footer-main .copy-right { font-size: 13.5px; }
+    .footer-main .copy-right i { font-size: 18px; vertical-align: middle; color: #E9B824; }
+
+    @media only screen and (max-width: 991px) {
+        footer .footer-top-wrapper { justify-content: center; text-align: center; }
+        footer .footer-top-text { font-size: 20px; }
+        footer .footer-top { padding: 24px 0; }
+        .footer-main .content-widget { margin-bottom: 6px; }
+        .footer-main .row > div { min-width: 0; }
+        .footer-main .widget { height: auto; }
+    }
+    @media only screen and (max-width: 760px) {
+        .paragraph_text { padding-left: 0 !important; padding-top: 0; }
+        .footer-main { padding-top: 34px; }
+        .footer-main .widget { padding: 18px 16px; }
+        .footer-main .footer-copy .row > div { text-align: center; margin-bottom: 8px; }
+    }
+</style>
+
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml            : true,
+            version          : 'v15.0'
+        });
+    };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Messenger Chat plugin Code -->
+<div id="fb-root"></div>
+
+<!-- Your Chat plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "443832499055601");
+    chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- jQuery (CDN first, local fallback) ============================ -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    window.jQuery || document.write('<script src="https://su.edu.bd/web_assets/engineering/js/vendor/jquery-1.12.4.min.js"><\/script>');
+</script>
+
+<!-- Popper + Bootstrap (legacy widgets on inner pages) ============= -->
+<script src="https://su.edu.bd/web_assets/engineering/js/popper.min.js"></script>
+<script src="https://su.edu.bd/web_assets/engineering/js/bootstrap.min.js"></script>
+
+<!-- Contact form + shared plugins ================================== -->
+<script src="https://su.edu.bd/web_assets/engineering/js/ajax-mail.js"></script>
+<script src="https://su.edu.bd/web_assets/engineering/js/plugins.js"></script>
+<script src="https://su.edu.bd/web_assets/engineering/js/jquery.newsTicker.js"></script>
+<script src="https://su.edu.bd/web_assets/engineering/js/main.js"></script>
+
+<script>
+    /* ---------- Accordion (kept from the old file, null-safe) ---------- */
+    (function () {
+        var acc = document.getElementsByClassName('accordion');
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener('click', function () {
+                this.classList.toggle('active');
+                var panel = this.nextElementSibling;
+                if (!panel) return;
+                panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
+            });
+        }
+    })();
+
+    /* ---------- Notice ticker (only if the element exists) ---------- */
+    (function () {
+        if (!window.jQuery || !jQuery.fn.newsTicker) return;
+        var $t = jQuery('.su-ticker-list, #newsTicker');
+        if ($t.length) {
+            $t.newsTicker({ row_height: 24, max_rows: 1, speed: 600, direction: 'up', duration: 4000, pauseOnHover: 1 });
+        }
+    })();
+
+    /* ---------- Smooth reveal for the new design blocks ---------- */
+    (function () {
+        var items = document.querySelectorAll('.su-card, .su-head, .su-reveal');
+        if (!items.length || !('IntersectionObserver' in window)) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        items.forEach(function (el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(18px)';
+            el.style.transition = 'opacity .6s ease, transform .6s ease';
+        });
+
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'none';
+                io.unobserve(entry.target);
+            });
+        }, { threshold: 0.12 });
+
+        items.forEach(function (el) { io.observe(el); });
+    })();
+
+    /* ---------- Back to top (works with .su-totop if present) ---------- */
+    (function () {
+        var btn = document.querySelector('.su-totop, #suToTop');
+        if (!btn) return;
+        window.addEventListener('scroll', function () {
+            btn.classList.toggle('is-visible', window.scrollY > 400);
+        });
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+{
+  "status": "PASS_STRUCTURED_PROMOTION_STAGING_7",
+  "mode": "READ_ONLY_BUILD_FROM_DB_EVIDENCE",
+  "dbWritesPerformed": false,
+  "counts": {
+    "admissionRules": 5,
+    "scholarships": 2,
+    "total": 7
+  },
+  "policy": {
+    "verificationStatus": "PENDING",
+    "verifiedPublicationPerformed": false,
+    "sourceEvidenceStatusChanged": false,
+    "unresolvedParentEvidencePromoted": false,
+    "academicSessionInferred": false,
+    "programScopeInferred": false,
+    "scalarGpaFieldsInferred": false,
+    "primeIndicativeSlabsTreatedAsConfirmedPolicy": false
+  },
+  "admissionRules": [
+    {
+      "sourceEvidenceId": "cmug0k1nc0003ov6x8vtne66k",
+      "sourceCandidateId": "CAN:c0a3d4764ee81eb5dab5",
+      "sourceRecordId": "ugc:admission:c0a3d4764ee81eb5dab5",
+      "institutionId": "cmufw2vaw000fov4pl2hvviij",
+      "institutionName": "Manarat International University",
+      "programId": null,
+      "academicSession": null,
+      "applicantStage": null,
+      "allowedGroups": [],
+      "minimumSscGpa": null,
+      "minimumHscGpa": null,
+      "minimumCombinedGpa": null,
+      "requiredSubjects": null,
+      "minimumSubjectGrades": null,
+      "additionalCriteria": "Transfer applicants must submit official transcripts and have a minimum GPA of 2.5 in their previous academic record; final transfer eligibility is determined by the departmental academic committee.",
+      "sourceUrl": "https://dis.manarat.ac.bd/bangla_program",
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "verificationStatus": "PENDING",
+      "sourceCandidateIds": [
+        "CAN:c0a3d4764ee81eb5dab5"
+      ],
+      "sourceEvidence": {
+        "evidenceId": "cmug0k1nc0003ov6x8vtne66k",
+        "candidateId": "CAN:c0a3d4764ee81eb5dab5",
+        "parentSourceRecordId": "ugc:private:15",
+        "originalSourceUrl": "https://manarat.ac.bd/academic-information/",
+        "normalizedSourceUrl": "https://dis.manarat.ac.bd/bangla_program",
+        "assistantAction": "KEEP_NORMALIZED_TRANSFER_REQUIREMENT",
+        "normalizedValue": "Transfer applicants must submit official transcripts and have a minimum GPA of 2.5 in their previous academic record; final transfer eligibility is determined by the departmental academic committee.",
+        "promotionPolicy": "EXPLICIT_NORMALIZED_EVIDENCE_ONLY"
+      }
+    },
+    {
+      "sourceEvidenceId": "cmug0k1nc0005ov6x4m0ivth3",
+      "sourceCandidateId": "CAN:b6a1be2c9002210a3ddc",
+      "sourceRecordId": "ugc:admission:b6a1be2c9002210a3ddc",
+      "institutionId": "cmufw2vb0001dov4p249w2hcp",
+      "institutionName": "Varendra University",
+      "programId": null,
+      "academicSession": null,
+      "applicantStage": null,
+      "allowedGroups": [],
+      "minimumSscGpa": null,
+      "minimumHscGpa": null,
+      "minimumCombinedGpa": null,
+      "requiredSubjects": null,
+      "minimumSubjectGrades": null,
+      "additionalCriteria": "Undergraduate Honors admission: total GPA 5 with minimum 2.5 either in SSC or HSC/equivalent; alternatively, a student with minimum GPA 2.00 in SSC/HSC/equivalent and total GPA 6.00 or above may apply, except B.Pharm. Minimum five O-Level and two A-Level subjects are required; among seven subjects, four must have B-grade/GPA 4.00 and three must have C-grade/GPA 3.50. Freedom Fighter children require total GPA 5.00 in SSC and HSC. Approved diploma holders are treated as HSC/equivalent and take the usual admission test.",
+      "sourceUrl": "https://vu.edu.bd/academics/programs/20/ba-in-islamic-history-and-culture",
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "verificationStatus": "PENDING",
+      "sourceCandidateIds": [
+        "CAN:b6a1be2c9002210a3ddc"
+      ],
+      "sourceEvidence": {
+        "evidenceId": "cmug0k1nc0005ov6x4m0ivth3",
+        "candidateId": "CAN:b6a1be2c9002210a3ddc",
+        "parentSourceRecordId": "ugc:private:53",
+        "originalSourceUrl": "http://160.187.25.3:8083/front/applicant/home",
+        "normalizedSourceUrl": "https://vu.edu.bd/academics/programs/20/ba-in-islamic-history-and-culture",
+        "assistantAction": "KEEP_NORMALIZED_GENERAL_ADMISSION_REQUIREMENT",
+        "normalizedValue": "Undergraduate Honors admission: total GPA 5 with minimum 2.5 either in SSC or HSC/equivalent; alternatively, a student with minimum GPA 2.00 in SSC/HSC/equivalent and total GPA 6.00 or above may apply, except B.Pharm. Minimum five O-Level and two A-Level subjects are required; among seven subjects, four must have B-grade/GPA 4.00 and three must have C-grade/GPA 3.50. Freedom Fighter children require total GPA 5.00 in SSC and HSC. Approved diploma holders are treated as HSC/equivalent and take the usual admission test.",
+        "promotionPolicy": "EXPLICIT_NORMALIZED_EVIDENCE_ONLY"
+      }
+    },
+    {
+      "sourceEvidenceId": "cmug0k1nc0001ov6x8u1kp817",
+      "sourceCandidateId": "CAN:9dc20b5db7bf99a63773",
+      "sourceRecordId": "ugc:admission:9dc20b5db7bf99a63773",
+      "institutionId": "cmufw2vb1001fov4pbv5owr83",
+      "institutionName": "BGMEA University of Fashion & Technology(BUFT) (2)",
+      "programId": null,
+      "academicSession": null,
+      "applicantStage": null,
+      "allowedGroups": [],
+      "minimumSscGpa": null,
+      "minimumHscGpa": null,
+      "minimumCombinedGpa": null,
+      "requiredSubjects": null,
+      "minimumSubjectGrades": null,
+      "additionalCriteria": "Direct admission: Science applicants with combined SSC/HSC GPA >= 9 may enter all subjects without admission test (viva required). Arts/Commerce applicants with combined GPA >= 8 may enter AMM, BFS, BBA and English without admission test (viva required).",
+      "sourceUrl": "https://buft.buft.edu.bd/admission/eligibility",
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "verificationStatus": "PENDING",
+      "sourceCandidateIds": [
+        "CAN:9dc20b5db7bf99a63773"
+      ],
+      "sourceEvidence": {
+        "evidenceId": "cmug0k1nc0001ov6x8u1kp817",
+        "candidateId": "CAN:9dc20b5db7bf99a63773",
+        "parentSourceRecordId": "ugc:private:55",
+        "originalSourceUrl": "https://buft.edu.bd/admission/eligibility",
+        "normalizedSourceUrl": "https://buft.buft.edu.bd/admission/eligibility",
+        "assistantAction": "KEEP_NORMALIZED_ADMISSION_REQUIREMENT",
+        "normalizedValue": "Direct admission: Science applicants with combined SSC/HSC GPA >= 9 may enter all subjects without admission test (viva required). Arts/Commerce applicants with combined GPA >= 8 may enter AMM, BFS, BBA and English without admission test (viva required).",
+        "promotionPolicy": "EXPLICIT_NORMALIZED_EVIDENCE_ONLY"
+      }
+    },
+    {
+      "sourceEvidenceId": "cmug0k1nc0004ov6xjmm3z6xu",
+      "sourceCandidateId": "CAN:2cfcf6cf8f3b0b090869",
+      "sourceRecordId": "ugc:admission:2cfcf6cf8f3b0b090869",
+      "institutionId": "cmufw2vb30020ov4pit8m5rcy",
+      "institutionName": "University of Scholars",
+      "programId": null,
+      "academicSession": null,
+      "applicantStage": null,
+      "allowedGroups": [],
+      "minimumSscGpa": null,
+      "minimumHscGpa": null,
+      "minimumCombinedGpa": null,
+      "requiredSubjects": null,
+      "minimumSubjectGrades": null,
+      "additionalCriteria": "HSC/Alim/equivalent applicants require combined SSC/Dakhil + HSC/Alim/equivalent GPA of at least 6.00, with minimum 2.50 in each examination. Engineering applicants require a science background. A-Level applicants require at least 2 A-Level subjects after at least 5 O-Level subjects.",
+      "sourceUrl": "https://www.ius.edu.bd/admission",
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "verificationStatus": "PENDING",
+      "sourceCandidateIds": [
+        "CAN:2cfcf6cf8f3b0b090869"
+      ],
+      "sourceEvidence": {
+        "evidenceId": "cmug0k1nc0004ov6xjmm3z6xu",
+        "candidateId": "CAN:2cfcf6cf8f3b0b090869",
+        "parentSourceRecordId": "ugc:private:83",
+        "originalSourceUrl": "https://www.ius.edu.bd/admission",
+        "normalizedSourceUrl": "https://www.ius.edu.bd/admission",
+        "assistantAction": "KEEP_NORMALIZED_ADMISSION_REQUIREMENT",
+        "normalizedValue": "HSC/Alim/equivalent applicants require combined SSC/Dakhil + HSC/Alim/equivalent GPA of at least 6.00, with minimum 2.50 in each examination. Engineering applicants require a science background. A-Level applicants require at least 2 A-Level subjects after at least 5 O-Level subjects.",
+        "promotionPolicy": "EXPLICIT_NORMALIZED_EVIDENCE_ONLY"
+      }
+    },
+    {
+      "sourceEvidenceId": "cmug0k1nc0000ov6xzosc4vwl",
+      "sourceCandidateId": "CAN:393cf3a4505c9af03469",
+      "sourceRecordId": "ugc:admission:393cf3a4505c9af03469",
+      "institutionId": "cmufw2vb40028ov4p3rnzvwtw",
+      "institutionName": "Ahsania Mission University of Science and Technology",
+      "programId": null,
+      "academicSession": null,
+      "applicantStage": null,
+      "allowedGroups": [],
+      "minimumSscGpa": null,
+      "minimumHscGpa": null,
+      "minimumCombinedGpa": null,
+      "requiredSubjects": null,
+      "minimumSubjectGrades": null,
+      "additionalCriteria": "Admission: combined SSC/HSC GPA >= 6.00; GPA in either exam >= 2.50. Freedom Fighter children: combined GPA >= 5.00. Engineering applicants require Mathematics, Physics and Chemistry at HSC/equivalent. Diploma applicants are subject to eligibility.",
+      "sourceUrl": "https://amust.ac.bd/admission/",
+      "effectiveFrom": null,
+      "effectiveUntil": null,
+      "verificationStatus": "PENDING",
+      "sourceCandidateIds": [
+        "CAN:393cf3a4505c9af03469"
+      ],
+      "sourceEvidence": {
+        "evidenceId": "cmug0k1nc0000ov6xzosc4vwl",
+        "candidateId": "CAN:393cf3a4505c9af03469",
+        "parentSourceRecordId": "ugc:private:95",
+        "originalSourceUrl": "https://amust.ac.bd/admission/",
+        "normalizedSourceUrl": "https://amust.ac.bd/admission/",
+        "assistantAction": "KEEP_NORMALIZED_ADMISSION_REQUIREMENT",
+        "normalizedValue": "Admission: combined SSC/HSC GPA >= 6.00; GPA in either exam >= 2.50. Freedom Fighter children: combined GPA >= 5.00. Engineering applicants require Mathematics, Physics and Chemistry at HSC/equivalent. Diploma applicants are subject to eligibility.",
+        "promotionPolicy": "EXPLICIT_NORMALIZED_EVIDENCE_ONLY"
+      }
+    }
+  ],
+  "scholarships": [
+    {
+      "sourceEvidenceId": "cmug0k1nd0007ov6xo9elfv4v",
+      "sourceCandidateId": "CAN:88dd8e4036c73e68f9a5",
+      "sourceRecordId": "ugc:scholarship:88dd8e4036c73e68f9a5",
+      "institutionId": "cmufw2vay000qov4pmvdh4bwl",
+      "institutionName": "Prime University",
+      "programId": null,
+      "title": "First-semester GPA-based scholarship",
+      "provider": "Prime University",
+      "description": "Prime University first-semester GPA-based scholarship: combined SSC+HSC GPA 10.00 = 100% tuition waiver. The page also displays 9.00-9.99 = 75%, 8.00-8.99 = 50%, and 7.00-7.99 = 25%, but explicitly states that the intermediate 7.00-9.99 slabs are indicative while the GPA 10.00 to 100% rule is university policy.",
+      "eligibility": {
+        "confirmedPolicy": [
+          {
+            "combinedSscHscGpa": "10.00",
+            "tuitionWaiverPercent": 100
+          }
+        ],
+        "indicativeDisplayedSlabs": [
+          {
+            "combinedSscHscGpa": "9.00-9.99",
+            "tuitionWaiverPercent": 75
+          },
+          {
+            "combinedSscHscGpa": "8.00-8.99",
+            "tuitionWaiverPercent": 50
+          },
+          {
+            "combinedSscHscGpa": "7.00-7.99",
+            "tuitionWaiverPercent": 25
+          }
+        ],
+        "caveat": "The source describes the intermediate 7.00-9.99 slabs as indicative; only the GPA 10.00 to 100% rule is stated as university policy."
+      },
+      "amountDescription": "100% tuition waiver for combined SSC+HSC GPA 10.00. Intermediate 75%/50%/25% slabs are preserved as indicative only.",
+      "deadline": null,
+      "sourceUrl": "https://primeuniversity.ac.bd/scholarships-waivers",
+      "verificationStatus": "PENDING",
+      "sourceCandidateIds": [
+        "CAN:88dd8e4036c73e68f9a5"
+      ],
+      "sourceEvidence": {
+        "evidenceId": "cmug0k1nd0007ov6xo9elfv4v",
+        "candidateId": "CAN:88dd8e4036c73e68f9a5",
+        "parentSourceRecordId": "ugc:private:28",
+        "originalSourceUrl": "https://primeuniversity.ac.bd/scholarships-waivers",
+        "normalizedSourceUrl": "https://primeuniversity.ac.bd/scholarships-waivers",
+        "assistantAction": "KEEP_CURRENT_FIRST_SEMESTER_GPA_SCHOLARSHIP_WITH_CAVEAT",
+        "normalizedValue": "Prime University first-semester GPA-based scholarship: combined SSC+HSC GPA 10.00 = 100% tuition waiver. The page also displays 9.00-9.99 = 75%, 8.00-8.99 = 50%, and 7.00-7.99 = 25%, but explicitly states that the intermediate 7.00-9.99 slabs are indicative while the GPA 10.00 to 100% rule is university policy.",
+        "promotionPolicy": "EXPLICIT_NORMALIZED_EVIDENCE_ONLY_WITH_CAVEAT"
+      }
+    },
+    {
+      "sourceEvidenceId": "cmug0k1nc0006ov6x38w635gu",
+      "sourceCandidateId": "CAN:d14a32d46a725c7e4601",
+      "sourceRecordId": "ugc:scholarship:d14a32d46a725c7e4601",
+      "institutionId": "cmufw2vaz000xov4pe6sypkc3",
+      "institutionName": "Metropolitan University",
+      "programId": null,
+      "title": "Entry-level merit scholarships",
+      "provider": "Metropolitan University",
+      "description": "Metropolitan University entry-level merit scholarships: combined SSC+HSC GPA 10 with both Golden GPA 5.00 = 50%; GPA 10 with one Golden GPA 5.00 = 30%; GPA 10 without Golden GPA 5.00 = 20%; combined SSC+HSC GPA 9 = 10%.",
+      "eligibility": {
+        "tiers": [
+          {
+            "combinedSscHscGpa": "10",
+            "goldenGpa5Condition": "both",
+            "tuitionWaiverPercent": 50
+          },
+          {
+            "combinedSscHscGpa": "10",
+            "goldenGpa5Condition": "one",
+            "tuitionWaiverPercent": 30
+          },
+          {
+            "combinedSscHscGpa": "10",
+            "goldenGpa5Condition": "none",
+            "tuitionWaiverPercent": 20
+          },
+          {
+            "combinedSscHscGpa": "9",
+            "goldenGpa5Condition": "not specified",
+            "tuitionWaiverPercent": 10
+          }
+        ]
+      },
+      "amountDescription": "Tuition waiver tiers: 50%, 30%, 20%, or 10% according to the documented SSC+HSC GPA and Golden GPA 5.00 conditions.",
+      "deadline": null,
+      "sourceUrl": "https://metrouni.edu.bd/sites/admission/scholarship-aid",
+      "verificationStatus": "PENDING",
+      "sourceCandidateIds": [
+        "CAN:d14a32d46a725c7e4601"
+      ],
+      "sourceEvidence": {
+        "evidenceId": "cmug0k1nc0006ov6x38w635gu",
+        "candidateId": "CAN:d14a32d46a725c7e4601",
+        "parentSourceRecordId": "ugc:private:37",
+        "originalSourceUrl": "https://metrouni.edu.bd/sites/admission/scholarship-aid",
+        "normalizedSourceUrl": "https://metrouni.edu.bd/sites/admission/scholarship-aid",
+        "assistantAction": "KEEP_CURRENT_STRUCTURED_ENTRY_MERIT_SCHOLARSHIP",
+        "normalizedValue": "Metropolitan University entry-level merit scholarships: combined SSC+HSC GPA 10 with both Golden GPA 5.00 = 50%; GPA 10 with one Golden GPA 5.00 = 30%; GPA 10 without Golden GPA 5.00 = 20%; combined SSC+HSC GPA 9 = 10%.",
+        "promotionPolicy": "EXPLICIT_NORMALIZED_EVIDENCE_ONLY"
+      }
+    }
+  ]
+}

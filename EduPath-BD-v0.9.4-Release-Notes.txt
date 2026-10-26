@@ -1,0 +1,29 @@
+EduPath BD v0.9.4 — Production Account Lifecycle
+Android/iOS build: 22
+
+This release builds on v0.9.3 profile sync/privacy and adds a production account-lifecycle foundation.
+
+Implemented
+- Added nullable unique User.firebaseUid with a committed PostgreSQL/Prisma migration.
+- Firebase registration stores the stable UID; later verified sessions backfill/update the UID for existing accounts.
+- Added STUDENT-only, authenticated, rate-limited DELETE /api/me/account.
+- Account deletion requires typing the signed-in username; an incorrect confirmation is rejected.
+- Production deletion removes the Firebase Auth identity and then the cascading Prisma user/application data.
+- Demo deletion removes disposable profile/shortlist/application/activity/report/comment/vote/rating state so the flow is testable without credentials.
+- Account & privacy UI now exposes a guarded destructive section only to STUDENT accounts.
+- Demo mode text accurately distinguishes demo deletion from real Firebase deletion.
+- Successful deletion clears persisted profile/session, comparison/scholarship state, public API cache, reminder timers and native scheduled notifications.
+- API verifier covers wrong-confirmation rejection and successful disposable-account deletion.
+- Release verifier checks identity linkage, migration, deletion route/UI and account-local cleanup.
+- Version bumped to v0.9.4 / build 22.
+
+Validation completed in this environment
+- 50 TS/TSX source files passed TypeScript 5.8.3 syntax transpilation.
+- Release/API/Android/production-config MJS scripts passed Node syntax checks.
+- 129 release-verifier assertions passed before the verifier reached the unavailable local Prisma binary.
+- Production config gate fails closed with missing settings and passes with synthetic structurally-valid production settings without printing secret values.
+- No committed .env, keystore, service-account JSON or google-services.json was found in the source tree.
+
+Not yet claimed
+- Full `npm run qa`, Prisma validate/generate, browser E2E and final build are not claimed in this container because project dependencies/Prisma CLI are unavailable here.
+- v1.0 still needs real PostgreSQL + Firebase + Supabase Storage + HTTPS deployment + signed AAB + physical Android acceptance + hosted CI evidence.

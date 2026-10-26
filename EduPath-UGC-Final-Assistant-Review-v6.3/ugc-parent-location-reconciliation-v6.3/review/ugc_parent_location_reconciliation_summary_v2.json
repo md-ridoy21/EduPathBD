@@ -1,0 +1,28 @@
+{
+  "evidence_rows": 119,
+  "recommendation_rows_loaded": 99,
+  "unique_recommendation_ids": 99,
+  "duplicate_recommendation_ids": 0,
+  "duplicate_ids": [],
+  "reviewed_rows": 99,
+  "unreviewed_rows": 20,
+  "recommend_accept": 91,
+  "recommend_correct_candidate": 2,
+  "needs_campus_policy": 6,
+  "needs_more_evidence": 0,
+  "unreviewed_evidence_type_counts": {
+    "NONE": 20
+  },
+  "unreviewed_fetch_status_counts": {
+    "FETCH_FAILED": 11,
+    "NO_WEBSITE": 7,
+    "FETCHED": 2
+  },
+  "human_decisions_nonblank": 0,
+  "accepted_district_nonblank": 0,
+  "accepted_district_code_nonblank": 0,
+  "accept_rows_missing_code": 0,
+  "correction_rows_with_code": 0,
+  "campus_policy_rows_with_location": 0,
+  "db_changes": false
+}

@@ -1,0 +1,118 @@
+name: edupath-bd
+
+x-api-environment: &api-environment
+  NODE_ENV: production
+  PORT: "4000"
+  DEMO_MODE: "false"
+  TRUST_PROXY: "true"
+  LOG_REQUESTS: "true"
+  DATABASE_URL: ${DATABASE_URL:?Set DATABASE_URL in the deployment environment}
+  JWT_SECRET: ${JWT_SECRET:?Set a random JWT_SECRET of at least 32 characters}
+  WEB_ORIGINS: ${WEB_ORIGINS:?Set the public HTTPS web origin}
+  FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID:?Set FIREBASE_PROJECT_ID}
+  FIREBASE_SERVICE_ACCOUNT_JSON: ${FIREBASE_SERVICE_ACCOUNT_JSON:-}
+  SUPABASE_URL: ${SUPABASE_URL:?Set SUPABASE_URL}
+  SUPABASE_ANON_KEY: ${SUPABASE_ANON_KEY:-}
+  SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY:?Set SUPABASE_SERVICE_ROLE_KEY}
+  SUPABASE_STORAGE_BUCKET: ${SUPABASE_STORAGE_BUCKET:-edupath-media}
+  GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+  GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.5-flash-lite}
+
+x-database-operations-environment: &database-operations-environment
+  NODE_ENV: production
+  DATABASE_URL: ${DATABASE_URL:?Set DATABASE_URL in the deployment environment}
+  BACKUP_DIR: /backups/postgres
+  BACKUP_ENCRYPTION_KEY: ${BACKUP_ENCRYPTION_KEY:?Set a separate random backup encryption key of at least 32 characters}
+  BACKUP_RETENTION_COUNT: ${BACKUP_RETENTION_COUNT:-14}
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: edupath
+      POSTGRES_USER: ${POSTGRES_USER:-edupath}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set a strong POSTGRES_PASSWORD}
+    volumes:
+      - edupath_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  migrate:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      target: migrator
+    environment: *api-environment
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      target: runtime
+    environment: *api-environment
+    ports:
+      - "${API_BIND_ADDRESS:-127.0.0.1}:${API_PORT:-4000}:4000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:4000/api/ready >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
+
+  seed:
+    profiles: ["seed"]
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      target: build
+    command: ["npm", "run", "db:seed", "--workspace", "@edupath/api"]
+    environment: *api-environment
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    restart: "no"
+
+  db-operations:
+    profiles: ["operations"]
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      target: operations
+    command: ["scripts/database-integrity.mjs"]
+    environment: *database-operations-environment
+    volumes:
+      - edupath_backups:/backups
+    depends_on:
+      postgres:
+        condition: service_healthy
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: "no"
+
+volumes:
+  edupath_postgres:
+  edupath_backups:

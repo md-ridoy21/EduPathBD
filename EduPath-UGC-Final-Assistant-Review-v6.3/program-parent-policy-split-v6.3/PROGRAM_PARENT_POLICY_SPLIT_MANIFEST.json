@@ -1,0 +1,35 @@
+{
+  "status": "PASS_PROGRAM_PARENT_POLICY_SPLIT",
+  "mode": "FILES_ONLY_NO_DB_WRITES",
+  "dbChanges": false,
+  "inputRows": 1608,
+  "resolvedParentRows": 1542,
+  "policyBlockedRows": 66,
+  "blockedParentCount": 7,
+  "blockedParentRows": {
+    "ugc:international:3": 19,
+    "ugc:private:100": 4,
+    "ugc:private:12": 2,
+    "ugc:private:77": 14,
+    "ugc:private:84": 15,
+    "ugc:public:36": 1,
+    "ugc:public:46": 11
+  },
+  "unexpectedBlockedIds": [],
+  "missingExpectedBlockedIds": [],
+  "countMismatches": {},
+  "checks": {
+    "expected_input_1608": true,
+    "expected_resolved_1542": true,
+    "expected_blocked_66": true,
+    "no_unexpected_blocked_ids": true,
+    "no_missing_expected_blocked_ids": true,
+    "blocked_counts_match_expected": true,
+    "partition_reconstructs_input": true
+  },
+  "hardStopReasons": [],
+  "files": {
+    "resolvedParentDraftReady": "program_resolved_parent_draft_ready.csv",
+    "policyBlocked": "program_policy_blocked.csv"
+  }
+}

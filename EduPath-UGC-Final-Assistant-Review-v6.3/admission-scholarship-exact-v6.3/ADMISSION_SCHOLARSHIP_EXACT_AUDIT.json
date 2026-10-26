@@ -1,0 +1,1184 @@
+{
+  "status": "PASS_EXACT_DATASET_EXTRACTION",
+  "mode": "FILES_AND_PROJECT_READ_ONLY",
+  "dbWritesPerformed": false,
+  "masterFile": "/home/md-ridoy/Downloads/EduPath-UGC-Final-Assistant-Review-v6.3/final_approve_recommendations_v6_2.csv",
+  "masterRows": 2970,
+  "datasetCounts": {
+    "admission": 682,
+    "scholarship": 654,
+    "program": 1634,
+    "other": 0
+  },
+  "admission": {
+    "dataset": "admission",
+    "rows": 682,
+    "uniqueCanonicalCandidateIds": 682,
+    "uniqueCanonicalRecordIds": 90,
+    "uniqueParentSourceRecordIds": 90,
+    "uniqueInstitutions": 90,
+    "candidateTypes": {
+      "GPA_OR_ELIGIBILITY": 356,
+      "FEE_OR_COST": 87,
+      "DATE_OR_DEADLINE": 239
+    },
+    "decisionCounts": {
+      "APPROVE": 682
+    },
+    "reconstructionStatusCounts": {
+      "RECONSTRUCTION_CANDIDATE": 6,
+      "APPROVED_BUT_NEEDS_NORMALIZATION_OR_SOURCE": 676
+    },
+    "rowsWithNormalizedValue": 6,
+    "rowsWithHttpsReconstructionSource": 679,
+    "productionVerifiedCounts": {
+      "NO": 682
+    },
+    "topActions": {
+      "BULK_APPROVE_PREVIOUSLY_CLEAN_PENDING": 676,
+      "KEEP_NORMALIZED_ADMISSION_REQUIREMENT": 3,
+      "KEEP_NORMALIZED_FEE_RECORD": 1,
+      "KEEP_NORMALIZED_TRANSFER_REQUIREMENT": 1,
+      "KEEP_NORMALIZED_GENERAL_ADMISSION_REQUIREMENT": 1
+    }
+  },
+  "scholarship": {
+    "dataset": "scholarship",
+    "rows": 654,
+    "uniqueCanonicalCandidateIds": 654,
+    "uniqueCanonicalRecordIds": 73,
+    "uniqueParentSourceRecordIds": 73,
+    "uniqueInstitutions": 73,
+    "candidateTypes": {
+      "(blank)": 654
+    },
+    "decisionCounts": {
+      "APPROVE": 654
+    },
+    "reconstructionStatusCounts": {
+      "RECONSTRUCTION_CANDIDATE": 2,
+      "APPROVED_BUT_NEEDS_NORMALIZATION_OR_SOURCE": 652
+    },
+    "rowsWithNormalizedValue": 2,
+    "rowsWithHttpsReconstructionSource": 653,
+    "productionVerifiedCounts": {
+      "NO": 654
+    },
+    "topActions": {
+      "BULK_APPROVE_PREVIOUSLY_CLEAN_PENDING": 652,
+      "KEEP_CURRENT_STRUCTURED_ENTRY_MERIT_SCHOLARSHIP": 1,
+      "KEEP_CURRENT_FIRST_SEMESTER_GPA_SCHOLARSHIP_WITH_CAVEAT": 1
+    }
+  },
+  "schemaFit": {
+    "AdmissionRule": {
+      "hasDataSourceLineage": false,
+      "hasSourceRecordId": false,
+      "hasInstitutionId": true,
+      "programIdRequired": true,
+      "uniqueProgramAcademicSession": true
+    },
+    "Scholarship": {
+      "hasDataSourceLineage": false,
+      "hasSourceRecordId": false,
+      "hasInstitutionId": true,
+      "hasProgramId": true
+    }
+  },
+  "projectUsage": {
+    "AdmissionRule": [
+      {
+        "file": "scripts/verify-release.mjs",
+        "hits": [
+          {
+            "line": 186,
+            "text": "check(apiServer.includes(\"listEligibilityRules\") && store.includes(\"prisma!.admissionRule.findMany\") && eligibility.includes(\"AdmissionRuleInput\"), \"Eligibility is driven by current database admission rules\");"
+          },
+          {
+            "line": 221,
+            "text": "const admissionRuleVerificationMigration = await readFile("
+          },
+          {
+            "line": 226,
+            "text": "admissionRuleVerificationMigration.includes('\"verificationStatus\"') &&"
+          },
+          {
+            "line": 227,
+            "text": "admissionRuleVerificationMigration.includes('\"verifiedAt\"') &&"
+          },
+          {
+            "line": 228,
+            "text": "admissionRuleVerificationMigration.includes(\"AdmissionRule_verificationStatus_idx\"),"
+          },
+          {
+            "line": 229,
+            "text": "\"Incremental migration adds independent AdmissionRule verification lifecycle\""
+          }
+        ]
+      },
+      {
+        "file": "scripts/verify-production.mjs",
+        "hits": [
+          {
+            "line": 39,
+            "text": "check(apiPackage.scripts[\"db:seed\"] === \"tsx prisma/seed.ts\" && apiPackage.scripts[\"db:seed:demo\"]?.includes(\"--include-demo-content\") && apiPackage.scripts[\"db:seed:repair\"]?.includes(\"--repair-legacy-demo-data\") && seedScript.includes('process.argv.includes(\"--include-demo-content\")') && seedScrip"
+          }
+        ]
+      },
+      {
+        "file": ".full-safety-fix-backup-20260924T100349Z/apps/api/src/server.ts",
+        "hits": [
+          {
+            "line": 925,
+            "text": "detail: `${item.level}; pathway ${item.pathwayCategory}; location ${item.institution.upazila ? `${item.institution.upazila}, ` : \"\"}${item.institution.district}; groups: ${item.availableGroups.join(\", \") || \"not specified\"}; ${item.admissionRules.length ? `structured admission rule available for ${i"
+          }
+        ]
+      },
+      {
+        "file": ".full-safety-fix-backup-20260924T100349Z/apps/api/prisma/seed.ts",
+        "hits": [
+          {
+            "line": 136,
+            "text": "await prisma.admissionRule.upsert({"
+          },
+          {
+            "line": 256,
+            "text": "let removedAdmissionRules = 0;"
+          },
+          {
+            "line": 262,
+            "text": "const [circularCleanup, scholarshipCleanup, admissionRuleCleanup] = await prisma.$transaction(["
+          },
+          {
+            "line": 265,
+            "text": "prisma.admissionRule.deleteMany({ where: { programId: { in: programIds }, academicSession: \"2026-27\" } })"
+          },
+          {
+            "line": 269,
+            "text": "removedAdmissionRules = admissionRuleCleanup.count;"
+          },
+          {
+            "line": 276,
+            "text": "console.log(`Production repair: removed ${removedAdmissionRules} legacy demo admission rules, ${removedCirculars} legacy demo circulars and ${removedScholarships} legacy demo scholarships.`);"
+          }
+        ]
+      },
+      {
+        "file": ".full-safety-fix-backup-20260924T100349Z/apps/api/prisma/schema.prisma",
+        "hits": [
+          {
+            "line": 330,
+            "text": "admissionRules     AdmissionRule[]"
+          },
+          {
+            "line": 345,
+            "text": "model AdmissionRule {"
+          }
+        ]
+      },
+      {
+        "file": ".full-safety-fix-backup-20260924T100349Z/apps/api/src/data/store.ts",
+        "hits": [
+          {
+            "line": 93,
+            "text": "admissionRules: AdmissionRuleRecord[];"
+          },
+          {
+            "line": 110,
+            "text": "export type AdmissionRuleRecord = {"
+          },
+          {
+            "line": 640,
+            "text": "...(options.group ? { admissionRules: { some: { allowedGroups: { has: options.group } } } } : {})"
+          },
+          {
+            "line": 643,
+            "text": "prisma!.program.findMany({ where, skip: (page - 1) * limit, take: limit, orderBy: { name: \"asc\" }, include: { institution: { select: { name: true } }, admissionRules: { orderBy: { createdAt: \"desc\" }, take: 1 } } }),"
+          },
+          {
+            "line": 647,
+            "text": "const rule = item.admissionRules[0];"
+          },
+          {
+            "line": 653,
+            "text": "export async function listEligibilityRules(): Promise<AdmissionRuleRecord[]> {"
+          },
+          {
+            "line": 674,
+            "text": "const rows = await prisma!.admissionRule.findMany({"
+          },
+          {
+            "line": 685,
+            "text": "const latestByProgram = new Map<string, AdmissionRuleRecord>();"
+          },
+          {
+            "line": 711,
+            "text": "const rulesByProgram = new Map<string, AdmissionRuleRecord[]>();"
+          },
+          {
+            "line": 731,
+            "text": "admissionRules: rulesByProgram.get(program.id) ?? []"
+          },
+          {
+            "line": 776,
+            "text": "admissionRules: rulesByProgram.get(program.id) ?? []"
+          }
+        ]
+      },
+      {
+        "file": "tests/ops/production-seed-safety.test.mjs",
+        "hits": [
+          {
+            "line": 24,
+            "text": "assert.match(source, /prisma\\.admissionRule\\.deleteMany/);"
+          }
+        ]
+      },
+      {
+        "file": "tests/ops/content-publication-safety.test.mjs",
+        "hits": [
+          {
+            "line": 7,
+            "text": "test('AdmissionRule has independent publication lifecycle', async () => {"
+          },
+          {
+            "line": 9,
+            "text": "assert.match(schema, /model AdmissionRule[\\s\\S]*verificationStatus\\s+VerificationStatus\\s+@default\\(PENDING\\)/);"
+          },
+          {
+            "line": 10,
+            "text": "assert.match(schema, /model AdmissionRule[\\s\\S]*verifiedAt\\s+DateTime\\?/);"
+          },
+          {
+            "line": 23,
+            "text": "assert.match(store, /admissionRules:\\s*\\{\\s*some:\\s*\\{\\s*verificationStatus:\\s*\"VERIFIED\"/);"
+          },
+          {
+            "line": 24,
+            "text": "assert.match(store, /admissionRules:\\s*\\{\\s*where:\\s*\\{\\s*verificationStatus:\\s*\"VERIFIED\"/);"
+          }
+        ]
+      },
+      {
+        "file": "apps/api/src/server.ts",
+        "hits": [
+          {
+            "line": 23,
+            "text": "createAdmissionRule,"
+          },
+          {
+            "line": 729,
+            "text": "const admissionRuleEditSchema = z.object({ academicSession: z.string().trim().min(4).max(20).optional(), sourceUrl: httpsUrlSchema.optional() }).refine((value) => Object.keys(value).length > 0);"
+          },
+          {
+            "line": 748,
+            "text": "const schema = kind === \"INSTITUTION\" ? institutionEditSchema : kind === \"PROGRAM\" ? programEditSchema : kind === \"ADMISSION_RULE\" ? admissionRuleEditSchema : kind === \"CIRCULAR\" ? circularEditSchema : kind === \"SCHOLARSHIP\" ? scholarshipEditSchema : mediaEditSchema;"
+          },
+          {
+            "line": 853,
+            "text": "const admissionRuleSchema = z.object({"
+          },
+          {
+            "line": 872,
+            "text": "const parsed = admissionRuleSchema.safeParse(request.body);"
+          },
+          {
+            "line": 874,
+            "text": "try { response.status(201).json(await createAdmissionRule(parsed.data)); }"
+          },
+          {
+            "line": 976,
+            "text": "detail: `${item.level}; pathway ${item.pathwayCategory}; location ${item.institution.upazila ? `${item.institution.upazila}, ` : \"\"}${item.institution.district}; groups: ${item.availableGroups.join(\", \") || \"not specified\"}; ${item.admissionRules.length ? `structured admission rule available for ${i"
+          }
+        ]
+      },
+      {
+        "file": "apps/api/prisma/seed.ts",
+        "hits": [
+          {
+            "line": 138,
+            "text": "await prisma.admissionRule.upsert({"
+          },
+          {
+            "line": 262,
+            "text": "let removedAdmissionRules = 0;"
+          },
+          {
+            "line": 268,
+            "text": "const [circularCleanup, scholarshipCleanup, admissionRuleCleanup] = await prisma.$transaction(["
+          },
+          {
+            "line": 271,
+            "text": "prisma.admissionRule.deleteMany({ where: { programId: { in: programIds }, academicSession: \"2026-27\" } })"
+          },
+          {
+            "line": 275,
+            "text": "removedAdmissionRules = admissionRuleCleanup.count;"
+          },
+          {
+            "line": 282,
+            "text": "console.log(`Production repair: removed ${removedAdmissionRules} legacy demo admission rules, ${removedCirculars} legacy demo circulars and ${removedScholarships} legacy demo scholarships.`);"
+          }
+        ]
+      },
+      {
+        "file": "apps/api/prisma/schema.prisma",
+        "hits": [
+          {
+            "line": 342,
+            "text": "admissionRules     AdmissionRule[]"
+          },
+          {
+            "line": 357,
+            "text": "model AdmissionRule {"
+          }
+        ]
+      },
+      {
+        "file": "apps/api/src/data/store.ts",
+        "hits": [
+          {
+            "line": 93,
+            "text": "admissionRules: AdmissionRuleRecord[];"
+          },
+          {
+            "line": 110,
+            "text": "export type AdmissionRuleRecord = {"
+          },
+          {
+            "line": 640,
+            "text": "...(options.group ? { admissionRules: { some: { verificationStatus: \"VERIFIED\", allowedGroups: { has: options.group } } } } : {})"
+          },
+          {
+            "line": 643,
+            "text": "prisma!.program.findMany({ where, skip: (page - 1) * limit, take: limit, orderBy: { name: \"asc\" }, include: { institution: { select: { name: true } }, admissionRules: { where: { verificationStatus: \"VERIFIED\" }, orderBy: { createdAt: \"desc\" }, take: 1 } } }),"
+          },
+          {
+            "line": 647,
+            "text": "const rule = item.admissionRules[0];"
+          },
+          {
+            "line": 653,
+            "text": "export async function listEligibilityRules(): Promise<AdmissionRuleRecord[]> {"
+          },
+          {
+            "line": 674,
+            "text": "const rows = await prisma!.admissionRule.findMany({"
+          },
+          {
+            "line": 686,
+            "text": "const latestByProgram = new Map<string, AdmissionRuleRecord>();"
+          },
+          {
+            "line": 712,
+            "text": "const rulesByProgram = new Map<string, AdmissionRuleRecord[]>();"
+          },
+          {
+            "line": 732,
+            "text": "admissionRules: rulesByProgram.get(program.id) ?? []"
+          },
+          {
+            "line": 777,
+            "text": "admissionRules: rulesByProgram.get(program.id) ?? []"
+          },
+          {
+            "line": 826,
+            "text": "export async function createAdmissionRule(input: {"
+          },
+          {
+            "line": 844,
+            "text": "const item = await prisma!.admissionRule.create({"
+          },
+          {
+            "line": 878,
+            "text": "} satisfies AdmissionRuleRecord;"
+          },
+          {
+            "line": 1266,
+            "text": "return { users: demoUsers.length, institutions: demoInstitutions.length, programs: demoPrograms.length, admissionRules: 0, circulars: demoCirculars.length, scholarships: demoScholarships.length, media: demoMedia.length, pendingVerification: [...demoInstitutions, ...demoPrograms, ...demoCirculars, .."
+          }
+        ]
+      },
+      {
+        "file": "apps/api/src/domain/eligibility.ts",
+        "hits": [
+          {
+            "line": 17,
+            "text": "export type AdmissionRuleInput = {"
+          },
+          {
+            "line": 43,
+            "text": "function inferPathway(rule: AdmissionRuleInput): PathwayId {"
+          },
+          {
+            "line": 56,
+            "text": "function evaluateRule(profile: EligibilityProfile, rule: AdmissionRuleInput) {"
+          },
+          {
+            "line": 81,
+            "text": "export function evaluateEligibility(profile: EligibilityProfile, rules: AdmissionRuleInput[]) {"
+          }
+        ]
+      },
+      {
+        "file": "apps/api/src/domain/recommendation.ts",
+        "hits": [
+          {
+            "line": 2,
+            "text": "import type { AdmissionRuleRecord, RecommendationCandidateRecord } from \"../data/store.js\";"
+          },
+          {
+            "line": 48,
+            "text": "function evaluateRule(profile: RecommendationProfile, rule: AdmissionRuleRecord): { status: EligibilityConfidence; reasons: string[] } {"
+          },
+          {
+            "line": 83,
+            "text": "const ruleResults = candidate.admissionRules.map((rule) => evaluateRule(profile, rule));"
+          }
+        ]
+      },
+      {
+        "file": "apps/api/src/domain/recommendation.test.ts",
+        "hits": [
+          {
+            "line": 7,
+            "text": "id: \"program_1\", name: \"Diploma in Computer Technology\", level: \"Diploma\", pathwayCategory: \"POLYTECHNIC_DIPLOMA\", entryStage: \"SSC\", subjectAreas: [\"Computer\"], availableGroups: [\"SCIENCE\", \"VOCATIONAL\"], careerOutcomes: [\"Developer\"], sourceUrl: \"https://bteb.gov.bd/program\", institution: { id: \"i"
+          },
+          {
+            "line": 18,
+            "text": "const university = base({ id: \"university\", name: \"Computer Science\", pathwayCategory: \"ENGINEERING\", entryStage: \"HSC\", institution: { ...base({}).institution, type: \"PUBLIC_UNIVERSITY\", districtCode: \"BD-DHA\", district: \"Dhaka\" }, admissionRules: [{ id: \"rule\", programId: \"university\", programName"
+          }
+        ]
+      }
+    ],
+    "Scholarship": [
+      {
+        "file": "scripts/verify-api.mjs",
+        "hits": [
+          {
+            "line": 93,
+            "text": "const scholarships = await request(\"/api/scholarships?level=HSC&group=Science&gpa=4.8&limit=12\");"
+          },
+          {
+            "line": 94,
+            "text": "check(scholarships.status === 200 && scholarships.body.data.length >= 3 && scholarships.body.data.every((item) => item.verified && item.sourceUrl), \"scholarship matching returns verified and sourced opportunities\");"
+          },
+          {
+            "line": 95,
+            "text": "const technicalScholarships = await request(\"/api/scholarships?level=SSC&group=Vocational&gpa=3&limit=12\");"
+          },
+          {
+            "line": 96,
+            "text": "check(technicalScholarships.status === 200 && technicalScholarships.body.data.some((item) => item.id === \"sch_polytechnic\"), \"scholarship matching supports SSC technical profiles\");"
+          }
+        ]
+      },
+      {
+        "file": "scripts/verify-release.mjs",
+        "hits": [
+          {
+            "line": 23,
+            "text": "\"apps/web/src/components/ScholarshipHub.tsx\","
+          },
+          {
+            "line": 154,
+            "text": "check(appSource.includes(\"ScholarshipHub\") && appSource.includes(\"AdmissionWorkspace\"), \"Admission workspace and scholarship matching are exposed in the application shell\");"
+          },
+          {
+            "line": 199,
+            "text": "const scholarshipHub = await readFile(\"apps/web/src/components/ScholarshipHub.tsx\", \"utf8\");"
+          },
+          {
+            "line": 202,
+            "text": "check(apiServer.includes('app.get(\"/api/scholarships\"') && scholarshipHub.includes(\"/api/scholarships\"), \"Scholarship matching API and UI are connected\");"
+          }
+        ]
+      },
+      {
+        "file": "scripts/database-integrity.mjs",
+        "hits": [
+          {
+            "line": 24,
+            "text": "[\"scholarships\", prisma.scholarship.count()],"
+          }
+        ]
+      },
+      {
+        "file": "scripts/verify-production.mjs",
+        "hits": [
+          {
+            "line": 39,
+            "text": "check(apiPackage.scripts[\"db:seed\"] === \"tsx prisma/seed.ts\" && apiPackage.scripts[\"db:seed:demo\"]?.includes(\"--include-demo-content\") && apiPackage.scripts[\"db:seed:repair\"]?.includes(\"--repair-legacy-demo-data\") && seedScript.includes('process.argv.includes(\"--include-demo-content\")') && seedScrip"
+          }
+        ]
+      },
+      {
+        "file": ".full-safety-fix-backup-20260924T100349Z/apps/api/src/server.ts",
+        "hits": [
+          {
+            "line": 52,
+            "text": "listScholarships,"
+          },
+          {
+            "line": 171,
+            "text": "app.get(\"/api/scholarships\", async (request, response, next) => {"
+          },
+          {
+            "line": 179,
+            "text": "if (!parsed.success) { response.status(400).json({ message: \"Invalid scholarship filters\", issues: parsed.error.flatten() }); return; }"
+          },
+          {
+            "line": 182,
+            "text": "const result = await listScholarships({ ...filters, page, limit });"
+          },
+          {
+            "line": 912,
+            "text": "const [circulars, programs, scholarships] = await Promise.all([listCirculars({ page: 1, limit: 100 }), listRecommendationCandidates(), listScholarships({ page: 1, limit: 100 })]);"
+          },
+          {
+            "line": 934,
+            "text": "...scholarships.data.map((item) => ({"
+          },
+          {
+            "line": 937,
+            "text": "detail: `${item.description ?? \"Scholarship\"}; levels: ${item.levels.join(\", \") || \"not specified\"}; groups: ${item.groups.join(\", \") || \"not specified\"}; minimum GPA: ${item.minimumGpa ?? \"not specified\"}; amount: ${item.amountDescription ?? \"not specified\"}; deadline: ${item.deadline ? new Date(it"
+          }
+        ]
+      },
+      {
+        "file": ".full-safety-fix-backup-20260924T100349Z/apps/api/prisma/seed.ts",
+        "hits": [
+          {
+            "line": 3,
+            "text": "import { demoCirculars, demoInstitutions, demoPrograms, demoScholarships } from \"../src/data/demo-catalog.js\";"
+          },
+          {
+            "line": 187,
+            "text": "for (const scholarship of demoScholarships) {"
+          },
+          {
+            "line": 188,
+            "text": "await prisma.scholarship.upsert({"
+          },
+          {
+            "line": 189,
+            "text": "where: { id: scholarship.id },"
+          },
+          {
+            "line": 191,
+            "text": "id: scholarship.id,"
+          },
+          {
+            "line": 192,
+            "text": "title: scholarship.title,"
+          },
+          {
+            "line": 193,
+            "text": "provider: scholarship.provider,"
+          },
+          {
+            "line": 194,
+            "text": "description: scholarship.description,"
+          },
+          {
+            "line": 195,
+            "text": "institutionId: demoInstitutions.find((item) => item.name === scholarship.institutionName)?.id,"
+          },
+          {
+            "line": 196,
+            "text": "eligibility: { minimumGpa: scholarship.minimumGpa, groups: scholarship.groups, levels: scholarship.levels },"
+          },
+          {
+            "line": 197,
+            "text": "amountDescription: scholarship.amountDescription,"
+          },
+          {
+            "line": 198,
+            "text": "deadline: scholarship.deadline ? new Date(scholarship.deadline) : undefined,"
+          },
+          {
+            "line": 199,
+            "text": "sourceUrl: scholarship.sourceUrl,"
+          },
+          {
+            "line": 200,
+            "text": "verificationStatus: scholarship.verified ? \"VERIFIED\" : \"PENDING\""
+          },
+          {
+            "line": 203,
+            "text": "title: scholarship.title,"
+          }
+        ]
+      },
+      {
+        "file": ".full-safety-fix-backup-20260924T100349Z/apps/api/prisma/schema.prisma",
+        "hits": [
+          {
+            "line": 292,
+            "text": "scholarships       Scholarship[]"
+          },
+          {
+            "line": 332,
+            "text": "scholarships       Scholarship[]"
+          },
+          {
+            "line": 393,
+            "text": "model Scholarship {"
+          }
+        ]
+      },
+      {
+        "file": ".full-safety-fix-backup-20260924T100349Z/apps/api/src/data/store.ts",
+        "hits": [
+          {
+            "line": 3,
+            "text": "import { demoCirculars, demoInstitutions, demoPrograms, demoScholarships } from \"./demo-catalog.js\";"
+          },
+          {
+            "line": 128,
+            "text": "export type ScholarshipRecord = {"
+          },
+          {
+            "line": 780,
+            "text": "export async function listScholarships(options: { gpa?: number; group?: string; level?: string; page?: number; limit?: number } = {}) {"
+          },
+          {
+            "line": 783,
+            "text": "const matches = (item: ScholarshipRecord) =>"
+          },
+          {
+            "line": 789,
+            "text": "const filtered = demoScholarships.filter((item) => item.verified && matches(item));"
+          },
+          {
+            "line": 793,
+            "text": "const rows = await prisma!.scholarship.findMany({"
+          },
+          {
+            "line": 814,
+            "text": "} satisfies ScholarshipRecord;"
+          }
+        ]
+      },
+      {
+        "file": "tests/ops/production-seed-safety.test.mjs",
+        "hits": [
+          {
+            "line": 23,
+            "text": "assert.match(source, /prisma\\.scholarship\\.deleteMany/);"
+          },
+          {
+            "line": 31,
+            "text": "assert.ok(source.indexOf(\"for (const scholarship of demoScholarships)\") > demoCatalogGate);"
+          }
+        ]
+      },
+      {
+        "file": "tests/ops/content-publication-safety.test.mjs",
+        "hits": [
+          {
+            "line": 21,
+            "text": "test('public catalog only consumes verified rules and verified scholarship parents', async () => {"
+          },
+          {
+            "line": 28,
+            "text": "test('admin content lifecycle includes admission rules and scholarships', async () => {"
+          }
+        ]
+      },
+      {
+        "file": "tests/e2e/app-smoke.spec.ts",
+        "hits": [
+          {
+            "line": 61,
+            "text": "const sectionIds = [\"top\", \"eligibility\", \"pathways\", \"institutions\", \"deadlines\", \"scholarships\", \"ai-guide\", \"media-map\", \"community\"];"
+          },
+          {
+            "line": 72,
+            "text": "const apiPaths = [\"/api/health\", \"/api/catalog/stats\", \"/api/institutions?limit=4\", \"/api/programs?limit=4\", \"/api/circulars?limit=4\", \"/api/scholarships?limit=4\", \"/api/institutions/inst_du/media\"];"
+          }
+        ]
+      },
+      {
+        "file": "apps/api/src/server.ts",
+        "hits": [
+          {
+            "line": 28,
+            "text": "createScholarship,"
+          },
+          {
+            "line": 54,
+            "text": "listScholarships,"
+          },
+          {
+            "line": 173,
+            "text": "app.get(\"/api/scholarships\", async (request, response, next) => {"
+          },
+          {
+            "line": 181,
+            "text": "if (!parsed.success) { response.status(400).json({ message: \"Invalid scholarship filters\", issues: parsed.error.flatten() }); return; }"
+          },
+          {
+            "line": 184,
+            "text": "const result = await listScholarships({ ...filters, page, limit });"
+          },
+          {
+            "line": 731,
+            "text": "const scholarshipEditSchema = z.object({ title: z.string().trim().min(3).max(180).optional(), provider: z.string().trim().min(2).max(160).optional(), amountDescription: z.string().trim().max(500).optional(), sourceUrl: httpsUrlSchema.optional() }).refine((value) => Object.keys(value).length > 0);"
+          },
+          {
+            "line": 748,
+            "text": "const schema = kind === \"INSTITUTION\" ? institutionEditSchema : kind === \"PROGRAM\" ? programEditSchema : kind === \"ADMISSION_RULE\" ? admissionRuleEditSchema : kind === \"CIRCULAR\" ? circularEditSchema : kind === \"SCHOLARSHIP\" ? scholarshipEditSchema : mediaEditSchema;"
+          },
+          {
+            "line": 878,
+            "text": "const scholarshipSchema = z.object({"
+          },
+          {
+            "line": 892,
+            "text": "app.post(\"/api/admin/scholarships\", requireAuth, requireRole(\"ADMIN\"), async (request, response, next) => {"
+          },
+          {
+            "line": 893,
+            "text": "const parsed = scholarshipSchema.safeParse(request.body);"
+          },
+          {
+            "line": 894,
+            "text": "if (!parsed.success) { response.status(400).json({ message: \"Invalid scholarship\", issues: parsed.error.flatten() }); return; }"
+          },
+          {
+            "line": 895,
+            "text": "try { response.status(201).json(await createScholarship(parsed.data)); }"
+          },
+          {
+            "line": 963,
+            "text": "const [circulars, programs, scholarships] = await Promise.all([listCirculars({ page: 1, limit: 100 }), listRecommendationCandidates(), listScholarships({ page: 1, limit: 100 })]);"
+          },
+          {
+            "line": 985,
+            "text": "...scholarships.data.map((item) => ({"
+          },
+          {
+            "line": 988,
+            "text": "detail: `${item.description ?? \"Scholarship\"}; levels: ${item.levels.join(\", \") || \"not specified\"}; groups: ${item.groups.join(\", \") || \"not specified\"}; minimum GPA: ${item.minimumGpa ?? \"not specified\"}; amount: ${item.amountDescription ?? \"not specified\"}; deadline: ${item.deadline ? new Date(it"
+          }
+        ]
+      },
+      {
+        "file": "apps/api/prisma/seed.ts",
+        "hits": [
+          {
+            "line": 3,
+            "text": "import { demoCirculars, demoInstitutions, demoPrograms, demoScholarships } from \"../src/data/demo-catalog.js\";"
+          },
+          {
+            "line": 193,
+            "text": "for (const scholarship of demoScholarships) {"
+          },
+          {
+            "line": 194,
+            "text": "await prisma.scholarship.upsert({"
+          },
+          {
+            "line": 195,
+            "text": "where: { id: scholarship.id },"
+          },
+          {
+            "line": 197,
+            "text": "id: scholarship.id,"
+          },
+          {
+            "line": 198,
+            "text": "title: scholarship.title,"
+          },
+          {
+            "line": 199,
+            "text": "provider: scholarship.provider,"
+          },
+          {
+            "line": 200,
+            "text": "description: scholarship.description,"
+          },
+          {
+            "line": 201,
+            "text": "institutionId: demoInstitutions.find((item) => item.name === scholarship.institutionName)?.id,"
+          },
+          {
+            "line": 202,
+            "text": "eligibility: { minimumGpa: scholarship.minimumGpa, groups: scholarship.groups, levels: scholarship.levels },"
+          },
+          {
+            "line": 203,
+            "text": "amountDescription: scholarship.amountDescription,"
+          },
+          {
+            "line": 204,
+            "text": "deadline: scholarship.deadline ? new Date(scholarship.deadline) : undefined,"
+          },
+          {
+            "line": 205,
+            "text": "sourceUrl: scholarship.sourceUrl,"
+          },
+          {
+            "line": 206,
+            "text": "verificationStatus: scholarship.verified ? \"VERIFIED\" : \"PENDING\""
+          },
+          {
+            "line": 209,
+            "text": "title: scholarship.title,"
+          }
+        ]
+      },
+      {
+        "file": "apps/api/prisma/schema.prisma",
+        "hits": [
+          {
+            "line": 303,
+            "text": "scholarships       Scholarship[]"
+          },
+          {
+            "line": 344,
+            "text": "scholarships       Scholarship[]"
+          },
+          {
+            "line": 408,
+            "text": "model Scholarship {"
+          }
+        ]
+      },
+      {
+        "file": "apps/api/scripts/import-ugc-programs-guarded.ts",
+        "hits": [
+          {
+            "line": 66,
+            "text": "/\\bscholarship\\b/i, /\\bwaiver\\b/i, /\\bfinal exam\\b/i, /\\bmarksheet\\b/i,"
+          }
+        ]
+      },
+      {
+        "file": "apps/api/scripts/salvage-ugc-programs-from-institution-sites.ts",
+        "hits": [
+          {
+            "line": 163,
+            "text": "/\\bscholarship\\b/i, /\\bwaiver\\b/i, /\\bfinal exam\\b/i, /\\bmarksheet\\b/i,"
+          }
+        ]
+      },
+      {
+        "file": "apps/api/src/data/store.ts",
+        "hits": [
+          {
+            "line": 3,
+            "text": "import { demoCirculars, demoInstitutions, demoPrograms, demoScholarships } from \"./demo-catalog.js\";"
+          },
+          {
+            "line": 128,
+            "text": "export type ScholarshipRecord = {"
+          },
+          {
+            "line": 781,
+            "text": "export async function listScholarships(options: { gpa?: number; group?: string; level?: string; page?: number; limit?: number } = {}) {"
+          },
+          {
+            "line": 784,
+            "text": "const matches = (item: ScholarshipRecord) =>"
+          },
+          {
+            "line": 790,
+            "text": "const filtered = demoScholarships.filter((item) => item.verified && matches(item));"
+          },
+          {
+            "line": 794,
+            "text": "const rows = await prisma!.scholarship.findMany({"
+          },
+          {
+            "line": 821,
+            "text": "} satisfies ScholarshipRecord;"
+          },
+          {
+            "line": 881,
+            "text": "export async function createScholarship(input: {"
+          },
+          {
+            "line": 895,
+            "text": "const item: ScholarshipRecord = { id: `sch_${Date.now()}`, title: input.title, provider: input.provider, description: input.description, minimumGpa: input.minimumGpa, groups: input.groups, levels: input.levels, amountDescription: input.amountDescription, deadline: input.deadline?.toISOString(), sour"
+          },
+          {
+            "line": 896,
+            "text": "demoScholarships.push(item);"
+          },
+          {
+            "line": 903,
+            "text": "if (input.institutionId && input.institutionId !== program.institutionId) throw new Error(\"Scholarship program does not belong to the selected institution\");"
+          },
+          {
+            "line": 908,
+            "text": "const item = await prisma!.scholarship.create({"
+          },
+          {
+            "line": 923,
+            "text": "return { id: item.id, title: item.title, provider: item.provider, description: item.description ?? undefined, institutionName: item.institution?.name, programName: item.program?.name, minimumGpa: input.minimumGpa, groups: input.groups, levels: input.levels, amountDescription: item.amountDescription "
+          },
+          {
+            "line": 1266,
+            "text": "return { users: demoUsers.length, institutions: demoInstitutions.length, programs: demoPrograms.length, admissionRules: 0, circulars: demoCirculars.length, scholarships: demoScholarships.length, media: demoMedia.length, pendingVerification: [...demoInstitutions, ...demoPrograms, ...demoCirculars, .."
+          },
+          {
+            "line": 1268,
+            "text": "const [users, institutions, programs, admissionRules, circulars, scholarships, media, pendingInstitutions, pendingPrograms, pendingAdmissionRules, pendingCirculars, pendingScholarships, pendingMedia, comments, openReports, aiInteractions] = await Promise.all(["
+          }
+        ]
+      },
+      {
+        "file": "apps/api/src/data/demo-catalog.ts",
+        "hits": [
+          {
+            "line": 1,
+            "text": "import type { CircularRecord, InstitutionRecord, ProgramRecord, ScholarshipRecord } from \"./store.js\";"
+          },
+          {
+            "line": 42,
+            "text": "export const demoScholarships: ScholarshipRecord[] = ["
+          },
+          {
+            "line": 45,
+            "text": "{ id: \"sch_cu_access\", title: \"Higher Education Access Scholarship\", provider: \"University of Chittagong\", description: \"General higher-education support across science, business and humanities routes.\", institutionName: \"University of Chittagong\", minimumGpa: 3.5, groups: [\"Science\", \"Business Stud"
+          }
+        ]
+      },
+      {
+        "file": "apps/api/src/ai/assistant.ts",
+        "hits": [
+          {
+            "line": 56,
+            "text": "const scholarshipIntent = /scholarship|stipend|funding|বৃত্তি|স্কলারশিপ|উপবৃত্তি/.test(normalizedQuestion);"
+          },
+          {
+            "line": 61,
+            "text": "if (scholarshipIntent && source.kind !== \"SCHOLARSHIP\") return false;"
+          },
+          {
+            "line": 62,
+            "text": "if (deadlineIntent && !scholarshipIntent && source.kind !== \"CIRCULAR\") return false;"
+          },
+          {
+            "line": 74,
+            "text": "const kindScore = scholarshipIntent && source.kind === \"SCHOLARSHIP\" ? 10 : deadlineIntent && source.kind === \"CIRCULAR\" ? 10 : 0;"
+          },
+          {
+            "line": 87,
+            "text": "return ranked.filter((item) => item.score > 0 || requestedPathways.size > 0 || deadlineIntent || scholarshipIntent || locallyScoped).slice(0, 10).map((item) => item.source);"
+          }
+        ]
+      },
+      {
+        "file": "apps/web/src/App.tsx",
+        "hits": [
+          {
+            "line": 44,
+            "text": "const ScholarshipHub = lazy(() => import(\"./components/ScholarshipHub\").then((module) => ({ default: module.ScholarshipHub })));"
+          },
+          {
+            "line": 100,
+            "text": "\"higher-study\": { title: \"উচ্চশিক্ষা ও গবেষণা\", category: \"উচ্চশিক্ষা\", description: \"ডিপ্লোমা বা ডিগ্রির পর যাচাইকৃত স্নাতকোত্তর, গবেষণা ও scholarship-এর পথ খুঁজুন।\" }"
+          },
+          {
+            "line": 238,
+            "text": "const sectionIds = [\"top\", \"eligibility\", \"pathways\", \"institutions\", \"deadlines\", \"scholarships\", \"ai-guide\", \"media-map\", \"community\"];"
+          },
+          {
+            "line": 287,
+            "text": "for (const key of [profileStorageKey, \"edupath_compare\", \"edupath_saved_scholarships\", \"edupath_session\"]) localStorage.removeItem(key);"
+          },
+          {
+            "line": 387,
+            "text": "<a className=\"transition hover:text-emerald-300\" href=\"#scholarships\">{text(\"Scholarships\", \"স্কলারশিপ\")}</a>"
+          },
+          {
+            "line": 409,
+            "text": "{[[\"pathways\", text(\"Pathways\", \"পথসমূহ\")], [\"eligibility\", text(\"Eligibility\", \"যোগ্যতা\")], [\"institutions\", text(\"Institutions\", \"প্রতিষ্ঠান\")], [\"deadlines\", text(\"Deadlines\", \"সময়সীমা\")], [\"scholarships\", text(\"Scholarships\", \"স্কলারশিপ\")], [\"media-map\", text(\"Campus map, video and audio\", \"ক্যা"
+          },
+          {
+            "line": 438,
+            "text": "{text(\"Check eligibility, compare institutions, discover scholarships and turn your academic goals into a clear, trackable pathway.\", \"যোগ্যতা যাচাই করো, প্রতিষ্ঠান তুলনা করো, স্কলারশিপ খুঁজে নাও এবং শিক্ষার লক্ষ্যকে স্পষ্ট ও ট্র্যাকযোগ্য পরিকল্পনায় রূপ দাও।\")}"
+          },
+          {
+            "line": 592,
+            "text": "<ScholarshipHub />"
+          }
+        ]
+      },
+      {
+        "file": "apps/web/src/data/demo.ts",
+        "hits": [
+          {
+            "line": 17,
+            "text": "type: \"University\" | \"Scholarship\" | \"Technical\";"
+          },
+          {
+            "line": 70,
+            "text": "description: \"Find verified postgraduate, research and scholarship pathways after diploma or degree study.\","
+          },
+          {
+            "line": 88,
+            "text": "institution: \"National Merit Scholarship\","
+          },
+          {
+            "line": 92,
+            "text": "type: \"Scholarship\""
+          }
+        ]
+      },
+      {
+        "file": "apps/web/src/components/AdminContentForms.tsx",
+        "hits": [
+          {
+            "line": 7,
+            "text": "type FormMode = \"program\" | \"admission\" | \"circular\" | \"scholarship\" | \"media\";"
+          },
+          {
+            "line": 13,
+            "text": "const emptyScholarship = { institutionId: \"\", programId: \"\", title: \"\", provider: \"\", minimumGpa: \"\", groups: \"\", levels: \"HSC\", amountDescription: \"\", deadline: \"\", sourceUrl: \"\" };"
+          },
+          {
+            "line": 25,
+            "text": "const [scholarship, setScholarship] = useState(emptyScholarship);"
+          },
+          {
+            "line": 42,
+            "text": "setScholarship((current) => ({ ...current, institutionId: current.institutionId || firstInstitution }));"
+          },
+          {
+            "line": 85,
+            "text": "const createScholarship = () => submit(\"/api/admin/scholarships\", {"
+          },
+          {
+            "line": 86,
+            "text": "...(scholarship.institutionId ? { institutionId: scholarship.institutionId } : {}), ...(scholarship.programId ? { programId: scholarship.programId } : {}),"
+          },
+          {
+            "line": 87,
+            "text": "title: scholarship.title, provider: scholarship.provider, ...(scholarship.minimumGpa ? { minimumGpa: Number(scholarship.minimumGpa) } : {}),"
+          },
+          {
+            "line": 88,
+            "text": "groups: csvList(scholarship.groups), levels: csvList(scholarship.levels), ...(scholarship.amountDescription ? { amountDescription: scholarship.amountDescription } : {}),"
+          },
+          {
+            "line": 89,
+            "text": "...(scholarship.deadline ? { deadline: scholarship.deadline } : {}), sourceUrl: scholarship.sourceUrl"
+          },
+          {
+            "line": 90,
+            "text": "}, \"Scholarship saved as pending verification.\", () => setScholarship({ ...emptyScholarship, institutionId: scholarship.institutionId }));"
+          },
+          {
+            "line": 96,
+            "text": "const submitCurrent = mode === \"program\" ? createProgram : mode === \"admission\" ? createAdmission : mode === \"circular\" ? createCircular : mode === \"scholarship\" ? createScholarship : createMedia;"
+          },
+          {
+            "line": 97,
+            "text": "const invalidCurrent = tuitionRangeInvalid || circularDateInvalid || (mode === \"program\" ? !program.institutionId || !program.name || !program.slug : mode === \"admission\" ? !admission.programId || !admission.academicSession || !admission.sourceUrl : mode === \"circular\" ? !circular.institutionId || !"
+          },
+          {
+            "line": 98,
+            "text": "const icon = mode === \"program\" ? <GraduationCap size={20} /> : mode === \"admission\" ? <ClipboardCheck size={20} /> : mode === \"circular\" ? <CalendarPlus size={20} /> : mode === \"scholarship\" ? <Award size={20} /> : <Film size={20} />;"
+          },
+          {
+            "line": 101,
+            "text": "<div className=\"flex flex-col justify-between gap-4 sm:flex-row sm:items-start\"><div className=\"flex items-start gap-3\"><span className=\"grid size-11 shrink-0 place-items-center rounded-2xl bg-cyan-50 text-cyan-700\">{icon}</span><div><h3 className=\"text-xl font-black\">Academic content</h3><p classNa"
+          },
+          {
+            "line": 117,
+            "text": "{mode === \"scholarship\" && <div className=\"mt-6 grid gap-4 md:grid-cols-2\">"
+          }
+        ]
+      },
+      {
+        "file": "apps/web/src/components/ScholarshipHub.tsx",
+        "hits": [
+          {
+            "line": 8,
+            "text": "type Scholarship = {"
+          },
+          {
+            "line": 24,
+            "text": "const savedKey = \"edupath_saved_scholarships\";"
+          },
+          {
+            "line": 31,
+            "text": "export function ScholarshipHub() {"
+          },
+          {
+            "line": 36,
+            "text": "const [scholarships, setScholarships] = useState<Scholarship[]>([]);"
+          },
+          {
+            "line": 49,
+            "text": "const result = await apiRequest<Paginated<Scholarship>>(`/api/scholarships?${params}`);"
+          },
+          {
+            "line": 50,
+            "text": "setScholarships(result.data);"
+          },
+          {
+            "line": 51,
+            "text": "if (!result.data.length) setMessage(text(\"No current verified scholarship matched these filters.\", \"বর্তমান যাচাইকৃত কোনো scholarship এই filter-এর সাথে মেলেনি।\"));"
+          },
+          {
+            "line": 52,
+            "text": "} catch (error) { setMessage(error instanceof Error ? error.message : text(\"Could not load scholarships.\", \"Scholarship লোড করা যায়নি।\")); }"
+          },
+          {
+            "line": 64,
+            "text": "const remind = async (scholarship: Scholarship) => {"
+          },
+          {
+            "line": 65,
+            "text": "if (!scholarship.deadline) return;"
+          },
+          {
+            "line": 66,
+            "text": "setReminderBusy(scholarship.id); setMessage(\"\");"
+          },
+          {
+            "line": 68,
+            "text": "const mode = await enableDeadlineReminder({ id: `scholarship-${scholarship.id}`, title: scholarship.title, institution: scholarship.provider, deadline: scholarship.deadline });"
+          },
+          {
+            "line": 69,
+            "text": "setMessage(mode === \"notification\" ? text(\"Scholarship notification scheduled.\", \"Scholarship notification নির্ধারিত হয়েছে।\") : text(\"Scholarship reminder saved in the app.\", \"Scholarship reminder অ্যাপে সেভ হয়েছে।\"));"
+          },
+          {
+            "line": 74,
+            "text": "return <section id=\"scholarships\" className=\"scroll-mt-28 bg-amber-50/60 py-16 lg:py-24\"><div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">"
+          },
+          {
+            "line": 75,
+            "text": "<div className=\"max-w-2xl\"><p className=\"flex items-center gap-2 text-xs font-black uppercase tracking-[.2em] text-amber-700\"><Award size={16} />{text(\"Scholarship matching\", \"Scholarship matching\")}</p><h2 className=\"mt-3 text-3xl font-black tracking-tight sm:text-4xl\">{text(\"Find verified funding "
+          }
+        ]
+      },
+      {
+        "file": "apps/web/src/lib/api.ts",
+        "hits": [
+          {
+            "line": 14,
+            "text": "return method === \"GET\" && !options.token && [\"/api/institutions\", \"/api/programs\", \"/api/circulars\", \"/api/scholarships\", \"/api/catalog/stats\"].some((prefix) => path.startsWith(prefix));"
+          }
+        ]
+      }
+    ]
+  },
+  "policy": {
+    "textKeywordClassificationUsedForExactDatasetCounts": false,
+    "exactDatasetColumnUsed": true,
+    "fakeOrInferredValuesAllowed": false,
+    "productionVerifiedExpected": "NO",
+    "dbWritesPerformed": false
+  },
+  "files": {
+    "admissionExact": "admission_exact_candidates.csv",
+    "scholarshipExact": "scholarship_exact_candidates.csv"
+  }
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>National University::College Portal </title>
+    <link rel="icon" type="image/x-icon" href="https://collegeportal.nu.ac.bd/favicon.ico" />
+    <link href="https://collegeportal.nu.ac.bd/css/bootstrap.css" rel="stylesheet" />
+    <link href="https://collegeportal.nu.ac.bd/css/animate.min.css" rel="stylesheet" />
+    <link href="https://collegeportal.nu.ac.bd/css/fontawesome.css" rel="stylesheet" />
+    <link href="https://collegeportal.nu.ac.bd/css/style.css" rel="stylesheet" />
+    <link id="pagestyle" href="https://collegeportal.nu.ac.bd/assets/css/argon-dashboard.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        rel="stylesheet" />
+
+    <link href="https://collegeportal.nu.ac.bd/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="https://collegeportal.nu.ac.bd/js/jquery-3.7.0.min.js"></script>
+    <script src="https://collegeportal.nu.ac.bd/js/jquery.dataTables.min.js"></script>
+
+    <link href="https://collegeportal.nu.ac.bd/css/toastify.min.css" rel="stylesheet" />
+
+    <script src="https://collegeportal.nu.ac.bd/js/toastify-js.js"></script>
+    <script src="https://collegeportal.nu.ac.bd/js/axios.min.js"></script>
+    <script src="https://collegeportal.nu.ac.bd/js/config.js"></script>
+    <style>
+        #feedback {
+
+            height: 0px;
+            width: 85px;
+            position: fixed;
+            right: 0;
+            top: 50%;
+            z-index: 1000;
+            transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -o-transform: rotate(-90deg);
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+        }
+
+        #feedback span {
+            display: block;
+            background: #00803C;
+            height: 52px;
+            padding-top: 10px;
+            width: 210px;
+            text-align: center;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+
+<script type="text/javascript" class="flasher-js">(function() {    var rootScript = 'https://cdn.jsdelivr.net/npm/@flasher/flasher@1.3.2/dist/flasher.min.js';    var FLASHER_FLASH_BAG_PLACE_HOLDER = {};    var options = mergeOptions([], FLASHER_FLASH_BAG_PLACE_HOLDER);    function mergeOptions(first, second) {        return {            context: merge(first.context || {}, second.context || {}),            envelopes: merge(first.envelopes || [], second.envelopes || []),            options: merge(first.options || {}, second.options || {}),            scripts: merge(first.scripts || [], second.scripts || []),            styles: merge(first.styles || [], second.styles || []),        };    }    function merge(first, second) {        if (Array.isArray(first) && Array.isArray(second)) {            return first.concat(second).filter(function(item, index, array) {                return array.indexOf(item) === index;            });        }        return Object.assign({}, first, second);    }    function renderOptions(options) {        if(!window.hasOwnProperty('flasher')) {            console.error('Flasher is not loaded');            return;        }        requestAnimationFrame(function () {            window.flasher.render(options);        });    }    function render(options) {        if ('loading' !== document.readyState) {            renderOptions(options);            return;        }        document.addEventListener('DOMContentLoaded', function() {            renderOptions(options);        });    }    if (1 === document.querySelectorAll('script.flasher-js').length) {        document.addEventListener('flasher:render', function (event) {            render(event.detail);        });            }    if (window.hasOwnProperty('flasher') || !rootScript || document.querySelector('script[src="' + rootScript + '"]')) {        render(options);    } else {        var tag = document.createElement('script');        tag.setAttribute('src', rootScript);        tag.setAttribute('type', 'text/javascript');        tag.onload = function () {            render(options);        };        document.head.appendChild(tag);    }})();</script>
+</head>
+
+<body>
+
+    <div id="loader" class="LoadingOverlay d-none">
+        <div class="Line-Progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+
+    <div>
+
+        <div id="feedback">
+            <span>College Portal</span>
+        </div>
+        <nav
+            class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent mt-4">
+            <div class="container">
+
+                <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon mt-2">
+                        <span class="navbar-toggler-bar bar1"></span>
+                        <span class="navbar-toggler-bar bar2"></span>
+                        <span class="navbar-toggler-bar bar3"></span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navigation">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center me-2 active" aria-current="page"
+                                href="https://www.nu.ac.bd/">
+                              
+                              Nu  Home
+                            </a>
+                        </li>
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center me-2 active" aria-current="page"
+                                href="https://collegeportal.nu.ac.bd">
+                              
+                                Home
+                            </a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center me-2 active" aria-current="page"
+                                href="https://results.nu.ac.bd/">
+                              
+                              Results
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link me-2" href="https://collegeportal.nu.ac.bd/userRegistration">
+                              
+                                Register
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-2" href="https://collegeportal.nu.ac.bd">
+                               
+                             College Portal Login
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link me-2" href="https://collegeportal.nu.ac.bd/sendOtp">
+                               
+                             Forgot Password ?
+                            </a>
+                        </li>
+ 
+                        <li class="nav-item">
+                            <a class="nav-link me-2" href="https://collegeportal.nu.ac.bd/college-list">
+                                
+                                College List
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <main class="main-content  mt-0">
+            <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg"
+                style="background-image: url('../assets/img/slide_vector.png'); background-position: top;">
+                
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 text-center mx-auto">
+                            
+                            
+                            <!-- <p class="text-lead text-white">Use these awesome forms to login or create new account in your project for free.</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <style>
+    .error {
+        color: red;
+        display: none;
+    }
+
+    .highlight {
+        border-color: blue;
+    }
+</style>
+
+<style>
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.9s ease-out forwards;
+  }
+</style>
+
+
+<div class="container" >
+    <div class="row mt-lg-n10 mt-md-n11 mt-n10 justify-content-center">
+        <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
+            <div class="card z-index-0" >
+                <div class="card-body" >
+
+                    <div class="text-center" style="position: relative; overflow: hidden; height: 20vh; border-radius: 20px;">
+                        <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+                            <source src="https://collegeportal.nu.ac.bd/images/info.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    
+                    
+                        <img src="https://collegeportal.nu.ac.bd/images/logo13.png" width="100" style="position: absolute center;  z-index: 2;">
+                    </div>
+                    
+
+                    
+                  
+
+                            <div class="text-center mt-2 animate-fade-in-up select-none">
+                                <h2 class="text-3xl font-extrabold text-gray-900 tracking-wide transition-transform duration-300 hover:scale-105 active:scale-100 hover:text-purple-800" >
+                                  National University
+                                </h2>
+                                <h4 class="text-base text-purple-700 mt-2 font-medium italic transition duration-300 hover:text-indigo-600"  style="font-size: 16px; color:#6B5090" >
+                                  [ College Information Portal Login]
+                                </h4>
+                              </div>
+
+<hr>
+                              <div class="mb-3">
+                                
+                                <input id="email" placeholder="College Code" class="form-control" type="email" />
+                                <div id="emailError" class="error">Please enter a valid college code</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                
+                                <input id="password" placeholder="User Password" class="form-control" type="password" />
+                                <div id="passError" class="error">Please enter a valid password!</div>
+                            </div>
+                            
+                            <button onclick="SubmitLogin()" class="btn w-100 bg-gradient-primary">Next</button>
+
+
+                 
+               
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+  
+                    
+
+<script>
+    async function SubmitLogin() {
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+
+        const emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
+        // /|| !emailPattern.test(email)
+
+        if (email.length === 0) {
+            errorToast("Please enter a valid college code!");
+            //$('#emailError').show();
+        } else if (password.length === 0) {
+            // $('#passError').show();
+
+            errorToast("Password is required");
+        } else {
+            showLoader();
+            let res = await axios.post("/user-login", {
+                email: email,
+                password: password
+            });
+            hideLoader()
+            if (res.status === 200 && res.data['status'] === 'success') {
+                window.location.href = "/dashboard";
+            } else {
+                errorToast(res.data['message']);
+            }
+        }
+    }
+</script>
+
+        </main>
+
+
+        <footer class="footer py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mb-4 mx-auto text-center">
+                        <a href="https://collegeportal.nu.ac.bd" class=" text-center ms-3 h6   me-xl-5 me-3 mb-sm-0 mb-2">
+                           Home
+                        </a>
+                        <a href="https://collegeportal.nu.ac.bd" class="text-center ms-3 h6 me-xl-5 me-3 mb-sm-0 mb-2">
+                            College Portal Login
+                        </a>
+                        <a href="https://collegeportal.nu.ac.bd/userRegistration" class="text-center ms-3 h6 me-xl-5 me-3 mb-sm-0 mb-2">
+                            Register
+                        </a>
+                        <a href="https://collegeportal.nu.ac.bd/sendOtp" class="text-center ms-3 h6 me-xl-5 me-3 mb-sm-0 mb-2">
+                            Forgot Password ?
+                        </a>
+                        <a href="https://collegeportal.nu.ac.bd/college-list" class="text-center ms-3 h6 me-xl-5 me-3 mb-sm-0 mb-2">
+                            College List
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-8 mx-auto text-center mt-1">
+                        <p class="mb-0 text-secondary">
+                            Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> National University of Bangladesh
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+    <script></script>
+
+    <script src="https://collegeportal.nu.ac.bd/js/bootstrap.bundle.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+  (   )ও                                                                                (IH)
+                                              Forward             Flowchart
+
+                                             শুরু
+
+
+
+                             /           /               -এ
+
+
+                                     /          গ
+
+
+           ও                     এ           এ /                        গ           ও
+
+
+        EIIN ও     ও             -                        /        এ            গ
+
+
+                                     /
+
+
+                            Application ->Application list                  এ
+
+
+                          E-Stipend 2025
+
+
+
+
+                                     ও                        এ    ,
+
+
+
+       এ                                             এ   select        Recommend
+
+
+
+       Recommended by IH
+
+
+                 Scroll                             Forward to PMEAT
+
+
+Window ও                     ,                            এ             গ
+                          submit
+
+
+                                             শেষ
+

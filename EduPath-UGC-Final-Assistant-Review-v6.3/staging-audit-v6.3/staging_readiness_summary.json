@@ -1,0 +1,23 @@
+{
+  "master_rows": 3278,
+  "master_unique_ids": 3278,
+  "approve_rows": 2970,
+  "approve_unique_ids": 2970,
+  "reject_rows": 308,
+  "reject_unique_ids": 308,
+  "approve_reject_overlap": 0,
+  "partition_matches_master": true,
+  "conflict_ids_extracted": 22,
+  "conflict_ids_in_approve": 0,
+  "conflict_ids_in_reject": 22,
+  "production_verified_non_no_in_approve": 0,
+  "dataset_counts": {
+    "program": 1634,
+    "admission": 682,
+    "scholarship": 654
+  },
+  "approve_rows_without_source_urls": 0,
+  "approve_rows_without_https_source": 30,
+  "unique_institutions_in_approve": 132,
+  "unique_canonical_records_in_approve": 132
+}

@@ -1,0 +1,32 @@
+{
+  "status": "PASS_CORRECTED_PARENT_STAGING",
+  "mode": "FILES_ONLY_NO_DB_WRITES",
+  "dbChanges": false,
+  "rows": 2,
+  "sourceRecordIds": [
+    "ugc:private:58",
+    "ugc:private:80"
+  ],
+  "districtResolutions": [
+    {
+      "sourceRecordId": "ugc:private:58",
+      "district": "Kishoreganj",
+      "districtCode": "BD-KIS"
+    },
+    {
+      "sourceRecordId": "ugc:private:80",
+      "district": "Nilphamari",
+      "districtCode": "BD-NIL"
+    }
+  ],
+  "checks": {
+    "expected_rows_2": true,
+    "all_source_ugc": true,
+    "all_draft": true,
+    "all_not_production_verified": true,
+    "all_have_district_codes": true,
+    "all_sources_https": true
+  },
+  "hardStopReasons": [],
+  "file": "corrected_parent_draft_ready.csv"
+}

@@ -1,0 +1,18 @@
+{
+  "input_program_entities": 1630,
+  "draft_ready": 1608,
+  "quarantined": 22,
+  "parent_reference_count": 119,
+  "slug_collisions": 0,
+  "draft_without_parent": 0,
+  "draft_without_program_name": 0,
+  "draft_without_degree_level": 0,
+  "draft_without_degree_award": 0,
+  "draft_without_https_source": 0,
+  "non_draft_status_count": 0,
+  "production_verified_yes_count": 0,
+  "parent_rows_without_district": 119,
+  "parent_join_policy": "case-insensitive canonical UGC source-record ID",
+  "authority_code_policy": "reference-only; never unique join key",
+  "db_changes": false
+}

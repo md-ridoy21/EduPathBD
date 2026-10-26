@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="wmApp">
+  <head>
+    <meta http-equiv="Expires" content="Wed, 15 Nov 1995 04:58:08 GMT" />
+    <meta http-equiv="Last-Modified" content="Wed, 15 Nov 1995 04:58:08 GMT" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Cache-Control" content="pre-check=0, post-check=0, max-age=0', false" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Vary" content="*" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>BUET</title>
+    <meta content="BUET" name="description" />
+    <meta content="Bangaldesh University of Engineering and Technology" name="keywords" />
+    <link href="assets/img/logo.png" rel="icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link href="assets/css/otherStyles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/modifiedtags.css" rel="stylesheet" />
+    <link href="assets/css/fontsLibrary.css" rel="stylesheet" />
+    <!--<link href="assets/css/animate.css" rel="stylesheet" />-->
+    <!--<link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />-->
+    <link href="assets/css/jk-carousel.min.css" rel="stylesheet" />
+    <script defer data-domain="buet.ac.bd" src="https://ansible.cluster-2.buet.ac.bd/js/script.hash.js"></script>
+  </head>
+
+  <body>
+    <div ng-controller="menuController">
+      <header id="deras" class="fixed-top d-flex align-items-end">
+        <div class="container d-flex align-items-end">
+          <div class="logo mr-auto">
+            <!--<table>
+                              <tr>
+                                  <td>
+                                      <img class="position-absolute imageShadow" style="margin-top: -12px;height:100px;background: white;opacity: 1" src="assets/img/icons/M_100logo.png" alt="logo" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  </td>
+                                  <td>
+                                      <h2 class="text-light"><a style="color: #fff; font-size: 35px; font-weight: bold" href="#/"><span>BUET</span></a></h2>
+                                  </td>
+                              </tr>
+                          </table>-->
+            <div class="row">
+              <!--<div class="col-md-4 d-none d-md-block" style="padding: 5px!important">
+                                    <div style="height: 92px">
+                                        <div>
+                                            <a ng-href="#/"> <img src="assets/img/Bangladesh50-02-300x300.png" alt="logo" style="width:90px; height: 120px" /></a>
+                                        </div>
+                                    </div>
+                                </div>-->
+              <div class="col-md-6" style="padding: 10px !important">
+                <div>
+                  <a ng-href="#/">
+                    <img src="assets/img/BImages/logoBIRN.png" style="height: 75px; width: 75px" alt="logo" />
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+          </div>
+          <nav class="nav-menu d-none d-lg-block">
+            <ul>
+              <li><a class="cool-link" ng-href="#/">Home</a></li>
+              <li>
+                <a class="cool-link" ng-href="#/administration">Administration</a>
+              </li>
+              <li>
+                <a class="cool-link" ng-href="#/department">Departments</a>
+              </li>
+              <li>
+                <a class="cool-link" ng-href="#/institutes">Institutes</a>
+              </li>
+              <li>
+                <a class="cool-link" ng-href="#/facultyStaff">Faculty & Staff</a>
+              </li>
+              <li><a class="cool-link" ng-href="#/student">Students</a></li>
+              <li>
+                <a class="cool-link" ng-href="https://alumni.buet.ac.bd/" target="_blank">Alumni</a>
+              </li>
+              <li><a class="cool-link" ng-href="#/notice/0">Notices</a></li>
+              <li>
+                <a class="cool-link" ng-href="#/buetSearch">
+                  Search
+                  <i style="font-size: 17px !important" class="fas fa-search"></i>
+                </a>
+                <!--<a class="cool-link" href="{{InfoUrl}}Home/PeopleOfficeSearch" target="_blank">Search <i style="font-size: 17px !important;" class="fas fa-search"></i></a>-->
+              </li>
+              <!--<li>&nbsp;&nbsp;&nbsp;&nbsp;<img class="position-absolute imageShadow" style="margin-top: -10px; height: 50px; width: 55px; background: white; opacity: .85" src="assets/img/icons/M_100logo.png" alt="logo" /></li>-->
+              <!--<li class="drop-down">
+                <a style="color: white;font-weight: bold;" href="">Drop Y</a>
+                <ul>
+                    <li><a href="#">Drop Down 1</a></li>
+                    <li class="drop-down">
+                        <a href="#">Drop Down 2</a>
+                        <ul>
+                            <li><a href="#">Deep Drop Down 1</a></li>
+                            <li><a href="#">Deep Drop Down 2</a></li>
+                            <li><a href="#">Deep Drop Down 3</a></li>
+                            <li><a href="#">Deep Drop Down 4</a></li>
+                            <li><a href="#">Deep Drop Down 5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Drop Down 3</a></li>
+                    <li><a href="#">Drop Down 4</a></li>
+                    <li><a href="#">Drop Down 5</a></li>
+                </ul>
+            </li>-->
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center" style="background-color: transparent !important; padding-right: 130px">
+          <br />
+          <br />
+          <div class="logo mr-auto"></div>
+
+          <nav class="nav-menu d-none d-lg-block">
+            <ul style="font-size: 2px">
+              <li><a class="cool-link" ng-href="#/about/1">About</a></li>
+              <li>
+                <a class="cool-link" ng-href="#/hNewsIndex">News & Events</a>
+              </li>
+              <li>
+                <a class="cool-link" ng-href="#/academics/1">Academics</a>
+              </li>
+              <!--<li><a class="cool-link" href="">Events</a></li>-->
+              <li><a class="cool-link" ng-href="#/research/1">Research</a></li>
+              <!-- <li>
+                <a class="cool-link" ng-href="#/ugAdmission/1">
+
+                  UG Admission
+                </a>
+              </li> -->
+              <li>
+                <a class="cool-link" ng-href="#/admission/2">
+                  <!--<i style="color: #d60356" class="fa fa-asterisk blinking"></i>-->
+                  PG Admission
+                </a>
+              </li>
+              <li>
+                <a class="cool-link" href="https://dce.buet.ac.bd/ " target="_blank">
+                  <!--<i style="color: #d60356" class="fa fa-asterisk blinking"></i>-->
+                  Professional Courses
+                </a>
+              </li>
+              <!-- <li>
+              <a class="cool-link" ng-href="#/admission/2">
+
+                PG Admission
+              </a>
+            </li> -->
+              <li>
+                <a class="cool-link" href="https://www.facebook.com/buetofficialpage/" target="_blank">Facebook</a>
+              </li>
+              <!-- <li>
+              <a class="cool-link"
+                href="https://www.linkedin.com/company/bangladesh-university-of-engineering-and-technology-buet/"
+                target="_blank">LinkedIn</a>
+            </li> -->
+            </ul>
+          </nav>
+          <!-- .nav-menu -->
+        </div>
+      </header>
+    </div>
+    <br />
+    <div class="body-content" ng-controller="mainController" id="style-2">
+      <div style="min-height: 900px; background: white">
+        <div ng-view autoscroll="true"></div>
+      </div>
+    </div>
+    <nav ng-controller="menuController" id="hiddenMenu" class="custMenu nav-menu d-none .d-sm-none">
+      <div class="row">
+        <div class="col-md-6">
+          <ul>
+            <li>
+              <a class="cool-link" href="" ng-click="gotoLink('/')">Home</a>
+            </li>
+            <li>
+              <a class="cool-link" href="" ng-click="gotoLink('/administration')">Administration</a>
+            </li>
+            <li>
+              <a class="cool-link" href="" ng-click="gotoLink('/department')">Departments</a>
+            </li>
+            <li>
+              <a class="cool-link" href="" ng-click="gotoLink('/institutes')">Institutes</a>
+            </li>
+            <li>
+              <a class="cool-link" href="" ng-click="gotoLink('/facultyStaff')">Faculty & Staff</a>
+            </li>
+            <li>
+              <a class="cool-link" href="" ng-click="gotoLink('/student')" target="_blank">Students</a>
+            </li>
+            <li>
+              <a class="cool-link" href="https://alumni.buet.ac.bd/" target="_blank">Alumni</a>
+            </li>
+            <li>
+              <a class="cool-link" href="" ng-click="gotoLink('/notice/0')" target="_blank">Notices</a>
+            </li>
+            <!--<li>
+        <a class="cool-link"
+           href=""
+           ng-click="gotoLink('/covid19/2')"
+           target="_blank">Covid19</a>
+    </li>-->
+
+            <li>
+              <!--<a class="cool-link" href="" ng-click="gotoInfoLink('Home/PeopleOfficeSearch')" target="_blank">Search <i style="font-size: 17px !important;" class="fas fa-search"></i></a>-->
+              <a class="cool-link" href="" ng-click="gotoLink('/buetSearch')">
+                Search
+                <i style="font-size: 17px !important" class="fas fa-search"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul>
+            <li>
+              <a class="cool-link" href="" ng-click="gotoLink('about/1')" target="_blank">About</a>
+            </li>
+            <li>
+              <a class="cool-link" href="" ng-click="gotoLink('/hNewsIndex')">News & Events</a>
+            </li>
+            <li>
+              <a class="cool-link" href="" ng-click="gotoLink('academics/1')" target="_blank">Academics</a>
+            </li>
+            <li>
+              <a class="cool-link" href="" ng-click="gotoLink('research/1')" target="_blank">Research</a>
+            </li>
+            <li>
+              <a class="cool-link" href="https://dce.buet.ac.bd/">Professional Courses</a>
+            </li>
+            <!-- <li>
+              <a class="cool-link" href="" ng-click="gotoLink('/ugAdmission/1')" target="_blank">UG Admission</a>
+            </li> -->
+            <!-- <li>
+            <a class="cool-link" href="" ng-click="gotoLink('/admission/1')" target="_blank">PG Admission</a>
+          </li> -->
+            <li>
+              <a class="cool-link" href="" ng-click="gotoLink('/admission/2')" target="_blank">PG Admission</a>
+            </li>
+            <!-- <li>
+            <a class="cool-link" href="https://www.facebook.com/buetofficialpage/ target="_blank">Facebook</a>
+          </li> -->
+            <!-- <li>
+            <a class="cool-link"
+              href="https://www.linkedin.com/company/bangladesh-university-of-engineering-and-technology-buet/"
+              target="_blank">LinkedIn
+            </a>
+          </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br />
+    <div ng-include="'./angular_app/common/footerMenu.partial.html?v1.2'"></div>
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    <!---Angular-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>-->
+    <!-- Vendor JS Files -->
+
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="Scripts/External/bibtex_js.js"></script>
+    <script src="Scripts/External/bibtexParse.js"></script>
+    <!---Angular-->
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-resource.min.js"></script>
+    <script src="Scripts/angular-animate.min.js"></script>
+    <script src="Scripts/angular-touch.min.js"></script>
+    <script src="Scripts/angular-aria.min.js"></script>
+    <script src="Scripts/angular-messages.min.js"></script>
+    <script src="Scripts/angular-sanitize.min.js"></script>
+    <script src="Scripts/External/angular-filter.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+    <script src="Scripts/External/ui-bootstrap-tpls-2.4.0.min.js"></script>
+    <script src="Scripts/External/jk-carousel.min.js"></script>
+
+    <!--Configurations-->
+    <script src="angular_app/masterApp.config.js"></script>
+    <script src="angular_app/configuration/common.config.js"></script>
+    <!--configurations-->
+    <!--controllers-->
+    <script src="angular_app/main.ctrl.js"></script>
+    <script src="angular_app/menu.ctrl.js"></script>
+    <script src="angular_app/modules/basePageControllers.ctrl.js"></script>
+    <script src="angular_app/modules/campusLife/campusLife.ctrl.js"></script>
+    <script src="angular_app/modules/hNews/hNews.ctrl.js"></script>
+    <script src="angular_app/modules/hNewsSec/hNewsSec.ctrl.js"></script>
+    <script src="angular_app/modules/hNews/hNewsDetails.ctrl.js"></script>
+    <script src="angular_app/modules/hNewsSec/hNewsDetails.ctrl.js"></script>
+    <script src="angular_app/modules/admission/admission.ctrl.js?v1.1"></script>
+    <script src="angular_app/modules/research/research.ctrl.js"></script>
+    <script src="angular_app/modules/academics/academics.ctrl.js"></script>
+    <script src="angular_app/modules/about/about.ctrl.js"></script>
+    <script src="angular_app/modules/covid19/covid.ctrl.js"></script>
+    <script src="angular_app/modules/buetSearch/buetSearch.ctrl.js"></script>
+    <script src="angular_app/modules/facultyIndex/facultyIndexMain.ctrl.js"></script>
+    <script src="angular_app/modules/facultyOutside/facultyOutside.ctrl.js"></script>
+    <script src="angular_app/modules/notice/notice.ctrl.js"></script>
+    <script src="angular_app/modules/noticeSec/noticeSec.ctrl.js"></script>
+    <script src="angular_app/modules/faq/faq.ctrl.js"></script>
+    <script src="angular_app/modules/dsw/dsw.ctrl.js"></script>
+    <script src="angular_app/modules/centralSearch/centralSearch.ctrl.js"></script>
+    <script src="angular_app/modules/engOffice/engOffice.ctrl.js"></script>
+    <script src="angular_app/modules/library/library.ctrl.js"></script>
+    <script src="angular_app/modules/apa/apa.ctrl.js?v1.12"></script>
+    <script src="angular_app/modules/noticePanel/archive.ctrl.js?v1.12"></script>
+    <!--controllers-->
+    <!--services-->
+    <script src="angular_app/common/services/other.common.service.js"></script>
+    <script src="angular_app/modules/hNews/hNews.service.js"></script>
+    <script src="angular_app/modules/hNewsSec/hNews.service.js"></script>
+    <script src="angular_app/image.service.js"></script>
+    <script src="angular_app/common/services/landingContentService.service.js"></script>
+    <script src="angular_app/modules/research/research.service.js"></script>
+    <script src="angular_app/modules/notice/notice.service.js"></script>
+    <script src="angular_app/modules/noticeSec/notice.service.js"></script>
+    <script src="angular_app/modules/centralSearch/centralSearch.service.js"></script>
+
+    <script src="angular_app/modules/gallery/gallery.ctrl.js"></script>
+    <script src="angular_app/modules/universal-controllers/uni-nav.ctrl.js"></script>
+
+    <!--services-->
+    <!-- Template Main JS File -->
+    <script src="assets/js/external.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

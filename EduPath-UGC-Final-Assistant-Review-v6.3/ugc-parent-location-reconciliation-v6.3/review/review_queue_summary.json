@@ -1,0 +1,34 @@
+{
+  "rows": 119,
+  "fetch_status": {
+    "FETCH_FAILED": 11,
+    "FETCHED": 101,
+    "NO_WEBSITE": 7
+  },
+  "evidence_type": {
+    "NONE": 20,
+    "SINGLE_TEXT_MENTION_CANDIDATE": 51,
+    "AMBIGUOUS_MULTIPLE_DISTRICTS": 42,
+    "STRUCTURED_ADDRESS_CANDIDATE": 6
+  },
+  "candidate_count": {
+    "0": 20,
+    "1": 54,
+    "2": 25,
+    "12": 1,
+    "3": 12,
+    "5": 1,
+    "4": 4,
+    "8": 2
+  },
+  "human_decisions_nonblank": 0,
+  "accepted_district_nonblank": 0,
+  "accepted_district_code_nonblank": 0,
+  "queues": {
+    "structured_address_candidates.csv": 6,
+    "single_text_candidates.csv": 51,
+    "ambiguous_candidates.csv": 42,
+    "no_evidence_or_failed.csv": 20
+  },
+  "db_changes": false
+}

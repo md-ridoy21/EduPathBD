@@ -1,0 +1,26 @@
+{
+  "status": "PASS_PROGRAM_SEMANTIC_FLAG_SPLIT",
+  "mode": "FILES_ONLY_NO_DB_WRITES",
+  "dbChanges": false,
+  "inputFlaggedRows": 104,
+  "highQuarantineCandidates": 47,
+  "mediumManualReviewRows": 57,
+  "otherSeverityRows": 0,
+  "humanDecisionsChanged": 0,
+  "autoDeletePerformed": false,
+  "autoRejectPerformed": false,
+  "checks": {
+    "expected_total_104": true,
+    "expected_high_47": true,
+    "expected_medium_57": true,
+    "no_other_severity": true,
+    "partition_reconstructs_input": true,
+    "high_are_recommend_reject": true,
+    "medium_are_manual_review": true
+  },
+  "hardStopReasons": [],
+  "files": {
+    "high": "program_semantic_high_quarantine_candidates.csv",
+    "medium": "program_semantic_medium_manual_review.csv"
+  }
+}

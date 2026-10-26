@@ -1,0 +1,4109 @@
+[
+  {
+    "file": "FINAL_INTEGRITY_V6_3.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "version",
+      "generated_at",
+      "candidate_key",
+      "total_master_records",
+      "unique_candidate_ids",
+      "approve_recommendations",
+      "reject_recommendations",
+      "needs_check_recommendations",
+      "decision_partition_complete",
+      "decision_overlap_count",
+      "duplicate_candidate_ids",
+      "resolved_final_9",
+      "correction_proposals_v6_2",
+      "root_unresolved_conflicts_v6_3",
+      "britannia_conflict_candidate_ids",
+      "britannia_conflict_candidates_approved",
+      "master_candidate_decisions_changed_from_v6_2",
+      "production_verified_yes",
+      "status"
+    ]
+  },
+  {
+    "file": "corrected-parent-staging-v6.3/CORRECTED_PARENT_MANIFEST.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbChanges",
+      "rows",
+      "sourceRecordIds",
+      "districtResolutions",
+      "checks",
+      "hardStopReasons",
+      "file"
+    ],
+    "list_lengths": {
+      "sourceRecordIds": 2,
+      "districtResolutions": 2,
+      "hardStopReasons": 0
+    }
+  },
+  {
+    "file": "corrected-parent-staging-v6.3/corrected_parent_draft_ready.csv",
+    "suffix": ".csv",
+    "rows": 2,
+    "headers": [
+      "source_id",
+      "source_record_id",
+      "canonical_name",
+      "slug",
+      "institution_category",
+      "district_name",
+      "district_code",
+      "identity_source_url",
+      "location_source_url",
+      "location_review_action",
+      "location_review_note",
+      "verification_status",
+      "production_verified",
+      "staging_package"
+    ],
+    "id_field_guess": "source_record_id",
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {
+      "institution_category": {
+        "private": 2
+      }
+    }
+  },
+  {
+    "file": "final_approve_recommendations_v6_2.csv",
+    "suffix": ".csv",
+    "rows": 2970,
+    "headers": [
+      "canonical_candidate_id",
+      "dataset",
+      "canonical_record_id",
+      "institution_name",
+      "candidate_type",
+      "source_candidate_text",
+      "evidence_strength",
+      "review_priority",
+      "raw_evidence_count",
+      "distinct_source_count",
+      "distinct_page_hash_count",
+      "source_urls",
+      "page_sha256_values",
+      "review_decision",
+      "reviewer_name",
+      "reviewed_at",
+      "review_notes",
+      "production_verified",
+      "suggested_fact_type",
+      "suggested_gpa_values",
+      "suggested_money_values",
+      "suggested_date_values",
+      "suggested_percent_values",
+      "final_fact_type",
+      "final_fact_value",
+      "final_currency",
+      "final_effective_date",
+      "final_applicant_group",
+      "final_condition",
+      "suggested_program_name",
+      "suggested_degree_level",
+      "suggested_degree_award",
+      "suggested_credit_values",
+      "suggested_duration_values",
+      "final_program_name",
+      "final_degree_level",
+      "final_degree_award",
+      "final_subject_or_major",
+      "final_credit_hours",
+      "final_duration",
+      "audit_flags_v4_4",
+      "audit_severity_v4_4",
+      "audit_status_v4_4",
+      "audit_batch",
+      "final_scholarship_name",
+      "final_award_percent",
+      "final_award_amount",
+      "final_minimum_gpa",
+      "final_eligibility",
+      "final_deadline",
+      "final_renewal_condition",
+      "refined_degree_award_v4_5",
+      "refined_degree_level_v4_5",
+      "refined_audit_flags_v4_5",
+      "refined_audit_status_v4_5",
+      "refined_gpa_values_v4_5",
+      "resolution_status_v4_6_1",
+      "resolved_flags_v4_6_1",
+      "content_review_flags_v4_6_1",
+      "remaining_hard_flags_v4_6_1",
+      "resolution_diagnostics_v4_6_1",
+      "final_review_queue_v4_7",
+      "production_gate_v4_7",
+      "queue_source_v4_7",
+      "review_sequence_v4_7",
+      "pre_recovery_queue_v4_9",
+      "recovery_resolution_v4_9",
+      "recovery_evidence_urls_v4_9",
+      "recovery_page_hashes_v4_9",
+      "final_review_queue_v4_9",
+      "production_gate_v4_9",
+      "review_sequence_v4_9",
+      "record_fingerprint_v4_12",
+      "package_version_v4_12",
+      "baseline_status_v4_12",
+      "hard25_suggested_disposition_v4_12",
+      "hard25_suggested_action_v4_12",
+      "hard25_disposition_reason_v4_12",
+      "hard25_current_source_v4_12",
+      "hard25_source_status_v4_12",
+      "hard25_source_effective_url_v4_12",
+      "hard25_source_page_sha256_v4_12",
+      "hard25_source_fetch_error_v4_12",
+      "reviewer_notes",
+      "reviewer_final_action",
+      "reviewer_final_normalized_value",
+      "reviewer_final_source_url",
+      "reviewer_override_reason",
+      "production_export_eligible",
+      "review_sequence_v4_12",
+      "technical_blocker_v5_1",
+      "technical_blocker_resolved_v5_1",
+      "system_fix_applied_v5_1",
+      "system_disposition_v5_1",
+      "replacement_sources_v5_1",
+      "replacement_page_hashes_v5_1",
+      "review_bucket_v5_1",
+      "production_candidate_status_v5_1",
+      "source_recheck_status_v5_1",
+      "review_sequence_v5_1",
+      "assistant_recommended_decision_v5_2",
+      "assistant_recommended_action_v5_2",
+      "assistant_recommended_normalized_value_v5_2",
+      "assistant_recommended_source_v5_2",
+      "assistant_review_note_v5_2",
+      "assistant_review_status_v5_3",
+      "assistant_review_set_v5_3",
+      "assistant_recommended_decision_cumulative",
+      "assistant_recommended_action_cumulative",
+      "assistant_recommended_normalized_value_cumulative",
+      "assistant_recommended_source_cumulative",
+      "assistant_review_note_cumulative",
+      "assistant_review_set_cumulative",
+      "assistant_review_status_v5_4",
+      "assistant_review_status_v5_5",
+      "assistant_review_status_v5_6",
+      "assistant_review_status_v5_7",
+      "assistant_review_status_v5_8",
+      "assistant_review_status_v5_9",
+      "assistant_review_status_v6_0",
+      "assistant_bulk_confidence_v6_0",
+      "assistant_final_resolution_v6_2"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 1763,
+      "SCHOLARSHIP_TEXT_MATCH": 1110
+    },
+    "category_field_values": {
+      "candidate_type": {
+        "GPA_OR_ELIGIBILITY": 356,
+        "DATE_OR_DEADLINE": 239,
+        "FEE_OR_COST": 87
+      },
+      "suggested_fact_type": {
+        "GPA_OR_ELIGIBILITY": 356,
+        "DATE_OR_DEADLINE": 239,
+        "FEE_OR_COST": 87
+      }
+    }
+  },
+  {
+    "file": "final_correction_proposals_v6_2.csv",
+    "suffix": ".csv",
+    "rows": 38,
+    "headers": [
+      "proposal_group",
+      "source_candidate_ids",
+      "proposed_dataset",
+      "proposed_candidate_type",
+      "proposed_normalized_value",
+      "source",
+      "proposal_status",
+      "final_resolution_note_v6_2"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 21,
+      "SCHOLARSHIP_TEXT_MATCH": 20
+    },
+    "category_field_values": {
+      "proposed_candidate_type": {
+        "GPA_OR_ELIGIBILITY": 18,
+        "FEE_OR_COST": 7,
+        "DOCUMENT_OR_CONDITION": 1,
+        "CALCULATOR_OR_TOOL": 1,
+        "WAIVER_OR_FINANCIAL_AID": 1
+      }
+    }
+  },
+  {
+    "file": "final_needs_check_v6_2.csv",
+    "suffix": ".csv",
+    "rows": 0,
+    "headers": [
+      "canonical_candidate_id",
+      "institution_name",
+      "dataset",
+      "assistant_recommended_decision_cumulative",
+      "assistant_recommended_action_cumulative"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {}
+  },
+  {
+    "file": "final_recommendation_master_v6_2.csv",
+    "suffix": ".csv",
+    "rows": 3278,
+    "headers": [
+      "canonical_candidate_id",
+      "dataset",
+      "canonical_record_id",
+      "institution_name",
+      "candidate_type",
+      "source_candidate_text",
+      "evidence_strength",
+      "review_priority",
+      "raw_evidence_count",
+      "distinct_source_count",
+      "distinct_page_hash_count",
+      "source_urls",
+      "page_sha256_values",
+      "review_decision",
+      "reviewer_name",
+      "reviewed_at",
+      "review_notes",
+      "production_verified",
+      "suggested_fact_type",
+      "suggested_gpa_values",
+      "suggested_money_values",
+      "suggested_date_values",
+      "suggested_percent_values",
+      "final_fact_type",
+      "final_fact_value",
+      "final_currency",
+      "final_effective_date",
+      "final_applicant_group",
+      "final_condition",
+      "suggested_program_name",
+      "suggested_degree_level",
+      "suggested_degree_award",
+      "suggested_credit_values",
+      "suggested_duration_values",
+      "final_program_name",
+      "final_degree_level",
+      "final_degree_award",
+      "final_subject_or_major",
+      "final_credit_hours",
+      "final_duration",
+      "audit_flags_v4_4",
+      "audit_severity_v4_4",
+      "audit_status_v4_4",
+      "audit_batch",
+      "final_scholarship_name",
+      "final_award_percent",
+      "final_award_amount",
+      "final_minimum_gpa",
+      "final_eligibility",
+      "final_deadline",
+      "final_renewal_condition",
+      "refined_degree_award_v4_5",
+      "refined_degree_level_v4_5",
+      "refined_audit_flags_v4_5",
+      "refined_audit_status_v4_5",
+      "refined_gpa_values_v4_5",
+      "resolution_status_v4_6_1",
+      "resolved_flags_v4_6_1",
+      "content_review_flags_v4_6_1",
+      "remaining_hard_flags_v4_6_1",
+      "resolution_diagnostics_v4_6_1",
+      "final_review_queue_v4_7",
+      "production_gate_v4_7",
+      "queue_source_v4_7",
+      "review_sequence_v4_7",
+      "pre_recovery_queue_v4_9",
+      "recovery_resolution_v4_9",
+      "recovery_evidence_urls_v4_9",
+      "recovery_page_hashes_v4_9",
+      "final_review_queue_v4_9",
+      "production_gate_v4_9",
+      "review_sequence_v4_9",
+      "record_fingerprint_v4_12",
+      "package_version_v4_12",
+      "baseline_status_v4_12",
+      "hard25_suggested_disposition_v4_12",
+      "hard25_suggested_action_v4_12",
+      "hard25_disposition_reason_v4_12",
+      "hard25_current_source_v4_12",
+      "hard25_source_status_v4_12",
+      "hard25_source_effective_url_v4_12",
+      "hard25_source_page_sha256_v4_12",
+      "hard25_source_fetch_error_v4_12",
+      "reviewer_notes",
+      "reviewer_final_action",
+      "reviewer_final_normalized_value",
+      "reviewer_final_source_url",
+      "reviewer_override_reason",
+      "production_export_eligible",
+      "review_sequence_v4_12",
+      "technical_blocker_v5_1",
+      "technical_blocker_resolved_v5_1",
+      "system_fix_applied_v5_1",
+      "system_disposition_v5_1",
+      "replacement_sources_v5_1",
+      "replacement_page_hashes_v5_1",
+      "review_bucket_v5_1",
+      "production_candidate_status_v5_1",
+      "source_recheck_status_v5_1",
+      "review_sequence_v5_1",
+      "assistant_recommended_decision_v5_2",
+      "assistant_recommended_action_v5_2",
+      "assistant_recommended_normalized_value_v5_2",
+      "assistant_recommended_source_v5_2",
+      "assistant_review_note_v5_2",
+      "assistant_review_status_v5_3",
+      "assistant_review_set_v5_3",
+      "assistant_recommended_decision_cumulative",
+      "assistant_recommended_action_cumulative",
+      "assistant_recommended_normalized_value_cumulative",
+      "assistant_recommended_source_cumulative",
+      "assistant_review_note_cumulative",
+      "assistant_review_set_cumulative",
+      "assistant_review_status_v5_4",
+      "assistant_review_status_v5_5",
+      "assistant_review_status_v5_6",
+      "assistant_review_status_v5_7",
+      "assistant_review_status_v5_8",
+      "assistant_review_status_v5_9",
+      "assistant_review_status_v6_0",
+      "assistant_bulk_confidence_v6_0",
+      "assistant_final_resolution_v6_2"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 2005,
+      "SCHOLARSHIP_TEXT_MATCH": 1396
+    },
+    "category_field_values": {
+      "candidate_type": {
+        "GPA_OR_ELIGIBILITY": 417,
+        "DATE_OR_DEADLINE": 239,
+        "FEE_OR_COST": 99
+      },
+      "suggested_fact_type": {
+        "GPA_OR_ELIGIBILITY": 417,
+        "DATE_OR_DEADLINE": 239,
+        "FEE_OR_COST": 99
+      }
+    }
+  },
+  {
+    "file": "final_reject_recommendations_v6_2.csv",
+    "suffix": ".csv",
+    "rows": 308,
+    "headers": [
+      "canonical_candidate_id",
+      "dataset",
+      "canonical_record_id",
+      "institution_name",
+      "candidate_type",
+      "source_candidate_text",
+      "evidence_strength",
+      "review_priority",
+      "raw_evidence_count",
+      "distinct_source_count",
+      "distinct_page_hash_count",
+      "source_urls",
+      "page_sha256_values",
+      "review_decision",
+      "reviewer_name",
+      "reviewed_at",
+      "review_notes",
+      "production_verified",
+      "suggested_fact_type",
+      "suggested_gpa_values",
+      "suggested_money_values",
+      "suggested_date_values",
+      "suggested_percent_values",
+      "final_fact_type",
+      "final_fact_value",
+      "final_currency",
+      "final_effective_date",
+      "final_applicant_group",
+      "final_condition",
+      "suggested_program_name",
+      "suggested_degree_level",
+      "suggested_degree_award",
+      "suggested_credit_values",
+      "suggested_duration_values",
+      "final_program_name",
+      "final_degree_level",
+      "final_degree_award",
+      "final_subject_or_major",
+      "final_credit_hours",
+      "final_duration",
+      "audit_flags_v4_4",
+      "audit_severity_v4_4",
+      "audit_status_v4_4",
+      "audit_batch",
+      "final_scholarship_name",
+      "final_award_percent",
+      "final_award_amount",
+      "final_minimum_gpa",
+      "final_eligibility",
+      "final_deadline",
+      "final_renewal_condition",
+      "refined_degree_award_v4_5",
+      "refined_degree_level_v4_5",
+      "refined_audit_flags_v4_5",
+      "refined_audit_status_v4_5",
+      "refined_gpa_values_v4_5",
+      "resolution_status_v4_6_1",
+      "resolved_flags_v4_6_1",
+      "content_review_flags_v4_6_1",
+      "remaining_hard_flags_v4_6_1",
+      "resolution_diagnostics_v4_6_1",
+      "final_review_queue_v4_7",
+      "production_gate_v4_7",
+      "queue_source_v4_7",
+      "review_sequence_v4_7",
+      "pre_recovery_queue_v4_9",
+      "recovery_resolution_v4_9",
+      "recovery_evidence_urls_v4_9",
+      "recovery_page_hashes_v4_9",
+      "final_review_queue_v4_9",
+      "production_gate_v4_9",
+      "review_sequence_v4_9",
+      "record_fingerprint_v4_12",
+      "package_version_v4_12",
+      "baseline_status_v4_12",
+      "hard25_suggested_disposition_v4_12",
+      "hard25_suggested_action_v4_12",
+      "hard25_disposition_reason_v4_12",
+      "hard25_current_source_v4_12",
+      "hard25_source_status_v4_12",
+      "hard25_source_effective_url_v4_12",
+      "hard25_source_page_sha256_v4_12",
+      "hard25_source_fetch_error_v4_12",
+      "reviewer_notes",
+      "reviewer_final_action",
+      "reviewer_final_normalized_value",
+      "reviewer_final_source_url",
+      "reviewer_override_reason",
+      "production_export_eligible",
+      "review_sequence_v4_12",
+      "technical_blocker_v5_1",
+      "technical_blocker_resolved_v5_1",
+      "system_fix_applied_v5_1",
+      "system_disposition_v5_1",
+      "replacement_sources_v5_1",
+      "replacement_page_hashes_v5_1",
+      "review_bucket_v5_1",
+      "production_candidate_status_v5_1",
+      "source_recheck_status_v5_1",
+      "review_sequence_v5_1",
+      "assistant_recommended_decision_v5_2",
+      "assistant_recommended_action_v5_2",
+      "assistant_recommended_normalized_value_v5_2",
+      "assistant_recommended_source_v5_2",
+      "assistant_review_note_v5_2",
+      "assistant_review_status_v5_3",
+      "assistant_review_set_v5_3",
+      "assistant_recommended_decision_cumulative",
+      "assistant_recommended_action_cumulative",
+      "assistant_recommended_normalized_value_cumulative",
+      "assistant_recommended_source_cumulative",
+      "assistant_review_note_cumulative",
+      "assistant_review_set_cumulative",
+      "assistant_review_status_v5_4",
+      "assistant_review_status_v5_5",
+      "assistant_review_status_v5_6",
+      "assistant_review_status_v5_7",
+      "assistant_review_status_v5_8",
+      "assistant_review_status_v5_9",
+      "assistant_review_status_v6_0",
+      "assistant_bulk_confidence_v6_0",
+      "assistant_final_resolution_v6_2"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 242,
+      "SCHOLARSHIP_TEXT_MATCH": 286
+    },
+    "category_field_values": {
+      "candidate_type": {
+        "GPA_OR_ELIGIBILITY": 61,
+        "FEE_OR_COST": 12
+      },
+      "suggested_fact_type": {
+        "GPA_OR_ELIGIBILITY": 61,
+        "FEE_OR_COST": 12
+      }
+    }
+  },
+  {
+    "file": "final_validation_v6_2.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "generated_at",
+      "total_records",
+      "unique_candidate_ids",
+      "assistant_recommended_approve",
+      "assistant_recommended_reject",
+      "assistant_recommended_needs_check",
+      "final_9_resolved",
+      "correction_proposals",
+      "unresolved_correction_proposals",
+      "human_decisions_applied",
+      "review_decision_pending",
+      "production_verified_yes",
+      "production_verified_no",
+      "assistant_candidate_review_complete",
+      "policy"
+    ]
+  },
+  {
+    "file": "final_validation_v6_3.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "version",
+      "generated_at",
+      "source_version",
+      "master_candidate_decisions_changed",
+      "v6_2_unresolved_groups",
+      "v6_3_root_unresolved_groups",
+      "root_conflict",
+      "candidate_ids_in_conflict",
+      "canonical_percentage_schedule_published",
+      "human_decisions_modified",
+      "production_verified",
+      "status"
+    ]
+  },
+  {
+    "file": "institution-draft-staging-v6.3/STAGING_MANIFEST.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbChanges",
+      "sourceId",
+      "canonicalParentJoin",
+      "authorityCodePolicy",
+      "stagingPackage",
+      "inputRows",
+      "draftReady",
+      "policyHolds",
+      "correctedCandidates",
+      "unexpectedActions",
+      "duplicateSourceIds",
+      "duplicateStagingIds",
+      "slugCollisions",
+      "missingNames",
+      "missingDistricts",
+      "missingDistrictCodes",
+      "badIdentitySourceUrls",
+      "badLocationSourceUrls",
+      "nonDraftRows",
+      "productionVerifiedYesCount",
+      "humanDecisionFieldsNonblank",
+      "checks",
+      "hardStopReasons",
+      "files"
+    ],
+    "list_lengths": {
+      "hardStopReasons": 0
+    }
+  },
+  {
+    "file": "institution-draft-staging-v6.3/canonical-split/SPLIT_MANIFEST.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbChanges",
+      "inputRows",
+      "newDraftInsertCandidates",
+      "existingCanonicalLineageLinkProposals",
+      "errors",
+      "policy",
+      "canonicalMatches",
+      "files"
+    ],
+    "list_lengths": {
+      "errors": 0,
+      "canonicalMatches": 2
+    }
+  },
+  {
+    "file": "institution-draft-staging-v6.3/canonical-split/institution_existing_lineage_link_proposals.csv",
+    "suffix": ".csv",
+    "rows": 2,
+    "headers": [
+      "source_id",
+      "source_record_id",
+      "existing_institution_id",
+      "canonical_name",
+      "slug",
+      "district_name",
+      "district_code",
+      "existing_verification_status",
+      "proposed_change",
+      "proposed_source_record_id",
+      "preserve_verification_status",
+      "preserve_existing_fields",
+      "human_approval_required",
+      "db_write_now",
+      "identity_source_url",
+      "location_source_url",
+      "note"
+    ],
+    "id_field_guess": "source_record_id",
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {}
+  },
+  {
+    "file": "institution-draft-staging-v6.3/canonical-split/institution_new_draft_insert_candidates.csv",
+    "suffix": ".csv",
+    "rows": 108,
+    "headers": [
+      "staging_id",
+      "source_id",
+      "source_record_id",
+      "canonical_name",
+      "slug",
+      "institution_category",
+      "district_name",
+      "district_code",
+      "website_url",
+      "identity_source_url",
+      "location_source_url",
+      "location_review_action",
+      "location_review_note",
+      "verification_status",
+      "production_verified",
+      "staging_package"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 3
+    },
+    "category_field_values": {
+      "institution_category": {
+        "private": 83,
+        "public": 25
+      }
+    }
+  },
+  {
+    "file": "institution-draft-staging-v6.3/institution_corrected_candidates.csv",
+    "suffix": ".csv",
+    "rows": 2,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {
+      "category": {
+        "private": 2
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 2
+      }
+    }
+  },
+  {
+    "file": "institution-draft-staging-v6.3/institution_draft_ready.csv",
+    "suffix": ".csv",
+    "rows": 110,
+    "headers": [
+      "staging_id",
+      "source_id",
+      "source_record_id",
+      "canonical_name",
+      "slug",
+      "institution_category",
+      "district_name",
+      "district_code",
+      "website_url",
+      "identity_source_url",
+      "location_source_url",
+      "location_review_action",
+      "location_review_note",
+      "verification_status",
+      "production_verified",
+      "staging_package"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 3
+    },
+    "category_field_values": {
+      "institution_category": {
+        "private": 83,
+        "public": 27
+      }
+    }
+  },
+  {
+    "file": "institution-draft-staging-v6.3/institution_policy_holds.csv",
+    "suffix": ".csv",
+    "rows": 7,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 3
+    },
+    "category_field_values": {
+      "category": {
+        "private": 4,
+        "public": 2,
+        "international": 1
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 4,
+        "NONE": 1,
+        "STRUCTURED_ADDRESS_CANDIDATE": 1,
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 1
+      }
+    }
+  },
+  {
+    "file": "institution-draft-staging-v6.3/institution_slug_collisions.csv",
+    "suffix": ".csv",
+    "rows": 0,
+    "headers": [
+      "slug",
+      "count"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {}
+  },
+  {
+    "file": "program-draft-staging-v6.3/STAGING_MANIFEST.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "input_program_entities",
+      "draft_ready",
+      "quarantined",
+      "parent_reference_count",
+      "slug_collisions",
+      "draft_without_parent",
+      "draft_without_program_name",
+      "draft_without_degree_level",
+      "draft_without_degree_award",
+      "draft_without_https_source",
+      "non_draft_status_count",
+      "production_verified_yes_count",
+      "parent_rows_without_district",
+      "parent_join_policy",
+      "authority_code_policy",
+      "db_changes"
+    ]
+  },
+  {
+    "file": "program-draft-staging-v6.3/parent_identity_reference.csv",
+    "suffix": ".csv",
+    "rows": 119,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "authority",
+      "authority_code",
+      "category",
+      "website",
+      "identity_source_url",
+      "district",
+      "upazila",
+      "address",
+      "identity_verification_status"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {
+      "category": {
+        "private": 89,
+        "public": 29,
+        "international": 1
+      }
+    }
+  },
+  {
+    "file": "program-draft-staging-v6.3/program_draft_ready.csv",
+    "suffix": ".csv",
+    "rows": 1608,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 572,
+      "SCHOLARSHIP_TEXT_MATCH": 225
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 1356,
+        "public": 233,
+        "international": 19
+      }
+    }
+  },
+  {
+    "file": "program-draft-staging-v6.3/program_quarantine.csv",
+    "suffix": ".csv",
+    "rows": 22,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "quarantine_reason"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {
+      "parent_category": {
+        "private": 22
+      }
+    }
+  },
+  {
+    "file": "program-draft-staging-v6.3/slug_collisions.csv",
+    "suffix": ".csv",
+    "rows": 0,
+    "headers": [
+      "parent_source_record_id",
+      "program_slug",
+      "count"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {}
+  },
+  {
+    "file": "program-institution-site-salvage-v6.3/PROGRAM_INSTITUTION_SITE_SALVAGE_MANIFEST.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbWritesPerformed",
+      "inputRows",
+      "requiredParentIds",
+      "databaseParentsMatched",
+      "uniqueSourceUrls",
+      "uniqueSourceOrigins",
+      "salvagePassStrongRows",
+      "unresolvedRows",
+      "reasonCounts",
+      "policy",
+      "checks",
+      "files",
+      "hardStopReasons"
+    ],
+    "list_lengths": {
+      "hardStopReasons": 0
+    }
+  },
+  {
+    "file": "program-institution-site-salvage-v6.3/program_institution_site_salvage_pass.csv",
+    "suffix": ".csv",
+    "rows": 1179,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "strict_semantic_status",
+      "strict_semantic_reasons",
+      "human_semantic_decision",
+      "source_verification_status",
+      "source_http_status",
+      "source_final_url",
+      "source_content_type",
+      "source_parent_website_url",
+      "source_domain_match",
+      "source_title_token_coverage",
+      "source_exact_phrase_match",
+      "source_verification_note",
+      "evidence_tier",
+      "evidence_source_url",
+      "evidence_final_url",
+      "evidence_host",
+      "institution_identity_score",
+      "institution_identity_exact",
+      "program_phrase_exact",
+      "program_token_coverage",
+      "salvage_note"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 448,
+      "SCHOLARSHIP_TEXT_MATCH": 161
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 1005,
+        "public": 174
+      },
+      "source_content_type": {
+        "text/html; charset=UTF-8": 832,
+        "text/html; charset=utf-8": 291,
+        "text/html": 42,
+        "text/html;charset=utf-8": 6
+      },
+      "source_domain_match": {
+        "false": 1179
+      }
+    }
+  },
+  {
+    "file": "program-institution-site-salvage-v6.3/program_institution_site_unresolved.csv",
+    "suffix": ".csv",
+    "rows": 89,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "strict_semantic_status",
+      "strict_semantic_reasons",
+      "human_semantic_decision",
+      "source_verification_status",
+      "source_http_status",
+      "source_final_url",
+      "source_content_type",
+      "source_parent_website_url",
+      "source_domain_match",
+      "source_title_token_coverage",
+      "source_exact_phrase_match",
+      "source_verification_note",
+      "evidence_tier",
+      "evidence_source_url",
+      "evidence_final_url",
+      "evidence_host",
+      "institution_identity_score",
+      "institution_identity_exact",
+      "program_phrase_exact",
+      "program_token_coverage",
+      "salvage_note"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 11
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 85,
+        "public": 4
+      },
+      "source_content_type": {
+        "text/html; charset=UTF-8": 74,
+        "text/html; charset=utf-8": 11
+      },
+      "source_domain_match": {
+        "false": 89
+      }
+    }
+  },
+  {
+    "file": "program-parent-policy-split-v6.3/PROGRAM_PARENT_POLICY_SPLIT_MANIFEST.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbChanges",
+      "inputRows",
+      "resolvedParentRows",
+      "policyBlockedRows",
+      "blockedParentCount",
+      "blockedParentRows",
+      "unexpectedBlockedIds",
+      "missingExpectedBlockedIds",
+      "countMismatches",
+      "checks",
+      "hardStopReasons",
+      "files"
+    ],
+    "list_lengths": {
+      "unexpectedBlockedIds": 0,
+      "missingExpectedBlockedIds": 0,
+      "hardStopReasons": 0
+    }
+  },
+  {
+    "file": "program-parent-policy-split-v6.3/program_policy_blocked.csv",
+    "suffix": ".csv",
+    "rows": 66,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "policy_hold_reason"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 33,
+      "SCHOLARSHIP_TEXT_MATCH": 31
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 35,
+        "international": 19,
+        "public": 12
+      }
+    }
+  },
+  {
+    "file": "program-parent-policy-split-v6.3/program_resolved_parent_draft_ready.csv",
+    "suffix": ".csv",
+    "rows": 1542,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 539,
+      "SCHOLARSHIP_TEXT_MATCH": 194
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 1321,
+        "public": 221
+      }
+    }
+  },
+  {
+    "file": "program-phase-closeout-v6.3-v2/UGC_PROGRAM_DB_CLOSEOUT_V2.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbWritesPerformed",
+      "expectedImportedRows",
+      "databaseMatchedExpectedRows",
+      "databaseTotalUgcPrograms",
+      "canonicalImportedDraftRows",
+      "legacyVerifiedRowsWithoutSourceRecordId",
+      "extraCanonicalLineageRows",
+      "missingExpectedRows",
+      "importedNonDraftRows",
+      "exactInstitutionSlugDuplicateRows",
+      "policy",
+      "checks",
+      "hardStopReasons",
+      "samples",
+      "files"
+    ],
+    "list_lengths": {
+      "hardStopReasons": 0
+    }
+  },
+  {
+    "file": "program-phase-closeout-v6.3-v2/UGC_PROGRAM_PHASE_RECONCILIATION_V2.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbChanges",
+      "originalRows",
+      "importedRowsImplied",
+      "nonImportedRows",
+      "buckets",
+      "overlaps",
+      "checks",
+      "hardStopReasons"
+    ],
+    "list_lengths": {
+      "hardStopReasons": 0
+    }
+  },
+  {
+    "file": "program-phase-closeout-v6.3-v2/legacy_verified_program_lineage_review.csv",
+    "suffix": ".csv",
+    "rows": 9,
+    "headers": [
+      "legacyId",
+      "legacyName",
+      "legacySlug",
+      "institutionId",
+      "legacyVerificationStatus",
+      "legacySourceRecordId",
+      "bestCanonicalCandidateId",
+      "bestCanonicalCandidateName",
+      "bestCanonicalCandidateSlug",
+      "bestCanonicalCandidateSourceRecordId",
+      "bestSimilarityScore",
+      "assistantAction"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {}
+  },
+  {
+    "file": "program-production-gate-v6.3/official-source/PROGRAM_OFFICIAL_SOURCE_MANIFEST.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbWritesPerformed",
+      "inputFile",
+      "inputSha256",
+      "inputRows",
+      "uniqueSourceUrls",
+      "requiredParents",
+      "databaseParentsMatched",
+      "passStrongRows",
+      "reviewRequiredRows",
+      "policy",
+      "checks",
+      "files"
+    ]
+  },
+  {
+    "file": "program-production-gate-v6.3/official-source/program_official_source_review.csv",
+    "suffix": ".csv",
+    "rows": 1268,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "strict_semantic_status",
+      "strict_semantic_reasons",
+      "human_semantic_decision",
+      "source_verification_status",
+      "source_http_status",
+      "source_final_url",
+      "source_content_type",
+      "source_parent_website_url",
+      "source_domain_match",
+      "source_title_token_coverage",
+      "source_exact_phrase_match",
+      "source_verification_note"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 459,
+      "SCHOLARSHIP_TEXT_MATCH": 161
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 1090,
+        "public": 178
+      },
+      "source_content_type": {
+        "text/html; charset=UTF-8": 906,
+        "text/html; charset=utf-8": 302,
+        "text/html": 42,
+        "text/html;charset=utf-8": 6
+      },
+      "source_domain_match": {
+        "false": 1268
+      }
+    }
+  },
+  {
+    "file": "program-production-gate-v6.3/official-source/program_official_verified_pass.csv",
+    "suffix": ".csv",
+    "rows": 29,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "strict_semantic_status",
+      "strict_semantic_reasons",
+      "human_semantic_decision",
+      "source_verification_status",
+      "source_http_status",
+      "source_final_url",
+      "source_content_type",
+      "source_parent_website_url",
+      "source_domain_match",
+      "source_title_token_coverage",
+      "source_exact_phrase_match",
+      "source_verification_note"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 2,
+      "SCHOLARSHIP_TEXT_MATCH": 1
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 27,
+        "public": 2
+      },
+      "source_content_type": {
+        "text/html; charset=UTF-8": 29
+      },
+      "source_domain_match": {
+        "true": 29
+      }
+    }
+  },
+  {
+    "file": "program-production-gate-v6.3/semantic/PROGRAM_STRICT_SEMANTIC_MANIFEST.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbChanges",
+      "inputFile",
+      "inputSha256",
+      "inputRows",
+      "strictPassRows",
+      "strictQuarantineRows",
+      "humanDecisionsChanged",
+      "autoDeletePerformed",
+      "verifiedPublicationPerformed",
+      "checks",
+      "files",
+      "hardStopReasons"
+    ],
+    "list_lengths": {
+      "hardStopReasons": 0
+    }
+  },
+  {
+    "file": "program-production-gate-v6.3/semantic/program_strict_semantic_pass.csv",
+    "suffix": ".csv",
+    "rows": 1297,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "strict_semantic_status",
+      "strict_semantic_reasons",
+      "human_semantic_decision"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 461,
+      "SCHOLARSHIP_TEXT_MATCH": 162
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 1117,
+        "public": 180
+      }
+    }
+  },
+  {
+    "file": "program-production-gate-v6.3/semantic/program_strict_semantic_quarantine.csv",
+    "suffix": ".csv",
+    "rows": 141,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "strict_semantic_status",
+      "strict_semantic_reasons",
+      "human_semantic_decision"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 31,
+      "SCHOLARSHIP_TEXT_MATCH": 19
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 114,
+        "public": 27
+      }
+    }
+  },
+  {
+    "file": "program-semantic-audit-v6.3/PROGRAM_SEMANTIC_AUDIT_SUMMARY.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbChanges",
+      "inputRows",
+      "flaggedRows",
+      "highConfidenceFlags",
+      "mediumConfidenceFlags",
+      "degreeLevelCounts",
+      "degreeAwardTopCounts",
+      "policy",
+      "files"
+    ]
+  },
+  {
+    "file": "program-semantic-audit-v6.3/program_semantic_flags.csv",
+    "suffix": ".csv",
+    "rows": 104,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "semantic_audit_severity",
+      "semantic_audit_reasons",
+      "assistant_semantic_recommendation"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 47,
+      "SCHOLARSHIP_TEXT_MATCH": 13
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 90,
+        "public": 14
+      }
+    }
+  },
+  {
+    "file": "program-semantic-final-v6.3/PROGRAM_SEMANTIC_FINALIZATION_MANIFEST.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbChanges",
+      "resolvedInputRows",
+      "highRows",
+      "mediumRows",
+      "directCleanRows",
+      "semanticQuarantineRows",
+      "recommendRejectAsNonProgram",
+      "embeddedProgramRecoveryReviewRows",
+      "humanDecisionsChanged",
+      "autoDeletePerformed",
+      "databaseWritePerformed",
+      "importPolicy",
+      "checks",
+      "hardStopReasons",
+      "files"
+    ],
+    "list_lengths": {
+      "hardStopReasons": 0
+    }
+  },
+  {
+    "file": "program-semantic-final-v6.3/program_direct_clean_1438.csv",
+    "suffix": ".csv",
+    "rows": 1438,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 492,
+      "SCHOLARSHIP_TEXT_MATCH": 181
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 1231,
+        "public": 207
+      }
+    }
+  },
+  {
+    "file": "program-semantic-final-v6.3/program_embedded_recovery_review_12.csv",
+    "suffix": ".csv",
+    "rows": 12,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "semantic_final_status",
+      "assistant_final_semantic_decision",
+      "assistant_final_semantic_note",
+      "embedded_program_recovery_hint",
+      "human_semantic_decision"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "SCHOLARSHIP_TEXT_MATCH": 1,
+      "ADMISSION_TEXT_MATCH": 1
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 11,
+        "public": 1
+      }
+    }
+  },
+  {
+    "file": "program-semantic-final-v6.3/program_semantic_quarantine_104.csv",
+    "suffix": ".csv",
+    "rows": 104,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "semantic_final_status",
+      "assistant_final_semantic_decision",
+      "assistant_final_semantic_note",
+      "embedded_program_recovery_hint",
+      "human_semantic_decision"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 93,
+      "SCHOLARSHIP_TEXT_MATCH": 93
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 90,
+        "public": 14
+      }
+    }
+  },
+  {
+    "file": "program-semantic-final-v6.3/program_semantic_reject_recommendations_92.csv",
+    "suffix": ".csv",
+    "rows": 92,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "semantic_final_status",
+      "assistant_final_semantic_decision",
+      "assistant_final_semantic_note",
+      "embedded_program_recovery_hint",
+      "human_semantic_decision"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 92,
+      "SCHOLARSHIP_TEXT_MATCH": 92
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 79,
+        "public": 13
+      }
+    }
+  },
+  {
+    "file": "program-semantic-review-v6.3/PROGRAM_SEMANTIC_SPLIT_MANIFEST.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbChanges",
+      "inputFlaggedRows",
+      "highQuarantineCandidates",
+      "mediumManualReviewRows",
+      "otherSeverityRows",
+      "humanDecisionsChanged",
+      "autoDeletePerformed",
+      "autoRejectPerformed",
+      "checks",
+      "hardStopReasons",
+      "files"
+    ],
+    "list_lengths": {
+      "hardStopReasons": 0
+    }
+  },
+  {
+    "file": "program-semantic-review-v6.3/high-all-final/PROGRAM_HIGH_ALL_REVIEW_MANIFEST.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbChanges",
+      "inputRows",
+      "reviewedRows",
+      "recommendRejectAsNonProgram",
+      "unexpectedRows",
+      "humanDecisionsChanged",
+      "autoDeletePerformed",
+      "databaseWritePerformed",
+      "checks",
+      "hardStopReasons",
+      "files"
+    ],
+    "list_lengths": {
+      "unexpectedRows": 0,
+      "hardStopReasons": 0
+    }
+  },
+  {
+    "file": "program-semantic-review-v6.3/high-all-final/program_high_all_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 47,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "semantic_audit_severity",
+      "semantic_audit_reasons",
+      "assistant_semantic_recommendation",
+      "assistant_final_semantic_decision",
+      "assistant_final_semantic_note",
+      "assistant_review_batch",
+      "human_semantic_decision"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 47,
+      "SCHOLARSHIP_TEXT_MATCH": 47
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 35,
+        "public": 12
+      }
+    }
+  },
+  {
+    "file": "program-semantic-review-v6.3/program_high_batch01_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 15,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "semantic_audit_severity",
+      "semantic_audit_reasons",
+      "assistant_semantic_recommendation",
+      "assistant_final_semantic_decision",
+      "assistant_final_semantic_note",
+      "assistant_review_batch",
+      "human_semantic_decision"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 7,
+      "SCHOLARSHIP_TEXT_MATCH": 3
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 12,
+        "public": 3
+      }
+    }
+  },
+  {
+    "file": "program-semantic-review-v6.3/program_high_batch02_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 15,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "semantic_audit_severity",
+      "semantic_audit_reasons",
+      "assistant_semantic_recommendation",
+      "assistant_final_semantic_decision",
+      "assistant_final_semantic_note",
+      "assistant_review_batch",
+      "human_semantic_decision"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 11,
+      "SCHOLARSHIP_TEXT_MATCH": 2
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 10,
+        "public": 5
+      }
+    }
+  },
+  {
+    "file": "program-semantic-review-v6.3/program_semantic_high_quarantine_candidates.csv",
+    "suffix": ".csv",
+    "rows": 47,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "semantic_audit_severity",
+      "semantic_audit_reasons",
+      "assistant_semantic_recommendation"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 26,
+      "SCHOLARSHIP_TEXT_MATCH": 8
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 35,
+        "public": 12
+      }
+    }
+  },
+  {
+    "file": "program-semantic-review-v6.3/program_semantic_medium_manual_review.csv",
+    "suffix": ".csv",
+    "rows": 57,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "semantic_audit_severity",
+      "semantic_audit_reasons",
+      "assistant_semantic_recommendation"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 21,
+      "SCHOLARSHIP_TEXT_MATCH": 5
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 55,
+        "public": 2
+      }
+    }
+  },
+  {
+    "file": "program-ugc-authoritative-salvage-v6.3/UGC_AUTHORITATIVE_SALVAGE_MANIFEST.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbWritesPerformed",
+      "inputRows",
+      "ugcUniversityDetailRecordsFound",
+      "inputParentNames",
+      "parentsMatchedToUgcDetail",
+      "parentsAmbiguous",
+      "parentsUnmatched",
+      "ugcFacultyPagesCrawled",
+      "salvagePassStrongRows",
+      "unresolvedRows",
+      "reasonCounts",
+      "policy",
+      "checks",
+      "samples",
+      "files",
+      "hardStopReasons"
+    ],
+    "list_lengths": {
+      "hardStopReasons": 0
+    }
+  },
+  {
+    "file": "program-ugc-authoritative-salvage-v6.3/program_ugc_authoritative_salvage_pass.csv",
+    "suffix": ".csv",
+    "rows": 0,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "strict_semantic_status",
+      "strict_semantic_reasons",
+      "human_semantic_decision",
+      "source_verification_status",
+      "source_http_status",
+      "source_final_url",
+      "source_content_type",
+      "source_parent_website_url",
+      "source_domain_match",
+      "source_title_token_coverage",
+      "source_exact_phrase_match",
+      "source_verification_note",
+      "authoritative_evidence_tier",
+      "authoritative_evidence_url",
+      "authoritative_matched_program_name",
+      "authoritative_match_score",
+      "ugc_university_detail_url",
+      "ugc_authoritative_website",
+      "salvage_note"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {}
+  },
+  {
+    "file": "program-ugc-authoritative-salvage-v6.3/program_ugc_authoritative_unresolved.csv",
+    "suffix": ".csv",
+    "rows": 1268,
+    "headers": [
+      "staging_id",
+      "parent_source_record_id",
+      "parent_authority_code",
+      "parent_category",
+      "institution_name",
+      "institution_identity_source_url",
+      "program_name",
+      "program_slug",
+      "degree_level",
+      "degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "program_source_url",
+      "all_program_source_urls",
+      "verification_status",
+      "production_verified",
+      "staging_package",
+      "notes",
+      "strict_semantic_status",
+      "strict_semantic_reasons",
+      "human_semantic_decision",
+      "source_verification_status",
+      "source_http_status",
+      "source_final_url",
+      "source_content_type",
+      "source_parent_website_url",
+      "source_domain_match",
+      "source_title_token_coverage",
+      "source_exact_phrase_match",
+      "source_verification_note",
+      "authoritative_evidence_tier",
+      "authoritative_evidence_url",
+      "authoritative_matched_program_name",
+      "authoritative_match_score",
+      "ugc_university_detail_url",
+      "ugc_authoritative_website",
+      "salvage_note"
+    ],
+    "id_field_guess": "staging_id",
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 459,
+      "SCHOLARSHIP_TEXT_MATCH": 161
+    },
+    "category_field_values": {
+      "parent_category": {
+        "private": 1090,
+        "public": 178
+      },
+      "source_content_type": {
+        "text/html; charset=UTF-8": 906,
+        "text/html; charset=utf-8": 302,
+        "text/html": 42,
+        "text/html;charset=utf-8": 6
+      },
+      "source_domain_match": {
+        "false": 1268
+      }
+    }
+  },
+  {
+    "file": "program-ugc-authoritative-salvage-v6.3/ugc_authoritative_catalog.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "ugcBase",
+      "universityDetailRange",
+      "universityRecords"
+    ],
+    "list_lengths": {
+      "universityDetailRange": 2,
+      "universityRecords": 0
+    }
+  },
+  {
+    "file": "resolved_final_9_v6_2.csv",
+    "suffix": ".csv",
+    "rows": 9,
+    "headers": [
+      "canonical_candidate_id",
+      "dataset",
+      "canonical_record_id",
+      "institution_name",
+      "candidate_type",
+      "source_candidate_text",
+      "evidence_strength",
+      "review_priority",
+      "raw_evidence_count",
+      "distinct_source_count",
+      "distinct_page_hash_count",
+      "source_urls",
+      "page_sha256_values",
+      "review_decision",
+      "reviewer_name",
+      "reviewed_at",
+      "review_notes",
+      "production_verified",
+      "suggested_fact_type",
+      "suggested_gpa_values",
+      "suggested_money_values",
+      "suggested_date_values",
+      "suggested_percent_values",
+      "final_fact_type",
+      "final_fact_value",
+      "final_currency",
+      "final_effective_date",
+      "final_applicant_group",
+      "final_condition",
+      "suggested_program_name",
+      "suggested_degree_level",
+      "suggested_degree_award",
+      "suggested_credit_values",
+      "suggested_duration_values",
+      "final_program_name",
+      "final_degree_level",
+      "final_degree_award",
+      "final_subject_or_major",
+      "final_credit_hours",
+      "final_duration",
+      "audit_flags_v4_4",
+      "audit_severity_v4_4",
+      "audit_status_v4_4",
+      "audit_batch",
+      "final_scholarship_name",
+      "final_award_percent",
+      "final_award_amount",
+      "final_minimum_gpa",
+      "final_eligibility",
+      "final_deadline",
+      "final_renewal_condition",
+      "refined_degree_award_v4_5",
+      "refined_degree_level_v4_5",
+      "refined_audit_flags_v4_5",
+      "refined_audit_status_v4_5",
+      "refined_gpa_values_v4_5",
+      "resolution_status_v4_6_1",
+      "resolved_flags_v4_6_1",
+      "content_review_flags_v4_6_1",
+      "remaining_hard_flags_v4_6_1",
+      "resolution_diagnostics_v4_6_1",
+      "final_review_queue_v4_7",
+      "production_gate_v4_7",
+      "queue_source_v4_7",
+      "review_sequence_v4_7",
+      "pre_recovery_queue_v4_9",
+      "recovery_resolution_v4_9",
+      "recovery_evidence_urls_v4_9",
+      "recovery_page_hashes_v4_9",
+      "final_review_queue_v4_9",
+      "production_gate_v4_9",
+      "review_sequence_v4_9",
+      "record_fingerprint_v4_12",
+      "package_version_v4_12",
+      "baseline_status_v4_12",
+      "hard25_suggested_disposition_v4_12",
+      "hard25_suggested_action_v4_12",
+      "hard25_disposition_reason_v4_12",
+      "hard25_current_source_v4_12",
+      "hard25_source_status_v4_12",
+      "hard25_source_effective_url_v4_12",
+      "hard25_source_page_sha256_v4_12",
+      "hard25_source_fetch_error_v4_12",
+      "reviewer_notes",
+      "reviewer_final_action",
+      "reviewer_final_normalized_value",
+      "reviewer_final_source_url",
+      "reviewer_override_reason",
+      "production_export_eligible",
+      "review_sequence_v4_12",
+      "technical_blocker_v5_1",
+      "technical_blocker_resolved_v5_1",
+      "system_fix_applied_v5_1",
+      "system_disposition_v5_1",
+      "replacement_sources_v5_1",
+      "replacement_page_hashes_v5_1",
+      "review_bucket_v5_1",
+      "production_candidate_status_v5_1",
+      "source_recheck_status_v5_1",
+      "review_sequence_v5_1",
+      "assistant_recommended_decision_v5_2",
+      "assistant_recommended_action_v5_2",
+      "assistant_recommended_normalized_value_v5_2",
+      "assistant_recommended_source_v5_2",
+      "assistant_review_note_v5_2",
+      "assistant_review_status_v5_3",
+      "assistant_review_set_v5_3",
+      "assistant_recommended_decision_cumulative",
+      "assistant_recommended_action_cumulative",
+      "assistant_recommended_normalized_value_cumulative",
+      "assistant_recommended_source_cumulative",
+      "assistant_review_note_cumulative",
+      "assistant_review_set_cumulative",
+      "assistant_review_status_v5_4",
+      "assistant_review_status_v5_5",
+      "assistant_review_status_v5_6",
+      "assistant_review_status_v5_7",
+      "assistant_review_status_v5_8",
+      "assistant_review_status_v5_9",
+      "assistant_review_status_v6_0",
+      "assistant_bulk_confidence_v6_0",
+      "assistant_final_resolution_v6_2"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 6,
+      "SCHOLARSHIP_TEXT_MATCH": 8
+    },
+    "category_field_values": {
+      "candidate_type": {
+        "GPA_OR_ELIGIBILITY": 1
+      },
+      "suggested_fact_type": {
+        "GPA_OR_ELIGIBILITY": 1
+      }
+    }
+  },
+  {
+    "file": "staging-audit-v6.3/dataset_candidate_type_counts.csv",
+    "suffix": ".csv",
+    "rows": 5,
+    "headers": [
+      "dataset",
+      "candidate_type",
+      "count"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 3,
+      "SCHOLARSHIP_TEXT_MATCH": 1
+    },
+    "category_field_values": {
+      "candidate_type": {
+        "<blank>": 2,
+        "GPA_OR_ELIGIBILITY": 1,
+        "DATE_OR_DEADLINE": 1,
+        "FEE_OR_COST": 1
+      }
+    }
+  },
+  {
+    "file": "staging-audit-v6.3/https_missing_candidates.csv",
+    "suffix": ".csv",
+    "rows": 26,
+    "headers": [
+      "canonical_candidate_id",
+      "dataset",
+      "canonical_record_id",
+      "institution_name",
+      "source_urls",
+      "assistant_source"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 11,
+      "SCHOLARSHIP_TEXT_MATCH": 1
+    },
+    "category_field_values": {}
+  },
+  {
+    "file": "staging-audit-v6.3/normalization_coverage.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "admission",
+      "program",
+      "scholarship"
+    ]
+  },
+  {
+    "file": "staging-audit-v6.3/program-entity-audit/program_entities.csv",
+    "suffix": ".csv",
+    "rows": 1630,
+    "headers": [
+      "canonical_record_id",
+      "institution_name",
+      "program_name",
+      "normalized_program_name",
+      "refined_degree_level",
+      "refined_degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "https_source_count",
+      "https_sources",
+      "conflict",
+      "conflict_reason"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 572,
+      "SCHOLARSHIP_TEXT_MATCH": 225
+    },
+    "category_field_values": {}
+  },
+  {
+    "file": "staging-audit-v6.3/program-entity-audit/program_entities_no_https.csv",
+    "suffix": ".csv",
+    "rows": 22,
+    "headers": [
+      "canonical_record_id",
+      "institution_name",
+      "program_name",
+      "normalized_program_name",
+      "refined_degree_level",
+      "refined_degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "https_source_count",
+      "https_sources",
+      "conflict",
+      "conflict_reason"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {}
+  },
+  {
+    "file": "staging-audit-v6.3/program-entity-audit/program_entity_conflicts.csv",
+    "suffix": ".csv",
+    "rows": 0,
+    "headers": [
+      "canonical_record_id",
+      "institution_name",
+      "program_name",
+      "normalized_program_name",
+      "refined_degree_level",
+      "refined_degree_award",
+      "candidate_count",
+      "candidate_ids",
+      "https_source_count",
+      "https_sources",
+      "conflict",
+      "conflict_reason"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {}
+  },
+  {
+    "file": "staging-audit-v6.3/program-entity-audit/program_entity_summary.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "program_candidate_rows",
+      "unique_program_entities",
+      "duplicate_candidate_rows_collapsed",
+      "entity_conflicts",
+      "entities_without_https",
+      "unique_canonical_records",
+      "degree_level_counts",
+      "degree_award_counts",
+      "institution_mapping"
+    ]
+  },
+  {
+    "file": "staging-audit-v6.3/program-parent-audit/matched_parent_institutions.csv",
+    "suffix": ".csv",
+    "rows": 119,
+    "headers": [
+      "canonical_record_id",
+      "review_name",
+      "master_name",
+      "authority",
+      "authority_code",
+      "category",
+      "district",
+      "upazila",
+      "address",
+      "website",
+      "source_url",
+      "verification_status",
+      "program_entities"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": "source_url",
+    "match_counts": {},
+    "category_field_values": {
+      "category": {
+        "private": 89,
+        "public": 29,
+        "international": 1
+      }
+    }
+  },
+  {
+    "file": "staging-audit-v6.3/program-parent-audit/missing_parent_institutions.csv",
+    "suffix": ".csv",
+    "rows": 0,
+    "headers": [
+      "canonical_record_id",
+      "review_name"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {}
+  },
+  {
+    "file": "staging-audit-v6.3/program-parent-audit/parent_mapping_summary.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "required_parent_ids",
+      "matched_parent_ids",
+      "missing_parent_ids",
+      "name_mismatches",
+      "matched_with_district",
+      "matched_without_district",
+      "matched_with_address",
+      "matched_with_website",
+      "categories",
+      "authority_code_duplicates_within_required_set"
+    ]
+  },
+  {
+    "file": "staging-audit-v6.3/program-parent-audit/parent_name_mismatches.csv",
+    "suffix": ".csv",
+    "rows": 0,
+    "headers": [
+      "canonical_record_id",
+      "review_name",
+      "master_name",
+      "authority",
+      "authority_code",
+      "category",
+      "district",
+      "upazila",
+      "address",
+      "website",
+      "source_url",
+      "verification_status",
+      "program_entities"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": "source_url",
+    "match_counts": {},
+    "category_field_values": {}
+  },
+  {
+    "file": "staging-audit-v6.3/source_hosts.csv",
+    "suffix": ".csv",
+    "rows": 147,
+    "headers": [
+      "host",
+      "references"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 2
+    },
+    "category_field_values": {}
+  },
+  {
+    "file": "staging-audit-v6.3/staging_readiness_summary.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "master_rows",
+      "master_unique_ids",
+      "approve_rows",
+      "approve_unique_ids",
+      "reject_rows",
+      "reject_unique_ids",
+      "approve_reject_overlap",
+      "partition_matches_master",
+      "conflict_ids_extracted",
+      "conflict_ids_in_approve",
+      "conflict_ids_in_reject",
+      "production_verified_non_no_in_approve",
+      "dataset_counts",
+      "approve_rows_without_source_urls",
+      "approve_rows_without_https_source",
+      "unique_institutions_in_approve",
+      "unique_canonical_records_in_approve"
+    ]
+  },
+  {
+    "file": "staging-audit-v6.3/structured_field_coverage.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "admission",
+      "program",
+      "scholarship"
+    ]
+  },
+  {
+    "file": "staging-audit-v6.3/top_institutions.csv",
+    "suffix": ".csv",
+    "rows": 132,
+    "headers": [
+      "institution_name",
+      "approved_candidates"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {}
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ambiguous_batch01_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 12,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 1
+    },
+    "category_field_values": {
+      "category": {
+        "private": 12
+      },
+      "evidence_type": {
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 12
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ambiguous_batch02_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 12,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 4
+    },
+    "category_field_values": {
+      "category": {
+        "private": 12
+      },
+      "evidence_type": {
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 12
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ambiguous_batch03_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 12,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 3
+    },
+    "category_field_values": {
+      "category": {
+        "public": 12
+      },
+      "evidence_type": {
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 12
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ambiguous_batch04_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 6,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 1,
+      "SCHOLARSHIP_TEXT_MATCH": 1
+    },
+    "category_field_values": {
+      "category": {
+        "public": 6
+      },
+      "evidence_type": {
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 6
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ambiguous_candidates.csv",
+    "suffix": ".csv",
+    "rows": 42,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 9,
+      "SCHOLARSHIP_TEXT_MATCH": 1
+    },
+    "category_field_values": {
+      "category": {
+        "private": 24,
+        "public": 18
+      },
+      "evidence_type": {
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 42
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/no_evidence_or_failed.csv",
+    "suffix": ".csv",
+    "rows": 20,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {
+      "category": {
+        "private": 16,
+        "public": 3,
+        "international": 1
+      },
+      "evidence_type": {
+        "NONE": 20
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/none_batch01_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 10,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 1
+    },
+    "category_field_values": {
+      "category": {
+        "private": 9,
+        "international": 1
+      },
+      "evidence_type": {
+        "NONE": 10
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/none_batch02_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 10,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {
+      "category": {
+        "private": 7,
+        "public": 3
+      },
+      "evidence_type": {
+        "NONE": 10
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/none_batch02_assistant_recommendations_resolved.csv",
+    "suffix": ".csv",
+    "rows": 10,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {
+      "category": {
+        "private": 7,
+        "public": 3
+      },
+      "evidence_type": {
+        "NONE": 10
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/review_queue_summary.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "rows",
+      "fetch_status",
+      "evidence_type",
+      "candidate_count",
+      "human_decisions_nonblank",
+      "accepted_district_nonblank",
+      "accepted_district_code_nonblank",
+      "queues",
+      "db_changes"
+    ]
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/single_text_batch01_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 15,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 4
+    },
+    "category_field_values": {
+      "category": {
+        "private": 15
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 15
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/single_text_batch02_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 15,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 1
+    },
+    "category_field_values": {
+      "category": {
+        "private": 15
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 15
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/single_text_batch03_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 15,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 4,
+      "SCHOLARSHIP_TEXT_MATCH": 2
+    },
+    "category_field_values": {
+      "category": {
+        "private": 13,
+        "public": 2
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 15
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/single_text_batch04_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 6,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 1
+    },
+    "category_field_values": {
+      "category": {
+        "public": 6
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 6
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/single_text_candidates.csv",
+    "suffix": ".csv",
+    "rows": 51,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 10,
+      "SCHOLARSHIP_TEXT_MATCH": 2
+    },
+    "category_field_values": {
+      "category": {
+        "private": 43,
+        "public": 8
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 51
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/structured_address_assistant_recommendations.csv",
+    "suffix": ".csv",
+    "rows": 6,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {
+      "category": {
+        "private": 6
+      },
+      "evidence_type": {
+        "STRUCTURED_ADDRESS_CANDIDATE": 6
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/structured_address_candidates.csv",
+    "suffix": ".csv",
+    "rows": 6,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {
+      "category": {
+        "private": 6
+      },
+      "evidence_type": {
+        "STRUCTURED_ADDRESS_CANDIDATE": 6
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ugc_parent_location_assistant_reviewed.csv",
+    "suffix": ".csv",
+    "rows": 57,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 10,
+      "SCHOLARSHIP_TEXT_MATCH": 2
+    },
+    "category_field_values": {
+      "category": {
+        "private": 49,
+        "public": 8
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 51,
+        "STRUCTURED_ADDRESS_CANDIDATE": 6
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ugc_parent_location_assistant_reviewed_v2.csv",
+    "suffix": ".csv",
+    "rows": 99,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 19,
+      "SCHOLARSHIP_TEXT_MATCH": 3
+    },
+    "category_field_values": {
+      "category": {
+        "private": 73,
+        "public": 26
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 51,
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 42,
+        "STRUCTURED_ADDRESS_CANDIDATE": 6
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ugc_parent_location_corrected_candidates.csv",
+    "suffix": ".csv",
+    "rows": 2,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {
+      "category": {
+        "private": 2
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 2
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ugc_parent_location_district_ready.csv",
+    "suffix": ".csv",
+    "rows": 110,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 17,
+      "SCHOLARSHIP_TEXT_MATCH": 3
+    },
+    "category_field_values": {
+      "category": {
+        "private": 83,
+        "public": 27
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 45,
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 41,
+        "NONE": 19,
+        "STRUCTURED_ADDRESS_CANDIDATE": 5
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ugc_parent_location_policy_holds.csv",
+    "suffix": ".csv",
+    "rows": 7,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 3
+    },
+    "category_field_values": {
+      "category": {
+        "private": 4,
+        "public": 2,
+        "international": 1
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 4,
+        "STRUCTURED_ADDRESS_CANDIDATE": 1,
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 1,
+        "NONE": 1
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ugc_parent_location_reconciliation_final.csv",
+    "suffix": ".csv",
+    "rows": 119,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 20,
+      "SCHOLARSHIP_TEXT_MATCH": 3
+    },
+    "category_field_values": {
+      "category": {
+        "private": 89,
+        "public": 29,
+        "international": 1
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 51,
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 42,
+        "NONE": 20,
+        "STRUCTURED_ADDRESS_CANDIDATE": 6
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ugc_parent_location_reconciliation_final_summary.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "status",
+      "mode",
+      "dbWritesPerformed",
+      "evidence_rows",
+      "recommendation_rows_loaded",
+      "unique_recommendation_ids",
+      "duplicate_recommendation_ids",
+      "duplicate_ids",
+      "reviewed_rows",
+      "unreviewed_rows",
+      "recommend_accept",
+      "recommend_correct_candidate",
+      "needs_campus_policy",
+      "needs_model_policy",
+      "needs_more_evidence",
+      "human_decisions_nonblank",
+      "accepted_district_nonblank",
+      "accepted_district_code_nonblank",
+      "accept_rows_missing_code",
+      "correction_rows_with_code",
+      "campus_policy_rows_with_location",
+      "model_policy_rows_with_location",
+      "district_ready_rows",
+      "policy_hold_rows",
+      "corrected_candidate_rows",
+      "chapainawabganj_resolution"
+    ],
+    "list_lengths": {
+      "duplicate_ids": 0
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ugc_parent_location_reconciliation_master.csv",
+    "suffix": ".csv",
+    "rows": 119,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 19,
+      "SCHOLARSHIP_TEXT_MATCH": 3
+    },
+    "category_field_values": {
+      "category": {
+        "private": 89,
+        "public": 29,
+        "international": 1
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 51,
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 42,
+        "NONE": 20,
+        "STRUCTURED_ADDRESS_CANDIDATE": 6
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ugc_parent_location_reconciliation_master_v2.csv",
+    "suffix": ".csv",
+    "rows": 119,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 19,
+      "SCHOLARSHIP_TEXT_MATCH": 3
+    },
+    "category_field_values": {
+      "category": {
+        "private": 89,
+        "public": 29,
+        "international": 1
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 51,
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 42,
+        "NONE": 20,
+        "STRUCTURED_ADDRESS_CANDIDATE": 6
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ugc_parent_location_reconciliation_summary.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "evidence_rows",
+      "recommendation_rows_loaded",
+      "unique_recommendation_ids",
+      "duplicate_recommendation_ids",
+      "duplicate_ids",
+      "reviewed_rows",
+      "unreviewed_rows",
+      "recommend_accept",
+      "recommend_correct_candidate",
+      "needs_campus_policy",
+      "needs_more_evidence",
+      "unreviewed_evidence_type_counts",
+      "human_decisions_nonblank",
+      "accepted_district_nonblank",
+      "accepted_district_code_nonblank",
+      "accept_rows_missing_code",
+      "correction_rows_with_code",
+      "campus_policy_rows_with_district",
+      "db_changes"
+    ],
+    "list_lengths": {
+      "duplicate_ids": 0
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ugc_parent_location_reconciliation_summary_v2.json",
+    "suffix": ".json",
+    "top_type": "dict",
+    "top_keys": [
+      "evidence_rows",
+      "recommendation_rows_loaded",
+      "unique_recommendation_ids",
+      "duplicate_recommendation_ids",
+      "duplicate_ids",
+      "reviewed_rows",
+      "unreviewed_rows",
+      "recommend_accept",
+      "recommend_correct_candidate",
+      "needs_campus_policy",
+      "needs_more_evidence",
+      "unreviewed_evidence_type_counts",
+      "unreviewed_fetch_status_counts",
+      "human_decisions_nonblank",
+      "accepted_district_nonblank",
+      "accepted_district_code_nonblank",
+      "accept_rows_missing_code",
+      "correction_rows_with_code",
+      "campus_policy_rows_with_location",
+      "db_changes"
+    ],
+    "list_lengths": {
+      "duplicate_ids": 0
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ugc_parent_location_unreviewed.csv",
+    "suffix": ".csv",
+    "rows": 62,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 9,
+      "SCHOLARSHIP_TEXT_MATCH": 1
+    },
+    "category_field_values": {
+      "category": {
+        "private": 40,
+        "public": 21,
+        "international": 1
+      },
+      "evidence_type": {
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 42,
+        "NONE": 20
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/review/ugc_parent_location_unreviewed_v2.csv",
+    "suffix": ".csv",
+    "rows": 20,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note",
+      "assistant_location_recommendation",
+      "assistant_recommended_district",
+      "assistant_recommended_district_code",
+      "assistant_recommendation_source_url",
+      "assistant_recommendation_note",
+      "assistant_review_batch"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {},
+    "category_field_values": {
+      "category": {
+        "private": 16,
+        "public": 3,
+        "international": 1
+      },
+      "evidence_type": {
+        "NONE": 20
+      }
+    }
+  },
+  {
+    "file": "ugc-parent-location-reconciliation-v6.3/ugc_parent_location_evidence.csv",
+    "suffix": ".csv",
+    "rows": 119,
+    "headers": [
+      "parent_source_record_id",
+      "canonical_name",
+      "category",
+      "official_website_raw",
+      "attempted_url",
+      "fetched_url",
+      "fetch_status",
+      "http_status",
+      "html_sha256",
+      "structured_address",
+      "district_candidates",
+      "candidate_count",
+      "evidence_type",
+      "evidence_excerpt",
+      "identity_source_url",
+      "reconciliation_status",
+      "human_decision",
+      "accepted_district",
+      "accepted_district_code",
+      "decision_source_url",
+      "decision_note"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 19,
+      "SCHOLARSHIP_TEXT_MATCH": 3
+    },
+    "category_field_values": {
+      "category": {
+        "private": 89,
+        "public": 29,
+        "international": 1
+      },
+      "evidence_type": {
+        "SINGLE_TEXT_MENTION_CANDIDATE": 51,
+        "AMBIGUOUS_MULTIPLE_DISTRICTS": 42,
+        "NONE": 20,
+        "STRUCTURED_ADDRESS_CANDIDATE": 6
+      }
+    }
+  },
+  {
+    "file": "unresolved_correction_proposals_v6_2.csv",
+    "suffix": ".csv",
+    "rows": 3,
+    "headers": [
+      "proposal_group",
+      "source_candidate_ids",
+      "proposed_dataset",
+      "proposed_candidate_type",
+      "proposed_normalized_value",
+      "source",
+      "proposal_status",
+      "final_resolution_note_v6_2"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 3,
+      "SCHOLARSHIP_TEXT_MATCH": 3
+    },
+    "category_field_values": {
+      "proposed_candidate_type": {
+        "GPA_OR_ELIGIBILITY": 1
+      }
+    }
+  },
+  {
+    "file": "unresolved_correction_proposals_v6_3.csv",
+    "suffix": ".csv",
+    "rows": 1,
+    "headers": [
+      "proposal_group",
+      "source_candidate_ids",
+      "proposed_dataset",
+      "proposed_candidate_type",
+      "proposed_normalized_value",
+      "source",
+      "proposal_status",
+      "final_resolution_note_v6_2"
+    ],
+    "id_field_guess": null,
+    "url_field_guess": null,
+    "match_counts": {
+      "ADMISSION_TEXT_MATCH": 1,
+      "SCHOLARSHIP_TEXT_MATCH": 1
+    },
+    "category_field_values": {
+      "proposed_candidate_type": {
+        "GPA_OR_ELIGIBILITY": 1
+      }
+    }
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "retrieved_date": "2026-09-23",
+  "live_rows": 2294,
+  "live_unique_codes": 2294,
+  "live_unique_names": 2249,
+  "duplicate_name_groups": 25,
+  "official_profile_count_reference": 2257,
+  "difference_live_minus_profile": 37,
+  "captured_response_sample_chars": 500000,
+  "approved_1_occurrences_in_partial_sample": 1897,
+  "approved_0_occurrences_in_partial_sample": 0,
+  "conclusion": "No evidence-based set of exactly 37 invalid rows can be identified from the captured current list. Retain all 2,294 as staging; do not delete 37 rows merely to force the older/static 2,257 profile count.",
+  "promotion_rule": "Require an official status/type/currentness field or an updated authoritative count before bulk promotion to VERIFIED."
+}
