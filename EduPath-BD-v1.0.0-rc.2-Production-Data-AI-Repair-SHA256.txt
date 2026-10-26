@@ -1,0 +1,3 @@
+c6fea68efaa49e76d54e876a62cb61609697bcd34926684cc5e2abe58a730795  EduPath-BD-v1.0.0-rc.2-Production-Data-AI-Repair.patch
+99310979d11aa901ba65b802acf043486f4f95269afaa33bc806f953b43f6ec3  EduPath-BD-v1.0.0-rc.2-Production-Data-AI-Repair-Overlay.zip
+cd7f8563861ec1257d214f34c63559f3343b704c36913cc7ea719743cbf4280d  EduPath-BD-v1.0.0-rc.2-Production-Data-AI-Repair-Guide.md

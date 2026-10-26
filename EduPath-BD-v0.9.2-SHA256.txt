@@ -1,0 +1,2 @@
+234522c06c72709e7ef6d6b6768b9467bdd1490cd34aac4805f1099b5cbaf479  /mnt/data/EduPath-BD-v0.9.2-Production-Hardened-Source.zip
+f5d925bddf6a432642337377784f0b97af7fcc959ac7bb8178e5f7ed1d1ee2db  /mnt/data/EduPath-BD-v0.9.1-to-v0.9.2-Production-Hardening.patch

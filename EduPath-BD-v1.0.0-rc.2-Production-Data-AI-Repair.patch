@@ -1,0 +1,534 @@
+diff -ruN '--exclude=node_modules' '--exclude=dist' '--exclude=*.tsbuildinfo' a/apps/api/package.json b/apps/api/package.json
+--- a/apps/api/package.json	2026-09-18 13:43:37.000000000 -0700
++++ b/apps/api/package.json	2026-09-20 11:35:06.781727358 -0700
+@@ -16,6 +16,7 @@
+     "db:migrate:deploy": "prisma migrate deploy",
+     "db:seed": "tsx prisma/seed.ts",
+     "db:seed:demo": "tsx prisma/seed.ts --include-demo-content",
++    "db:seed:repair": "tsx prisma/seed.ts --repair-legacy-demo-data",
+     "db:studio": "prisma studio",
+     "admin:bootstrap": "tsx scripts/bootstrap-admin.ts",
+     "verify:integrations": "tsx scripts/verify-integrations.ts"
+diff -ruN '--exclude=node_modules' '--exclude=dist' '--exclude=*.tsbuildinfo' a/apps/api/prisma/seed.ts b/apps/api/prisma/seed.ts
+--- a/apps/api/prisma/seed.ts	2026-09-18 14:15:41.000000000 -0700
++++ b/apps/api/prisma/seed.ts	2026-09-20 11:37:33.650119232 -0700
+@@ -3,6 +3,11 @@
+ 
+ const prisma = new PrismaClient();
+ const includeDemoContent = process.argv.includes("--include-demo-content");
++const repairLegacyDemoData = process.argv.includes("--repair-legacy-demo-data");
++
++if (includeDemoContent && repairLegacyDemoData) {
++  throw new Error("Choose either --include-demo-content or --repair-legacy-demo-data, not both.");
++}
+ 
+ async function main() {
+   for (const institution of demoInstitutions) {
+@@ -43,8 +48,8 @@
+         slug: program.slug,
+         level: program.level,
+         durationMonths: program.durationMonths,
+-        tuitionMin: program.tuitionMin,
+-        tuitionMax: program.tuitionMax,
++        tuitionMin: includeDemoContent ? program.tuitionMin : undefined,
++        tuitionMax: includeDemoContent ? program.tuitionMax : undefined,
+         careerOutcomes: program.careerOutcomes,
+         verificationStatus: program.verified ? "VERIFIED" : "DRAFT",
+         sourceUrl: institutionSourceUrl
+@@ -53,88 +58,95 @@
+         name: program.name,
+         level: program.level,
+         durationMonths: program.durationMonths,
+-        tuitionMin: program.tuitionMin,
+-        tuitionMax: program.tuitionMax,
++        ...(includeDemoContent
++          ? { tuitionMin: program.tuitionMin, tuitionMax: program.tuitionMax }
++          : repairLegacyDemoData
++            ? { tuitionMin: null, tuitionMax: null }
++            : {}),
+         careerOutcomes: program.careerOutcomes,
+         verificationStatus: program.verified ? "VERIFIED" : "DRAFT",
+         sourceUrl: institutionSourceUrl
+       }
+     });
+-    await prisma.admissionRule.upsert({
+-      where: { programId_academicSession: { programId: program.id, academicSession: "2026-27" } },
+-      create: {
+-        programId: program.id,
+-        academicSession: "2026-27",
+-        applicantStage: program.level === "Diploma" ? "SSC" : "HSC",
+-        allowedGroups: program.groups,
+-        ...(program.level === "Diploma" || program.level === "Certificate"
+-          ? { minimumSscGpa: program.minimumGpa || undefined }
+-          : { minimumHscGpa: program.minimumGpa || undefined }),
+-        sourceUrl: institutionSourceUrl
+-      },
+-      update: {
+-        applicantStage: program.level === "Diploma" ? "SSC" : "HSC",
+-        allowedGroups: program.groups,
+-        minimumSscGpa: program.level === "Diploma" || program.level === "Certificate" ? program.minimumGpa || undefined : null,
+-        minimumHscGpa: program.level === "Diploma" || program.level === "Certificate" ? null : program.minimumGpa || undefined,
+-        sourceUrl: institutionSourceUrl
+-      }
+-    });
+-  }
+-
+-  for (const circular of demoCirculars) {
+-    await prisma.circular.upsert({
+-      where: { id: circular.id },
+-      create: {
+-        id: circular.id,
+-        institutionId: circular.institutionId,
+-        title: circular.title,
+-        academicSession: circular.academicSession,
+-        applicationStartsAt: circular.applicationStartsAt ? new Date(circular.applicationStartsAt) : undefined,
+-        applicationEndsAt: new Date(circular.applicationEndsAt),
+-        examAt: circular.examAt ? new Date(circular.examAt) : undefined,
+-        applicationFee: circular.applicationFee,
+-        sourceUrl: circular.sourceUrl,
+-        verificationStatus: circular.verified ? "VERIFIED" : "PENDING"
+-      },
+-      update: {
+-        title: circular.title,
+-        applicationStartsAt: circular.applicationStartsAt ? new Date(circular.applicationStartsAt) : undefined,
+-        applicationEndsAt: new Date(circular.applicationEndsAt),
+-        examAt: circular.examAt ? new Date(circular.examAt) : undefined,
+-        applicationFee: circular.applicationFee,
+-        sourceUrl: circular.sourceUrl,
+-        verificationStatus: circular.verified ? "VERIFIED" : "PENDING"
+-      }
+-    });
++    if (includeDemoContent) {
++      await prisma.admissionRule.upsert({
++        where: { programId_academicSession: { programId: program.id, academicSession: "2026-27" } },
++        create: {
++          programId: program.id,
++          academicSession: "2026-27",
++          applicantStage: program.level === "Diploma" ? "SSC" : "HSC",
++          allowedGroups: program.groups,
++          ...(program.level === "Diploma" || program.level === "Certificate"
++            ? { minimumSscGpa: program.minimumGpa || undefined }
++            : { minimumHscGpa: program.minimumGpa || undefined }),
++          sourceUrl: institutionSourceUrl
++        },
++        update: {
++          applicantStage: program.level === "Diploma" ? "SSC" : "HSC",
++          allowedGroups: program.groups,
++          minimumSscGpa: program.level === "Diploma" || program.level === "Certificate" ? program.minimumGpa || undefined : null,
++          minimumHscGpa: program.level === "Diploma" || program.level === "Certificate" ? null : program.minimumGpa || undefined,
++          sourceUrl: institutionSourceUrl
++        }
++      });
++    }
+   }
+ 
+-  for (const scholarship of demoScholarships) {
+-    await prisma.scholarship.upsert({
+-      where: { id: scholarship.id },
+-      create: {
+-        id: scholarship.id,
+-        title: scholarship.title,
+-        provider: scholarship.provider,
+-        description: scholarship.description,
+-        institutionId: demoInstitutions.find((item) => item.name === scholarship.institutionName)?.id,
+-        eligibility: { minimumGpa: scholarship.minimumGpa, groups: scholarship.groups, levels: scholarship.levels },
+-        amountDescription: scholarship.amountDescription,
+-        deadline: scholarship.deadline ? new Date(scholarship.deadline) : undefined,
+-        sourceUrl: scholarship.sourceUrl,
+-        verificationStatus: scholarship.verified ? "VERIFIED" : "PENDING"
+-      },
+-      update: {
+-        title: scholarship.title,
+-        provider: scholarship.provider,
+-        description: scholarship.description,
+-        eligibility: { minimumGpa: scholarship.minimumGpa, groups: scholarship.groups, levels: scholarship.levels },
+-        amountDescription: scholarship.amountDescription,
+-        deadline: scholarship.deadline ? new Date(scholarship.deadline) : null,
+-        sourceUrl: scholarship.sourceUrl,
+-        verificationStatus: scholarship.verified ? "VERIFIED" : "PENDING"
+-      }
+-    });
++  if (includeDemoContent) {
++    for (const circular of demoCirculars) {
++      await prisma.circular.upsert({
++        where: { id: circular.id },
++        create: {
++          id: circular.id,
++          institutionId: circular.institutionId,
++          title: circular.title,
++          academicSession: circular.academicSession,
++          applicationStartsAt: circular.applicationStartsAt ? new Date(circular.applicationStartsAt) : undefined,
++          applicationEndsAt: new Date(circular.applicationEndsAt),
++          examAt: circular.examAt ? new Date(circular.examAt) : undefined,
++          applicationFee: circular.applicationFee,
++          sourceUrl: circular.sourceUrl,
++          verificationStatus: circular.verified ? "VERIFIED" : "PENDING"
++        },
++        update: {
++          title: circular.title,
++          applicationStartsAt: circular.applicationStartsAt ? new Date(circular.applicationStartsAt) : undefined,
++          applicationEndsAt: new Date(circular.applicationEndsAt),
++          examAt: circular.examAt ? new Date(circular.examAt) : undefined,
++          applicationFee: circular.applicationFee,
++          sourceUrl: circular.sourceUrl,
++          verificationStatus: circular.verified ? "VERIFIED" : "PENDING"
++        }
++      });
++    }
++
++    for (const scholarship of demoScholarships) {
++      await prisma.scholarship.upsert({
++        where: { id: scholarship.id },
++        create: {
++          id: scholarship.id,
++          title: scholarship.title,
++          provider: scholarship.provider,
++          description: scholarship.description,
++          institutionId: demoInstitutions.find((item) => item.name === scholarship.institutionName)?.id,
++          eligibility: { minimumGpa: scholarship.minimumGpa, groups: scholarship.groups, levels: scholarship.levels },
++          amountDescription: scholarship.amountDescription,
++          deadline: scholarship.deadline ? new Date(scholarship.deadline) : undefined,
++          sourceUrl: scholarship.sourceUrl,
++          verificationStatus: scholarship.verified ? "VERIFIED" : "PENDING"
++        },
++        update: {
++          title: scholarship.title,
++          provider: scholarship.provider,
++          description: scholarship.description,
++          eligibility: { minimumGpa: scholarship.minimumGpa, groups: scholarship.groups, levels: scholarship.levels },
++          amountDescription: scholarship.amountDescription,
++          deadline: scholarship.deadline ? new Date(scholarship.deadline) : null,
++          sourceUrl: scholarship.sourceUrl,
++          verificationStatus: scholarship.verified ? "VERIFIED" : "PENDING"
++        }
++      });
++    }
+   }
+ 
+   if (includeDemoContent) {
+@@ -175,8 +187,32 @@
+     });
+   }
+ 
+-  console.log(`Seeded ${demoInstitutions.length} institutions, ${demoPrograms.length} programs, ${demoCirculars.length} circulars and ${demoScholarships.length} scholarships.`);
+-  console.log(includeDemoContent ? "Included explicitly requested demo community fixtures." : "Skipped demo users, discussions, reports and ratings (production-safe default)." );
++  let removedCirculars = 0;
++  let removedScholarships = 0;
++  let removedAdmissionRules = 0;
++  if (repairLegacyDemoData) {
++    const circularIds = demoCirculars.map((item) => item.id);
++    const scholarshipIds = demoScholarships.map((item) => item.id);
++    const programIds = demoPrograms.map((item) => item.id);
++    await prisma.savedItem.deleteMany({ where: { itemId: { in: [...circularIds, ...scholarshipIds] } } });
++    const [circularCleanup, scholarshipCleanup, admissionRuleCleanup] = await prisma.$transaction([
++      prisma.circular.deleteMany({ where: { id: { in: circularIds } } }),
++      prisma.scholarship.deleteMany({ where: { id: { in: scholarshipIds } } }),
++      prisma.admissionRule.deleteMany({ where: { programId: { in: programIds }, academicSession: "2026-27" } })
++    ]);
++    removedCirculars = circularCleanup.count;
++    removedScholarships = scholarshipCleanup.count;
++    removedAdmissionRules = admissionRuleCleanup.count;
++  }
++
++  console.log(`Seeded ${demoInstitutions.length} institutions and ${demoPrograms.length} programs with official source links.`);
++  if (includeDemoContent) {
++    console.log(`Included ${demoCirculars.length} demo circulars, ${demoScholarships.length} demo scholarships and explicitly requested demo community fixtures.`);
++  } else if (repairLegacyDemoData) {
++    console.log(`Production repair: removed ${removedAdmissionRules} legacy demo admission rules, ${removedCirculars} legacy demo circulars and ${removedScholarships} legacy demo scholarships.`);
++  } else {
++    console.log("Production-safe default: skipped demo admission rules, tuition ranges, circulars, scholarships, users and community fixtures. Existing records were not deleted; run db:seed:repair explicitly after a verified backup to remove legacy demo data.");
++  }
+ }
+ 
+ main().finally(() => prisma.$disconnect());
+diff -ruN '--exclude=node_modules' '--exclude=dist' '--exclude=*.tsbuildinfo' a/apps/api/src/ai/assistant.test.ts b/apps/api/src/ai/assistant.test.ts
+--- a/apps/api/src/ai/assistant.test.ts	1969-12-31 16:00:00.000000000 -0800
++++ b/apps/api/src/ai/assistant.test.ts	2026-09-20 11:30:39.330247218 -0700
+@@ -0,0 +1,24 @@
++import assert from "node:assert/strict";
++import test from "node:test";
++import { selectRelevantSources, type KnowledgeSource } from "./assistant.js";
++
++const sources: KnowledgeSource[] = [
++  { id: "engineering-1", title: "BUET — Computer Science and Engineering", detail: "Undergraduate engineering pathway", url: "https://www.buet.ac.bd", verified: true },
++  { id: "engineering-2", title: "University — Civil Engineering", detail: "Undergraduate engineering pathway", url: "https://example.edu", verified: true },
++  { id: "diploma-1", title: "Dhaka Polytechnic — Diploma in Computer Technology", detail: "Diploma technical pathway after SSC", url: "https://dpi.gov.bd", verified: true },
++  { id: "diploma-2", title: "Rangpur Polytechnic — Diploma in Electrical Technology", detail: "Diploma technical pathway after SSC", url: "https://rpi.gov.bd", verified: true },
++  { id: "medical-1", title: "Medical College — MBBS", detail: "Undergraduate medical pathway", url: "https://dghs.gov.bd", verified: true }
++];
++
++test("comparison questions receive balanced engineering and diploma evidence", () => {
++  const selected = selectRelevantSources("Engineering ও diploma pathway-এর পার্থক্য কী?", sources);
++  assert.ok(selected.some((source) => source.id.startsWith("engineering-")));
++  assert.ok(selected.some((source) => source.id.startsWith("diploma-")));
++  assert.ok(selected.length <= 5);
++});
++
++test("Bangla diploma questions select polytechnic evidence", () => {
++  const selected = selectRelevantSources("ডিপ্লোমা এবং প্রকৌশল পথ তুলনা করো", sources);
++  assert.ok(selected.some((source) => source.id.startsWith("diploma-")));
++  assert.ok(selected.some((source) => source.id.startsWith("engineering-")));
++});
+diff -ruN '--exclude=node_modules' '--exclude=dist' '--exclude=*.tsbuildinfo' a/apps/api/src/ai/assistant.ts b/apps/api/src/ai/assistant.ts
+--- a/apps/api/src/ai/assistant.ts	2026-09-13 10:00:26.000000000 -0700
++++ b/apps/api/src/ai/assistant.ts	2026-09-20 11:30:36.334073061 -0700
+@@ -16,12 +16,39 @@
+   safetyNotice: string;
+ };
+ 
+-function selectRelevantSources(question: string, sources: KnowledgeSource[]) {
+-  const terms = question.toLowerCase().split(/[^a-z0-9\u0980-\u09ff]+/).filter((term) => term.length > 2);
++const sourceConcepts = [
++  ["diploma", "polytechnic", "technical", "vocational", "ডিপ্লোমা", "পলিটেকনিক", "কারিগরি"],
++  ["engineering", "engineer", "cse", "eee", "civil", "ইঞ্জিনিয়ারিং", "ইঞ্জিনিয়ারিং", "প্রকৌশল"],
++  ["university", "undergraduate", "honours", "বিশ্ববিদ্যালয়", "বিশ্ববিদ্যালয়", "স্নাতক"],
++  ["medical", "mbbs", "medicine", "মেডিকেল", "চিকিৎসা"]
++] as const;
++
++function sourceText(source: KnowledgeSource) {
++  return `${source.title} ${source.detail}`.toLowerCase();
++}
++
++function uniqueSources(sources: KnowledgeSource[]) {
++  return [...new Map(sources.map((source) => [source.id, source])).values()];
++}
++
++export function selectRelevantSources(question: string, sources: KnowledgeSource[]) {
++  const normalizedQuestion = question.toLowerCase();
++  const terms = normalizedQuestion.split(/[^a-z0-9\u0980-\u09ff]+/).filter((term) => term.length > 2);
+   const ranked = sources.map((source) => {
+-    const haystack = `${source.title} ${source.detail}`.toLowerCase();
++    const haystack = sourceText(source);
+     return { source, score: terms.reduce((sum, term) => sum + (haystack.includes(term) ? 1 : 0), 0) };
+   }).sort((a, b) => b.score - a.score);
++
++  const requestedConcepts = sourceConcepts.filter((aliases) => aliases.some((alias) => normalizedQuestion.includes(alias)));
++  if (requestedConcepts.length > 1) {
++    const comparisonSources = requestedConcepts.flatMap((aliases) => ranked
++      .filter(({ source }) => aliases.some((alias) => sourceText(source).includes(alias)))
++      .slice(0, 2)
++      .map(({ source }) => source));
++    const balanced = uniqueSources(comparisonSources);
++    if (balanced.length >= requestedConcepts.length) return balanced.slice(0, 5);
++  }
++
+   const matches = ranked.filter((item) => item.score > 0).slice(0, 5).map((item) => item.source);
+   return matches.length ? matches : sources.slice(0, 4);
+ }
+@@ -48,13 +75,31 @@
+     body: JSON.stringify({ contents: [{ role: "user", parts: [{ text: prompt }] }], generationConfig: { temperature: 0.2, maxOutputTokens: 700 } }),
+     signal: AbortSignal.timeout(15_000)
+   });
+-  if (!response.ok) throw new Error(`Gemini request failed (${response.status})`);
++  if (!response.ok) throw new GeminiRequestError("http_error", response.status);
+   const payload = await response.json() as { candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }> };
+   const answer = payload.candidates?.[0]?.content?.parts?.map((part) => part.text ?? "").join("").trim();
+-  if (!answer) throw new Error("Gemini returned no answer");
++  if (!answer) throw new GeminiRequestError("empty_answer");
+   return answer;
+ }
+ 
++class GeminiRequestError extends Error {
++  constructor(readonly category: "http_error" | "empty_answer", readonly status?: number) {
++    super(category);
++    this.name = "GeminiRequestError";
++  }
++}
++
++function logGeminiFallback(error: unknown) {
++  const event = {
++    level: "warn",
++    event: "ai.gemini_fallback",
++    model: config.geminiModel,
++    category: error instanceof GeminiRequestError ? error.category : error instanceof DOMException && error.name === "TimeoutError" ? "timeout" : "unexpected",
++    ...(error instanceof GeminiRequestError && error.status ? { status: error.status } : {})
++  };
++  console.warn(JSON.stringify(event));
++}
++
+ export async function answerEducationQuestion(question: string, allSources: KnowledgeSource[]): Promise<AssistantResult> {
+   const sources = selectRelevantSources(question, allSources);
+   const safetyNotice = "AI guidance is informational. Always verify dates, fees and eligibility from the linked official source before applying.";
+@@ -66,7 +111,8 @@
+   }
+   try {
+     return { answer: await askGemini(question, sources), mode: "gemini", model: config.geminiModel, sources, safetyNotice };
+-  } catch {
++  } catch (error) {
++    logGeminiFallback(error);
+     return { answer: demoAnswer(question, sources), mode: "fallback", model: "source-aware-fallback-v1", sources, safetyNotice };
+   }
+ }
+diff -ruN '--exclude=node_modules' '--exclude=dist' '--exclude=*.tsbuildinfo' a/apps/api/src/config.test.ts b/apps/api/src/config.test.ts
+--- a/apps/api/src/config.test.ts	2026-09-19 01:37:47.000000000 -0700
++++ b/apps/api/src/config.test.ts	2026-09-20 11:30:38.818216865 -0700
+@@ -44,6 +44,11 @@
+   assert.equal(config.logRequests, true);
+   assert.equal(config.webOrigins.length, 3);
+   assert.equal(config.supabaseSecretKey, "sb_secret_server-value");
++  assert.equal(config.geminiModel, "gemini-3.5-flash-lite");
++});
++
++test("Gemini model remains explicitly configurable", () => {
++  assert.equal(loadConfig({ ...validProduction, GEMINI_MODEL: "gemini-custom" }).geminiModel, "gemini-custom");
+ });
+ 
+ test("legacy Supabase service-role key remains a migration fallback", () => {
+diff -ruN '--exclude=node_modules' '--exclude=dist' '--exclude=*.tsbuildinfo' a/apps/api/src/config.ts b/apps/api/src/config.ts
+--- a/apps/api/src/config.ts	2026-09-19 01:37:47.000000000 -0700
++++ b/apps/api/src/config.ts	2026-09-20 11:30:35.778040905 -0700
+@@ -81,7 +81,7 @@
+     supabaseSecretKey,
+     supabaseStorageBucket: env.SUPABASE_STORAGE_BUCKET ?? "edupath-media",
+     geminiApiKey: env.GEMINI_API_KEY,
+-    geminiModel: env.GEMINI_MODEL ?? "gemini-2.5-flash-lite"
++    geminiModel: env.GEMINI_MODEL ?? "gemini-3.5-flash-lite"
+   } as const;
+ }
+ 
+diff -ruN '--exclude=node_modules' '--exclude=dist' '--exclude=*.tsbuildinfo' a/apps/api/src/data/store.ts b/apps/api/src/data/store.ts
+--- a/apps/api/src/data/store.ts	2026-09-16 10:52:44.000000000 -0700
++++ b/apps/api/src/data/store.ts	2026-09-20 11:30:37.210123725 -0700
+@@ -50,6 +50,7 @@
+   groups: string[];
+   minimumGpa: number;
+   careerOutcomes: string[];
++  sourceUrl?: string;
+   verified: boolean;
+ };
+ 
+@@ -521,7 +522,13 @@
+       (!options.level || item.level.toLowerCase() === options.level.toLowerCase()) &&
+       (!options.group || item.groups.includes(options.group))
+     );
+-    return { data: filtered.slice((page - 1) * limit, page * limit), total: filtered.length };
++    return {
++      data: filtered.slice((page - 1) * limit, page * limit).map((item) => ({
++        ...item,
++        sourceUrl: item.sourceUrl ?? demoInstitutions.find((institution) => institution.id === item.institutionId)?.sourceUrl
++      })),
++      total: filtered.length
++    };
+   }
+ 
+   const where = {
+@@ -542,7 +549,7 @@
+   ]);
+   const mapped = data.map((item) => {
+     const rule = item.admissionRules[0];
+-    return { id: item.id, institutionId: item.institutionId, institutionName: item.institution.name, name: item.name, slug: item.slug, level: item.level, durationMonths: item.durationMonths ?? undefined, tuitionMin: item.tuitionMin ?? undefined, tuitionMax: item.tuitionMax ?? undefined, groups: rule?.allowedGroups ?? [], minimumGpa: Number(rule?.minimumCombinedGpa ?? rule?.minimumHscGpa ?? 0), careerOutcomes: item.careerOutcomes, verified: item.verificationStatus === "VERIFIED" } satisfies ProgramRecord;
++    return { id: item.id, institutionId: item.institutionId, institutionName: item.institution.name, name: item.name, slug: item.slug, level: item.level, durationMonths: item.durationMonths ?? undefined, tuitionMin: item.tuitionMin ?? undefined, tuitionMax: item.tuitionMax ?? undefined, groups: rule?.allowedGroups ?? [], minimumGpa: Number(rule?.minimumCombinedGpa ?? rule?.minimumHscGpa ?? rule?.minimumSscGpa ?? 0), careerOutcomes: item.careerOutcomes, sourceUrl: item.sourceUrl ?? undefined, verified: item.verificationStatus === "VERIFIED" } satisfies ProgramRecord;
+   });
+   return { data: mapped, total };
+ }
+diff -ruN '--exclude=node_modules' '--exclude=dist' '--exclude=*.tsbuildinfo' a/apps/api/src/server.ts b/apps/api/src/server.ts
+--- a/apps/api/src/server.ts	2026-09-18 13:22:47.000000000 -0700
++++ b/apps/api/src/server.ts	2026-09-20 11:30:37.798157728 -0700
+@@ -884,8 +884,8 @@
+     ...programs.data.map((item) => ({
+       id: item.id,
+       title: `${item.institutionName} — ${item.name}`,
+-      detail: `${item.level}; groups: ${item.groups.join(", ") || "not specified"}; minimum recorded GPA ${item.minimumGpa}; duration ${item.durationMonths ? `${item.durationMonths} months` : "not specified"}; career outcomes: ${item.careerOutcomes.join(", ") || "not specified"}.`,
+-      url: "",
++      detail: `${item.level}; groups: ${item.groups.join(", ") || "not specified"}; minimum recorded GPA ${item.minimumGpa || "not specified"}; duration ${item.durationMonths ? `${item.durationMonths} months` : "not specified"}; career outcomes: ${item.careerOutcomes.join(", ") || "not specified"}.`,
++      url: item.sourceUrl ?? "",
+       verified: item.verified
+     }))
+   ].filter((item) => item.verified);
+diff -ruN '--exclude=node_modules' '--exclude=dist' '--exclude=*.tsbuildinfo' a/apps/web/src/types/catalog.ts b/apps/web/src/types/catalog.ts
+--- a/apps/web/src/types/catalog.ts	2026-09-13 10:00:26.000000000 -0700
++++ b/apps/web/src/types/catalog.ts	2026-09-20 11:30:38.306187109 -0700
+@@ -24,6 +24,7 @@
+   groups: string[];
+   minimumGpa: number;
+   careerOutcomes: string[];
++  sourceUrl?: string;
+   verified: boolean;
+ };
+ 
+diff -ruN '--exclude=node_modules' '--exclude=dist' '--exclude=*.tsbuildinfo' a/package.json b/package.json
+--- a/package.json	2026-09-18 13:43:37.000000000 -0700
++++ b/package.json	2026-09-20 11:35:07.301757247 -0700
+@@ -42,6 +42,7 @@
+     "production:runtime-check": "node scripts/verify-production-runtime.mjs",
+     "db:seed": "npm run db:seed --workspace @edupath/api",
+     "db:seed:demo": "npm run db:seed:demo --workspace @edupath/api",
++    "db:seed:repair": "npm run db:seed:repair --workspace @edupath/api",
+     "db:studio": "npm run db:studio --workspace @edupath/api",
+     "audit:runtime:high": "npm audit --omit=dev --omit=optional --audit-level=high",
+     "audit:tooling:critical": "npm audit --audit-level=critical",
+diff -ruN '--exclude=node_modules' '--exclude=dist' '--exclude=*.tsbuildinfo' a/scripts/verify-production.mjs b/scripts/verify-production.mjs
+--- a/scripts/verify-production.mjs	2026-09-19 02:23:01.000000000 -0700
++++ b/scripts/verify-production.mjs	2026-09-20 11:35:08.381819119 -0700
+@@ -36,8 +36,9 @@
+ check(compose.includes("read_only: true") && compose.includes("no-new-privileges:true") && compose.includes("cap_drop:"), "runtime container applies least-privilege controls");
+ check(apiPackage.scripts["start:production"] === "node dist/server.js" && !apiPackage.scripts["start:production"].includes("seed"), "production startup never mutates seed data");
+ check(apiPackage.scripts["db:migrate:deploy"] === "prisma migrate deploy", "schema migration is an explicit deployment stage");
+-check(apiPackage.scripts["db:seed"] === "tsx prisma/seed.ts" && apiPackage.scripts["db:seed:demo"]?.includes("--include-demo-content") && seedScript.includes('process.argv.includes("--include-demo-content")') && seedScript.includes("Skipped demo users"), "production seed excludes demo identities and community fixtures unless explicitly requested");
++check(apiPackage.scripts["db:seed"] === "tsx prisma/seed.ts" && apiPackage.scripts["db:seed:demo"]?.includes("--include-demo-content") && apiPackage.scripts["db:seed:repair"]?.includes("--repair-legacy-demo-data") && seedScript.includes('process.argv.includes("--include-demo-content")') && seedScript.includes('process.argv.includes("--repair-legacy-demo-data")') && seedScript.includes("Existing records were not deleted; run db:seed:repair explicitly after a verified backup") && seedScript.includes("prisma.admissionRule.deleteMany") && seedScript.includes("prisma.circular.deleteMany") && seedScript.includes("prisma.scholarship.deleteMany"), "production seed excludes time-sensitive demo fixtures and exposes an explicit repair command");
+ check((seedScript.match(/sourceUrl: institutionSourceUrl/g) ?? []).length >= 4, "production seed preserves official sources on verified programs and admission rules");
++check(config.includes('gemini-3.5-flash-lite') && server.includes("url: item.sourceUrl"), "AI uses the supported default model and exposes program source links");
+ check(apiClient.includes('VITE_API_URL || ""') && vite.includes("preview:") && vite.includes("/socket.io"), "web deployment defaults to same-origin API with local preview proxies");
+ check(vite.includes("codeSplitting") && vite.includes("vendor-tensorflow-core") && vite.includes("vendor-jspdf"), "large frontend libraries have explicit bundle groups");
+ check(productionEnv.includes("GENERATE_A_LONG_RANDOM_PASSWORD") && productionEnv.includes("https://app.example.com") && !productionEnv.includes("postgres:postgres"), "production environment template contains placeholders, not usable secrets");
+diff -ruN '--exclude=node_modules' '--exclude=dist' '--exclude=*.tsbuildinfo' a/tests/ops/ai-production-contracts.test.mjs b/tests/ops/ai-production-contracts.test.mjs
+--- a/tests/ops/ai-production-contracts.test.mjs	1969-12-31 16:00:00.000000000 -0800
++++ b/tests/ops/ai-production-contracts.test.mjs	2026-09-20 11:35:20.070489374 -0700
+@@ -0,0 +1,20 @@
++import assert from "node:assert/strict";
++import { readFile } from "node:fs/promises";
++import test from "node:test";
++
++test("AI production defaults, citations and fallback logging remain safe", async () => {
++  const [config, assistant, server, store] = await Promise.all([
++    readFile(new URL("../../apps/api/src/config.ts", import.meta.url), "utf8"),
++    readFile(new URL("../../apps/api/src/ai/assistant.ts", import.meta.url), "utf8"),
++    readFile(new URL("../../apps/api/src/server.ts", import.meta.url), "utf8"),
++    readFile(new URL("../../apps/api/src/data/store.ts", import.meta.url), "utf8")
++  ]);
++
++  assert.match(config, /geminiModel: env\.GEMINI_MODEL \?\? "gemini-3\.5-flash-lite"/);
++  assert.match(server, /url: item\.sourceUrl \?\? ""/);
++  assert.match(store, /sourceUrl: item\.sourceUrl \?\? undefined/);
++  assert.match(store, /rule\?\.minimumSscGpa/);
++  assert.match(assistant, /event: "ai\.gemini_fallback"/);
++  assert.match(assistant, /category: error instanceof GeminiRequestError/);
++  assert.doesNotMatch(assistant, /console\.(?:warn|error)\([^\n]*(?:prompt|geminiApiKey|response\.text)/);
++});
+diff -ruN '--exclude=node_modules' '--exclude=dist' '--exclude=*.tsbuildinfo' a/tests/ops/production-seed-safety.test.mjs b/tests/ops/production-seed-safety.test.mjs
+--- a/tests/ops/production-seed-safety.test.mjs	2026-09-18 14:15:41.000000000 -0700
++++ b/tests/ops/production-seed-safety.test.mjs	2026-09-20 11:37:34.162148157 -0700
+@@ -2,7 +2,7 @@
+ import { readFile } from "node:fs/promises";
+ import test from "node:test";
+ 
+-test("production seed requires an explicit flag for demo community fixtures", async () => {
++test("production seed requires an explicit flag for all time-sensitive demo fixtures", async () => {
+   const [rootPackage, apiPackage, source] = await Promise.all([
+     readFile(new URL("../../package.json", import.meta.url), "utf8").then(JSON.parse),
+     readFile(new URL("../../apps/api/package.json", import.meta.url), "utf8").then(JSON.parse),
+@@ -11,10 +11,23 @@
+ 
+   assert.equal(apiPackage.scripts["db:seed"], "tsx prisma/seed.ts");
+   assert.equal(apiPackage.scripts["db:seed:demo"], "tsx prisma/seed.ts --include-demo-content");
++  assert.equal(apiPackage.scripts["db:seed:repair"], "tsx prisma/seed.ts --repair-legacy-demo-data");
+   assert.match(rootPackage.scripts["db:seed:demo"], /db:seed:demo/);
++  assert.match(rootPackage.scripts["db:seed:repair"], /db:seed:repair/);
+   assert.match(source, /process\.argv\.includes\("--include-demo-content"\)/);
++  assert.match(source, /process\.argv\.includes\("--repair-legacy-demo-data"\)/);
+   assert.match(source, /if \(includeDemoContent\)/);
+-  assert.match(source, /Skipped demo users, discussions, reports and ratings/);
++  assert.match(source, /Existing records were not deleted; run db:seed:repair explicitly after a verified backup/);
++  assert.match(source, /prisma\.circular\.deleteMany/);
++  assert.match(source, /prisma\.scholarship\.deleteMany/);
++  assert.match(source, /prisma\.admissionRule\.deleteMany/);
++  assert.match(source, /prisma\.savedItem\.deleteMany/);
++  assert.match(source, /if \(repairLegacyDemoData\)/);
++  assert.match(source, /repairLegacyDemoData\s*\? \{ tuitionMin: null, tuitionMax: null \}/);
++  const demoCatalogGate = source.indexOf("if (includeDemoContent)", source.indexOf("for (const program of demoPrograms)"));
++  assert.ok(demoCatalogGate > -1, "time-sensitive demo catalog must be behind the explicit demo flag");
++  assert.ok(source.indexOf("for (const circular of demoCirculars)") > demoCatalogGate);
++  assert.ok(source.indexOf("for (const scholarship of demoScholarships)") > demoCatalogGate);
+   assert.match(source, /sourceUrl: institutionSourceUrl/g);
+   assert.ok(source.match(/sourceUrl: institutionSourceUrl/g)?.length >= 4, "program and admission-rule create/update paths must retain an official source");
+ });

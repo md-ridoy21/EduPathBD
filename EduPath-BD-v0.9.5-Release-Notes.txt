@@ -1,0 +1,34 @@
+EduPath BD v0.9.5 — Production Runtime & Deployment Operations
+Android/iOS build: 23
+
+MAIN PRODUCTION CHANGES
+- Added fail-closed production API starter.
+- Production startup runs server-only configuration validation and prisma migrate deploy before HTTP startup.
+- Catalog seeding is now explicit via EDUPATH_SEED_CATALOG=true.
+- Standard production startup forces SEED_COMMUNITY_DEMO=false so classroom users/comments/reports are never silently seeded into a live database.
+- Split production configuration validation into full-release, --server-only and --client-only scopes.
+- Android signed release build now uses --client-only validation, so database/JWT/Firebase Admin/Supabase service-role secrets are not required on the client build workstation.
+- Added privacy-safe JSON request diagnostics: request ID, method, route path, response status and duration only.
+- X-Request-Id is exposed through CORS and included in support/error responses.
+- Added trusted-operator critical integration verifier for PostgreSQL, Firebase Admin and Supabase Storage.
+- Added no-secret hosted HTTPS runtime checker for liveness, readiness, release version, non-demo database mode, catalog reachability, request IDs and optional CORS verification.
+- Added one-time first-admin bootstrap tied to a verified Firebase email/UID, with explicit confirmation, UID conflict protection and AuditLog evidence.
+- Split Docker Compose into local integration and production templates.
+- Android version bumped to 0.9.5 / versionCode 23; iOS marketing/build version updated to 0.9.5 / 23.
+
+IMPORTANT SECURITY/OPERATIONS BOUNDARIES
+- Do not put DATABASE_URL, JWT_SECRET, Firebase Admin credentials, Supabase service-role key, keystore passwords or private signing material in ChatGPT or source control.
+- Client release builds need only public Firebase web configuration, the HTTPS API URL, and local signing variables.
+- Server-only secrets remain on the deployment/server side.
+- A real v1.0.0 claim still requires hosted PostgreSQL/Firebase/Supabase proof, public HTTPS runtime proof, signed AAB generation and final physical-phone acceptance.
+
+VALIDATION PERFORMED IN THIS BUILD ENVIRONMENT
+- Modified Node/MJS scripts passed node --check.
+- Modified TypeScript files passed TypeScript parser syntax checks.
+- Production config gate passed synthetic full-release, server-only and client-only valid configurations without printing secret values.
+- Docker Compose YAML files parsed successfully.
+- 20 focused v0.9.5 static production checks passed.
+- Existing release verifier completed 134 checks successfully before reaching Prisma CLI validation; the container could not complete dependency installation, so Prisma CLI/full npm QA was not claimed green here.
+- Obvious private-key/API-token/JWT-pattern source scan returned zero hits.
+
+See docs/PHASE_13_PRODUCTION_RUNTIME.md for the real deployment/operator sequence.

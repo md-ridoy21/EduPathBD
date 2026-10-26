@@ -1,0 +1,2 @@
+b8d9dde152c6fae3858a268e1a422ad9d234aac17a91552fa1c5fa947c5037c8  EduPath-BD-v1.0.0-rc.1-Production-Source.zip
+388ce4e6d086fb6529ef5fc14337ed1929b398d65b986ce89feb0b8fada77194  EduPath-BD-v1.0.0-rc.1-Feature-and-QA-Manual.pdf

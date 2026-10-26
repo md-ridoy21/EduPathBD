@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+android/
+ios/
+.env
+*.zip
+*.mp4
+pgdata/
+uploads/
+EduPath-Official-Data-2026/02-banbeis/Bangladesh Education Statistics 2024.pdf
