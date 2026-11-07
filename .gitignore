@@ -1,11 +1,103 @@
 node_modules/
 dist/
-build/
-android/
-ios/
 .env
-*.zip
-*.mp4
-pgdata/
+.env.local
+*.log
+*.tsbuildinfo
+.DS_Store
+.idea/
+.vscode/
+coverage/
+playwright-report/
+test-results/
+tmp/
+backups/
+apps/api/src/generated/
+*.keystore
+*.jks
+apps/web/capacitor.config.js
+apps/web/capacitor.config.d.ts
+apps/web/vite.config.js
+apps/web/vite.config.d.ts
+
+# Local secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*firebase-adminsdk*.json
+serviceAccount*.json
+
+# Dependencies / builds
+node_modules/
+dist/
+build/
+.next/
+coverage/
+
+# Local backups / database dumps
+backups/
+*.dump
+*.dump.enc
+*.sql.gz
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary compatibility backups
+*.bak
+*.pre-admission-nullable-compat*
+
+# EduPathBD local secrets
+.env
+.env.*
+!.env.example
+!.env.production.example
+!apps/**/.env.example
+*.pem
+*.key
+*firebase-adminsdk*.json
+serviceAccount*.json
+
+# Dependencies and generated builds
+node_modules/
+**/.gradle/
+**/build/
+**/dist/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+
+# Python generated files
+.venv/
+__pycache__/
+*.py[cod]
+
+# Local databases, uploads and backups
+backups/
 uploads/
-EduPath-Official-Data-2026/02-banbeis/Bangladesh Education Statistics 2024.pdf
+pgdata/
+*.dump
+*.dump.enc
+*.sql.gz
+.full-safety-fix-backup*/
+*.bak
+*.pre-*
+
+# Temporary and editor files
+tmp/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Root-level release archives and patches
+/*.zip
+/*.patch
+/*.bundle

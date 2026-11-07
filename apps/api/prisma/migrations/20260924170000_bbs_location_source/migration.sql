@@ -1,0 +1,1 @@
+ALTER TYPE "DataAuthority" ADD VALUE IF NOT EXISTS 'BBS';

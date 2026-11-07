@@ -1,0 +1,690 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  STUDENT
+  MODERATOR
+  ADMIN
+}
+
+enum InstitutionType {
+  SCHOOL
+  COLLEGE
+  PUBLIC_UNIVERSITY
+  PRIVATE_UNIVERSITY
+  ENGINEERING
+  MEDICAL
+  NATIONAL_UNIVERSITY_COLLEGE
+  POLYTECHNIC
+  TECHNICAL
+  TRAINING_PROVIDER
+}
+
+enum OwnershipType {
+  PUBLIC
+  PRIVATE
+  AUTONOMOUS
+  INTERNATIONAL
+  OTHER
+}
+
+enum PathwayCategory {
+  GENERAL_SCHOOL
+  GENERAL_COLLEGE
+  POLYTECHNIC_DIPLOMA
+  TECHNICAL_VOCATIONAL
+  MEDICAL_TECHNOLOGY
+  NURSING_MIDWIFERY
+  UNIVERSITY_GENERAL
+  ENGINEERING
+  MEDICAL_DENTAL
+  PROFESSIONAL
+  SKILLS_TRAINING
+  HIGHER_STUDY
+}
+
+enum StudyScope {
+  UPAZILA
+  DISTRICT
+  NATIONWIDE
+  INTERNATIONAL
+}
+
+enum DataAuthority {
+  BANBEIS
+  DSHE
+  BTEB
+  UGC
+  DGME
+  BNMC
+  NATIONAL_UNIVERSITY
+  MINISTRY_OF_EDUCATION
+  INSTITUTION_OFFICIAL
+  OTHER_GOVERNMENT
+  BBS
+}
+
+enum ImportStatus {
+  VALIDATING
+  REJECTED
+  COMMITTED
+  ROLLED_BACK
+}
+
+enum VerificationStatus {
+  DRAFT
+  PENDING
+  VERIFIED
+  OUTDATED
+  REJECTED
+}
+
+enum LocalityType {
+  UPAZILA
+  METRO_THANA
+  CITY_AREA
+  OTHER
+}
+
+enum VoteType {
+  LIKE
+  DISLIKE
+}
+
+enum ApplicationStatus {
+  INTERESTED
+  DOCUMENTS_PENDING
+  READY_TO_APPLY
+  APPLIED
+  ADMIT_CARD_RECEIVED
+  EXAM_COMPLETED
+  RESULT_PUBLISHED
+  SELECTED
+  NOT_SELECTED
+}
+
+enum MediaType {
+  YOUTUBE
+  AUDIO
+  IMAGE
+  DOCUMENT
+}
+
+enum SavedItemType {
+  INSTITUTION
+  PROGRAM
+  CIRCULAR
+  SCHOLARSHIP
+  OPPORTUNITY
+}
+
+enum ReportStatus {
+  OPEN
+  REVIEWING
+  RESOLVED
+  DISMISSED
+}
+
+model User {
+  id              String           @id @default(cuid())
+  firebaseUid     String?          @unique
+  username        String           @unique
+  email           String           @unique
+  phone           String?          @unique
+  displayName     String
+  role            UserRole         @default(STUDENT)
+  emailVerifiedAt DateTime?
+  phoneVerifiedAt DateTime?
+  avatarUrl       String?
+  preferredLocale String           @default("bn")
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  profile         StudentProfile?
+  applications    Application[]
+  comments        Comment[]
+  discussionPosts DiscussionPost[]
+  ratings         Rating[]
+  votes           CommentVote[]
+  savedItems      SavedItem[]
+  notifications   Notification[]
+  aiInteractions  AiInteraction[]
+  contentReports  ContentReport[]
+  auditLogs       AuditLog[]
+}
+
+model StudentProfile {
+  id                 String            @id @default(cuid())
+  userId             String            @unique
+  currentStage       String
+  educationBoard     String?
+  academicGroup      String?
+  sscGpa             Decimal?          @db.Decimal(3, 2)
+  hscGpa             Decimal?          @db.Decimal(3, 2)
+  graduationCgpa     Decimal?          @db.Decimal(4, 2)
+  passingYear        Int?
+  dateOfBirth        DateTime?
+  interests          String[]
+  preferredDistricts String[]
+  monthlyBudgetMax   Int?
+  careerGoals        String[]
+  homeDistrictId     String?
+  homeUpazilaId      String?
+  preferredScope     StudyScope        @default(NATIONWIDE)
+  preferredPathways  PathwayCategory[] @default([])
+  subjectResults     Json?
+  profileCompleted   Int               @default(0)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  user               User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  homeDistrict       District?         @relation("ProfileHomeDistrict", fields: [homeDistrictId], references: [id], onDelete: SetNull)
+  homeUpazila        Upazila?          @relation("ProfileHomeUpazila", fields: [homeUpazilaId], references: [id], onDelete: SetNull)
+
+  @@index([homeDistrictId, homeUpazilaId])
+}
+
+model Division {
+  id           String        @id
+  code         String        @unique
+  slug         String        @unique
+  name         String
+  nameBn       String
+  districts    District[]
+  institutions Institution[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model District {
+  id           String           @id
+  divisionId   String
+  code         String           @unique
+  slug         String           @unique
+  name         String
+  nameBn       String
+  division     Division         @relation(fields: [divisionId], references: [id], onDelete: Restrict)
+  upazilas     Upazila[]
+  institutions Institution[]
+  homeProfiles StudentProfile[] @relation("ProfileHomeDistrict")
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  @@index([divisionId, name])
+}
+
+model Upazila {
+  id           String           @id
+  districtId   String
+  code         String           @unique
+  slug         String
+  name         String
+  nameBn       String
+  district     District         @relation(fields: [districtId], references: [id], onDelete: Restrict)
+  institutions Institution[]
+  homeProfiles StudentProfile[] @relation("ProfileHomeUpazila")
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  @@unique([districtId, slug])
+  @@index([districtId, name])
+}
+
+model DataSource {
+  id             String           @id
+  authority      DataAuthority
+  name           String
+  baseUrl        String
+  datasetUrl     String?
+  license        String?
+  lastCheckedAt  DateTime?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  institutions   Institution[]
+  programs       Program[]
+  importRuns     DataImportRun[]
+  admissionRules AdmissionRule[]
+  scholarships   Scholarship[]
+  sourceEvidence SourceEvidence[]
+
+  @@unique([authority, baseUrl])
+}
+
+model DataImportRun {
+  id              String       @id @default(cuid())
+  dataSourceId    String
+  status          ImportStatus @default(VALIDATING)
+  fileName        String
+  fileSha256      String
+  recordsRead     Int          @default(0)
+  recordsAccepted Int          @default(0)
+  recordsRejected Int          @default(0)
+  validationLog   Json?
+  startedAt       DateTime     @default(now())
+  completedAt     DateTime?
+  dataSource      DataSource   @relation(fields: [dataSourceId], references: [id], onDelete: Restrict)
+
+  @@index([dataSourceId, startedAt])
+  @@index([status])
+}
+
+model Institution {
+  id                 String             @id @default(cuid())
+  name               String
+  slug               String             @unique
+  type               InstitutionType
+  ownership          OwnershipType?
+  officialCode       String?
+  divisionId         String?
+  districtId         String?
+  upazilaId          String?
+  localityType       LocalityType?
+  localityName       String?
+  dataSourceId       String?
+  sourceRecordId     String?
+  description        String?
+  district           String
+  address            String?
+  latitude           Decimal?           @db.Decimal(10, 7)
+  longitude          Decimal?           @db.Decimal(10, 7)
+  websiteUrl         String?
+  logoUrl            String?
+  establishedYear    Int?
+  verificationStatus VerificationStatus @default(DRAFT)
+  sourceUrl          String?
+  verifiedAt         DateTime?
+  sourceUpdatedAt    DateTime?
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  programs           Program[]
+  circulars          Circular[]
+  scholarships       Scholarship[]
+  media              Media[]
+  ratings            Rating[]
+  discussionPosts    DiscussionPost[]
+  division           Division?          @relation(fields: [divisionId], references: [id], onDelete: SetNull)
+  districtRef        District?          @relation(fields: [districtId], references: [id], onDelete: SetNull)
+  upazila            Upazila?           @relation(fields: [upazilaId], references: [id], onDelete: SetNull)
+  dataSource         DataSource?        @relation(fields: [dataSourceId], references: [id], onDelete: SetNull)
+  admissionRules     AdmissionRule[]
+  sourceEvidence     SourceEvidence[]
+
+  @@unique([dataSourceId, sourceRecordId])
+  @@index([type, district])
+  @@index([districtId, upazilaId, type])
+  @@index([divisionId, type])
+  @@index([verificationStatus])
+  @@index([localityType, localityName])
+}
+
+model Program {
+  id                 String             @id @default(cuid())
+  institutionId      String
+  name               String
+  slug               String
+  level              String
+  pathwayCategory    PathwayCategory    @default(UNIVERSITY_GENERAL)
+  entryStage         String?
+  subjectAreas       String[]           @default([])
+  availableGroups    String[]           @default([])
+  dataSourceId       String?
+  sourceRecordId     String?
+  durationMonths     Int?
+  tuitionMin         Int?
+  tuitionMax         Int?
+  description        String?
+  careerOutcomes     String[]
+  verificationStatus VerificationStatus @default(DRAFT)
+  sourceUrl          String?
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  institution        Institution        @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  admissionRules     AdmissionRule[]
+  circulars          Circular[]
+  scholarships       Scholarship[]
+  applications       Application[]
+  media              Media[]
+  ratings            Rating[]
+  discussionPosts    DiscussionPost[]
+  dataSource         DataSource?        @relation(fields: [dataSourceId], references: [id], onDelete: SetNull)
+  sourceEvidence     SourceEvidence[]
+
+  @@unique([institutionId, slug])
+  @@unique([dataSourceId, sourceRecordId])
+  @@index([level])
+  @@index([pathwayCategory, entryStage])
+}
+
+model AdmissionRule {
+  id                   String             @id @default(cuid())
+  institutionId        String?
+  programId            String?
+  dataSourceId         String?
+  sourceRecordId       String?
+  sourceCandidateIds   String[]           @default([])
+  sourceEvidence       Json?
+  academicSession      String?
+  applicantStage       String?
+  allowedGroups        String[]           @default([])
+  minimumSscGpa        Decimal?           @db.Decimal(3, 2)
+  minimumHscGpa        Decimal?           @db.Decimal(3, 2)
+  minimumCombinedGpa   Decimal?           @db.Decimal(4, 2)
+  requiredSubjects     Json?
+  minimumSubjectGrades Json?
+  additionalCriteria   String?
+  sourceUrl            String
+  effectiveFrom        DateTime?
+  effectiveUntil       DateTime?
+  verificationStatus   VerificationStatus @default(PENDING)
+  verifiedAt           DateTime?
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+  institution          Institution?       @relation(fields: [institutionId], references: [id], onDelete: SetNull)
+  program              Program?           @relation(fields: [programId], references: [id], onDelete: Cascade)
+  dataSource           DataSource?        @relation(fields: [dataSourceId], references: [id], onDelete: SetNull)
+
+  @@unique([dataSourceId, sourceRecordId])
+  @@index([institutionId])
+  @@index([programId, academicSession])
+  @@index([academicSession])
+  @@index([verificationStatus])
+}
+
+model Circular {
+  id                  String             @id @default(cuid())
+  institutionId       String
+  programId           String?
+  title               String
+  academicSession     String
+  applicationStartsAt DateTime?
+  applicationEndsAt   DateTime
+  examAt              DateTime?
+  resultAt            DateTime?
+  applicationFee      Int?
+  sourceUrl           String
+  pdfUrl              String?
+  aiSummary           String?
+  verificationStatus  VerificationStatus @default(PENDING)
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  institution         Institution        @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  program             Program?           @relation(fields: [programId], references: [id], onDelete: SetNull)
+  discussionPosts     DiscussionPost[]
+
+  @@index([applicationEndsAt])
+  @@index([academicSession, verificationStatus])
+}
+
+model Scholarship {
+  id                 String             @id @default(cuid())
+  institutionId      String?
+  programId          String?
+  dataSourceId       String?
+  sourceRecordId     String?
+  sourceCandidateIds String[]           @default([])
+  sourceEvidence     Json?
+  title              String
+  provider           String
+  description        String?
+  eligibility        Json
+  amountDescription  String?
+  deadline           DateTime?
+  sourceUrl          String
+  verificationStatus VerificationStatus @default(PENDING)
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  institution        Institution?       @relation(fields: [institutionId], references: [id], onDelete: SetNull)
+  program            Program?           @relation(fields: [programId], references: [id], onDelete: SetNull)
+  dataSource         DataSource?        @relation(fields: [dataSourceId], references: [id], onDelete: SetNull)
+
+  @@unique([dataSourceId, sourceRecordId])
+  @@index([deadline])
+  @@index([verificationStatus])
+}
+
+model Application {
+  id          String                @id @default(cuid())
+  userId      String
+  programId   String
+  status      ApplicationStatus     @default(INTERESTED)
+  appliedAt   DateTime?
+  referenceNo String?
+  notes       String?
+  createdAt   DateTime              @default(now())
+  updatedAt   DateTime              @updatedAt
+  user        User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  program     Program               @relation(fields: [programId], references: [id], onDelete: Cascade)
+  documents   ApplicationDocument[]
+
+  @@unique([userId, programId])
+  @@index([userId, status])
+}
+
+model ApplicationDocument {
+  id            String      @id @default(cuid())
+  applicationId String
+  title         String
+  fileUrl       String?
+  storagePath   String?
+  isRequired    Boolean     @default(true)
+  isCompleted   Boolean     @default(false)
+  uploadedAt    DateTime?
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  @@index([applicationId, isCompleted])
+}
+
+model DiscussionPost {
+  id            String       @id @default(cuid())
+  authorId      String
+  institutionId String?
+  programId     String?
+  circularId    String?
+  title         String
+  body          String
+  isLocked      Boolean      @default(false)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  author        User         @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  institution   Institution? @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  program       Program?     @relation(fields: [programId], references: [id], onDelete: Cascade)
+  circular      Circular?    @relation(fields: [circularId], references: [id], onDelete: Cascade)
+  comments      Comment[]
+
+  @@index([institutionId, createdAt])
+  @@index([programId, createdAt])
+  @@index([circularId, createdAt])
+}
+
+model Comment {
+  id         String         @id @default(cuid())
+  postId     String
+  authorId   String
+  parentId   String?
+  body       String
+  isVerified Boolean        @default(false)
+  isEdited   Boolean        @default(false)
+  isHidden   Boolean        @default(false)
+  createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt
+  post       DiscussionPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  author     User           @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  parent     Comment?       @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies    Comment[]      @relation("CommentReplies")
+  votes      CommentVote[]
+
+  @@index([postId, createdAt])
+  @@index([parentId])
+}
+
+model CommentVote {
+  id        String   @id @default(cuid())
+  commentId String
+  userId    String
+  type      VoteType
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  comment   Comment  @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([commentId, userId])
+  @@index([commentId, type])
+}
+
+model Rating {
+  id            String       @id @default(cuid())
+  userId        String
+  institutionId String?
+  programId     String?
+  score         Int
+  review        String?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  user          User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  institution   Institution? @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  program       Program?     @relation(fields: [programId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, institutionId])
+  @@unique([userId, programId])
+  @@index([institutionId, score])
+  @@index([programId, score])
+}
+
+model Media {
+  id                 String             @id @default(cuid())
+  institutionId      String?
+  programId          String?
+  type               MediaType
+  title              String
+  url                String
+  thumbnailUrl       String?
+  languageCode       String?
+  verificationStatus VerificationStatus @default(PENDING)
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  institution        Institution?       @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  program            Program?           @relation(fields: [programId], references: [id], onDelete: Cascade)
+
+  @@index([institutionId, type])
+  @@index([institutionId, verificationStatus])
+  @@index([programId, type])
+}
+
+model SavedItem {
+  id        String        @id @default(cuid())
+  userId    String
+  itemType  SavedItemType
+  itemId    String
+  createdAt DateTime      @default(now())
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, itemType, itemId])
+  @@index([userId, createdAt])
+}
+
+model Notification {
+  id          String    @id @default(cuid())
+  userId      String
+  title       String
+  body        String
+  type        String
+  data        Json?
+  scheduledAt DateTime?
+  readAt      DateTime?
+  createdAt   DateTime  @default(now())
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, readAt, createdAt])
+}
+
+model AiInteraction {
+  id           String   @id @default(cuid())
+  userId       String
+  feature      String
+  prompt       String
+  response     String
+  model        String
+  sourceIds    String[]
+  safetyNotice String?
+  createdAt    DateTime @default(now())
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+}
+
+model ContentReport {
+  id         String       @id @default(cuid())
+  reporterId String
+  targetType String
+  targetId   String
+  reason     String
+  details    String?
+  status     ReportStatus @default(OPEN)
+  resolution String?
+  reviewedBy String?
+  reviewedAt DateTime?
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  reporter   User         @relation(fields: [reporterId], references: [id], onDelete: Cascade)
+
+  @@unique([reporterId, targetType, targetId])
+  @@index([status, createdAt])
+  @@index([targetType, targetId])
+}
+
+model AuditLog {
+  id          String   @id @default(cuid())
+  adminUserId String
+  action      String
+  entityType  String
+  entityId    String
+  before      Json?
+  after       Json?
+  createdAt   DateTime @default(now())
+  admin       User     @relation(fields: [adminUserId], references: [id], onDelete: Restrict)
+
+  @@index([entityType, entityId])
+  @@index([adminUserId, createdAt])
+}
+
+enum EvidenceDataset {
+  ADMISSION
+  SCHOLARSHIP
+}
+
+model SourceEvidence {
+  id                   String             @id @default(cuid())
+  dataset              EvidenceDataset
+  institutionId        String?
+  programId            String?
+  dataSourceId         String?
+  sourceRecordId       String?
+  parentSourceRecordId String?
+  candidateType        String?
+  sourceCandidateText  String
+  sourceUrl            String
+  pageSha256Values     String[]           @default([])
+  extractedValues      Json?
+  assistantDecision    String?
+  assistantAction      String?
+  normalizedValue      String?
+  normalizedSourceUrl  String?
+  verificationStatus   VerificationStatus @default(PENDING)
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+
+  institution Institution? @relation(fields: [institutionId], references: [id], onDelete: SetNull)
+  program     Program?     @relation(fields: [programId], references: [id], onDelete: SetNull)
+  dataSource  DataSource?  @relation(fields: [dataSourceId], references: [id], onDelete: SetNull)
+
+  @@unique([dataSourceId, sourceRecordId])
+  @@index([dataset, verificationStatus])
+  @@index([institutionId, dataset])
+  @@index([parentSourceRecordId])
+}
+
+// EDUPATH_ADMISSION_SCHOLARSHIP_EVIDENCE_V1
