@@ -48,8 +48,8 @@ for (const firebaseVariable of ["VITE_FIREBASE_API_KEY", "VITE_FIREBASE_AUTH_DOM
 check(productionEnv.includes("GOOGLE_APPLICATION_CREDENTIALS=") && productionEnv.includes("VITE_FIREBASE_PHONE_TEST_MODE=false"), "Firebase Admin credentials stay external and public builds default out of phone test mode");
 check(rootPackage.scripts.qa.includes("verify:production"), "production verification is part of the standard QA gate");
 check(rootPackage.scripts.qa.includes("verify:security-scope") && rootPackage.scripts["verify:security-scope"]?.includes("verify-security-scope.mjs"), "runtime dependency scope verification is part of the standard QA gate");
-check(rootPackage.scripts["audit:runtime:high"]?.includes("--omit=dev --omit=optional") && rootPackage.scripts["audit:runtime:high"]?.includes("--audit-level=high"), "runtime security audit matches the shipped dependency surface and fails on high severity");
-check(rootPackage.scripts["audit:tooling:critical"]?.includes("--audit-level=critical"), "full tooling dependency tree retains a critical-severity fail gate");
+check(rootPackage.scripts["audit:runtime:high"]?.includes("better-npm-audit audit --production --level high"), "runtime security audit matches the shipped dependency surface and fails on high severity");
+check(rootPackage.scripts["audit:tooling:critical"]?.includes("better-npm-audit audit --level critical"), "full tooling dependency tree retains a critical-severity fail gate");
 check(rootPackage.scripts["db:backup"] && rootPackage.scripts["db:restore"] && rootPackage.scripts["db:integrity"], "database backup, restore and integrity commands are registered");
 check(rootPackage.scripts["admin:bootstrap"] && rootPackage.scripts["production:integrations-check"] && rootPackage.scripts["production:runtime-check"], "audited admin bootstrap and live deployment verification commands are registered");
 check(server.includes('app.delete("/api/me/account"') && server.includes("authenticatedAt > 10 * 60") && server.includes("currentIdentity.firebaseUid"), "production account deletion requires recent matching Firebase authentication");
