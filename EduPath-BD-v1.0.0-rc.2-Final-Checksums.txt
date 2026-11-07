@@ -1,2 +1,0 @@
-f7f1ccebf0d2379a8032929267ec422b8f33c0c971c9644780320b94ea1c8bcd  EduPath-BD-v1.0.0-rc.2-Final-Cumulative-Production-Source.zip
-66c14a3bbac8736e63f7645f77dc3e69b291da6213750ca55506b4e7ad90490f  EduPath-BD-v1.0.0-rc.2-Final-E2E-Isolation-Fix.patch

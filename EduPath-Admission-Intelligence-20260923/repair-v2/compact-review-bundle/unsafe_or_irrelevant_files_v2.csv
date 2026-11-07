@@ -1,2 +1,0 @@
-﻿path,bytes,sha256,magic_type,extension,unsafe_or_irrelevant,action
-attachments/DGME_NOTICES/DGME_NOTICES.exe,25767784,d90533ca15f5d2abf7cfbc7ef2bd2202e7b292f14b437e761dff613e58689134,PE_EXECUTABLE,.exe,YES,EXCLUDE_FROM_DATASET

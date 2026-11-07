@@ -1,2 +1,0 @@
-8c5dfc701846876fefabd9ad27bc81d39718eb72ed735563ec6e0955978eaeca  /mnt/data/EduPath-BD-v1.0.0-rc.2-Deep-Audited-Production-Source.zip
-1f2cf52a2aa94fda6df38292ec7dee499aa254d32524d915ef3d38b93e51d860  /mnt/data/EduPath-BD-v1.0.0-rc.2-Account-Accessibility-Deep-Fix.patch

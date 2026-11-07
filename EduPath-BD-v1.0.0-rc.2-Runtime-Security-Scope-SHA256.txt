@@ -1,2 +1,0 @@
-9447759872708b62bdeb96f6b28130a474f52e2d04d0b1b2715f174dfb69ea35  /mnt/data/EduPath-BD-v1.0.0-rc.2-Runtime-Security-Scoped-Production-Source.zip
-10eb2f26c8c7e97396d197abc66ecfb9a483d44861358eee205b4f2819f97983  /mnt/data/EduPath-BD-v1.0.0-rc.2-Runtime-Security-Scope-Fix.patch
