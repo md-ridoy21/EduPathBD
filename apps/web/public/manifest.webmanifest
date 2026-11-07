@@ -1,0 +1,17 @@
+{
+  "name": "EduPath BD - Education, Admission and Career Guidance",
+  "short_name": "EduPath BD",
+  "description": "Verified education, admission and career decision support for Bangladeshi students.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#071b2e",
+  "theme_color": "#071b2e",
+  "lang": "en-BD",
+  "categories": ["education", "productivity"],
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,9 +1,0 @@
-﻿dataset,authority,rows,coverage,status,production_use,notes
-Bangladesh admin units,Bangladesh National Portal,499,8 divisions / 64 districts / 499 upazilas,COMPLETE_CURRENT_MASTER,YES,Use as current location-name/coverage authority.
-BBS district geocode source index,BBS,64,64 district PDF links,COMPLETE_SOURCE_INDEX,YES_WITH_RECONCILIATION,BBS geocode documents are older code references; reconcile against current National Portal hierarchy.
-BANBEIS institution PDF extract,BANBEIS,35673,35669 Bangladesh rows + 4 foreign rows,FULL_RAW_EXTRACT_BUT_LEGACY_CURRENTNESS,NO_DIRECT_IMPORT,"Official attachment, but PDF internally references SURVEY2015; page last updated 2024-04-21. Use for matching/reference until a current master is obtained."
-BTEB institute snapshot,BTEB CBT&A,199,196 unique codes from 20 uploaded pages,INCOMPLETE,NO_AS_MASTER,Official live list is larger and volatile; automated fetcher included.
-UGC university lists,UGC,182,"{'cbhe': 1, 'international': 3, 'private': 117, 'public': 61}",CURRENT_CAPTURE_2026_09_23,YES_FOR_INSTITUTION_VERIFICATION,Program-approval data is a separate dataset.
-DGME Medical & Dental,DGME,118,38 public + 80 private,CURRENT_WEB_CRAWL,YES_SNAPSHOT,Student counts/seats are time-sensitive; preserve retrieval date.
-BNMC institution list,BNMC,0,source discovered,RAW_ATTACHMENT_PENDING,NO,Automated browser fetcher included; do not invent rows.
-NU affiliated colleges,National University,0,official total 2257,DYNAMIC_ROWS_PENDING,NO,"Automated browser fetcher included; official site states 555 govt, 1361 non-govt, 341 other."
