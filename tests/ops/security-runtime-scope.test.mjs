@@ -14,7 +14,7 @@ test("persistent API runtime excludes Prisma CLI and optional dependency trees",
 });
 
 test("runtime high-severity audit matches the shipped dependency surface", () => {
-  assert.match(rootPackage.scripts["audit:runtime:high"], /--omit=dev --omit=optional --audit-level=high/);
+  assert.match(rootPackage.scripts["audit:runtime:high"], /better-npm-audit audit --production --level high/);
   assert.match(rootPackage.scripts["release:gate"], /audit:runtime:high/);
   assert.match(rootPackage.scripts["release:gate"], /audit:tooling:critical/);
 });
