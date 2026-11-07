@@ -18,8 +18,8 @@ const packages = lock.packages ?? {};
 ok(!apiPackage.dependencies?.prisma && Boolean(apiPackage.devDependencies?.prisma), "Prisma CLI is tooling-only, not an API runtime dependency");
 ok(Boolean(apiPackage.dependencies?.["@prisma/client"]), "Prisma Client remains an explicit API runtime dependency");
 ok(dockerfile.includes("npm prune --omit=dev --omit=optional"), "runtime image prunes development and optional dependency trees");
-ok(rootPackage.scripts?.["audit:runtime:high"]?.includes("--omit=dev --omit=optional") && rootPackage.scripts?.["audit:runtime:high"]?.includes("--audit-level=high"), "release audit targets the shipped runtime dependency surface at high severity");
-ok(rootPackage.scripts?.["audit:tooling:critical"]?.includes("--audit-level=critical"), "tooling dependency tree still has a critical-severity fail gate");
+ok(rootPackage.scripts?.["audit:runtime:high"]?.includes("better-npm-audit audit --production --level high"), "release audit targets the shipped runtime dependency surface at high severity");
+ok(rootPackage.scripts?.["audit:tooling:critical"]?.includes("better-npm-audit audit --level critical"), "tooling dependency tree still has a critical-severity fail gate");
 ok(rootPackage.scripts?.["release:gate"]?.includes("audit:runtime:high") && rootPackage.scripts?.["release:gate"]?.includes("audit:tooling:critical"), "release gate checks runtime high severity and full-tooling critical severity");
 
 const firebaseCombined = [firebaseSource, bootstrapSource, integrationSource].join("\n");
