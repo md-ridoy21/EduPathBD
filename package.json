@@ -44,13 +44,14 @@
     "db:seed:demo": "npm run db:seed:demo --workspace @edupath/api",
     "db:seed:repair": "npm run db:seed:repair --workspace @edupath/api",
     "db:studio": "npm run db:studio --workspace @edupath/api",
-    "audit:runtime:high": "npm audit --omit=dev --omit=optional --audit-level=high --ignore GHSA-m9gg-hp2v-232j --ignore GHSA-f596-whhp-79r4",
-    "audit:tooling:critical": "npm audit --audit-level=critical",
+    "audit:runtime:high": "better-npm-audit audit --production --level high -x GHSA-m9gg-hp2v-232j -x GHSA-f596-whhp-79r4",
+    "audit:tooling:critical": "better-npm-audit audit --level critical",
     "verify:security-scope": "node scripts/verify-security-scope.mjs",
     "data:import:official": "npm run data:import:official --workspace @edupath/api --"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
+    "better-npm-audit": "^4.2.1",
     "concurrently": "^10.0.5"
   }
 }
