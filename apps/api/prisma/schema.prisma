@@ -120,7 +120,6 @@ enum SavedItemType {
   INSTITUTION
   PROGRAM
   CIRCULAR
-  SCHOLARSHIP
   OPPORTUNITY
 }
 
@@ -248,7 +247,6 @@ model DataSource {
   programs       Program[]
   importRuns     DataImportRun[]
   admissionRules AdmissionRule[]
-  scholarships   Scholarship[]
   sourceEvidence SourceEvidence[]
 
   @@unique([authority, baseUrl])
@@ -302,7 +300,6 @@ model Institution {
   updatedAt          DateTime           @updatedAt
   programs           Program[]
   circulars          Circular[]
-  scholarships       Scholarship[]
   media              Media[]
   ratings            Rating[]
   discussionPosts    DiscussionPost[]
@@ -345,7 +342,6 @@ model Program {
   institution        Institution        @relation(fields: [institutionId], references: [id], onDelete: Cascade)
   admissionRules     AdmissionRule[]
   circulars          Circular[]
-  scholarships       Scholarship[]
   applications       Application[]
   media              Media[]
   ratings            Rating[]
@@ -417,33 +413,6 @@ model Circular {
 
   @@index([applicationEndsAt])
   @@index([academicSession, verificationStatus])
-}
-
-model Scholarship {
-  id                 String             @id @default(cuid())
-  institutionId      String?
-  programId          String?
-  dataSourceId       String?
-  sourceRecordId     String?
-  sourceCandidateIds String[]           @default([])
-  sourceEvidence     Json?
-  title              String
-  provider           String
-  description        String?
-  eligibility        Json
-  amountDescription  String?
-  deadline           DateTime?
-  sourceUrl          String
-  verificationStatus VerificationStatus @default(PENDING)
-  createdAt          DateTime           @default(now())
-  updatedAt          DateTime           @updatedAt
-  institution        Institution?       @relation(fields: [institutionId], references: [id], onDelete: SetNull)
-  program            Program?           @relation(fields: [programId], references: [id], onDelete: SetNull)
-  dataSource         DataSource?        @relation(fields: [dataSourceId], references: [id], onDelete: SetNull)
-
-  @@unique([dataSourceId, sourceRecordId])
-  @@index([deadline])
-  @@index([verificationStatus])
 }
 
 model Application {
@@ -653,7 +622,6 @@ model AuditLog {
 
 enum EvidenceDataset {
   ADMISSION
-  SCHOLARSHIP
 }
 
 model SourceEvidence {
@@ -687,4 +655,4 @@ model SourceEvidence {
   @@index([parentSourceRecordId])
 }
 
-// EDUPATH_ADMISSION_SCHOLARSHIP_EVIDENCE_V1
+// EDUPATH_ADMISSION_EVIDENCE_V1
