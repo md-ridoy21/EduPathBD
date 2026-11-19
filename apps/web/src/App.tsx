@@ -41,7 +41,6 @@ const AdmissionWorkspace = lazy(() => import("./components/AdmissionWorkspace").
 const AdminDashboard = lazy(() => import("./components/AdminDashboard").then((module) => ({ default: module.AdminDashboard })));
 const CommunityHub = lazy(() => import("./components/CommunityHub").then((module) => ({ default: module.CommunityHub })));
 const MediaMapHub = lazy(() => import("./components/MediaMapHub").then((module) => ({ default: module.MediaMapHub })));
-const ScholarshipHub = lazy(() => import("./components/ScholarshipHub").then((module) => ({ default: module.ScholarshipHub })));
 const AiGuidanceHub = lazy(() => import("./components/AiGuidanceHub").then((module) => ({ default: module.AiGuidanceHub })));
 const DeviceCheckModal = lazy(() => import("./components/DeviceCheckModal").then((module) => ({ default: module.DeviceCheckModal })));
 const AccountCenter = lazy(() => import("./components/AccountCenter").then((module) => ({ default: module.AccountCenter })));
@@ -97,7 +96,7 @@ const pathwayBangla: Record<string, { title: string; category: string; descripti
   business: { title: "ব্যবসা ও ব্যবস্থাপনা", category: "উচ্চশিক্ষা", description: "ব্যবসা, ফাইন্যান্স, মার্কেটিং ও উদ্যোক্তা হওয়ার প্রোগ্রাম খুঁজুন।" },
   technical: { title: "ডিপ্লোমা ও কারিগরি দক্ষতা", category: "SSC-পরবর্তী", description: "পলিটেকনিক, ডিপ্লোমা ও চাকরিমুখী কারিগরি শিক্ষার অপশন দেখুন।" },
   general: { title: "সাধারণ ও বহুমুখী শিক্ষা", category: "উচ্চশিক্ষা", description: "মানবিক, সামাজিক বিজ্ঞান ও বহুমুখী ডিগ্রির পথগুলো দেখুন।" },
-  "higher-study": { title: "উচ্চশিক্ষা ও গবেষণা", category: "উচ্চশিক্ষা", description: "ডিপ্লোমা বা ডিগ্রির পর যাচাইকৃত স্নাতকোত্তর, গবেষণা ও scholarship-এর পথ খুঁজুন।" }
+  "higher-study": { title: "উচ্চশিক্ষা ও গবেষণা", category: "উচ্চশিক্ষা", description: "ডিপ্লোমা বা ডিগ্রির পর যাচাইকৃত স্নাতকোত্তর ও গবেষণার পথ খুঁজুন।" }
 };
 
 function localizedPathway(id: string, fallback: string, locale: "en" | "bn", field: "title" | "category" | "description" = "title") {
@@ -235,7 +234,7 @@ function App() {
   }, [catalogRevision]);
 
   useEffect(() => {
-    const sectionIds = ["top", "eligibility", "pathways", "institutions", "deadlines", "scholarships", "ai-guide", "media-map", "community"];
+    const sectionIds = ["top", "eligibility", "pathways", "institutions", "deadlines", "ai-guide", "media-map", "community"];
     const observed = new Set<Element>();
     const observer = new IntersectionObserver((entries) => {
       const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
@@ -284,7 +283,7 @@ function App() {
   const handleAccountDeleted = async () => {
     await signOutFirebaseUser().catch(() => undefined);
     await clearAllDeadlineReminders();
-    for (const key of [profileStorageKey, "edupath_compare", "edupath_saved_scholarships", "edupath_session"]) localStorage.removeItem(key);
+    for (const key of [profileStorageKey, "edupath_compare", "edupath_session"]) localStorage.removeItem(key);
     for (let index = localStorage.length - 1; index >= 0; index -= 1) {
       const key = localStorage.key(index);
       if (key?.startsWith("edupath_public_api:")) localStorage.removeItem(key);
@@ -384,7 +383,6 @@ function App() {
             <a className="transition hover:text-emerald-300" href="#pathways">{text("Pathways", "পথসমূহ")}</a>
             <a className="transition hover:text-emerald-300" href="#eligibility">{text("Eligibility", "যোগ্যতা")}</a>
             <a className="transition hover:text-emerald-300" href="#institutions">{text("Institutions", "প্রতিষ্ঠান")}</a>
-            <a className="transition hover:text-emerald-300" href="#scholarships">{text("Scholarships", "স্কলারশিপ")}</a>
             <a className="transition hover:text-emerald-300" href="#media-map">{text("Campus media", "ক্যাম্পাস মিডিয়া")}</a>
             <a className="transition hover:text-emerald-300" href="#community">{text("Community", "কমিউনিটি")}</a>
           </nav>
@@ -406,7 +404,7 @@ function App() {
         {mobileMenu && (
           <div id="mobile-navigation" className="border-t border-white/10 px-4 py-4 lg:hidden">
             <nav className="grid gap-2 text-sm text-slate-200">
-              {[["pathways", text("Pathways", "পথসমূহ")], ["eligibility", text("Eligibility", "যোগ্যতা")], ["institutions", text("Institutions", "প্রতিষ্ঠান")], ["deadlines", text("Deadlines", "সময়সীমা")], ["scholarships", text("Scholarships", "স্কলারশিপ")], ["media-map", text("Campus map, video and audio", "ক্যাম্পাস ম্যাপ, ভিডিও ও অডিও")], ["community", text("Community", "কমিউনিটি")]].map(([id, label]) => (
+              {[["pathways", text("Pathways", "পথসমূহ")], ["eligibility", text("Eligibility", "যোগ্যতা")], ["institutions", text("Institutions", "প্রতিষ্ঠান")], ["deadlines", text("Deadlines", "সময়সীমা")], ["media-map", text("Campus map, video and audio", "ক্যাম্পাস ম্যাপ, ভিডিও ও অডিও")], ["community", text("Community", "কমিউনিটি")]].map(([id, label]) => (
                 <a key={id} className="flex min-h-11 items-center rounded-xl px-3 py-2 hover:bg-white/10" href={`#${id}`} onClick={() => setMobileMenu(false)}>{label}</a>
               ))}
               <button type="button" onClick={() => { setLocale(locale === "en" ? "bn" : "en"); setMobileMenu(false); }} className="mt-2 flex min-h-11 items-center gap-2 rounded-xl border border-white/15 px-3 py-2.5 text-left font-bold"><Languages size={16} />{locale === "en" ? "বাংলায় দেখুন" : "View in English"}</button>
@@ -435,7 +433,7 @@ function App() {
                 <span className="text-gradient block">{text("planned around you.", "পরিকল্পিত তোমাকে ঘিরে।")}</span>
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
-                {text("Check eligibility, compare institutions, discover scholarships and turn your academic goals into a clear, trackable pathway.", "যোগ্যতা যাচাই করো, প্রতিষ্ঠান তুলনা করো, স্কলারশিপ খুঁজে নাও এবং শিক্ষার লক্ষ্যকে স্পষ্ট ও ট্র্যাকযোগ্য পরিকল্পনায় রূপ দাও।")}
+                {text("Check eligibility, compare institutions and turn your academic goals into a clear, trackable pathway.", "যোগ্যতা যাচাই করো, প্রতিষ্ঠান তুলনা করো এবং শিক্ষার লক্ষ্যকে স্পষ্ট ও ট্র্যাকযোগ্য পরিকল্পনায় রূপ দাও।")}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a className="inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-300 px-6 py-3.5 text-sm font-black text-[#071b2e] shadow-xl shadow-emerald-500/10 transition hover:-translate-y-0.5 hover:bg-emerald-200" href="#eligibility">
@@ -589,7 +587,6 @@ function App() {
 
         <Suspense fallback={<SectionLoader />}>
           <AdmissionWorkspace session={session} refreshKey={catalogRevision} onRequireAuth={() => setAuthOpen(true)} />
-          <ScholarshipHub />
           <AiGuidanceHub session={session} onRequireAuth={() => setAuthOpen(true)} guidanceContext={{ stage: profile.level.toUpperCase() as "SSC" | "HSC" | "DIPLOMA" | "UNDERGRADUATE" | "GRADUATE", districtCode: profile.districtCode || undefined, upazilaCode: profile.upazilaCode || undefined, interests: [profile.interest] }} />
           <CommunityHub session={session} onRequireAuth={() => setAuthOpen(true)} />
           <MediaMapHub session={session} onRequireAuth={() => setAuthOpen(true)} />

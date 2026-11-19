@@ -1,6 +1,6 @@
 import { Prisma, PrismaClient, type ApplicationStatus, type InstitutionType, type MediaType, type ReportStatus, type UserRole, type VerificationStatus, type VoteType } from "@prisma/client";
 import { config } from "../config.js";
-import { demoCirculars, demoInstitutions, demoPrograms, demoScholarships } from "./demo-catalog.js";
+import { demoCirculars, demoInstitutions, demoPrograms } from "./demo-catalog.js";
 import { bangladeshDivisions } from "./bangladesh-locations.js";
 
 export type UserRecord = {
@@ -136,23 +136,6 @@ function requireProgramScopedAdmissionField(
   return value;
 }
 
-
-export type ScholarshipRecord = {
-  id: string;
-  title: string;
-  provider: string;
-  description?: string;
-  institutionName?: string;
-  programName?: string;
-  minimumGpa?: number;
-  groups: string[];
-  levels: string[];
-  amountDescription?: string;
-  deadline?: string;
-  sourceUrl: string;
-  verified: boolean;
-};
-
 export type MediaRecord = {
   id: string;
   institutionId?: string;
@@ -208,7 +191,7 @@ export type ContentReportRecord = {
 };
 
 export type AiInteractionRecord = { id: string; userId: string; feature: string; prompt: string; response: string; model: string; sourceIds: string[]; createdAt: string };
-export type AdminContentKind = "INSTITUTION" | "PROGRAM" | "ADMISSION_RULE" | "CIRCULAR" | "SCHOLARSHIP" | "MEDIA";
+export type AdminContentKind = "INSTITUTION" | "PROGRAM" | "ADMISSION_RULE" | "CIRCULAR" | "MEDIA";
 export type AdminContentRecord = {
   id: string;
   kind: AdminContentKind;
@@ -217,7 +200,7 @@ export type AdminContentRecord = {
   status: VerificationStatus;
   sourceUrl?: string;
   updatedAt?: string;
-  editable: { name?: string; district?: string; level?: string; title?: string; academicSession?: string; sourceUrl?: string; provider?: string; amountDescription?: string; type?: MediaType; url?: string; languageCode?: "en" | "bn" | null };
+  editable: { name?: string; district?: string; level?: string; title?: string; academicSession?: string; sourceUrl?: string; type?: MediaType; url?: string; languageCode?: "en" | "bn" | null };
 };
 
 export class UsernameConflictError extends Error {
@@ -791,51 +774,6 @@ export async function listRecommendationCandidates(): Promise<RecommendationCand
   }));
 }
 
-export async function listScholarships(options: { gpa?: number; group?: string; level?: string; page?: number; limit?: number } = {}) {
-  const page = options.page ?? 1;
-  const limit = options.limit ?? 10;
-  const matches = (item: ScholarshipRecord) =>
-    (options.gpa === undefined || item.minimumGpa === undefined || options.gpa >= item.minimumGpa)
-    && (!options.group || !item.groups.length || item.groups.some((group) => group.toUpperCase().replaceAll(" ", "_") === options.group!.toUpperCase().replaceAll(" ", "_")))
-    && (!options.level || !item.levels.length || item.levels.some((level) => level.toUpperCase() === options.level!.toUpperCase()));
-
-  if (config.demoMode) {
-    const filtered = demoScholarships.filter((item) => item.verified && matches(item));
-    return { data: filtered.slice((page - 1) * limit, page * limit), total: filtered.length };
-  }
-
-  const rows = await prisma!.scholarship.findMany({
-    where: {
-      verificationStatus: "VERIFIED",
-      AND: [
-        { OR: [{ institutionId: null }, { institution: { verificationStatus: "VERIFIED" } }] },
-        { OR: [{ programId: null }, { program: { verificationStatus: "VERIFIED", institution: { verificationStatus: "VERIFIED" } } }] }
-      ]
-    },
-    orderBy: [{ deadline: "asc" }, { title: "asc" }],
-    include: { institution: { select: { name: true } }, program: { select: { name: true } } }
-  });
-  const mapped = rows.map((item) => {
-    const eligibility = typeof item.eligibility === "object" && item.eligibility && !Array.isArray(item.eligibility) ? item.eligibility as Record<string, unknown> : {};
-    return {
-      id: item.id,
-      title: item.title,
-      provider: item.provider,
-      description: item.description ?? undefined,
-      institutionName: item.institution?.name,
-      programName: item.program?.name,
-      minimumGpa: typeof eligibility.minimumGpa === "number" ? eligibility.minimumGpa : undefined,
-      groups: Array.isArray(eligibility.groups) ? eligibility.groups.filter((value): value is string => typeof value === "string") : [],
-      levels: Array.isArray(eligibility.levels) ? eligibility.levels.filter((value): value is string => typeof value === "string") : [],
-      amountDescription: item.amountDescription ?? undefined,
-      deadline: item.deadline?.toISOString(),
-      sourceUrl: item.sourceUrl,
-      verified: true
-    } satisfies ScholarshipRecord;
-  }).filter(matches);
-  return { data: mapped.slice((page - 1) * limit, page * limit), total: mapped.length };
-}
-
 export async function createAdmissionRule(input: {
   programId: string;
   academicSession: string;
@@ -889,51 +827,6 @@ export async function createAdmissionRule(input: {
     additionalCriteria: item.additionalCriteria ?? undefined,
     sourceUrl: item.sourceUrl
   } satisfies AdmissionRuleRecord;
-}
-
-export async function createScholarship(input: {
-  institutionId?: string;
-  programId?: string;
-  title: string;
-  provider: string;
-  description?: string;
-  minimumGpa?: number;
-  groups: string[];
-  levels: string[];
-  amountDescription?: string;
-  deadline?: Date;
-  sourceUrl: string;
-}) {
-  if (config.demoMode) {
-    const item: ScholarshipRecord = { id: `sch_${Date.now()}`, title: input.title, provider: input.provider, description: input.description, minimumGpa: input.minimumGpa, groups: input.groups, levels: input.levels, amountDescription: input.amountDescription, deadline: input.deadline?.toISOString(), sourceUrl: input.sourceUrl, verified: false };
-    demoScholarships.push(item);
-    demoVerificationStatuses.set(`SCHOLARSHIP:${item.id}`, "PENDING");
-    return item;
-  }
-  if (input.programId) {
-    const program = await prisma!.program.findUnique({ where: { id: input.programId }, select: { institutionId: true } });
-    if (!program) throw new Error("Program not found");
-    if (input.institutionId && input.institutionId !== program.institutionId) throw new Error("Scholarship program does not belong to the selected institution");
-  } else if (input.institutionId) {
-    const institution = await prisma!.institution.findUnique({ where: { id: input.institutionId }, select: { id: true } });
-    if (!institution) throw new Error("Institution not found");
-  }
-  const item = await prisma!.scholarship.create({
-    data: {
-      institutionId: input.institutionId,
-      programId: input.programId,
-      title: input.title,
-      provider: input.provider,
-      description: input.description,
-      eligibility: { ...(input.minimumGpa === undefined ? {} : { minimumGpa: input.minimumGpa }), groups: input.groups, levels: input.levels } as Prisma.InputJsonObject,
-      amountDescription: input.amountDescription,
-      deadline: input.deadline,
-      sourceUrl: input.sourceUrl,
-      verificationStatus: "PENDING"
-    },
-    include: { institution: { select: { name: true } }, program: { select: { name: true } } }
-  });
-  return { id: item.id, title: item.title, provider: item.provider, description: item.description ?? undefined, institutionName: item.institution?.name, programName: item.program?.name, minimumGpa: input.minimumGpa, groups: input.groups, levels: input.levels, amountDescription: item.amountDescription ?? undefined, deadline: item.deadline?.toISOString(), sourceUrl: item.sourceUrl, verified: false } satisfies ScholarshipRecord;
 }
 
 export async function createProgram(input: { institutionId: string; name: string; slug: string; level: string; durationMonths?: number; tuitionMin?: number; tuitionMax?: number; careerOutcomes: string[] }) {
@@ -1276,27 +1169,25 @@ export async function createMediaResource(input: { institutionId?: string; type:
 
 export async function getAdminStats() {
   if (config.demoMode) {
-    return { users: demoUsers.length, institutions: demoInstitutions.length, programs: demoPrograms.length, admissionRules: 0, circulars: demoCirculars.length, scholarships: demoScholarships.length, media: demoMedia.length, pendingVerification: [...demoInstitutions, ...demoPrograms, ...demoCirculars, ...demoScholarships, ...demoMedia].filter((item) => !item.verified).length, comments: demoComments.length, openReports: demoContentReports.filter((item) => item.status === "OPEN" || item.status === "REVIEWING").length, aiInteractions: demoAiInteractions.length };
+    return { users: demoUsers.length, institutions: demoInstitutions.length, programs: demoPrograms.length, admissionRules: 0, circulars: demoCirculars.length, media: demoMedia.length, pendingVerification: [...demoInstitutions, ...demoPrograms, ...demoCirculars, ...demoMedia].filter((item) => !item.verified).length, comments: demoComments.length, openReports: demoContentReports.filter((item) => item.status === "OPEN" || item.status === "REVIEWING").length, aiInteractions: demoAiInteractions.length };
   }
-  const [users, institutions, programs, admissionRules, circulars, scholarships, media, pendingInstitutions, pendingPrograms, pendingAdmissionRules, pendingCirculars, pendingScholarships, pendingMedia, comments, openReports, aiInteractions] = await Promise.all([
+  const [users, institutions, programs, admissionRules, circulars, media, pendingInstitutions, pendingPrograms, pendingAdmissionRules, pendingCirculars, pendingMedia, comments, openReports, aiInteractions] = await Promise.all([
     prisma!.user.count(),
     prisma!.institution.count(),
     prisma!.program.count(),
     prisma!.admissionRule.count(),
     prisma!.circular.count(),
-    prisma!.scholarship.count(),
     prisma!.media.count(),
     prisma!.institution.count({ where: { verificationStatus: { not: "VERIFIED" } } }),
     prisma!.program.count({ where: { verificationStatus: { not: "VERIFIED" } } }),
     prisma!.admissionRule.count({ where: { verificationStatus: { not: "VERIFIED" } } }),
     prisma!.circular.count({ where: { verificationStatus: { not: "VERIFIED" } } }),
-    prisma!.scholarship.count({ where: { verificationStatus: { not: "VERIFIED" } } }),
     prisma!.media.count({ where: { verificationStatus: { not: "VERIFIED" } } }),
     prisma!.comment.count(),
     prisma!.contentReport.count({ where: { status: { in: ["OPEN", "REVIEWING"] } } }),
     prisma!.aiInteraction.count()
   ]);
-  return { users, institutions, programs, admissionRules, circulars, scholarships, media, pendingVerification: pendingInstitutions + pendingPrograms + pendingAdmissionRules + pendingCirculars + pendingScholarships + pendingMedia, comments, openReports, aiInteractions };
+  return { users, institutions, programs, admissionRules, circulars, media, pendingVerification: pendingInstitutions + pendingPrograms + pendingAdmissionRules + pendingCirculars + pendingMedia, comments, openReports, aiInteractions };
 }
 
 export async function getCatalogStats() {
@@ -1362,19 +1253,17 @@ export async function listAdminContent(options: { kind?: AdminContentKind; statu
       ...demoInstitutions.map((item) => ({ id: item.id, kind: "INSTITUTION" as const, title: item.name, subtitle: `${item.type.replaceAll("_", " ")} · ${item.district}`, status: demoVerificationStatus("INSTITUTION", item.id, item.verified), sourceUrl: item.sourceUrl, editable: { name: item.name, district: item.district, sourceUrl: item.sourceUrl } })),
       ...demoPrograms.map((item) => ({ id: item.id, kind: "PROGRAM" as const, title: item.name, subtitle: `${item.institutionName} · ${item.level}`, status: demoVerificationStatus("PROGRAM", item.id, item.verified), editable: { name: item.name, level: item.level } })),
       ...demoCirculars.map((item) => ({ id: item.id, kind: "CIRCULAR" as const, title: item.title, subtitle: `${item.institutionName} · ${item.academicSession}`, status: demoVerificationStatus("CIRCULAR", item.id, item.verified), sourceUrl: item.sourceUrl, editable: { title: item.title, academicSession: item.academicSession, sourceUrl: item.sourceUrl } })),
-      ...demoScholarships.map((item) => ({ id: item.id, kind: "SCHOLARSHIP" as const, title: item.title, subtitle: item.provider, status: demoVerificationStatus("SCHOLARSHIP", item.id, item.verified), sourceUrl: item.sourceUrl, editable: { title: item.title, provider: item.provider, sourceUrl: item.sourceUrl, amountDescription: item.amountDescription } })),
       ...demoMedia.map((item) => ({ id: item.id, kind: "MEDIA" as const, title: item.title, subtitle: `${item.institutionName ?? "Global fallback"} · ${item.type}${item.languageCode ? ` · ${item.languageCode.toUpperCase()}` : ""}`, status: demoVerificationStatus("MEDIA", item.id, item.verified), sourceUrl: item.url, updatedAt: item.updatedAt, editable: { title: item.title, type: item.type, url: item.url, sourceUrl: item.url, languageCode: item.languageCode } }))
     ];
     return records.filter((item) => (!options.kind || item.kind === options.kind) && (!options.status || item.status === options.status));
   }
 
   const statusWhere = options.status ? { verificationStatus: options.status } : {};
-  const [institutions, programs, admissionRules, circulars, scholarships, media] = await Promise.all([
+  const [institutions, programs, admissionRules, circulars, media] = await Promise.all([
     !options.kind || options.kind === "INSTITUTION" ? prisma!.institution.findMany({ where: statusWhere, orderBy: { updatedAt: "desc" } }) : [],
     !options.kind || options.kind === "PROGRAM" ? prisma!.program.findMany({ where: statusWhere, orderBy: { updatedAt: "desc" }, include: { institution: { select: { name: true } } } }) : [],
     !options.kind || options.kind === "ADMISSION_RULE" ? prisma!.admissionRule.findMany({ where: statusWhere, orderBy: { updatedAt: "desc" }, include: { program: { select: { name: true, institution: { select: { name: true } } } } } }) : [],
     !options.kind || options.kind === "CIRCULAR" ? prisma!.circular.findMany({ where: statusWhere, orderBy: { updatedAt: "desc" }, include: { institution: { select: { name: true } } } }) : [],
-    !options.kind || options.kind === "SCHOLARSHIP" ? prisma!.scholarship.findMany({ where: statusWhere, orderBy: { updatedAt: "desc" }, include: { institution: { select: { name: true } }, program: { select: { name: true } } } }) : [],
     !options.kind || options.kind === "MEDIA" ? prisma!.media.findMany({ where: statusWhere, orderBy: { updatedAt: "desc" }, include: { institution: { select: { name: true } } } }) : []
   ]);
   return [
@@ -1382,7 +1271,6 @@ export async function listAdminContent(options: { kind?: AdminContentKind; statu
     ...programs.map((item) => ({ id: item.id, kind: "PROGRAM" as const, title: item.name, subtitle: `${item.institution.name} · ${item.level}`, status: item.verificationStatus, sourceUrl: item.sourceUrl ?? undefined, updatedAt: item.updatedAt.toISOString(), editable: { name: item.name, level: item.level, sourceUrl: item.sourceUrl ?? undefined } })),
     ...admissionRules.map((item) => ({ id: item.id, kind: "ADMISSION_RULE" as const, title: item.program ? `${item.program.name} admission rule` : "Institution admission rule", subtitle: item.program ? `${item.program.institution.name}${item.academicSession ? ` · ${item.academicSession}` : ""}` : (item.academicSession ?? "Institution-wide rule"), status: item.verificationStatus, sourceUrl: item.sourceUrl, updatedAt: item.updatedAt.toISOString(), editable: { academicSession: item.academicSession ?? undefined, sourceUrl: item.sourceUrl } })),
     ...circulars.map((item) => ({ id: item.id, kind: "CIRCULAR" as const, title: item.title, subtitle: `${item.institution.name} · ${item.academicSession}`, status: item.verificationStatus, sourceUrl: item.sourceUrl, updatedAt: item.updatedAt.toISOString(), editable: { title: item.title, academicSession: item.academicSession, sourceUrl: item.sourceUrl } })),
-    ...scholarships.map((item) => ({ id: item.id, kind: "SCHOLARSHIP" as const, title: item.title, subtitle: `${item.provider}${item.institution?.name ? ` · ${item.institution.name}` : ""}${item.program?.name ? ` · ${item.program.name}` : ""}`, status: item.verificationStatus, sourceUrl: item.sourceUrl, updatedAt: item.updatedAt.toISOString(), editable: { title: item.title, provider: item.provider, sourceUrl: item.sourceUrl, amountDescription: item.amountDescription ?? undefined } })),
     ...media.map((item) => ({ id: item.id, kind: "MEDIA" as const, title: item.title, subtitle: `${item.institution?.name ?? "Global fallback"} · ${item.type}${item.languageCode ? ` · ${item.languageCode.toUpperCase()}` : ""}`, status: item.verificationStatus, sourceUrl: item.url, updatedAt: item.updatedAt.toISOString(), editable: { title: item.title, type: item.type, url: item.url, sourceUrl: item.url, languageCode: item.languageCode === "en" || item.languageCode === "bn" ? item.languageCode : undefined } } satisfies AdminContentRecord))
   ];
 }
@@ -1410,10 +1298,6 @@ async function assertPublishParents(kind: AdminContentKind, id: string) {
     const row = await prisma!.circular.findUnique({ where: { id }, select: { institution: { select: { verificationStatus: true } }, program: { select: { verificationStatus: true } } } });
     if (!row) throw new Error("Content record not found");
     if (row.institution.verificationStatus !== "VERIFIED" || (row.program && row.program.verificationStatus !== "VERIFIED")) throw new Error("Verify the linked institution/program before publishing this circular.");
-  } else if (kind === "SCHOLARSHIP") {
-    const row = await prisma!.scholarship.findUnique({ where: { id }, select: { institution: { select: { verificationStatus: true } }, program: { select: { verificationStatus: true, institution: { select: { verificationStatus: true } } } } } });
-    if (!row) throw new Error("Content record not found");
-    if ((row.institution && row.institution.verificationStatus !== "VERIFIED") || (row.program && (row.program.verificationStatus !== "VERIFIED" || row.program.institution.verificationStatus !== "VERIFIED"))) throw new Error("Verify the linked institution/program before publishing this scholarship.");
   } else if (kind === "MEDIA") {
     const row = await prisma!.media.findUnique({ where: { id }, select: { institution: { select: { verificationStatus: true } }, program: { select: { verificationStatus: true, institution: { select: { verificationStatus: true } } } } } });
     if (!row) throw new Error("Content record not found");
@@ -1423,7 +1307,7 @@ async function assertPublishParents(kind: AdminContentKind, id: string) {
 
 export async function updateContentVerification(kind: AdminContentKind, id: string, status: VerificationStatus, reviewerId: string): Promise<AdminContentRecord> {
   if (config.demoMode) {
-    const collection = kind === "INSTITUTION" ? demoInstitutions : kind === "PROGRAM" ? demoPrograms : kind === "CIRCULAR" ? demoCirculars : kind === "SCHOLARSHIP" ? demoScholarships : kind === "MEDIA" ? demoMedia : [];
+    const collection = kind === "INSTITUTION" ? demoInstitutions : kind === "PROGRAM" ? demoPrograms : kind === "CIRCULAR" ? demoCirculars : kind === "MEDIA" ? demoMedia : [];
     const item = collection.find((entry) => entry.id === id);
     if (!item) throw new Error("Content record not found");
     item.verified = status === "VERIFIED";
@@ -1439,7 +1323,6 @@ export async function updateContentVerification(kind: AdminContentKind, id: stri
     : kind === "PROGRAM" ? await prisma!.program.findUnique({ where: { id } })
     : kind === "ADMISSION_RULE" ? await prisma!.admissionRule.findUnique({ where: { id } })
     : kind === "CIRCULAR" ? await prisma!.circular.findUnique({ where: { id } })
-    : kind === "SCHOLARSHIP" ? await prisma!.scholarship.findUnique({ where: { id } })
     : await prisma!.media.findUnique({ where: { id } });
   if (!before) throw new Error("Content record not found");
 
@@ -1448,7 +1331,6 @@ export async function updateContentVerification(kind: AdminContentKind, id: stri
     else if (kind === "PROGRAM") await database.program.update({ where: { id }, data: { verificationStatus: status } });
     else if (kind === "ADMISSION_RULE") await database.admissionRule.update({ where: { id }, data: { verificationStatus: status, verifiedAt } });
     else if (kind === "CIRCULAR") await database.circular.update({ where: { id }, data: { verificationStatus: status } });
-    else if (kind === "SCHOLARSHIP") await database.scholarship.update({ where: { id }, data: { verificationStatus: status } });
     else await database.media.update({ where: { id }, data: { verificationStatus: status } });
     await database.auditLog.create({ data: { adminUserId: reviewerId, action: "UPDATE_VERIFICATION", entityType: kind, entityId: id, before: { verificationStatus: before.verificationStatus }, after: { verificationStatus: status } } });
   });
@@ -1457,7 +1339,7 @@ export async function updateContentVerification(kind: AdminContentKind, id: stri
   return updated;
 }
 
-type AdminContentChanges = { name?: string; district?: string; level?: string; title?: string; academicSession?: string; sourceUrl?: string; provider?: string; amountDescription?: string; type?: MediaType; url?: string; languageCode?: "en" | "bn" | null };
+type AdminContentChanges = { name?: string; district?: string; level?: string; title?: string; academicSession?: string; sourceUrl?: string; type?: MediaType; url?: string; languageCode?: "en" | "bn" | null };
 
 export async function updateAdminContent(kind: AdminContentKind, id: string, input: AdminContentChanges, adminUserId: string): Promise<AdminContentRecord> {
   const changes = Object.fromEntries(Object.entries(input).filter(([, value]) => value !== undefined)) as AdminContentChanges;
@@ -1465,7 +1347,6 @@ export async function updateAdminContent(kind: AdminContentKind, id: string, inp
     if (kind === "INSTITUTION") { const item = demoInstitutions.find((entry) => entry.id === id); if (!item) throw new Error("Content record not found"); if (changes.name) item.name = changes.name; if (changes.district) item.district = changes.district; if (changes.sourceUrl) item.sourceUrl = changes.sourceUrl; }
     else if (kind === "PROGRAM") { const item = demoPrograms.find((entry) => entry.id === id); if (!item) throw new Error("Content record not found"); if (changes.name) item.name = changes.name; if (changes.level) item.level = changes.level; }
     else if (kind === "CIRCULAR") { const item = demoCirculars.find((entry) => entry.id === id); if (!item) throw new Error("Content record not found"); if (changes.title) item.title = changes.title; if (changes.academicSession) item.academicSession = changes.academicSession; if (changes.sourceUrl) item.sourceUrl = changes.sourceUrl; }
-    else if (kind === "SCHOLARSHIP") { const item = demoScholarships.find((entry) => entry.id === id); if (!item) throw new Error("Content record not found"); if (changes.title) item.title = changes.title; if (changes.provider) item.provider = changes.provider; if (changes.sourceUrl) item.sourceUrl = changes.sourceUrl; if (changes.amountDescription !== undefined) item.amountDescription = changes.amountDescription; }
     else if (kind === "MEDIA") { const item = demoMedia.find((entry) => entry.id === id); if (!item) throw new Error("Content record not found"); if (changes.title) item.title = changes.title; if (changes.type) item.type = changes.type; if (changes.url) item.url = changes.url; if (changes.languageCode !== undefined) item.languageCode = changes.languageCode ?? undefined; item.updatedAt = new Date().toISOString(); }
     else throw new Error("Admission-rule editing requires the database-backed admin workflow.");
     const updated = (await listAdminContent({ kind })).find((entry) => entry.id === id); if (!updated) throw new Error("Content record could not be updated"); return updated;
@@ -1476,7 +1357,6 @@ export async function updateAdminContent(kind: AdminContentKind, id: string, inp
     else if (kind === "PROGRAM") await database.program.update({ where: { id }, data: { name: changes.name, level: changes.level, sourceUrl: changes.sourceUrl } });
     else if (kind === "ADMISSION_RULE") await database.admissionRule.update({ where: { id }, data: { academicSession: changes.academicSession, sourceUrl: changes.sourceUrl } });
     else if (kind === "CIRCULAR") await database.circular.update({ where: { id }, data: { title: changes.title, academicSession: changes.academicSession, sourceUrl: changes.sourceUrl } });
-    else if (kind === "SCHOLARSHIP") await database.scholarship.update({ where: { id }, data: { title: changes.title, provider: changes.provider, sourceUrl: changes.sourceUrl, amountDescription: changes.amountDescription } });
     else await database.media.update({ where: { id }, data: { title: changes.title, type: changes.type, url: changes.url, languageCode: changes.languageCode } });
     await database.auditLog.create({ data: { adminUserId, action: "EDIT_CONTENT", entityType: kind, entityId: id, after: changes as Prisma.InputJsonObject } });
   });

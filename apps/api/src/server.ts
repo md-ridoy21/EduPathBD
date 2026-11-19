@@ -25,7 +25,6 @@ import {
   createInstitution,
   createMediaResource,
   createProgram,
-  createScholarship,
   disconnectDataStore,
   getAdminStats,
   getAdminAnalytics,
@@ -51,7 +50,6 @@ import {
   listRecommendationCandidates,
   listVerifiedMedia,
   listPrograms,
-  listScholarships,
   listSavedInstitutions,
   removeSavedInstitution,
   rateInstitution,
@@ -170,22 +168,6 @@ app.get("/api/locations", async (request, response, next) => {
   catch (error) { next(error); }
 });
 
-app.get("/api/scholarships", async (request, response, next) => {
-  const parsed = z.object({
-    gpa: z.coerce.number().min(0).max(5).optional(),
-    group: z.string().trim().min(2).max(40).optional(),
-    level: z.enum(["SSC", "HSC", "DIPLOMA", "UNDERGRADUATE", "GRADUATE", "POSTGRADUATE"]).optional(),
-    page: z.coerce.number().int().positive().default(1),
-    limit: z.coerce.number().int().min(1).max(20).default(10)
-  }).safeParse(request.query);
-  if (!parsed.success) { response.status(400).json({ message: "Invalid scholarship filters", issues: parsed.error.flatten() }); return; }
-  try {
-    const { page, limit, ...filters } = parsed.data;
-    const result = await listScholarships({ ...filters, page, limit });
-    response.json({ data: result.data, pagination: { page, limit, total: result.total, pages: Math.ceil(result.total / limit) } });
-  } catch (error) { next(error); }
-});
-
 function broadcast(channel: string, event: string, payload: unknown) {
   publishToChannel(channel, event, payload);
   io.to(channel).emit(event, payload);
@@ -201,7 +183,7 @@ app.get("/api/realtime/:scope/:id", (request, response) => {
 });
 
 const institutionTypes = ["SCHOOL", "COLLEGE", "PUBLIC_UNIVERSITY", "PRIVATE_UNIVERSITY", "ENGINEERING", "MEDICAL", "NATIONAL_UNIVERSITY_COLLEGE", "POLYTECHNIC", "TECHNICAL", "TRAINING_PROVIDER"] as const;
-const adminContentKinds = ["INSTITUTION", "PROGRAM", "ADMISSION_RULE", "CIRCULAR", "SCHOLARSHIP", "MEDIA"] as const;
+const adminContentKinds = ["INSTITUTION", "PROGRAM", "ADMISSION_RULE", "CIRCULAR", "MEDIA"] as const;
 const verificationStatuses = ["DRAFT", "PENDING", "VERIFIED", "OUTDATED", "REJECTED"] as const;
 
 app.get("/api/institutions", async (request, response, next) => {
@@ -728,7 +710,6 @@ const institutionEditSchema = z.object({ name: z.string().trim().min(3).max(160)
 const programEditSchema = z.object({ name: z.string().trim().min(2).max(160).optional(), level: z.string().trim().min(2).max(60).optional(), sourceUrl: httpsUrlSchema.optional() }).refine((value) => Object.keys(value).length > 0);
 const admissionRuleEditSchema = z.object({ academicSession: z.string().trim().min(4).max(20).optional(), sourceUrl: httpsUrlSchema.optional() }).refine((value) => Object.keys(value).length > 0);
 const circularEditSchema = z.object({ title: z.string().trim().min(3).max(180).optional(), academicSession: z.string().trim().min(4).max(20).optional(), sourceUrl: httpsUrlSchema.optional() }).refine((value) => Object.keys(value).length > 0);
-const scholarshipEditSchema = z.object({ title: z.string().trim().min(3).max(180).optional(), provider: z.string().trim().min(2).max(160).optional(), amountDescription: z.string().trim().max(500).optional(), sourceUrl: httpsUrlSchema.optional() }).refine((value) => Object.keys(value).length > 0);
 const mediaEditSchema = z.object({ title: z.string().trim().min(3).max(160).optional(), type: z.enum(["YOUTUBE", "AUDIO"]).optional(), url: z.string().url().optional(), languageCode: z.enum(["en", "bn"]).nullable().optional() }).refine((value) => Object.keys(value).length > 0).superRefine((value, context) => {
   if (!value.url) return;
   if (!value.type) { context.addIssue({ code: "custom", path: ["type"], message: "Media type is required when changing its URL" }); return; }
@@ -745,7 +726,7 @@ const mediaEditSchema = z.object({ title: z.string().trim().min(3).max(160).opti
 app.patch("/api/admin/content/:kind/:id", requireAuth, requireRole("ADMIN"), async (request, response, next) => {
   const kind = String(request.params.kind).toUpperCase();
   if (!adminContentKinds.includes(kind as typeof adminContentKinds[number])) { response.status(400).json({ message: "Invalid content kind" }); return; }
-  const schema = kind === "INSTITUTION" ? institutionEditSchema : kind === "PROGRAM" ? programEditSchema : kind === "ADMISSION_RULE" ? admissionRuleEditSchema : kind === "CIRCULAR" ? circularEditSchema : kind === "SCHOLARSHIP" ? scholarshipEditSchema : mediaEditSchema;
+  const schema = kind === "INSTITUTION" ? institutionEditSchema : kind === "PROGRAM" ? programEditSchema : kind === "ADMISSION_RULE" ? admissionRuleEditSchema : kind === "CIRCULAR" ? circularEditSchema : mediaEditSchema;
   const parsed = schema.safeParse(request.body);
   if (!parsed.success) { response.status(400).json({ message: "Invalid content changes", issues: parsed.error.flatten() }); return; }
   try {
@@ -875,27 +856,6 @@ app.post("/api/admin/admission-rules", requireAuth, requireRole("ADMIN"), async 
   catch (error) { next(error); }
 });
 
-const scholarshipSchema = z.object({
-  institutionId: z.string().min(3).optional(),
-  programId: z.string().min(3).optional(),
-  title: z.string().trim().min(3).max(180),
-  provider: z.string().trim().min(2).max(160),
-  description: z.string().trim().max(1200).optional(),
-  minimumGpa: z.number().min(0).max(5).optional(),
-  groups: z.array(z.string().trim().min(2).max(60)).max(12).default([]),
-  levels: z.array(z.enum(["SSC", "HSC", "DIPLOMA", "UNDERGRADUATE", "GRADUATE", "POSTGRADUATE"])).max(8).default([]),
-  amountDescription: z.string().trim().max(500).optional(),
-  deadline: z.coerce.date().optional(),
-  sourceUrl: httpsUrlSchema
-});
-
-app.post("/api/admin/scholarships", requireAuth, requireRole("ADMIN"), async (request, response, next) => {
-  const parsed = scholarshipSchema.safeParse(request.body);
-  if (!parsed.success) { response.status(400).json({ message: "Invalid scholarship", issues: parsed.error.flatten() }); return; }
-  try { response.status(201).json(await createScholarship(parsed.data)); }
-  catch (error) { next(error); }
-});
-
 const circularSchema = z.object({
   institutionId: z.string().min(3),
   programId: z.string().min(3).optional(),
@@ -960,7 +920,7 @@ app.post("/api/recommendations", async (request, response, next) => {
 });
 
 async function getAssistantSources(): Promise<KnowledgeSource[]> {
-  const [circulars, programs, scholarships] = await Promise.all([listCirculars({ page: 1, limit: 100 }), listRecommendationCandidates(), listScholarships({ page: 1, limit: 100 })]);
+  const [circulars, programs] = await Promise.all([listCirculars({ page: 1, limit: 100 }), listRecommendationCandidates()]);
   return [
     ...circulars.data.map((item) => ({
       id: item.id,
@@ -981,14 +941,6 @@ async function getAssistantSources(): Promise<KnowledgeSource[]> {
       entryStage: item.entryStage,
       districtCode: item.institution.districtCode,
       upazilaCode: item.institution.upazilaCode
-    })),
-    ...scholarships.data.map((item) => ({
-      id: item.id,
-      title: `${item.provider} — ${item.title}`,
-      detail: `${item.description ?? "Scholarship"}; levels: ${item.levels.join(", ") || "not specified"}; groups: ${item.groups.join(", ") || "not specified"}; minimum GPA: ${item.minimumGpa ?? "not specified"}; amount: ${item.amountDescription ?? "not specified"}; deadline: ${item.deadline ? new Date(item.deadline).toLocaleDateString("en-GB") : "not specified"}.`,
-      url: item.sourceUrl,
-      verified: item.verified,
-      kind: "SCHOLARSHIP" as const
     }))
   ].filter((item) => item.verified);
 }

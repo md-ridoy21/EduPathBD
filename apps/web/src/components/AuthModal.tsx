@@ -33,6 +33,7 @@ export function AuthModal({ open, onClose, onAuthenticated }: Props) {
   const [usernameState, setUsernameState] = useState<"idle" | "checking" | "available" | "unavailable">("idle");
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
+  const [activeDemo, setActiveDemo] = useState<"student" | "admin" | null>(null); // নতুন স্টেট
   const firebaseSubmitDisabled = busy || !firebaseConfigured || !email.trim() || password.length < 6 || (mode === "register" && (!displayName.trim() || usernameState !== "available"));
   const phoneTestMode = import.meta.env.VITE_FIREBASE_PHONE_TEST_MODE === "true";
 
@@ -118,6 +119,7 @@ export function AuthModal({ open, onClose, onAuthenticated }: Props) {
   };
 
   const submitDemo = async (admin = false) => {
+    setActiveDemo(admin ? "admin" : "student"); // স্টেট আপডেট
     setBusy(true);
     setMessage("");
     try {
@@ -201,7 +203,10 @@ export function AuthModal({ open, onClose, onAuthenticated }: Props) {
             {!firebaseConfigured && <p className="mt-2 text-center text-[11px] text-slate-500">{text("Firebase keys are not configured locally. Demo access remains fully testable.", "Firebase key সেট করা নেই; demo access সম্পূর্ণ পরীক্ষা করা যাবে।")}</p>}
 
             <div className="my-5 flex items-center gap-3 text-[10px] font-bold uppercase tracking-wider text-slate-400"><span className="h-px flex-1 bg-slate-200" />{text("Demo access", "ডেমো প্রবেশ")}<span className="h-px flex-1 bg-slate-200" /></div>
-            <div className="grid grid-cols-2 gap-3"><button type="button" onClick={() => submitDemo(false)} disabled={busy} className="min-h-11 rounded-xl border border-slate-200 px-3 py-3 text-xs font-black hover:bg-slate-50">{text("Student demo", "শিক্ষার্থী ডেমো")}</button><button type="button" onClick={() => submitDemo(true)} disabled={busy} className="min-h-11 rounded-xl border border-teal-200 bg-teal-50 px-3 py-3 text-xs font-black text-teal-800 hover:bg-teal-100">{text("Admin demo", "অ্যাডমিন ডেমো")}</button></div>
+            <div className="grid grid-cols-2 gap-3">
+              <button type="button" onClick={() => submitDemo(false)} disabled={busy} className={`min-h-11 rounded-xl border px-3 py-3 text-xs font-black ${activeDemo === "student" ? "border-teal-200 bg-teal-50 text-teal-800" : "border-slate-200 hover:bg-slate-50"}`}>{text("Student demo", "শিক্ষার্থী ডেমো")}</button>
+              <button type="button" onClick={() => submitDemo(true)} disabled={busy} className={`min-h-11 rounded-xl border px-3 py-3 text-xs font-black ${activeDemo === "admin" ? "border-teal-200 bg-teal-50 text-teal-800" : "border-slate-200 hover:bg-slate-50"}`}>{text("Admin demo", "অ্যাডমিন ডেমো")}</button>
+            </div>
       </motion.div>
     </motion.div>
   );

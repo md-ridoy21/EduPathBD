@@ -1,12 +1,14 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
+import { qrcode } from 'vite-plugin-qrcode'
 
 const apiProxyTarget = process.env.VITE_PROXY_TARGET ?? "http://localhost:4000";
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), qrcode()],
   server: {
+    host: true,
     port: 5173,
     proxy: {
       "/api": apiProxyTarget,
@@ -15,6 +17,7 @@ export default defineConfig({
     }
   },
   preview: {
+    host: true,
     port: 5173,
     proxy: {
       "/api": apiProxyTarget,

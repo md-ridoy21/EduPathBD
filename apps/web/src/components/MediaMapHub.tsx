@@ -45,8 +45,11 @@ export function MediaMapHub({ session, onRequireAuth }: Props) {
   const googleMapsKey = import.meta.env.VITE_GOOGLE_MAPS_EMBED_KEY as string | undefined;
   const campus = campuses.find((item) => item.id === campusId) ?? campuses[0]!;
   const googleMapUrl = googleMapsKey ? `https://www.google.com/maps/embed/v1/place?key=${encodeURIComponent(googleMapsKey)}&q=${campus.lat},${campus.lng}&zoom=15` : "";
+  
+  // Find the best YouTube video from database (institution-specific first, then global)
   const video = useMemo(() => media.find((item) => item.type === "YOUTUBE" && item.institutionId === campus.id)
     ?? media.find((item) => item.type === "YOUTUBE" && !item.institutionId), [campus.id, media]);
+
   const audio = useMemo(() => {
     const candidates = media.filter((item) => item.type === "AUDIO");
     return candidates.find((item) => item.institutionId === campus.id && item.languageCode === locale)
@@ -56,6 +59,9 @@ export function MediaMapHub({ session, onRequireAuth }: Props) {
   }, [campus.id, locale, media]);
   const localGuideAudioUrl = (locale === "bn" ? import.meta.env.VITE_GUIDE_AUDIO_BN_URL : import.meta.env.VITE_GUIDE_AUDIO_EN_URL) as string | undefined;
   const isGlobalVideo = Boolean(video && !video.institutionId);
+
+  // Fallback YouTube URL if no database video is found
+  const fallbackYoutubeUrl = "https://www.youtube.com/embed/Mi63cF0GCTQ";
 
   useEffect(() => {
     let active = true;
@@ -127,7 +133,7 @@ export function MediaMapHub({ session, onRequireAuth }: Props) {
 
       <div className="grid gap-5">
         <article className="overflow-hidden rounded-[1.7rem] bg-[#071b2e] text-white">
-          {mediaBusy ? <div className="grid aspect-video place-items-center"><LoaderCircle className="animate-spin text-emerald-300" size={28} aria-label={text("Loading verified media", "যাচাইকৃত মিডিয়া লোড হচ্ছে")} /></div> : video ? <div className="aspect-video"><iframe className="size-full border-0" src={video.url} title={video.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div> : <div className="aspect-video"><video className="size-full bg-slate-950 object-cover" src="/media/edupath-admission-guide-en.mp4" controls preload="metadata" aria-label={text("EduPath admission planning guide", "EduPath ভর্তি পরিকল্পনা গাইড")} /></div>}
+          {mediaBusy ? <div className="grid aspect-video place-items-center"><LoaderCircle className="animate-spin text-emerald-300" size={28} aria-label={text("Loading verified media", "যাচাইকৃত মিডিয়া লোড হচ্ছে")} /></div> : video ? <div className="aspect-video"><iframe className="size-full border-0" src={video.url} title={video.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div> : <div className="aspect-video"><iframe className="size-full border-0" src={fallbackYoutubeUrl} title={text("EduPath admission planning guide", "EduPath ভর্তি পরিকল্পনা গাইড")} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div>}
           <div className="flex items-start gap-3 p-5"><PlayCircle className="shrink-0 text-emerald-300" size={22} /><div><div className="flex flex-wrap items-center gap-2"><h3 className="font-black">{video?.title ?? text("EduPath admission planning guide", "EduPath ভর্তি পরিকল্পনা গাইড")}</h3><span className="rounded-full bg-white/10 px-2 py-1 text-[9px] font-black uppercase tracking-wide text-emerald-200">{video && !isGlobalVideo ? text("Institution", "প্রতিষ্ঠান") : text("Fallback", "ফলব্যাক")}</span></div><p className="mt-1 text-xs leading-5 text-slate-400">{video && !isGlobalVideo ? text("This institution-specific video passed the admin verification workflow.", "এই প্রতিষ্ঠানভিত্তিক ভিডিও admin verification workflow-তে অনুমোদিত।") : text("No institution-specific video is published, so a verified global or bundled EduPath admission guide is shown.", "প্রতিষ্ঠানভিত্তিক ভিডিও প্রকাশিত না হওয়ায় যাচাইকৃত global অথবা bundled EduPath ভর্তি গাইড দেখানো হচ্ছে।")}</p></div></div>
         </article>
         <article className="rounded-[1.7rem] border border-slate-200 p-5"><div className="flex items-start gap-3"><span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-violet-50 text-violet-700"><FileAudio size={20} /></span><div><h3 className="font-black">{audio?.title ?? text("Campus admission audio guide", "ক্যাম্পাস ভর্তি অডিও গাইড")}</h3><p className="mt-1 text-xs leading-5 text-slate-500">{audio ? text("The best verified recording for the selected institution and app language is loaded.", "নির্বাচিত প্রতিষ্ঠান ও app language-এর জন্য সবচেয়ে উপযুক্ত যাচাইকৃত recording load হয়েছে।") : localGuideAudioUrl ? text("The local EduPath guide matching the current app language is loaded.", "বর্তমান app language অনুযায়ী local EduPath guide load হয়েছে।") : text("Until a verified recording is configured, the device reads a relevant institution-specific guide aloud.", "যাচাইকৃত recording configure না হওয়া পর্যন্ত ডিভাইস প্রাসঙ্গিক প্রতিষ্ঠানভিত্তিক গাইড পড়ে শোনাবে।")}</p></div></div>{audio ? <audio key={audio.id} src={audio.url} className="mt-4 w-full" controls preload="metadata" /> : localGuideAudioUrl ? <audio key={`${locale}-${localGuideAudioUrl}`} src={localGuideAudioUrl} className="mt-4 w-full" controls preload="metadata" /> : <button type="button" onClick={speakCampusGuide} aria-pressed={speaking} className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-xl bg-violet-50 px-4 py-3 text-xs font-black text-violet-800"><Volume2 size={16} />{speaking ? text("Stop audio guide", "অডিও গাইড বন্ধ করুন") : text("Listen to planning guide", "পরিকল্পনা গাইড শুনুন")}</button>}{mediaError && <p role="alert" className="mt-3 text-xs leading-5 text-rose-700">{mediaError}</p>}<a href={campus.sourceUrl} target="_blank" rel="noreferrer" className="mt-3 inline-flex min-h-11 items-center gap-2 text-xs font-black text-teal-700">{text("Verify on institution website", "প্রতিষ্ঠানের ওয়েবসাইটে যাচাই করুন")} <ExternalLink size={13} /></a></article>
